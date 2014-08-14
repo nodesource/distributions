@@ -1,0 +1,62 @@
+#!/bin/bash
+
+# Discussion, issues and change requests at:
+#   https://github.com/nodesource/distributions
+#
+# Script to install NodeSource repo onto a Debian or Ubuntu system.
+#
+# Run as root or insert `sudo` before `bash`:
+#
+# curl -sL https://deb.nodesource.com/setup | bash -
+#   or
+# wget -qO- https://deb.nodesource.com/setup | bash -
+#
+
+# Check that HTTPS transport is available to APT
+# (Check snaked from: https://get.docker.io/ubuntu/)
+if [ ! -e /usr/lib/apt/methods/https ]; then
+    apt-get update
+    apt-get install -y apt-transport-https
+fi
+
+DISTRO=$(lsb_release -c -s)
+
+if [ "x$DISTRO" == "xqiana" ]; then
+    echo "You seem to be using Mint Linux version $DISTRO."
+    echo "This maps to Ubuntu trusty... adjusting for you..."
+    DISTRO="trusty"
+fi
+
+if [ "x$DISTRO" == "xmaya" ]; then
+    echo "You seem to be using Mint Linux version $DISTRO."
+    echo "This maps to Ubuntu precise... adjusting for you..."
+    DISTRO="precise"
+fi
+
+if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
+    echo -n "Removing Launchpad PPA Repository for NodeJS... "
+    add-apt-repository -y -r ppa:chris-lea/node.js
+    rm -f /etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list
+    echo "done!"
+fi
+
+echo "Adding the NodeSource signing key to your keyring... "
+if [ -x /usr/bin/curl ]; then
+    bash -c "curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -"
+elif [ -x /usr/bin/wget ]; then
+    bash -c "wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -"
+else
+    echo "Need either curl or wget installed to run this script! Exiting..."
+    exit 1
+fi
+echo "done!"
+
+echo -n "Creating apt sources list file for the NodeSource repo... "
+bash -c "echo 'deb https://deb.nodesource.com/node $DISTRO main' > /etc/apt/sources.list.d/nodesource.list"
+bash -c "echo 'deb-src https://deb.nodesource.com/node $DISTRO main' >> /etc/apt/sources.list.d/nodesource.list"
+echo "done!"
+
+echo "Running apt-get update for you."
+
+apt-get update
+
