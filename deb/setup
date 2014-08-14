@@ -19,6 +19,11 @@ if [ ! -e /usr/lib/apt/methods/https ]; then
     apt-get install -y apt-transport-https
 fi
 
+# Check that lsb-release is installed
+if [ ! -x lsb_release ]; then
+    apt-get install lsb-release
+fi
+
 DISTRO=$(lsb_release -c -s)
 
 if [ "x$DISTRO" == "xqiana" ]; then
