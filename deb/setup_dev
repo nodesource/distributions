@@ -12,11 +12,26 @@
 # wget -qO- https://deb.nodesource.com/setup_dev | bash -
 #
 
+PRE_INSTALL_PKGS=""
+
 # Check that HTTPS transport is available to APT
 # (Check snaked from: https://get.docker.io/ubuntu/)
+
 if [ ! -e /usr/lib/apt/methods/https ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} apt-transport-https"
+fi
+
+if [ ! -x lsb_release ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} lsb-release"
+fi
+
+if [ ! -x /usr/bin/curl ] && [ ! -x /usr/bin/wget ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} curl"
+fi
+
+if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
     apt-get update
-    apt-get install -y apt-transport-https
+    apt-get install -y $PRE_INSTALL_PKGS
 fi
 
 DISTRO=$(lsb_release -c -s)
@@ -56,7 +71,8 @@ bash -c "echo 'deb https://deb.nodesource.com/node-devel $DISTRO main' > /etc/ap
 bash -c "echo 'deb-src https://deb.nodesource.com/node-devel $DISTRO main' >> /etc/apt/sources.list.d/nodesource-devel.list"
 echo "done!"
 
-echo "Running apt-get update for you."
+echo "Running 'apt-get update' for you."
+echo "Run 'apt-get install nodejs' (as root) to install Node.js (unstable) and npm"
 
 apt-get update
 
