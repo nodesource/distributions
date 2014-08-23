@@ -34,6 +34,11 @@ if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
     apt-get install -y $PRE_INSTALL_PKGS
 fi
 
+# Check that lsb-release is installed
+if [ ! -x lsb_release ]; then
+    apt-get install lsb-release
+fi
+
 DISTRO=$(lsb_release -c -s)
 
 if [ "x$DISTRO" == "xqiana" ]; then
