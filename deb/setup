@@ -48,6 +48,12 @@ if [ "x$DISTRO" == "xmaya" ]; then
     DISTRO="precise"
 fi
 
+if [ "x$DISTRO" == "luna" ]; then
+    echo "You seem to be using elementaryOS version $DISTRO."
+    echo "This maps to Ubuntu trusty... adjusting for you..."
+    DISTRO="trusty"
+fi
+
 if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
     echo -n "Removing Launchpad PPA Repository for NodeJS... "
     add-apt-repository -y -r ppa:chris-lea/node.js
