@@ -12,67 +12,85 @@
 # wget -qO- https://deb.nodesource.com/setup_dev | bash -
 #
 
+print_status() {
+    echo ""
+    echo "## $*"
+    echo ""
+}
+
+bail() {
+    echo "Error executing command, exiting"
+    exit 1
+}
+
+exec_cmd() {
+    echo "+ ${@}"
+    sh -c "${@}" || bail
+}
+
 PRE_INSTALL_PKGS=""
 
 # Check that HTTPS transport is available to APT
 # (Check snaked from: https://get.docker.io/ubuntu/)
 
 if [ ! -e /usr/lib/apt/methods/https ]; then
-    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} apt-transport-https"
+    PRE_INSTALL_PKGS="apt-transport-https ${PRE_INSTALL_PKGS}"
 fi
 
-if [ ! -x lsb_release ]; then
-    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} lsb-release"
+if [ ! -x /usr/bin/lsb_release ]; then
+    PRE_INSTALL_PKGS="lsb-release ${PRE_INSTALL_PKGS}"
 fi
 
 if [ ! -x /usr/bin/curl ] && [ ! -x /usr/bin/wget ]; then
-    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} curl"
+    PRE_INSTALL_PKGS="curl ${PRE_INSTALL_PKGS}"
 fi
 
 if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
-    apt-get update
-    apt-get install -y $PRE_INSTALL_PKGS
+    print_status "Installing packages required for setup: ${PRE_INSTALL_PKGS}..."
+    exec_cmd "apt-get update"
+    exec_cmd "apt-get install -y $PRE_INSTALL_PKGS"
 fi
 
 DISTRO=$(lsb_release -c -s)
 
-if [ "x$DISTRO" == "xqiana" ]; then
-    echo "You seem to be using Mint Linux version $DISTRO."
-    echo "This maps to Ubuntu trusty... adjusting for you..."
-    DISTRO="trusty"
-fi
+check_alt() {
+    if [ "x${DISTRO}" == "x${2}" ]; then
+        echo ""
+        echo "## You seem to be using ${1} version \"${DISTRO}\"."
+        echo "## This maps to ${3} \"${4}\"... Adjusting for you..."
+        DISTRO="${4}"
+    fi
+}
 
-if [ "x$DISTRO" == "xmaya" ]; then
-    echo "You seem to be using Mint Linux version $DISTRO."
-    echo "This maps to Ubuntu precise... adjusting for you..."
-    DISTRO="precise"
-fi
+check_alt "Linux Mint"   "qiana" "Ubuntu" "trusty"
+check_alt "Linux Mint"   "maya"  "Ubuntu" "precise"
+check_alt "elementaryOS" "luna"  "Ubuntu" "trusty"
 
 if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
-    echo -n "Removing Launchpad PPA Repository for NodeJS... "
-    add-apt-repository -y -r ppa:chris-lea/node.js
-    rm -f /etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list
-    echo "done!"
+    print_status "Removing Launchpad PPA Repository for NodeJS..."
+
+    exec_cmd "add-apt-repository -y -r ppa:chris-lea/node.js"
+    exec_cmd "rm -f /etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list"
 fi
 
-echo "Adding the NodeSource signing key to your keyring... "
+print_status "Adding the NodeSource signing key to your keyring..."
+
 if [ -x /usr/bin/curl ]; then
-    echo "curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -" | sudo bash
+    exec_cmd "curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -"
 elif [ -x /usr/bin/wget ]; then
-    echo "wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -" | sudo bash
+    exec_cmd "wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -"
 else
-    echo "Need either curl or wget installed to run this script! Exiting..."
+    echo "ERROR: Need either curl or wget installed to run this script! Exiting..."
     exit 1
 fi
-echo "done!"
 
-echo -n "Creating apt sources list file for the NodeSource Devel repo... "
-bash -c "echo 'deb https://deb.nodesource.com/node-devel $DISTRO main' > /etc/apt/sources.list.d/nodesource-devel.list"
-bash -c "echo 'deb-src https://deb.nodesource.com/node-devel $DISTRO main' >> /etc/apt/sources.list.d/nodesource-devel.list"
-echo "done!"
+print_status "Creating apt sources list file for the NodeSource repo..."
 
-echo "Running 'apt-get update' for you."
-echo "Run 'apt-get install nodejs' (as root) to install Node.js (unstable) and npm"
+exec_cmd "echo 'deb https://deb.nodesource.com/node-devel $DISTRO main' > /etc/apt/sources.list.d/nodesource-devel.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/node-devel $DISTRO main' >> /etc/apt/sources.list.d/nodesource-devel.list"
 
-apt-get update
+print_status "Running 'apt-get update' for you..."
 
+exec_cmd "apt-get update"
+
+print_status "Run 'apt-get install nodejs' (as root) to install Node.js (unstable) and npm"
