@@ -25,9 +25,13 @@ bail() {
     exit 1
 }
 
-exec_cmd() {
+exec_cmd_nobail() {
     echo "+ $1"
-    bash -c "$1" || bail
+    bash -c "$1"
+}
+
+exec_cmd() {
+    exec_cmd_nobail "$1" || bail
 }
 
 PRE_INSTALL_PKGS=""
@@ -70,6 +74,21 @@ check_alt "Linux Mint" "qiana" "Ubuntu" "trusty"
 check_alt "Linux Mint" "maya" "Ubuntu" "precise"
 check_alt "elementaryOS" "luna" "Ubuntu" "trusty"
 
+print_status "Confirming \"${DISTRO}\" is supported..."
+
+if [ -x /usr/bin/curl ]; then
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node-devel/dists/${DISTRO}/Release'"
+    RC=$?
+else
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node-devel/dists/${DISTRO}/Release'"
+    RC=$?
+fi
+
+if [[ $RC != 0 ]]; then
+    print_status "Your distribution, identified as \"${DISTRO}\", is not currently supported, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support"
+    exit 1
+fi
+
 if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
     print_status 'Removing Launchpad PPA Repository for NodeJS...'
 
@@ -81,11 +100,8 @@ print_status 'Adding the NodeSource signing key to your keyring...'
 
 if [ -x /usr/bin/curl ]; then
     exec_cmd 'curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
-elif [ -x /usr/bin/wget ]; then
-    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 else
-    echo 'ERROR: Need either curl or wget installed to run this script! Exiting...'
-    exit 1
+    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
 print_status 'Creating apt sources list file for the NodeSource repo...'
