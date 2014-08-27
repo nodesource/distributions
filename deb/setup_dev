@@ -74,6 +74,17 @@ check_alt "Linux Mint" "qiana" "Ubuntu" "trusty"
 check_alt "Linux Mint" "maya" "Ubuntu" "precise"
 check_alt "elementaryOS" "luna" "Ubuntu" "trusty"
 
+if [ "X${DISTRO}" == "Xdebian" ]; then
+  print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
+  NEWDISTRO=$([[ -e /etc/debian_version ]] && cat /etc/debian_version  | cut -d/ -f1)
+  if [ "X${DISTRO}" == "X" ]; then
+    print_status "Could not determine distribution from /etc/debian_version..."
+  else
+    DISTRO=$NEWDISTRO
+    print_status "Found \"${DISTRO}\" in /etc/debian_version..."
+  fi
+fi
+
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
