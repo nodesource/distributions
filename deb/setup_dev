@@ -72,7 +72,8 @@ check_alt() {
 
 check_alt "Linux Mint" "qiana" "Ubuntu" "trusty"
 check_alt "Linux Mint" "maya" "Ubuntu" "precise"
-check_alt "elementaryOS" "luna" "Ubuntu" "trusty"
+check_alt "elementaryOS" "luna" "Ubuntu" "precise"
+check_alt "elementaryOS" "freya" "Ubuntu" "trusty"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
