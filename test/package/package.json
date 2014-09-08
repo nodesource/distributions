@@ -1,0 +1,14 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "bl": "~0.9.1",
+    "buffertools": "~2.1.2",
+    "hyperquest": "~0.3.0"
+  },
+  "scripts": {
+    "test": "npm start; node test.js",
+    "start": "node server.js &"
+  }
+}
