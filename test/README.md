@@ -3,7 +3,7 @@
 It can be executed with:
 
 ```text
-$ curl -sL https://deb.nodesource.com/test | sudo bash -
+$ curl -sL https://deb.nodesource.com/test | bash -
 ```
 
 The test script will clean up after itself and report a `0` or `1` exit code on success or failure respectively. The output is verbose and should show any problems along the way.

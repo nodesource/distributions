@@ -57,14 +57,21 @@ sudo apt-get install nodejs
 Setup with Debian (as root):
 
 ```text
-apt-get install curl lsb-release
 curl -sL https://deb.nodesource.com/setup | bash -
 ```
 
 Then install with Debian (as root):
 
 ```text
-apt-get install nodejs nodejs-legacy npm
+apt-get install nodejs nodejs-legacy
+```
+
+## Tests
+
+To test an installation is working (and that the setup scripts are working!) use:
+
+```text
+curl -sL https://deb.nodesource.com/test | bash -
 ```
 
 ------------------------------------------------------------------
