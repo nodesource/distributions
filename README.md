@@ -44,6 +44,9 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
+* **Linux Mint Debian Edition (LMDE) stable** (via Debian stable)
+* **Linux Mint Debian Edition (LMDE) testing** (via Debian testing)
+* **Linux Mint Debian Edition (LMDE) unstable** (via Debian unstable)
 
 **Supported elementary OS versions:**
 
