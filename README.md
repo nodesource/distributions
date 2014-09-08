@@ -30,6 +30,8 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 
+*Ubuntu 14.10 (Utopic Unicorn) is not yet officially supported but can use the Trusty binaries, [details here](https://github.com/nodesource/distributions/issues/13).*
+
 **Supported Debian versions:**
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
@@ -37,6 +39,16 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Debian 7 / stable** (wheezy)
 * **Debian testing** (jessie)
 * **Debian unstable** (sid)
+
+**Supported Linux Mint versions:**
+
+* **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
+* **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
+
+**Supported elementary OS versions:**
+
+* **elemenrary OS Luna** (via Ubuntu 12.04 LTS)
+* **elemenrary OS Freya** (via Ubuntu 14.04 LTS)
 
 ## Usage instructions
 
