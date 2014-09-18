@@ -3,13 +3,19 @@
 ![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
 
 This repository contains the source of the
-**[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts. See the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com>.
+**[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts.
+
+For Debian / Ubuntu based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
+
+For Enterprise Linux based distributions (RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
 ## Platforms
+
+### Debian and Ubuntu based distributions
 
 **Available architectures:**
 
@@ -49,6 +55,32 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **elemenrary OS Luna** (via Ubuntu 12.04 LTS)
 * **elemenrary OS Freya** (via Ubuntu 14.04 LTS)
+
+### Enterprise Linux based distributions
+
+**Available architectures:**
+
+NodeSource will continue to maintain the following architectures and may add additional ones in the future. 
+
+* **i386** (32-bit, not available for EL7)
+* **x86_64** (64-bit)
+
+**Supported Red Hat Enterprise Linux versions:**
+
+* **RHEL 5** (32-bit and 64-bit)
+* **RHEL 6** (32-bit and 64-bit)
+* **RHEL 7** (64-bit)
+
+**Supported CentOS versions:**
+
+* **CentOS 5** (32-bit and 64-bit)
+* **CentOS 6** (32-bit and 64-bit)
+* **CentOS 7** (64-bit)
+
+**Supported Fedora versions:**
+
+* **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
+* **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
 ## Usage instructions
 
