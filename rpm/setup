@@ -1,0 +1,196 @@
+#!/bin/bash
+
+# Discussion, issues and change requests at:
+#   https://github.com/nodesource/distributions
+#
+# Script to install NodeSource repo onto a Enterprise Linux based system.
+#
+# Run as root or insert `sudo` before `bash`:
+#
+# curl -sL https://rpm.nodesource.com/setup | bash -
+#   or
+# wget -qO- https://rpm.nodesource.com/setup | bash -
+#
+
+print_status() {
+  local outp=$(echo "$1" | sed 's/\n/\n## /g')
+  echo
+  echo -e "## ${outp}"
+  echo
+}
+
+bail() {
+  echo 'Error executing command, exiting'
+  exit 1
+}
+
+exec_cmd_nobail() {
+  echo "+ $1"
+  bash -c "$1"
+}
+
+exec_cmd() {
+  exec_cmd_nobail "$1" || bail
+}
+
+
+print_status "Inspecting system..."
+
+if [ ! -x /bin/rpm ]; then
+  print_status "You don't appear to be running an Enterprise Linux based system, please contact NodeSource at https://github.com/nodesource/distributions/issues if you think this is incorrect or would like your distribution to be considered for support"
+  exit 1
+fi
+
+#-check-distro-#
+
+echo "+ rpm -q --whatprovides redhat-release"
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release)
+echo "+ uname -m"
+UNAME_ARCH=$(uname -m)
+
+if [ "X${UNAME_ARCH}" == "Xi686" ]; then
+  DIST_ARCH=i386
+elif [ "X${UNAME_ARCH}" == "Xx86_64" ]; then
+  DIST_ARCH=x86_64
+else
+
+  print_status "\
+You don't appear to be running a supported machine architecture: ${UNAME_ARCH}. \
+Please contact NodeSource at \
+https://github.com/nodesource/distributions/issues if you think this is \
+incorrect or would like your architecture to be considered for support. \
+"
+  exit 1
+
+fi
+
+if [[ $DISTRO_PKG =~ ^redhat- ]] || [[ $DISTRO_PKG =~ ^centos- ]]; then
+    DIST_TYPE=el
+elif [[ $DISTRO_PKG =~ ^fedora- ]]; then
+    DIST_TYPE=fc
+else
+
+  print_status "\
+You don't appear to be running a supported version of Enterprise Linux. \
+Please contact NodeSource at \
+https://github.com/nodesource/distributions/issues if you think this is \
+incorrect or would like your architecture to be considered for support. \
+Include your 'distribution package' name: ${DISTRO_PKG}. \
+"
+  exit 1
+
+fi
+
+DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[a-z]+-release(-server)?-([0-9]+).*$/\2/')
+
+if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
+
+  print_status "\
+Could not determine your distribution version, you may not be running a \
+supported version of Enterprise Linux. \
+Please contact NodeSource at \
+https://github.com/nodesource/distributions/issues if you think this is \
+incorrect. Include your 'distribution package' name: ${DISTRO_PKG}. \
+"
+  exit 1
+
+fi
+
+RELEASE_URL_VERSION_STRING=$DIST_VERSION
+
+if [ "$DIST_TYPE" == "fc" ]; then
+  RELEASE_URL_VERSION_STRING="fc${DIST_VERSION}"
+fi
+
+RELEASE_URL="\
+https://rpm.nodesource.com/pub/\
+${DIST_TYPE}/\
+${DIST_VERSION}/\
+${DIST_ARCH}/\
+nodesource-release-${RELEASE_URL_VERSION_STRING}-1.noarch.rpm"
+
+#-check-distro-#
+
+print_status "Confirming \"${DIST_TYPE}-${DIST_VERSION}-${DIST_ARCH}\" is supported..."
+
+exec_cmd_nobail "curl -sLf -o /dev/null '${RELEASE_URL}'"
+RC=$?
+
+if [[ $RC != 0 ]]; then
+    print_status "\
+Your distribution, identified as \"${DISTRO_PKG}\", \
+is not currently supported, please contact NodeSource at \
+https://github.com/nodesource/distributions/issues \
+if you think this is incorrect or would like your distribution to be considered for support"
+    exit 1
+fi
+
+if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
+
+  print_status "Checking if EPEL is enabled..."
+
+  echo "+ yum repolist enabled 2> /dev/null | grep epel"
+  repolist=$(yum repolist enabled 2> /dev/null | grep epel)
+
+  if [ "X${repolist}" == "X" ]; then
+    print_status "Finding current EPEL release RPM..."
+
+    epel_url="http://dl.fedoraproject.org/pub/epel/5/${DIST_ARCH}/"
+    epel_release_view="${epel_url}repoview/epel-release.html"
+    echo "+ curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm'"
+    epel=$(curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm')
+    if [ "X${epel}" = "X" ]; then
+      print_status "Error: Could not find current EPEL release RPM!"
+      exit 1
+    fi
+
+    print_status "\
+The EPEL (Extra Packages for Enterprise Linux) repository is a\n\
+prerequisite for installing Node.js on your operating system. Please\n\
+add it and re-run this setup script.\n\
+\n\
+The EPEL repository RPM is available at:\n\
+  ${epel_url}${epel}
+"
+
+    exit 1
+  fi
+
+fi
+
+print_status "Downloading release setup RPM..."
+
+echo "+ mktemp"
+RPM_TMP=$(mktemp || bail)
+
+exec_cmd "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
+
+print_status "Installing release setup RPM..."
+
+exec_cmd "rpm -i --nosignature --force '${RPM_TMP}'"
+
+print_status "Cleaning up..."
+
+exec_cmd "rm -f '${RPM_TMP}'"
+
+print_status "Checking for existing installations..."
+
+echo "+ rpm -qa 'node|npm' | grep -v nodesource"
+EXISTING_NODE=$(rpm -qa 'node|npm' | grep -v nodesource)
+
+if [ "X${EXISTING_NODE}" != "X" ]; then
+
+  print_status "\
+Your system appears to already have Node.js installed from an alternative source.\n\
+Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.\
+"
+
+fi
+
+print_status "\
+Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js and npm.\n\
+You may also need to install development tools to build native addons:\n\
+  \`yum groupinstall -y 'Development Tools'\`\
+"
+
+exit 0
