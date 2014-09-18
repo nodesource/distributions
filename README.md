@@ -2,20 +2,17 @@
 
 ![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
 
-This repository contains the source of the
-**[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts.
+This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts.
 
-For Debian / Ubuntu based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
+For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
-For Enterprise Linux based distributions (RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
+For **Enterprise Linux** based distributions (RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
-## Platforms
-
-### Debian and Ubuntu based distributions
+## Debian and Ubuntu based distributions
 
 **Available architectures:**
 
@@ -56,7 +53,43 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **elemenrary OS Luna** (via Ubuntu 12.04 LTS)
 * **elemenrary OS Freya** (via Ubuntu 14.04 LTS)
 
-### Enterprise Linux based distributions
+### Usage instructions
+
+Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
+
+Setup with **Ubuntu**:
+
+```text
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+```
+
+Then install with **Ubuntu**:
+
+```text
+sudo apt-get install -y nodejs
+```
+
+Setup with **Debian** (as root):
+
+```text
+curl -sL https://deb.nodesource.com/setup | bash -
+```
+
+Then install with **Debian** (as root):
+
+```text
+apt-get install -y nodejs nodejs-legacy
+```
+
+***Optional***: install build tools
+
+To compile and install native addons from npm you may also need to install build tools:
+
+```text
+apt-get install -y build-essential
+```
+
+## Enterprise Linux based distributions
 
 **Available architectures:**
 
@@ -82,32 +115,28 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
 * **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
-## Usage instructions
+### Usage instructions
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
 
-Setup with Ubuntu:
+Run as root on RHEL, CentOS or Fedora:
 
 ```text
-curl -sL https://deb.nodesource.com/setup | sudo bash -
+curl -sL https://rpm.nodesource.com/setup | bash -
 ```
 
-Then install with Ubuntu:
+Then install, as root:
 
 ```text
-sudo apt-get install nodejs
+yum install -y nodejs
 ```
 
-Setup with Debian (as root):
+***Optional***: install build tools
+
+To compile and install native addons from npm you may also need to install build tools:
 
 ```text
-curl -sL https://deb.nodesource.com/setup | bash -
-```
-
-Then install with Debian (as root):
-
-```text
-apt-get install nodejs nodejs-legacy
+yum groupinstall -y 'Development Tools'
 ```
 
 ## Tests
