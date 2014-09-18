@@ -1,9 +1,6 @@
 # NodeSource Node.js Binary Distributions
 
-<a href="https://nodesource.com"><img src="https://nodesource.com/assets/logo.svg" height="10%" width="10%"></a>
-<a href="https://ubuntu.com"><img src="http://design.ubuntu.com/wp-content/uploads/logo-ubuntu_su-black_orange-hex.svg" height="21%" width="21%"></a>
-<a href="https://www.debian.org/"><img src="https://www.debian.org/logos/openlogo.svg" height="8%" width="8%"></a>
-
+![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
 
 This repository contains the source of the
 **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts. See the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com>.
