@@ -1,17 +1,22 @@
-# NodeSource Node.js Binary Distributions
+# [NodeSource](https://nodesource.com/) Node.js Binary Distributions
 
 ![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
 
-This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup scripts.
+This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup and support scripts.
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
-For **Enterprise Linux** based distributions (RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
+For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
+* **[Debian and Ubuntu based distributions](#deb)** (deb)
+* **[Enterprise Linux based distributions](#rpm)** (rpm)
+* **[Tests](#tests)**
+
+<a name="deb"></a>
 ## Debian and Ubuntu based distributions
 
 **Available architectures:**
@@ -53,6 +58,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **elemenrary OS Luna** (via Ubuntu 12.04 LTS)
 * **elemenrary OS Freya** (via Ubuntu 14.04 LTS)
 
+<a name="debusage"></a>
 ### Usage instructions
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
@@ -89,6 +95,7 @@ To compile and install native addons from npm you may also need to install build
 apt-get install -y build-essential
 ```
 
+<a name="rpm"></a>
 ## Enterprise Linux based distributions
 
 **Available architectures:**
@@ -98,7 +105,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **i386** (32-bit, not available for EL7)
 * **x86_64** (64-bit)
 
-**Supported Red Hat Enterprise Linux versions:**
+**Supported Red Hat® Enterprise Linux® versions:**
 
 * **RHEL 5** (32-bit and 64-bit)
 * **RHEL 6** (32-bit and 64-bit)
@@ -115,9 +122,12 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
 * **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
+<a name="rpmusage"></a>
 ### Usage instructions
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
+
+Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
 Run as root on RHEL, CentOS or Fedora:
 
@@ -136,9 +146,11 @@ yum install -y nodejs
 To compile and install native addons from npm you may also need to install build tools:
 
 ```text
-yum groupinstall -y 'Development Tools'
+yum install gcc-c++ make
+# or: yum groupinstall 'Development Tools'
 ```
 
+<a name="tests"></a>
 ## Tests
 
 To test an installation is working (and that the setup scripts are working!) use:
@@ -151,4 +163,7 @@ curl -sL https://deb.nodesource.com/test | bash -
 
 *Supported with love by by [Chris Lea](https://github.com/chrislea), [Rod Vagg](https://github.com/rvagg) and the [NodeSource](https://nodesource.com) team*
 
-*Ubuntu is a registered trademark of Canonical Ltd.*
+*This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*<br>
+*Ubuntu is a registered trademark of Canonical Ltd.*<br>
+*Debian is a registered trademark owned by Software in the Public Interest, Inc.*<br>
+*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
