@@ -159,6 +159,10 @@ To test an installation is working (and that the setup scripts are working!) use
 curl -sL https://deb.nodesource.com/test | bash -
 ```
 
+## License
+
+This material is Copyright (c) 2014 NodeSource LLC and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
+
 ------------------------------------------------------------------
 
 *Supported with love by by [Chris Lea](https://github.com/chrislea), [Rod Vagg](https://github.com/rvagg) and the [NodeSource](https://nodesource.com) team*
