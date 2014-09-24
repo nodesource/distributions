@@ -55,8 +55,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported elementary OS versions:**
 
-* **elemenrary OS Luna** (via Ubuntu 12.04 LTS)
-* **elemenrary OS Freya** (via Ubuntu 14.04 LTS)
+* **elementary OS Luna** (via Ubuntu 12.04 LTS)
+* **elementary OS Freya** (via Ubuntu 14.04 LTS)
 
 <a name="debusage"></a>
 ### Usage instructions
