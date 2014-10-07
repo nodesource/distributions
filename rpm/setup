@@ -75,6 +75,8 @@ fi
 
 if [[ $DISTRO_PKG =~ ^redhat- ]] || [[ $DISTRO_PKG =~ ^centos- ]]; then
     DIST_TYPE=el
+elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
+    DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^fedora- ]]; then
     DIST_TYPE=fc
 else
@@ -90,22 +92,32 @@ Include your 'distribution package' name: ${DISTRO_PKG}. \
 
 fi
 
-## Using the redhat-release-server-X, centos-release-X, etc. pattern
-## extract the major version number of the distro
-DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[a-z]+-release(-server)?-([0-9]+).*$/\2/')
+if [[ $DISTRO_PKG =~ ^system-release-201[4-9]\. ]]; then  #NOTE: not really future-proof
 
-if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
+  # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
+  DIST_VERSION=7
 
-  print_status "\
+else
+
+  ## Using the redhat-release-server-X, centos-release-X, etc. pattern
+  ## extract the major version number of the distro
+  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[a-z]+-release(-server)?-([0-9]+).*$/\2/')
+
+  if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
+
+    print_status "\
 Could not determine your distribution version, you may not be running a \
 supported version of Enterprise Linux. \
 Please contact NodeSource at \
 https://github.com/nodesource/distributions/issues if you think this is \
 incorrect. Include your 'distribution package' name: ${DISTRO_PKG}. \
 "
-  exit 1
+    exit 1
+
+  fi
 
 fi
+
 
 ## Given the distro, version and arch, construct the url for
 ## the appropriate nodesource-release package (it's noarch but
