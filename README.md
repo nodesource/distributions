@@ -66,7 +66,7 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 Setup with **Ubuntu**:
 
 ```text
-curl -sL https://deb.nodesource.com/setup | sudo bash -
+curl -sL https://deb.nodesource.com/setup | bash -
 ```
 
 Then install with **Ubuntu**:
