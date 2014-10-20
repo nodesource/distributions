@@ -34,6 +34,13 @@ exec_cmd() {
   exec_cmd_nobail "$1" || bail
 }
 
+if [[ -n "$http_proxy" ]]; then
+  HTTP_PROXY_STRING="http_proxy=$http_proxy"
+fi
+
+if [[ -n "$https_proxy" ]]; then
+  HTTPS_PROXY_STRING="https_proxy=$https_proxy"
+fi
 
 print_status "Inspecting system..."
 
@@ -136,7 +143,7 @@ print_status "Confirming \"${DIST_TYPE}${DIST_VERSION}-${DIST_ARCH}\" is support
 
 ## Simple fetch & fast-fail to see if the nodesource-release
 ## file exists for this distro/version/arch
-exec_cmd_nobail "curl -sLf -o /dev/null '${RELEASE_URL}'"
+exec_cmd_nobail "$HTTP_PROXY_STRING $HTTPS_PROXY_STRING curl -sLf -o /dev/null '${RELEASE_URL}'"
 RC=$?
 
 if [[ $RC != 0 ]]; then
@@ -163,8 +170,8 @@ if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
     ## We can scrape the html to find the latest epel-release (likely 5.4)
     epel_url="http://dl.fedoraproject.org/pub/epel/5/${DIST_ARCH}/"
     epel_release_view="${epel_url}repoview/epel-release.html"
-    echo "+ curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm'"
-    epel=$(curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm')
+    echo "+ $HTTP_PROXY_STRING $HTTPS_PROXY_STRING curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm'"
+    epel=$($HTTP_PROXY_STRING $HTTPS_PROXY_STRING curl -s $epel_release_view | grep -oE 'epel-release-[0-9\-]+\.noarch\.rpm')
     if [ "X${epel}" = "X" ]; then
       print_status "Error: Could not find current EPEL release RPM!"
       exit 1
@@ -193,7 +200,7 @@ print_status "Downloading release setup RPM..."
 echo "+ mktemp"
 RPM_TMP=$(mktemp || bail)
 
-exec_cmd "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
+exec_cmd "$HTTP_PROXY_STRING $HTTPS_PROXY_STRING curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
 
 print_status "Installing release setup RPM..."
 
