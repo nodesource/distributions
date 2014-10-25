@@ -29,13 +29,12 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Ubuntu versions:**
 
-NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
+NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases. Please note we will only support the intermediate releases so long as they are within Canonical's support window.
 
 * **Ubuntu 10.04 LTS** (Lucid Lynx, *armhf build not available*)
 * **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
-
-*Ubuntu 14.10 (Utopic Unicorn) is not yet officially supported but can use the Trusty binaries, [details here](https://github.com/nodesource/distributions/issues/13).*
+* **Ubuntu 14.10*** (Utopic Unicorn)
 
 **Supported Debian versions:**
 
