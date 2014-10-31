@@ -83,7 +83,7 @@ curl -sL https://deb.nodesource.com/setup | bash -
 Then install with **Debian** (as root):
 
 ```text
-apt-get install -y nodejs nodejs-legacy
+apt-get install -y nodejs
 ```
 
 ***Optional***: install build tools
