@@ -156,6 +156,10 @@ if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
 
   echo "+ yum repolist enabled 2> /dev/null | grep epel"
   repolist=$(yum repolist enabled 2> /dev/null | grep epel)
+  if [ "X${repolist}" == "X" ]; then
+    echo "+ yum --disablerepo='*' --enablerepo='epel' list available 2> /dev/null | grep epel"
+    repolist=$(yum --disablerepo='*' --enablerepo='epel' list available 2> /dev/null | grep epel)
+  fi
 
   if [ "X${repolist}" == "X" ]; then
     print_status "Finding current EPEL release RPM..."
