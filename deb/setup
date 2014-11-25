@@ -73,6 +73,7 @@ check_alt() {
     fi
 }
 
+check_alt "Linux Mint" "rebecca" "Ubuntu" "trusty"
 check_alt "Linux Mint" "qiana" "Ubuntu" "trusty"
 check_alt "Linux Mint" "maya" "Ubuntu" "precise"
 check_alt "elementaryOS" "luna" "Ubuntu" "precise"
