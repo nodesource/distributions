@@ -63,6 +63,7 @@ testCheckDistro  centos-release-5-8.el5.centos                     i686    el   
 testCheckDistro  centos-release-5-10.el5.centos                    x86_64  el       5           x86_64   https://rpm.nodesource.com/pub/el/5/x86_64/nodesource-release-el5-1.noarch.rpm
 testCheckDistro  centos-release-6-5.el6.centos.11.2.i686           i686    el       6           i386     https://rpm.nodesource.com/pub/el/6/i386/nodesource-release-el6-1.noarch.rpm
 testCheckDistro  centos-release-6-5.el6.centos.11.2.x86_64         x86_64  el       6           x86_64   https://rpm.nodesource.com/pub/el/6/x86_64/nodesource-release-el6-1.noarch.rpm
+testCheckDistro  centos-release-6-6.el6.centos.12.2.x86_64         x86_64  el       6           x86_64   https://rpm.nodesource.com/pub/el/6/x86_64/nodesource-release-el6-1.noarch.rpm
 testCheckDistro  centos-release-7-0.1406.el7.centos.2.5.x86_64     x86_64  el       7           x86_64   https://rpm.nodesource.com/pub/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
 testCheckDistro  redhat-release-5Server-5.10.0.4                   x86_64  el       5           x86_64   https://rpm.nodesource.com/pub/el/5/x86_64/nodesource-release-el5-1.noarch.rpm
