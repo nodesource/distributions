@@ -57,6 +57,11 @@ DISTRO_PKG=$(rpm -q --whatprovides redhat-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
+echo "+ rpm -q --whatprovides cloudlinux-release"
+DISTRO_PKG=$(rpm -q --whatprovides cloudlinux-release)
+echo "+ uname -m"
+UNAME_ARCH=$(uname -m)
+
 if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
 elif [ "X${UNAME_ARCH}" == "Xx86_64" ]; then
@@ -73,7 +78,7 @@ incorrect or would like your architecture to be considered for support. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^redhat- ]] || [[ $DISTRO_PKG =~ ^centos- ]]; then
+if [[ $DISTRO_PKG =~ ^redhat- ]] || [[ $DISTRO_PKG =~ ^centos- ]] || [[ $DISTRO_PKG =~ ^cloudlinux- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
     DIST_TYPE=el
