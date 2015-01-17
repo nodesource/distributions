@@ -52,15 +52,11 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-echo "+ rpm -q --whatprovides redhat-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release)
+echo "+ rpm -q --whatprovides redhat-release or rpm -q --whatprovides cloudlinux-release"
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides cloudlinux-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
-echo "+ rpm -q --whatprovides cloudlinux-release"
-DISTRO_PKG=$(rpm -q --whatprovides cloudlinux-release)
-echo "+ uname -m"
-UNAME_ARCH=$(uname -m)
 
 if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
