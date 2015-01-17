@@ -6,7 +6,7 @@ This repository contains the source of the **[NodeSource](https://nodesource.com
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
-For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
+For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
@@ -136,7 +136,7 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora:
+Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 ```text
 curl -sL https://rpm.nodesource.com/setup | bash -
