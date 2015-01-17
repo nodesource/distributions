@@ -177,5 +177,5 @@ This material is Copyright (c) 2014 NodeSource LLC and licenced under the MIT li
 *This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*<br>
 *Ubuntu is a registered trademark of Canonical Ltd.*<br>
 *Debian is a registered trademark owned by Software in the Public Interest, Inc.*<br>
-*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
+*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*<br>
 *CloudLinux is a trademark of Cloud Linux, Inc*
