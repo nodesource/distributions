@@ -121,6 +121,9 @@ NodeSource will continue to maintain the following architectures and may add add
 * **CentOS 6** (32-bit and 64-bit)
 * **CentOS 7** (64-bit)
 
+**Supported CloudLinux versions:**
+* **CloudLinux 6** (32-bit and 64-bit)
+
 **Supported Fedora versions:**
 
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
@@ -175,3 +178,4 @@ This material is Copyright (c) 2014 NodeSource LLC and licenced under the MIT li
 *Ubuntu is a registered trademark of Canonical Ltd.*<br>
 *Debian is a registered trademark owned by Software in the Public Interest, Inc.*<br>
 *Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
+*CloudLinux is a trademark of Cloud Linux, Inc*
