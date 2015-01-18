@@ -6,7 +6,7 @@ This repository contains the source of the **[NodeSource](https://nodesource.com
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
-For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
+For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
@@ -121,6 +121,9 @@ NodeSource will continue to maintain the following architectures and may add add
 * **CentOS 6** (32-bit and 64-bit)
 * **CentOS 7** (64-bit)
 
+**Supported CloudLinux versions:**
+* **CloudLinux 6** (32-bit and 64-bit)
+
 **Supported Fedora versions:**
 
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
@@ -133,7 +136,7 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
-Run as root on RHEL, CentOS or Fedora:
+Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 ```text
 curl -sL https://rpm.nodesource.com/setup | bash -
@@ -174,4 +177,5 @@ This material is Copyright (c) 2014 NodeSource LLC and licenced under the MIT li
 *This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*<br>
 *Ubuntu is a registered trademark of Canonical Ltd.*<br>
 *Debian is a registered trademark owned by Software in the Public Interest, Inc.*<br>
-*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
+*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*<br>
+*CloudLinux is a trademark of Cloud Linux, Inc*
