@@ -5,8 +5,6 @@
 #
 # Script to install NodeSource repo onto a Debian or Ubuntu system.
 #
-# Run as root or insert `sudo` before `bash`:
-#
 # curl -sL https://deb.nodesource.com/setup | bash -
 #   or
 # wget -qO- https://deb.nodesource.com/setup | bash -
@@ -53,13 +51,13 @@ fi
 
 # Populating Cache
 print_status "Populating apt-get cache..."
-exec_cmd 'apt-get update'
+exec_cmd 'sudo apt-get update'
 
 if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
     print_status "Installing packages required for setup:${PRE_INSTALL_PKGS}..."
     # This next command needs to be redirected to /dev/null or the script will bork
     # in some environments
-    exec_cmd "apt-get install -y${PRE_INSTALL_PKGS} 2>&1 > /dev/null"
+    exec_cmd "sudo apt-get install -y${PRE_INSTALL_PKGS} 2>&1 > /dev/null"
 fi
 
 DISTRO=$(lsb_release -c -s)
@@ -95,7 +93,7 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sSLf -o /dev/null 'https://deb.nodesource.com/node/dists/${DISTRO}/Release'"
     RC=$?
 else
     exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node/dists/${DISTRO}/Release'"
@@ -110,25 +108,25 @@ fi
 if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
     print_status 'Removing Launchpad PPA Repository for NodeJS...'
 
-    exec_cmd 'add-apt-repository -y -r ppa:chris-lea/node.js'
-    exec_cmd "rm -f /etc/apt/sources.list.d/chris-lea-node_js-${DISTRO}.list"
+    exec_cmd 'sudo add-apt-repository -y -r ppa:chris-lea/node.js'
+    exec_cmd "sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-${DISTRO}.list"
 fi
 
 print_status 'Adding the NodeSource signing key to your keyring...'
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd 'curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
+    exec_cmd 'curl -sS https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -'
 else
-    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
+    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -'
 fi
 
 print_status 'Creating apt sources list file for the NodeSource repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/node ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/node ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/node ${DISTRO} main' | sudo tee /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/node ${DISTRO} main' | sudo tee -a /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 
-exec_cmd 'apt-get update'
+exec_cmd 'sudo apt-get update'
 
 print_status 'Run `apt-get install nodejs` (as root) to install Node.js and npm'
