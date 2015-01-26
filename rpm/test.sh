@@ -58,6 +58,7 @@ testCheckDistro  fedora-release-19-8.noarch                        i686    fc   
 testCheckDistro  fedora-release-19-8.noarch                        x86_64  fc       19          x86_64   https://rpm.nodesource.com/pub/fc/19/x86_64/nodesource-release-fc19-1.noarch.rpm
 testCheckDistro  fedora-release-20-3.noarch                        i686    fc       20          i386     https://rpm.nodesource.com/pub/fc/20/i386/nodesource-release-fc20-1.noarch.rpm
 testCheckDistro  fedora-release-20-3.noarch                        x86_64  fc       20          x86_64   https://rpm.nodesource.com/pub/fc/20/x86_64/nodesource-release-fc20-1.noarch.rpm
+testCheckDistro  fedora-release-21-2.noarch                        x86_64  fc       21          x86_64   https://rpm.nodesource.com/pub/fc/21/x86_64/nodesource-release-fc21-1.noarch.rpm
 
 testCheckDistro  centos-release-5-8.el5.centos                     i686    el       5           i386     https://rpm.nodesource.com/pub/el/5/i386/nodesource-release-el5-1.noarch.rpm
 testCheckDistro  centos-release-5-10.el5.centos                    x86_64  el       5           x86_64   https://rpm.nodesource.com/pub/el/5/x86_64/nodesource-release-el5-1.noarch.rpm
