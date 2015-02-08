@@ -1,0 +1,77 @@
+#!/bin/bash
+
+NPM_CACHE=".npm-test-cache"
+TEST_DIR="_test-node-install"
+NPM_CLONE="${TEST_DIR}/_npm"
+ANGULAR="${TEST_DIR}/angular"
+OWD=$(pwd)
+
+exec 2>&1
+
+print_status() {
+    echo
+    echo "## $1"
+    echo
+}
+
+cleanup() {
+    print_status "Cleaning up ..."
+    cd $OWD
+    exec_cmd "rm -rf ${TEST_DIR}"
+}
+
+## Currently doesn't exit. For testing purposes.
+bail() {
+    echo 'Error executing command'
+    # cleanup
+    # exit 1
+}
+
+exec_cmd_nobail() {
+    echo "\`$1\`"
+    echo ""
+    echo "\`\`\`"
+    bash -c "$1"
+    echo ""
+    echo "\`\`\`"
+}
+
+exec_cmd() {
+    exec_cmd_nobail "$1" || bail
+}
+
+PRE_INSTALL_PKGS=""
+
+# Need make and git for script to run
+
+if [ ! -x /usr/bin/make ]; then
+  PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} make"
+fi
+
+if [ ! -x /usr/bin/git ]; then
+  PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} git"
+fi
+
+if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
+  print_status "Installing packages required for setup:${PRE_INSTALL_PKGS}..."
+  # This next command needs to be redirected to /dev/null or the script will bork
+  # in some environments
+  exec_cmd "apt-get install -y${PRE_INSTALL_PKGS}"
+fi
+
+print_status "Testing Node.js and npm installation ..."
+
+print_status "Cloning npm directory ..."
+exec_cmd "git clone --recursive --depth 1 https://www.github.com/npm/npm.git ${NPM_CLONE}"
+
+print_status "Rebuilding npm ..."
+exec_cmd "cd ${NPM_CLONE} && make install && npm install --no-spin --production=false "
+
+print_status "Running npm test scripts ..."
+exec_cmd "cd ${NPM_CLONE} && npm --no-spin run-script test-all "
+
+print_status "Installing test packages ..."
+exec_cmd "npm install -g --no-spin yo generator-angular "
+
+print_status "Building test angular scaffold app ..."
+exec_cmd "mkdir -p ${ANGULAR} && cd ${ANGULAR} && yes | yo angular "
