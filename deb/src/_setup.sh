@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.12 repo onto a
+# Script to install the NodeSource {{name}} repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_dev | bash -
+# curl -sL https://deb.nodesource.com/setup{{suffix}} | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_dev | bash -
+# wget -qO- https://deb.nodesource.com/setup{{suffix}} | bash -
 #
 
 export DEBIAN_FRONTEND=noninteractive
@@ -36,7 +36,7 @@ exec_cmd() {
 }
 
 
-print_status "Installing the NodeSource Node.js 0.12 repo..."
+print_status "Installing the NodeSource {{name}} repo..."
 
 
 PRE_INSTALL_PKGS=""
@@ -100,10 +100,10 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node012/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node{{repo}}/dists/${DISTRO}/Release'"
     RC=$?
 else
-    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node012/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node{{repo}}/dists/${DISTRO}/Release'"
     RC=$?
 fi
 
@@ -127,10 +127,10 @@ else
     exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
-print_status 'Creating apt sources list file for the NodeSource Node.js 0.12 repo...'
+print_status 'Creating apt sources list file for the NodeSource {{name}} repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/node012 ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/node012 ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/node{{repo}} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/node{{repo}} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 

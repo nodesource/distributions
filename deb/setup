@@ -3,7 +3,8 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install NodeSource repo onto a Debian or Ubuntu system.
+# Script to install the NodeSource Node.js 0.10 repo onto a
+# Debian or Ubuntu system.
 #
 # Run as root or insert `sudo` before `bash`:
 #
@@ -33,6 +34,10 @@ exec_cmd_nobail() {
 exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
+
+
+print_status "Installing the NodeSource Node.js 0.10 repo..."
+
 
 PRE_INSTALL_PKGS=""
 
@@ -95,10 +100,10 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node010/dists/${DISTRO}/Release'"
     RC=$?
 else
-    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node010/dists/${DISTRO}/Release'"
     RC=$?
 fi
 
@@ -122,10 +127,10 @@ else
     exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
-print_status 'Creating apt sources list file for the NodeSource repo...'
+print_status 'Creating apt sources list file for the NodeSource Node.js 0.10 repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/node ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/node ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/node010 ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/node010 ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 

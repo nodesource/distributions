@@ -8,9 +8,9 @@
 #
 # Run as root or insert `sudo` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_dev | bash -
+# curl -sL https://deb.nodesource.com/setup_0.12 | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_dev | bash -
+# wget -qO- https://deb.nodesource.com/setup_0.12 | bash -
 #
 
 export DEBIAN_FRONTEND=noninteractive
