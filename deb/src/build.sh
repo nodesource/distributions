@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
-RELEASES=( "010::Node.js 0.10"
-           "010:_0.10:Node.js 0.10"
-           "012:_0.12:Node.js 0.12"
-           "012:_dev:Node.js 0.12"
+RELEASES=( "node010::nodejs:Node.js 0.10"
+           "node010:_0.10:nodejs:Node.js 0.10"
+           "node012:_0.12:nodejs:Node.js 0.12"
+           "node012:_dev:nodejs:Node.js 0.12"
+	   "iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
@@ -11,8 +12,9 @@ DEST=../setup
 for release in "${RELEASES[@]}"; do
     repo=${release%%:*}
     suffix=$(echo $release | cut -d: -f2)
-    name=$(echo $release | cut -d: -f3)
+    package=$(echo $release | cut -d: -f3)
+    name=$(echo $release | cut -d: -f4)
     cat $SOURCE \
-      | sed 's/{{repo}}/'"$repo"'/g;s/{{suffix}}/'"$suffix"'/g;s/{{name}}/'"$name"'/g' \
+      | sed 's/{{repo}}/'"$repo"'/g;s/{{suffix}}/'"$suffix"'/g;s/{{name}}/'"$name"'/g;s/{{package}}/'"$package"'/g' \
       > ${DEST}${suffix}
 done

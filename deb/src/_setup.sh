@@ -100,10 +100,10 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/node{{repo}}/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/{{repo}}/dists/${DISTRO}/Release'"
     RC=$?
 else
-    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/node{{repo}}/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/{{repo}}/dists/${DISTRO}/Release'"
     RC=$?
 fi
 
@@ -129,11 +129,11 @@ fi
 
 print_status 'Creating apt sources list file for the NodeSource {{name}} repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/node{{repo}} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/node{{repo}} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/{{repo}} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/{{repo}} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 
 exec_cmd 'apt-get update'
 
-print_status 'Run `apt-get install nodejs` (as root) to install Node.js and npm'
+print_status 'Run `apt-get install {{package}}` (as root) to install {{name}} and npm'

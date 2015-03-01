@@ -136,4 +136,4 @@ print_status 'Running `apt-get update` for you...'
 
 exec_cmd 'apt-get update'
 
-print_status 'Run `apt-get install nodejs` (as root) to install Node.js and npm'
+print_status 'Run `apt-get install nodejs` (as root) to install Node.js 0.12 and npm'
