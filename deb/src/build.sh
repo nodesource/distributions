@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-RELEASES=( "node010::nodejs:Node.js 0.10"
-           "node010:_0.10:nodejs:Node.js 0.10"
-           "node012:_0.12:nodejs:Node.js 0.12"
-           "node012:_dev:nodejs:Node.js 0.12"
+RELEASES=( "node_0.10::nodejs:Node.js 0.10"
+           "node_0.10:_0.10:nodejs:Node.js 0.10"
+           "node_0.12:_0.12:nodejs:Node.js 0.12"
+           "node_0.12:_dev:nodejs:Node.js 0.12"
 	   "iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
          )
 SOURCE=_setup.sh
