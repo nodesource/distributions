@@ -35,6 +35,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 14.10** (Utopic Unicorn)
+* **Ubuntu 15.04** (Vivid Vervet)
 
 **Supported Debian versions:**
 
