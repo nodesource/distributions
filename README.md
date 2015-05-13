@@ -68,10 +68,19 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
 
+<a name="install-nodejs"></a>
+#### Install node.js
+
 Setup with **Ubuntu**:
 
+*node v0.10*:
 ```text
 curl -sL https://deb.nodesource.com/setup | sudo bash -
+```
+  
+**or** *node.js v0.12*:
+```text
+curl -sL https://deb.nodesource.com/setup_dev | sudo bash -
 ```
 
 Then install with **Ubuntu**:
@@ -99,6 +108,28 @@ To compile and install native addons from npm you may also need to install build
 ```text
 apt-get install -y build-essential
 ```
+
+#### Install io.js
+
+Setup with **Ubuntu**:
+
+*io.js v1.x*:
+```text
+curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -
+```
+
+**or** *io.js v2.x*:
+```text
+curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo bash -
+```
+
+Then install with **Ubuntu**:
+
+```text
+sudo apt-get install -y iojs
+```
+
+Look **[Install node.js](#install-nodejs)** for install instructions as root, etc.
 
 <a name="rpm"></a>
 ## Enterprise Linux based distributions
