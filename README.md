@@ -64,6 +64,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
 
 <a name="debusage"></a>
+
+**Note:**
+> *Don't see your favourite distro listed here?* Check out our [document](./CONTRIBUTIONS.md) explaining how to modify our install scripts to be compatible with your system.
+
 ### Usage instructions
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
