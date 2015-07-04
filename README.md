@@ -1,8 +1,8 @@
-# [NodeSource](https://nodesource.com/) Node.js Binary Distributions
+# [NodeSource](https://nodesource.com/) Node.js and io.js Binary Distributions
 
 ![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
 
-This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup and support scripts.
+This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
@@ -13,7 +13,10 @@ Please file an issue if you are experiencing a problem or would like to discuss 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
+  - [Installation instructions](#debinstall)
+  - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
+  - [Installation instructions](#rpminstall)
 * **[Tests](#tests)**
 
 <a name="deb"></a>
@@ -68,8 +71,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **BOSS 5.0 "Anokha"** (via Debian 7)
 
-<a name="debusage"></a>
-### Usage instructions
+<a name="debinstall"></a>
+### Installation instructions
 
 **Node.js v0.12**:
 
@@ -130,6 +133,41 @@ To compile and install native addons from npm you may also need to install build
 apt-get install -y build-essential
 ```
 
+<a name="debmanual"></a>
+### Manual installation
+
+If you're not a fan of `curl <url> | bash -`, or you want to try use the repository for your unsupported distribution, try a manual install. The setup script performs the following steps:
+
+In the commands below you should replace the following placeholdes:
+
+* **`{DISTRO}`**: replace with the codename of your distro, which will be something like: *wheezy, jessie, sid* or *precise, trusty, utopic, vivid* (or other supported Ubuntu or Debian distro)
+* **`{VERSION}`**: replace with the version of Node.js or io.js you want to install, it should take the following form: *node_0.10, node_0.12* or *iojs_1.x*, *iojs_2.x*, etc.
+
+**1. Remove the old PPA if it exists**
+
+```sh
+# add-apt-repository may not exist on some distributions
+add-apt-repository -y -r ppa:chris-lea/node.js
+rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
+```
+
+**2. Add the NodeSource signing key**
+
+```sh
+curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+# if curl is not available:
+wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+```
+
+**3. Add the repositories to your sources.list**
+
+```sh
+echo 'deb https://deb.nodesource.com/{{VERSION}} {DISTRO} main' > /etc/apt/sources.list.d/nodesource.list
+echo 'deb-src https://deb.nodesource.com/{{VERSION}} {DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list
+```
+
+Then you should be able to `apt-get update` and `apt-get install nodejs`.
+
 <a name="rpm"></a>
 ## Enterprise Linux based distributions
 
@@ -161,8 +199,8 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
 * **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
-<a name="rpmusage"></a>
-### Usage instructions
+<a name="rpminstall"></a>
+### Installation instructions
 
 Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
 
