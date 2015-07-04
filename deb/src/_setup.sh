@@ -6,7 +6,7 @@
 # Script to install the NodeSource {{name}} repo onto a
 # Debian or Ubuntu system.
 #
-# Run as root or insert `sudo` before `bash`:
+# Run as root or insert `sudo -E` before `bash`:
 #
 # curl -sL https://deb.nodesource.com/setup{{suffix}} | bash -
 #   or
