@@ -162,8 +162,8 @@ wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
 **3. Add the repositories to your sources.list**
 
 ```sh
-echo 'deb https://deb.nodesource.com/{{VERSION}} {DISTRO} main' > /etc/apt/sources.list.d/nodesource.list
-echo 'deb-src https://deb.nodesource.com/{{VERSION}} {DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list
+echo 'deb https://deb.nodesource.com/{VERSION} {DISTRO} main' > /etc/apt/sources.list.d/nodesource.list
+echo 'deb-src https://deb.nodesource.com/{VERSION} {DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list
 ```
 
 Then you should be able to `apt-get update` and `apt-get install nodejs`.
