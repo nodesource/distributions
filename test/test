@@ -31,6 +31,33 @@ exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
 
+PRE_INSTALL_PKGS=""
+
+# Need g++, make, libcloog-isl-dev, libmpc-dev
+
+if [ ! -x /usr/bin/g++ ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} g++"
+fi
+
+if [ ! -x /usr/bin/make ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} make"
+fi
+
+if [ ! -x /usr/include/cloog/isl/cloog.h ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} libcloog-isl-dev"
+fi
+
+if [ ! -e /usr/include/mpc.h ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} libmpc-dev"
+fi
+
+if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
+    print_status "Installing packages required for setup:${PRE_INSTALL_PKGS}..."
+    # This next command needs to be redirected to /dev/null or the script will bork
+    # in some environments
+    exec_cmd "apt-get install -y${PRE_INSTALL_PKGS} 2>&1 > /dev/null"
+fi
+
 print_status "Testing Node.js and npm installation ..."
 
 exec_cmd "mkdir ${TEST_DIR} && cd ${TEST_DIR}"
