@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto an
+# Script to install the NodeSource {{name}} repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup | bash -
+# curl -sL https://rpm.nodesource.com/setup{{suffix}} | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup | bash -
+# wget -qO- https://rpm.nodesource.com/setup{{suffix}} | bash -
 #
 
 print_status() {
@@ -34,7 +34,7 @@ exec_cmd() {
   exec_cmd_nobail "$1" || bail
 }
 
-print_status "Installing the NodeSource Node.js 0.10 repo..."
+print_status "Installing the NodeSource {{name}} repo..."
 
 print_status "Inspecting system..."
 
@@ -126,7 +126,7 @@ fi
 ## we include the arch in the directory tree anyway)
 RELEASE_URL_VERSION_STRING="${DIST_TYPE}${DIST_VERSION}"
 RELEASE_URL="\
-https://rpm.nodesource.com/pub_0.10/\
+https://rpm.nodesource.com/{{repo}}/\
 ${DIST_TYPE}/\
 ${DIST_VERSION}/\
 ${DIST_ARCH}/\
@@ -217,15 +217,15 @@ if [ "X${EXISTING_NODE}" != "X" ]; then
 
   print_status "\
 Your system appears to already have Node.js installed from an alternative source.\n\
-Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.\
+Run \`\033[1myum remove -y {{package}} npm\033[22m\` (as root) to remove these first.\
 "
 
 fi
 
-print_status 'Run `apt-get install nodejs` (as root) to install Node.js 0.10 and npm'
+print_status 'Run `apt-get install {{package}}` (as root) to install {{name}} and npm'
 
 print_status "\
-Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 0.10 and npm.\n\
+Run \`\033[1myum install -y {{package}}\033[22m\` (as root) to install {{name}} and npm.\n\
 You may also need development tools to build native addons:\n\
   \`yum install -y gcc-c++ make\`\
 "
