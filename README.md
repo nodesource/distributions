@@ -71,77 +71,71 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debusage"></a>
 ### Usage instructions
 
-Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
+**Node.js v0.12**:
 
-<a name="install-nodejs"></a>
-#### Install node.js
-
-Setup with **Ubuntu**:
-
-*node v0.10*:
-```text
-curl -sL https://deb.nodesource.com/setup | sudo bash -
-```
-  
-**or** *node.js v0.12*:
-```text
-curl -sL https://deb.nodesource.com/setup_dev | sudo bash -
-```
-
-Then install with **Ubuntu**:
-
-```text
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
 sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_0.10 | bash -
+apt-get install -y nodejs
 ```
 
-Setup with **Debian** (as root):
+**Node.js v0.10**:
 
-```text
-curl -sL https://deb.nodesource.com/setup | bash -
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_0.10 | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_0.10 | bash -
+apt-get install -y nodejs
 ```
 
-Then install with **Debian** (as root):
+**io.js v2.x**:
 
-```text
-apt-get install -y nodejs nodejs-legacy
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_iojs_2.x | bash -
+apt-get install -y nodejs
+```
+
+**io.js v1.x**:
+
+_Note: this branch of io.js is not actively maintained and is not recommended for production use._
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_iojs_1.x | bash -
+apt-get install -y nodejs
 ```
 
 ***Optional***: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
 
-```text
+```sh
+# use `sudo` on Ubuntu or run this as root on debian
 apt-get install -y build-essential
 ```
-
-#### Install io.js
-
-Setup with **Ubuntu**:
-
-*io.js v1.x*:
-```text
-curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -
-```
-
-**or** *io.js v2.x*:
-```text
-curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo bash -
-```
-
-Then install with **Ubuntu**:
-
-```text
-sudo apt-get install -y iojs
-```
-
-Look **[Install node.js](#install-nodejs)** for install instructions as root, etc.
 
 <a name="rpm"></a>
 ## Enterprise Linux based distributions
 
 **Available architectures:**
 
-NodeSource will continue to maintain the following architectures and may add additional ones in the future. 
+NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
 * **i386** (32-bit, not available for EL7)
 * **x86_64** (64-bit)
@@ -206,7 +200,7 @@ curl -sL https://deb.nodesource.com/test | bash -
 
 ## License
 
-This material is Copyright (c) 2014 NodeSource LLC and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
+This material is Copyright (c) 2015 NodeSource LLC and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
 
 ------------------------------------------------------------------
 
