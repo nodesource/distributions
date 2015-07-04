@@ -118,7 +118,7 @@ fi
 if [ -f "/etc/apt/sources.list.d/chris-lea-node_js-$DISTRO.list" ]; then
     print_status 'Removing Launchpad PPA Repository for NodeJS...'
 
-    exec_cmd 'add-apt-repository -y -r ppa:chris-lea/node.js'
+    exec_cmd_nobail 'add-apt-repository -y -r ppa:chris-lea/node.js'
     exec_cmd "rm -f /etc/apt/sources.list.d/chris-lea-node_js-${DISTRO}.list"
 fi
 
