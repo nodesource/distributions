@@ -41,17 +41,18 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
 
-* **Debian 7 / stable** (wheezy)
-* **Debian testing** (jessie)
+* **Debian 7** (wheezy)
+* **Debian 8 / stable** (jessie)
+* **Debian testing** (stretch)
 * **Debian unstable** (sid)
 
 **Supported Linux Mint versions:**
 
 * **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
-* **Linux Mint Debian Edition (LMDE) stable** (via Debian stable)
-* **Linux Mint Debian Edition (LMDE) testing** (via Debian testing)
-* **Linux Mint Debian Edition (LMDE) unstable** (via Debian unstable)
+* **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
+* **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
+* **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
 
 **Supported elementary OS versions:**
 
@@ -62,6 +63,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Trisquel 6 "Toutatis"** (via Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
+
+**Supported BOSS versions:**
+
+* **BOSS 5.0 "Anokha"** (via Debian 7)
 
 <a name="debusage"></a>
 ### Usage instructions
@@ -158,6 +163,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
+* **Fedora 21 (Twenty One)** (32-bit and 64-bit)
 * **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
 * **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
