@@ -78,6 +78,7 @@ check_alt() {
     fi
 }
 
+check_alt "Debian"        "stretch"  "Debian" "jessie"
 check_alt "Linux Mint"    "rafaela"  "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rebecca"  "Ubuntu" "trusty"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
