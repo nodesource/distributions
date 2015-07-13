@@ -103,11 +103,11 @@ apt-get install -y nodejs
 ```sh
 # Using Ubuntu
 curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y iojs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_iojs_2.x | bash -
-apt-get install -y nodejs
+apt-get install -y iojs
 ```
 
 **io.js v1.x**:
@@ -117,11 +117,11 @@ _Note: this branch of io.js is not actively maintained and is not recommended fo
 ```sh
 # Using Ubuntu
 curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo -E bash -
-sudo apt-get install -y nodejs
+sudo apt-get install -y iojs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_iojs_1.x | bash -
-apt-get install -y nodejs
+apt-get install -y iojs
 ```
 
 ***Optional***: install build tools
