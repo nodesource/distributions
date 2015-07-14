@@ -46,7 +46,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Debian 7** (wheezy)
 * **Debian 8 / stable** (jessie)
-* **Debian testing** (stretch)
+* **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
 
 **Supported Linux Mint versions:**
