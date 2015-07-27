@@ -34,10 +34,8 @@ NodeSource will continue to maintain the following architectures and may add add
 
 NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
 
-* **Ubuntu 10.04 LTS** (Lucid Lynx, *armhf build not available*)
 * **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
-* **Ubuntu 14.10** (Utopic Unicorn)
 * **Ubuntu 15.04** (Vivid Vervet)
 
 **Supported Debian versions:**
