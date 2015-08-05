@@ -96,6 +96,18 @@ curl -sL https://deb.nodesource.com/setup_0.10 | bash -
 apt-get install -y nodejs
 ```
 
+**io.js v3.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_iojs_3.x | sudo -E bash -
+sudo apt-get install -y iojs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_iojs_3.x | bash -
+apt-get install -y iojs
+```
+
 **io.js v2.x**:
 
 ```sh
