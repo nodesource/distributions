@@ -64,7 +64,7 @@ if [ "X${PRE_INSTALL_PKGS}" != "X" ]; then
     print_status "Installing packages required for setup:${PRE_INSTALL_PKGS}..."
     # This next command needs to be redirected to /dev/null or the script will bork
     # in some environments
-    exec_cmd "apt-get install -y${PRE_INSTALL_PKGS} 2>&1 > /dev/null"
+    exec_cmd "apt-get install -y${PRE_INSTALL_PKGS} > /dev/null 2>&1"
 fi
 
 DISTRO=$(lsb_release -c -s)
@@ -92,7 +92,7 @@ check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
-  NEWDISTRO=$([[ -e /etc/debian_version ]] && cat /etc/debian_version  | cut -d/ -f1)
+  NEWDISTRO=$([ -e /etc/debian_version ] && cut -d/ -f1 < /etc/debian_version)
   if [ "X${DISTRO}" == "X" ]; then
     print_status "Could not determine distribution from /etc/debian_version..."
   else
