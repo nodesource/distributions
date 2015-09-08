@@ -72,6 +72,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v4.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_4.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v0.12**:
 
 ```sh
