@@ -231,7 +231,7 @@ Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 ```text
-curl -sL https://rpm.nodesource.com/setup | bash -
+curl -sL https://rpm.nodesource.com/setup | sudo bash -
 ```
 
 Then install, as root:
