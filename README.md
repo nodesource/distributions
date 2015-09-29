@@ -32,7 +32,7 @@ Pull requests are encouraged if you have changes you believe would improve the s
 
 **Available architectures:**
 
-NodeSource will continue to maintain the following architectures and may add additional ones in the future. 
+NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
 * **i386** (32-bit)
 * **amd64** (64-bit)
@@ -81,6 +81,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 ### Installation instructions
 
 **Node.js v4.x**:
+
+* **IMPORTANT**: If you are using Ubuntu Precise or Debian Wheezy, be sure to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
