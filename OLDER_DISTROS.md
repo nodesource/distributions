@@ -53,3 +53,5 @@ fi
 ```
 
 **PLEASE NOTE** that we enable the `ubuntu-toolchain-r/test` PPA from [Launchpad](https://launchpad.net) for `precise`. This is because Clang requires a newer version of `libstdc++` than what is available in the distribution itself. However, V8 and therefore Node don't actually need any features from this updated library, so you should not have to install it on your target system(s) unless you want to build binary modules using the same compiler that we have used.
+
+Also please note that `arm` builds are not available for these two distributions, as there is not an Clang in the LLVM repository for `arm` builds.
