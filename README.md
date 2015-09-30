@@ -82,7 +82,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Node.js v4.x**:
 
-* **IMPORTANT**: If you are using Ubuntu Precise or Debian Wheezy, be sure to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
