@@ -15,6 +15,12 @@
 
 export DEBIAN_FRONTEND=noninteractive
 
+# enforce to be with root privileges
+if (( $EUID != 0 )); then
+    echo "Please run this script with root privileges"
+    exit 1
+fi
+
 print_status() {
     echo
     echo "## $1"
