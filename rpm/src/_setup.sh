@@ -13,6 +13,12 @@
 # wget -qO- https://rpm.nodesource.com/setup{{suffix}} | bash -
 #
 
+# enforce root privileges
+if (( $EUID != 0 )); then
+    echo "Please run this script with root privileges"
+    exit 1
+fi
+
 print_status() {
   local outp=$(echo "$1" | sed -r 's/\\n/\\n## /mg')
   echo
