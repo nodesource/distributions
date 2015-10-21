@@ -230,9 +230,9 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
+* **Fedora 23 (Twenty Three)** (32-bit and 64-bit)
+* **Fedora 22 (Twenty Two)** (32-bit and 64-bit)
 * **Fedora 21 (Twenty One)** (32-bit and 64-bit)
-* **Fedora 20 (Heisenbug)** (32-bit and 64-bit)
-* **Fedora 19 (Schrödinger's Cat)** (32-bit and 64-bit)
 
 <a name="rpminstall"></a>
 ### Installation instructions
