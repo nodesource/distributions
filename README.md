@@ -83,6 +83,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v5.x**:
+
+* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_5.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v4.x**:
 
 * NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
@@ -215,14 +229,14 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 5** (32-bit and 64-bit)
-* **RHEL 6** (32-bit and 64-bit)
+* **RHEL 5** (32-bit and 64-bit) **[For Node < 0.12.x]**
+* **RHEL 6** (32-bit and 64-bit) **[For Node < 4.x]**
 * **RHEL 7** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 5** (32-bit and 64-bit)
-* **CentOS 6** (32-bit and 64-bit)
+* **CentOS 5** (32-bit and 64-bit) **[For Node < 0.12.x]**
+* **CentOS 6** (32-bit and 64-bit) **[For Node < 4.x]**
 * **CentOS 7** (64-bit)
 
 **Supported CloudLinux versions:**
@@ -242,6 +256,26 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 5.x**
+
+```text
+curl -sL https://rpm.nodesource.com/setup_5.x | bash -
+```
+
+**NodeJS 4.x**
+
+```text
+curl -sL https://rpm.nodesource.com/setup_4.x | bash -
+```
+
+**NodeJS 0.12.x**
+
+```text
+curl -sL https://rpm.nodesource.com/setup_0.12 | bash -
+```
+
+**NodeJS 0.10.x**
 
 ```text
 curl -sL https://rpm.nodesource.com/setup | bash -
