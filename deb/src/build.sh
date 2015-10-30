@@ -7,7 +7,8 @@ RELEASES=( "node_0.10::nodejs:Node.js 0.10"
            "iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
            "iojs_2.x:_iojs_2.x:iojs:io.js 2.x"
            "iojs_3.x:_iojs_3.x:iojs:io.js 3.x"
-           "node_4.x:_4.x:nodejs:Node.js 4.x"
+           "node_4.x:_4.x:nodejs:Node.js 4.x LTS Argon"
+           "node_5.x:_5.x:nodejs:Node.js 5.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
