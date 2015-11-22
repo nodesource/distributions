@@ -94,7 +94,7 @@ check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
   NEWDISTRO=$([ -e /etc/debian_version ] && cut -d/ -f1 < /etc/debian_version)
-  if [ "X${DISTRO}" == "X" ]; then
+  if [ "X${NEWDISTRO}" == "X" ]; then
     print_status "Could not determine distribution from /etc/debian_version..."
   else
     DISTRO=$NEWDISTRO
