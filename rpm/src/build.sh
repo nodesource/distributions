@@ -5,6 +5,8 @@ RELEASES=( "pub_0.10::nodejs:Node.js 0.10"
            "pub_0.12:_0.12:nodejs:Node.js 0.12"
            "pub_iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
            "pub_iojs_2.x:_iojs_2.x:iojs:io.js 2.x"
+           "pub_4.x:_4.x:nodejs:Node.js 4.x LTS Argon"
+           "pub_5.x:_5.x:nodejs:Node.js 5.x"
          )
 SOURCE=_setup.sh
 DEST=../setup

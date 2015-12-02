@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 4.x repo onto an
+# Script to install the NodeSource Node.js 4.x LTS Argon repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -34,7 +34,7 @@ exec_cmd() {
   exec_cmd_nobail "$1" || bail
 }
 
-print_status "Installing the NodeSource Node.js 4.x repo..."
+print_status "Installing the NodeSource Node.js 4.x LTS Argon repo..."
 
 print_status "Inspecting system..."
 
@@ -222,10 +222,10 @@ Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.
 
 fi
 
-print_status 'Run `apt-get install nodejs` (as root) to install Node.js 4.x and npm'
+print_status 'Run `apt-get install nodejs` (as root) to install Node.js 4.x LTS Argon and npm'
 
 print_status "\
-Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 4.x and npm.\n\
+Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 4.x LTS Argon and npm.\n\
 You may also need development tools to build native addons:\n\
   \`yum install -y gcc-c++ make\`\
 "
