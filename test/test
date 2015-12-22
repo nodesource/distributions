@@ -12,7 +12,7 @@ print_status() {
 
 cleanup() {
     print_status "Cleaning up ..."
-    cd $OWD
+    cd "${OWD}"
     exec_cmd "rm -rf ${TEST_DIR}"
 }
 
