@@ -222,8 +222,6 @@ Run \`\033[1myum remove -y {{package}} npm\033[22m\` (as root) to remove these f
 
 fi
 
-print_status 'Run `apt-get install {{package}}` (as root) to install {{name}} and npm'
-
 print_status "\
 Run \`\033[1myum install -y {{package}}\033[22m\` (as root) to install {{name}} and npm.\n\
 You may also need development tools to build native addons:\n\

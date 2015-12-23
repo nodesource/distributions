@@ -222,8 +222,6 @@ Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.
 
 fi
 
-print_status 'Run `apt-get install nodejs` (as root) to install Node.js 5.x and npm'
-
 print_status "\
 Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 5.x and npm.\n\
 You may also need development tools to build native addons:\n\
