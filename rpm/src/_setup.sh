@@ -79,7 +79,7 @@ if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
     DIST_TYPE=el
-elif [[ $DISTRO_PKG =~ ^fedora- ]]; then
+elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
     DIST_TYPE=fc
 else
 

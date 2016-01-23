@@ -248,6 +248,8 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 22 (Twenty Two)** (32-bit and 64-bit)
 * **Fedora 21 (Twenty One)** (32-bit and 64-bit)
 
+Equivalent versions of Korora Linux should also be supported.
+
 <a name="rpminstall"></a>
 ### Installation instructions
 
