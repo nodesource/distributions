@@ -224,19 +224,21 @@ Then you should be able to `apt-get update` and `apt-get install nodejs`.
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit, not available for EL7)
+* **i386** (32-bit, not available for all distros)
 * **x86_64** (64-bit)
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
 * **RHEL 5** (32-bit and 64-bit) **[For Node < 0.12.x]**
 * **RHEL 6** (32-bit and 64-bit) **[For Node < 4.x]**
+* **RHEL 6** (64-bit) **[For Node >= 4.x]**
 * **RHEL 7** (64-bit)
 
 **Supported CentOS versions:**
 
 * **CentOS 5** (32-bit and 64-bit) **[For Node < 0.12.x]**
 * **CentOS 6** (32-bit and 64-bit) **[For Node < 4.x]**
+* **CentOS 6** (64-bit) **[For Node >= 4.x]**
 * **CentOS 7** (64-bit)
 
 **Supported CloudLinux versions:**
@@ -261,11 +263,15 @@ Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 **NodeJS 5.x**
 
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
 ```text
 curl -sL https://rpm.nodesource.com/setup_5.x | bash -
 ```
 
 **NodeJS 4.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```text
 curl -sL https://rpm.nodesource.com/setup_4.x | bash -
