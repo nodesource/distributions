@@ -4,6 +4,8 @@ At [NodeSource](https://nodesource.com), one of our primary missions is to encou
 
 Unfortunately, this is more complicated in certain instances than in others. Due to the extremely long support cycles of some releases, such as LTS releases for Ubuntu, the components that the distributions ship with are not always sufficient to build or sometimes even to run very new and fast-moving software such as Node.
 
+### Debian Style Distributions
+
 Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
 
 In order to get around this issue, we've built Node packages for these two distributions with [clang-3.4](http://clang.llvm.org/) instead of the standard `GCC` that we use on more modern releases.
@@ -55,3 +57,16 @@ fi
 **PLEASE NOTE** that we enable the `ubuntu-toolchain-r/test` PPA from [Launchpad](https://launchpad.net) for `precise`. This is because Clang requires a newer version of `libstdc++` than what is available in the distribution itself. However, V8 and therefore Node don't actually need any features from this updated library, so you should not have to install it on your target system(s) unless you want to build binary modules using the same compiler that we have used.
 
 Also please note that `arm` builds are not available for these two distributions, as there is not a Clang in the LLVM repository for `arm` builds.
+
+### RedHat Style Distributions
+
+Another example of this circumstance is RHEL6 / CentOS6 which use `rpm` packages. Much like in the Debian Style examples above, EL6 does not ship with a `C++` compiler that can build a modern version of V8. Additionally, the version of `python` in the distribution is not new enough to properly execute the `configure` script for the build.
+
+Fortunately, RedHat supports [SoftwareCollections.org](https://www.softwarecollections.org) and these collections can provide EL6 with newer versions of `GCC` and `python`.
+
+  - The [Devtoolset-3](https://www.softwarecollections.org/en/scls/rhscl/devtoolset-3/) collection provides `GCC`
+  - The [Python27](https://www.softwarecollections.org/en/scls/rhscl/python27/) collection provides `python`
+
+If you are running EL6 with our `rpm` packages for Node, and you intend to build any native add-on modules, you need to install and enable both of these collections by following the instructions at the links above.
+
+Also please note that for EL6, only the `x86_64` architecture is supported, as the aforementioned software collections do not have 32bit support.
