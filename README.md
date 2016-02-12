@@ -187,7 +187,7 @@ apt-get install -y build-essential
 
 If you're not a fan of `curl <url> | bash -`, or you want to try use the repository for your unsupported distribution, try a manual install. The setup script performs the following steps:
 
-In the commands below you should replace the following placeholdes:
+In the commands below you should replace the following placeholders:
 
 * **`{DISTRO}`**: replace with the codename of your distro, which will be something like: *wheezy, jessie, sid* or *precise, trusty, utopic, vivid* (or other supported Ubuntu or Debian distro)
 * **`{VERSION}`**: replace with the version of Node.js or io.js you want to install, it should take the following form: *node_0.10, node_0.12* or *iojs_1.x*, *iojs_2.x*, etc.
