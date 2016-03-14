@@ -91,6 +91,7 @@ check_alt "elementaryOS"  "freya"    "Ubuntu" "trusty"
 check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
+check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
