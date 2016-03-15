@@ -80,6 +80,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **BOSS 5.0 "Anokha"** (via Debian 7)
 
+**Supported BunsenLabs versions:**
+
+* **Hydrogen (rc2)** (via Debian 8)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
