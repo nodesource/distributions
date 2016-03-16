@@ -319,7 +319,7 @@ curl -sL https://deb.nodesource.com/test | bash -
 
 ## License
 
-This material is Copyright (c) 2015 NodeSource LLC and licenced under the MIT licence. All rights not explicitly granted in the MIT license are reserved. See the included LICENSE.md file for more details.
+This material is Copyright (c) 2016 NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
 
 ------------------------------------------------------------------
 
