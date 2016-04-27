@@ -87,6 +87,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v6.x**:
+
+* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_6.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v5.x**:
 
 * NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
@@ -193,7 +207,7 @@ If you're not a fan of `curl <url> | bash -`, or you want to try use the reposit
 
 In the commands below you should replace the following placeholders:
 
-* **`{DISTRO}`**: replace with the codename of your distro, which will be something like: *wheezy, jessie, sid* or *precise, trusty, utopic, vivid* (or other supported Ubuntu or Debian distro)
+* **`{DISTRO}`**: replace with the codename of your distro, which will be something like: *wheezy, jessie, sid* or *precise, trusty, wily, xenial* (or other supported Ubuntu or Debian distro)
 * **`{VERSION}`**: replace with the version of Node.js or io.js you want to install, it should take the following form: *node_0.10, node_0.12* or *iojs_1.x*, *iojs_2.x*, etc.
 
 **1. Remove the old PPA if it exists**
@@ -264,6 +278,14 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 6.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```text
+curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+```
 
 **NodeJS 5.x**
 
