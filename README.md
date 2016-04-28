@@ -203,37 +203,48 @@ apt-get install -y build-essential
 <a name="debmanual"></a>
 ### Manual installation
 
-If you're not a fan of `curl <url> | bash -`, or you want to try use the repository for your unsupported distribution, try a manual install. The setup script performs the following steps:
-
-In the commands below you should replace the following placeholders:
-
-* **`{DISTRO}`**: replace with the codename of your distro, which will be something like: *wheezy, jessie, sid* or *precise, trusty, wily, xenial* (or other supported Ubuntu or Debian distro)
-* **`{VERSION}`**: replace with the version of Node.js or io.js you want to install, it should take the following form: *node_0.10, node_0.12* or *iojs_1.x*, *iojs_2.x*, etc.
+If you're not a fan of `curl <url> | bash -`, or are using an unsupported distribution, you can try a manual installation.
 
 **1. Remove the old PPA if it exists**
 
-```sh
-# add-apt-repository may not exist on some distributions
-add-apt-repository -y -r ppa:chris-lea/node.js
-rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
-```
-
-**2. Add the NodeSource signing key**
+This step is only required if you previously used Chris Lea's Node.js PPA.
 
 ```sh
-curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-# if curl is not available:
-wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+# add-apt-repository may not be present on some Ubuntu releases:
+#sudo apt-get install python-software-properties
+sudo add-apt-repository -y -r ppa:chris-lea/node.js
+sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
+sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 ```
 
-**3. Add the repositories to your sources.list**
+**2. Add the NodeSource package signing key**
 
 ```sh
-echo 'deb https://deb.nodesource.com/{VERSION} {DISTRO} main' > /etc/apt/sources.list.d/nodesource.list
-echo 'deb-src https://deb.nodesource.com/{VERSION} {DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list
+curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+# wget can also be used:
+#wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 ```
 
-Then you should be able to `apt-get update` and `apt-get install nodejs`.
+**3. Add the desired NodeSource repository**
+
+
+```sh
+# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, iojs_1.x, iojs_2.x, etc...
+VERSION=nodejs_5.x
+# The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
+# - For Debian distributions: wheezey, jessie, sid, etc...
+# - For Ubuntu distributions: precise, trusty, xenial, etc...
+DISTRO="$(lsb_release -s -c)"
+echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+```
+
+**4. Update package lists and install Node.js**
+
+```sh
+sudo apt-get update
+sudo apt-get install nodejs
+```
 
 <a name="rpm"></a>
 ## Enterprise Linux based distributions
