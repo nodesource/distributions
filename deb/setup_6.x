@@ -94,7 +94,6 @@ check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris"  "Debian" "jessie"
 
-
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
   NEWDISTRO=$([ -e /etc/debian_version ] && cut -d/ -f1 < /etc/debian_version)
