@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource io.js 3.x repo onto a
+# Script to install the NodeSource io.js v3.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -36,7 +36,7 @@ exec_cmd() {
 }
 
 
-print_status "Installing the NodeSource io.js 3.x repo..."
+print_status "Installing the NodeSource io.js v3.x repo..."
 
 
 PRE_INSTALL_PKGS=""
@@ -92,6 +92,7 @@ check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
+check_alt "Tanglu"        "chromodoris"  "Debian" "jessie"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
@@ -134,7 +135,7 @@ else
     exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
-print_status 'Creating apt sources list file for the NodeSource io.js 3.x repo...'
+print_status 'Creating apt sources list file for the NodeSource io.js v3.x repo...'
 
 exec_cmd "echo 'deb https://deb.nodesource.com/iojs_3.x ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
 exec_cmd "echo 'deb-src https://deb.nodesource.com/iojs_3.x ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
@@ -143,4 +144,4 @@ print_status 'Running `apt-get update` for you...'
 
 exec_cmd 'apt-get update'
 
-print_status 'Run `apt-get install iojs` (as root) to install io.js 3.x and npm'
+print_status 'Run `apt-get install iojs` (as root) to install io.js v3.x and npm'

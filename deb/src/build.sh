@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-RELEASES=( "node_0.10::nodejs:Node.js 0.10"
-           "node_0.10:_0.10:nodejs:Node.js 0.10"
-           "node_0.12:_0.12:nodejs:Node.js 0.12"
-           "node_0.12:_dev:nodejs:Node.js 0.12"
-           "iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
-           "iojs_2.x:_iojs_2.x:iojs:io.js 2.x"
-           "iojs_3.x:_iojs_3.x:iojs:io.js 3.x"
-           "node_4.x:_4.x:nodejs:Node.js 4.x LTS Argon"
-           "node_5.x:_5.x:nodejs:Node.js 5.x"
+RELEASES=( "node_0.10::nodejs:Node.js v0.10"
+           "node_0.10:_0.10:nodejs:Node.js v0.10"
+           "node_0.12:_0.12:nodejs:Node.js v0.12"
+           "node_0.12:_dev:nodejs:Node.js v0.12"
+           "iojs_1.x:_iojs_1.x:iojs:io.js v1.x"
+           "iojs_2.x:_iojs_2.x:iojs:io.js v2.x"
+           "iojs_3.x:_iojs_3.x:iojs:io.js v3.x"
+           "node_4.x:_4.x:nodejs:Node.js v4.x LTS Argon"
+           "node_5.x:_5.x:nodejs:Node.js v5.x"
+           "node_6.x:_6.x:nodejs:Node.js v6.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
