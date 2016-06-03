@@ -8,29 +8,29 @@ Unfortunately, this is more complicated in certain instances than in others. Due
 
 Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
 
-In order to get around this issue, we've built Node packages for these two distributions with [clang-3.4](http://clang.llvm.org/) instead of the standard `GCC` that we use on more modern releases.
+In order to get around this issue, we build the packages for Debian Wheezy with [clang-3.4](http://clang.llvm.org/), and the packages for Ubuntu Precise use a [backported gcc-4.8](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test).
 
-You can read more about using Clang on older distributions from the [LLVM](http://llvm.org) [documentation for `apt`](http://llvm.org/apt/). The relevant bits of our build scripts to install the needed compilers looks like this:
+The relevant bits of our build scripts to install the needed compilers looks like this:
 
 ```bash
- if [ "x${DIST}" == "xprecise" ]; then
+#!/bin/bash
+
+if [ "x${DIST}" == "xprecise" ]; then
   echo "Calling $0"
   apt-get update
   apt-get -y install curl
   echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main" >> /etc/apt/sources.list
-  echo "deb http://llvm.org/apt/precise/ llvm-toolchain-precise-3.4 main" >> /etc/apt/sources.list
-  curl -s http://llvm.org/apt/llvm-snapshot.gpg.key | apt-key add -
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA9EF27F
   apt-get update
-  apt-get install -y clang-3.4
+  apt-get install -y gcc-4.8 g++-4.8
 fi
 
 if [ "x${DIST}" == "xwheezy" ]; then
   echo "Calling $0"
   apt-get update
-  apt-get -y install curl
-  echo "deb http://llvm.org/apt/wheezy/ llvm-toolchain-wheezy-3.4-binaries main" >> /etc/apt/sources.list
-  curl -s http://llvm.org/apt/llvm-snapshot.gpg.key | apt-key add -
+  apt-get -y install curl apt-transport-https ca-certificates
+  echo "deb https://deb.nodesource.com/clang-3.4 wheezy main" >> /etc/apt/sources.list
+  curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
   apt-get update
   apt-get install -y clang-3.4
 fi
@@ -40,9 +40,9 @@ To actually use these compilers during the build, the scripts look like this:
 
 ```bash
 if [ "x${DIST}" == "xprecise" ]; then
-  CC=/usr/bin/clang-3.4
+  CC=/usr/bin/gcc-4.8
   export CC
-  CXX=/usr/bin/clang++-3.4
+  CXX=/usr/bin/g++-4.8
   export CXX
 fi
 
@@ -56,7 +56,7 @@ fi
 
 **PLEASE NOTE** that we enable the `ubuntu-toolchain-r/test` PPA from [Launchpad](https://launchpad.net) for `precise`. This is because Clang requires a newer version of `libstdc++` than what is available in the distribution itself. However, V8 and therefore Node don't actually need any features from this updated library, so you should not have to install it on your target system(s) unless you want to build binary modules using the same compiler that we have used.
 
-Also please note that `arm` builds are not available for these two distributions, as there is not a Clang in the LLVM repository for `arm` builds.
+Also please note that `arm` builds are not available for these two distributions, as we don't have compilers available for that target.
 
 ### RedHat Style Distributions
 
