@@ -382,11 +382,12 @@ A: Unfortunately, newer versions of v8 require a modern compiler toolchain. On s
 
 We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
 
+* OpenSUSE - [Issue #199](https://github.com/nodesource/distributions/issues/199)
+* Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
+* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
-* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
-* Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
 
 ## License
 
