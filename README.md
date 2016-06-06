@@ -350,6 +350,9 @@ A: Please take a look at [issue #33](https://github.com/nodesource/distributions
 Q: I upgraded to a new major version of Node.js using the scripts, but the old version is still being installed, what is going on?
 A: You probably need to clear out your package manager's cache. Take a look at [issue #191](https://github.com/nodesource/distributions/issues/191)
 
+Q: I'm trying to install Node.js on Centos 5 and it is failing, why?
+A: Do to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
+
 # Requested Distributions
 
 We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
