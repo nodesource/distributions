@@ -70,6 +70,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **elementary OS Luna** (via Ubuntu 12.04 LTS)
 * **elementary OS Freya** (via Ubuntu 14.04 LTS)
+* **elementary OS Loki** (via Ubuntu 16.04)
 
 **Supported Trisquel versions:**
 
@@ -338,6 +339,55 @@ To test an installation is working (and that the setup scripts are working!) use
 ```text
 curl -sL https://deb.nodesource.com/test | bash -
 ```
+
+# FAQ
+
+---
+
+Q: How do I use this repo when behind a proxy?
+
+A: Please take a look at [issue #9](https://github.com/nodesource/distributions/issues/9)
+
+---
+
+Q: How do I pin to specific versions of Node.js?
+
+A: Please take a look at [issue #33](https://github.com/nodesource/distributions/issues/33#issuecomment-169345680)
+
+---
+
+Q: I upgraded to a new major version of Node.js using the scripts, but the old version is still being installed, what is going on?
+
+A: You probably need to clear out your package manager's cache. Take a look at [issue #191](https://github.com/nodesource/distributions/issues/191)
+
+---
+
+Q: I'm trying to install Node.js on Centos 5 and it is failing, why?
+
+A: Do to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
+
+---
+
+Q: I'm seeing "Your distribution, identified as "*.i686" or "*.i386, is not currently supported, why?
+
+A: Node.js 4.x and newer require a 64bit os for rpms. See [issue #268](https://github.com/nodesource/distributions/issues/268)
+
+---
+
+Q: Why have certain versions of platforms/releases stopped receiving updates to Node.js?
+
+A: Unfortunately, newer versions of v8 require a modern compiler toolchain. On some platforms, such as ARM wheezy, that toolchain is not available. See [issue #247](https://github.com/nodesource/distributions/issues/247)
+
+# Requested Distributions
+
+We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
+
+* OpenSUSE - [Issue #199](https://github.com/nodesource/distributions/issues/199)
+* Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
+* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
+* TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
+* Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
+* FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 
 ## Authors and Contributors
 
