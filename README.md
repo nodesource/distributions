@@ -339,6 +339,15 @@ To test an installation is working (and that the setup scripts are working!) use
 curl -sL https://deb.nodesource.com/test | bash -
 ```
 
+# FAQ
+
+Q: How do I use this repo when behind a proxy?
+A: Please take a look at [issue #9](https://github.com/nodesource/distributions/issues/9)
+
+Q: How do I pin to specific versions of Node.js?
+A: Please take a look at [issue #33](https://github.com/nodesource/distributions/issues/33#issuecomment-169345680)
+
+
 ## License
 
 This material is Copyright (c) 2016 NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
