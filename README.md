@@ -371,6 +371,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
+* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 
 ## License
 
