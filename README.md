@@ -12,6 +12,11 @@ If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Soli
 
 ----------------------------------
 
+> IMPORTANT: Official support for Node.js v0.12 ceases at the end of 2016
+> Please prepare to migrate to Node.js v4 LTS or a later version.
+
+----------------------------------
+
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
 For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
