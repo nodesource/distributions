@@ -347,6 +347,11 @@ A: Please take a look at [issue #9](https://github.com/nodesource/distributions/
 Q: How do I pin to specific versions of Node.js?
 A: Please take a look at [issue #33](https://github.com/nodesource/distributions/issues/33#issuecomment-169345680)
 
+# Requested Distributions
+
+We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
+
+* TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 
 ## License
 
