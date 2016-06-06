@@ -8,7 +8,7 @@ This repository contains the source of the **[NodeSource](http://nsrc.io/release
 
 <img src="https://downloads.nodesource.com/img/nsolid.svg" width="25%">
 
-If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nmaster.nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
+If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
 
 ----------------------------------
 
