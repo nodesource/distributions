@@ -380,6 +380,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
+* Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
 
 ## License
 
