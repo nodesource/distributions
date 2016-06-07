@@ -378,6 +378,12 @@ Q: Why have certain versions of platforms/releases stopped receiving updates to 
 
 A: Unfortunately, newer versions of v8 require a modern compiler toolchain. On some platforms, such as ARM wheezy, that toolchain is not available. See [issue #247](https://github.com/nodesource/distributions/issues/247)
 
+---
+
+Q: What is the current status of IPv6 support?
+
+A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
+
 # Requested Distributions
 
 We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
