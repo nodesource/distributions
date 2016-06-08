@@ -205,6 +205,8 @@ apt-get install -y build-essential
 
 If you're not a fan of `curl <url> | bash -`, or are using an unsupported distribution, you can try a manual installation.
 
+These instructions assume `sudo` is present, however some distributions do not include this command by default, particularly those focused on a minimal environment. In this case, you should install `sudo` or `su` to root to run the commands directly.
+
 **1. Remove the old PPA if it exists**
 
 This step is only required if you previously used Chris Lea's Node.js PPA.
@@ -222,18 +224,19 @@ sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 ```sh
 curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 # wget can also be used:
-#wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+# wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 ```
 
 **3. Add the desired NodeSource repository**
 
 
 ```sh
-# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, iojs_1.x, iojs_2.x, etc...
+# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
 VERSION=nodejs_5.x
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
 # - For Debian distributions: wheezey, jessie, sid, etc...
 # - For Ubuntu distributions: precise, trusty, xenial, etc...
+# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
 DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
