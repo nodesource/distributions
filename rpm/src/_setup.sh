@@ -103,7 +103,7 @@ else
 
   ## Using the redhat-release-server-X, centos-release-X, etc. pattern
   ## extract the major version number of the distro
-  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation)?-([0-9]+).*$/\2/')
+  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation|-client)?-([0-9]+).*$/\2/')
 
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 

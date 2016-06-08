@@ -76,6 +76,7 @@ testCheckDistro  redhat-release-server-6Server-6.5.0.1.el6.x86_64  x86_64  el   
 testCheckDistro  redhat-release-server-6Server-6.6.0.2.el6.x86_64  x86_64  el       6           x86_64   https://rpm.nodesource.com/pub_0.10/el/6/x86_64/nodesource-release-el6-1.noarch.rpm
 testCheckDistro  redhat-release-server-7.0-1.el7.x86_64            x86_64  el       7           x86_64   https://rpm.nodesource.com/pub_0.10/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 testCheckDistro  redhat-release-workstation-6Workstation-6.5.0.2.el6.x86_64 x86_64 el 6         x86_64   https://rpm.nodesource.com/pub_0.10/el/6/x86_64/nodesource-release-el6-1.noarch.rpm
+testCheckDistro  redhat-release-client-7.2-7.el7.x86_64            x86_64  el       7           x86_64   https://rpm.nodesource.com/pub_0.10/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
 testCheckDistro  sl-release-7.1-3.sl7.x86_64                       x86_64  el       7           x86_64   https://rpm.nodesource.com/pub_0.10/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
