@@ -1,5 +1,7 @@
 #!/bin/bash
 
+setup() {
+
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
@@ -146,3 +148,7 @@ print_status 'Running `apt-get update` for you...'
 exec_cmd 'apt-get update'
 
 print_status 'Run `apt-get install nodejs` (as root) to install Node.js v4.x LTS Argon and npm'
+
+}
+
+setup

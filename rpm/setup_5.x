@@ -1,5 +1,7 @@
 #!/bin/bash
 
+setup() {
+
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
@@ -231,3 +233,7 @@ You may also need development tools to build native addons:\n\
 ## Alternative to install dev tools: `yum groupinstall 'Development Tools'
 
 exit 0
+
+}
+
+setup
