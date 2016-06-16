@@ -17,7 +17,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 print_status() {
     echo
-    echo "## $1"
+    echo -e "## $1"
     echo
 }
 
@@ -146,3 +146,19 @@ print_status 'Running `apt-get update` for you...'
 exec_cmd 'apt-get update'
 
 print_status 'Run `apt-get install nodejs` (as root) to install Node.js v5.x and npm'
+
+if [ "node_5.x" = "node_0.10" ]; then
+
+    print_status \
+'IMPORTANT: Official support for Node.js v0.10 ceases in October 2016
+## Please prepare to migrate to Node.js v4 LTS or a later version.
+## See https://deb.nodesource.com for details on how to use a newer version.'
+
+elif [ "node_5.x" = "node_0.12" ]; then
+
+    print_status \
+'IMPORTANT: Official support for Node.js v0.12 ceases at the end of 2016
+## Please prepare to migrate to Node.js v4 LTS or a later version.
+## See https://deb.nodesource.com for details on how to use a newer version.'
+
+fi
