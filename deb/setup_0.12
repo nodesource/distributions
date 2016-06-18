@@ -21,6 +21,41 @@ print_status() {
     echo
 }
 
+if test -t 1; then # if terminal
+    ncolors=$(which tput > /dev/null && tput colors) # supports color
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+        termcols=$(tput cols)
+        bold="$(tput bold)"
+        underline="$(tput smul)"
+        standout="$(tput smso)"
+        normal="$(tput sgr0)"
+        black="$(tput setaf 0)"
+        red="$(tput setaf 1)"
+        green="$(tput setaf 2)"
+        yellow="$(tput setaf 3)"
+        blue="$(tput setaf 4)"
+        magenta="$(tput setaf 5)"
+        cyan="$(tput setaf 6)"
+        white="$(tput setaf 7)"
+    fi
+fi
+
+print_bold() {
+    title="$1"
+    text="$2"
+
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
+    echo
+    echo -e "  ${bold}${yellow}${title}${normal}"
+    echo
+    echo -en "  ${text}"
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
+}
+
 bail() {
     echo 'Error executing command, exiting'
     exit 1
@@ -35,8 +70,99 @@ exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
 
+node_deprecation_warning() {
+    if [ "XNode.js v0.12" == "XNode.js v0.10" ]; then
+        print_bold \
+"                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
+Node.js v0.12 will cease to be actively supported in ${bold}October 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 5 seconds ..."
+        echo
+        sleep 5
+    elif [ "XNode.js v0.12" == "XNode.js v0.12" ]; then
+        print_bold \
+"                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
+Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 3 seconds ..."
+        echo
+        sleep 3
+    fi
+}
+
+script_deprecation_warning() {
+    if [ "X_0.12" == "X" ]; then
+        print_bold \
+"                            DEPRECATION WARNING                            " "\
+This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used to
+  install Node.js v0.12, is being deprecated and will eventually be made
+  inactive.
+
+  You should use the script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 10 seconds (press Ctrl-C to abort) ..."
+        echo
+        sleep 10
+    fi
+}
 
 setup() {
+
+script_deprecation_warning
 
 print_status "Installing the NodeSource Node.js v0.12 repo..."
 
@@ -146,6 +272,8 @@ exec_cmd "echo 'deb-src https://deb.nodesource.com/node_0.12 ${DISTRO} main' >> 
 print_status 'Running `apt-get update` for you...'
 
 exec_cmd 'apt-get update'
+
+node_deprecation_warning
 
 print_status 'Run `apt-get install nodejs` (as root) to install Node.js v0.12 and npm'
 
