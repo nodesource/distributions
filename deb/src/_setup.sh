@@ -1,7 +1,5 @@
 #!/bin/bash
 
-setup() {
-
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
@@ -37,6 +35,8 @@ exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
 
+
+setup() {
 
 print_status "Installing the NodeSource {{name}} repo..."
 
@@ -151,4 +151,5 @@ print_status 'Run `apt-get install {{package}}` (as root) to install {{name}} an
 
 }
 
+## Defer setup until we have the complete script
 setup
