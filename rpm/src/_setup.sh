@@ -13,6 +13,11 @@
 # wget -qO- https://rpm.nodesource.com/setup{{suffix}} | bash -
 #
 
+SCRSUFFIX="{{suffix}}"
+NODENAME="{{name}}"
+NODEREPO="{{repo}}"
+NODEPKG="{{package}}"
+
 print_status() {
   local outp=$(echo "$1" | sed -r 's/\\n/\\n## /mg')
   echo
@@ -70,10 +75,10 @@ exec_cmd() {
 }
 
 node_deprecation_warning() {
-    if [ "X{{name}}" == "XNode.js v0.10" ]; then
+    if [ "X${NODENAME}" == "XNode.js v0.10" ]; then
         print_bold \
 "                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
-{{name}} will cease to be actively supported in ${bold}October 2016${normal}.
+Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
 
   This means you will not continue to receive security or critical stability
   updates for this version of Node.js beyond that time.
@@ -98,10 +103,10 @@ node_deprecation_warning() {
         echo "Continuing in 5 seconds ..."
         echo
         sleep 5
-    elif [ "X{{name}}" == "XNode.js v0.12" ]; then
+    elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
         print_bold \
 "                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
-{{name}} will cease to be actively supported ${bold}at the end of 2016${normal}.
+Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
 
   This means you will not continue to receive security or critical stability
   updates for this version of Node.js beyond that time.
@@ -130,11 +135,11 @@ node_deprecation_warning() {
 }
 
 script_deprecation_warning() {
-    if [ "X{{suffix}}" == "X" ]; then
+    if [ "X${SCRSUFFIX}" == "X" ]; then
         print_bold \
 "                            DEPRECATION WARNING                            " "\
 This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used to
-  install {{name}}, is being deprecated and will eventually be made
+  install Node.js v0.10, is being deprecated and will eventually be made
   inactive.
 
   You should use the script that corresponds to the version of Node.js you
@@ -163,7 +168,7 @@ setup() {
 
 script_deprecation_warning
 
-print_status "Installing the NodeSource {{name}} repo..."
+print_status "Installing the NodeSource ${NODENAME} repo..."
 
 print_status "Inspecting system..."
 
@@ -255,7 +260,7 @@ fi
 ## we include the arch in the directory tree anyway)
 RELEASE_URL_VERSION_STRING="${DIST_TYPE}${DIST_VERSION}"
 RELEASE_URL="\
-https://rpm.nodesource.com/{{repo}}/\
+https://rpm.nodesource.com/${NODEREPO}/\
 ${DIST_TYPE}/\
 ${DIST_VERSION}/\
 ${DIST_ARCH}/\
@@ -346,7 +351,7 @@ if [ "X${EXISTING_NODE}" != "X" ]; then
 
   print_status "\
 Your system appears to already have Node.js installed from an alternative source.\n\
-Run \`\033[1myum remove -y {{package}} npm\033[22m\` (as root) to remove these first.\
+Run \`\033[1myum remove -y ${NODEPKG} npm\033[22m\` (as root) to remove these first.\
 "
 
 fi
@@ -354,7 +359,7 @@ fi
 node_deprecation_warning
 
 print_status "\
-Run \`\033[1myum install -y {{package}}\033[22m\` (as root) to install {{name}} and npm.\n\
+Run \`\033[1myum install -y ${NODEPKG}\033[22m\` (as root) to install ${NODENAME} and npm.\n\
 You may also need development tools to build native addons:\n\
   \`yum install -y gcc-c++ make\`\
 "

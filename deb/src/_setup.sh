@@ -14,6 +14,10 @@
 #
 
 export DEBIAN_FRONTEND=noninteractive
+SCRSUFFIX="{{suffix}}"
+NODENAME="{{name}}"
+NODEREPO="{{repo}}"
+NODEPKG="{{package}}"
 
 print_status() {
     echo
@@ -71,10 +75,10 @@ exec_cmd() {
 }
 
 node_deprecation_warning() {
-    if [ "X{{name}}" == "XNode.js v0.10" ]; then
+    if [ "X${NODENAME}" == "XNode.js v0.10" ]; then
         print_bold \
 "                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
-{{name}} will cease to be actively supported in ${bold}October 2016${normal}.
+Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
 
   This means you will not continue to receive security or critical stability
   updates for this version of Node.js beyond that time.
@@ -99,10 +103,10 @@ node_deprecation_warning() {
         echo "Continuing in 5 seconds ..."
         echo
         sleep 5
-    elif [ "X{{name}}" == "XNode.js v0.12" ]; then
+    elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
         print_bold \
 "                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
-{{name}} will cease to be actively supported ${bold}at the end of 2016${normal}.
+Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
 
   This means you will not continue to receive security or critical stability
   updates for this version of Node.js beyond that time.
@@ -131,11 +135,11 @@ node_deprecation_warning() {
 }
 
 script_deprecation_warning() {
-    if [ "X{{suffix}}" == "X" ]; then
+    if [ "X${SCRSUFFIX}" == "X" ]; then
         print_bold \
 "                            DEPRECATION WARNING                            " "\
 This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used to
-  install {{name}}, is being deprecated and will eventually be made
+  install Node.js v0.10, is being deprecated and will eventually be made
   inactive.
 
   You should use the script that corresponds to the version of Node.js you
@@ -164,7 +168,7 @@ setup() {
 
 script_deprecation_warning
 
-print_status "Installing the NodeSource {{name}} repo..."
+print_status "Installing the NodeSource ${NODENAME} repo..."
 
 
 PRE_INSTALL_PKGS=""
@@ -237,10 +241,10 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/{{repo}}/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/${NODEREPO}/dists/${DISTRO}/Release'"
     RC=$?
 else
-    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/{{repo}}/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/${NODEREPO}/dists/${DISTRO}/Release'"
     RC=$?
 fi
 
@@ -264,10 +268,10 @@ else
     exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
-print_status 'Creating apt sources list file for the NodeSource {{name}} repo...'
+print_status 'Creating apt sources list file for the NodeSource ${NODENAME} repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/{{repo}} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/{{repo}} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 
@@ -275,7 +279,7 @@ exec_cmd 'apt-get update'
 
 node_deprecation_warning
 
-print_status 'Run `apt-get install {{package}}` (as root) to install {{name}} and npm'
+print_status 'Run `apt-get install ${NODEPKG}` (as root) to install ${NODENAME} and npm'
 
 }
 
