@@ -8,7 +8,7 @@ Unfortunately, this is more complicated in certain instances than in others. Due
 
 Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
 
-In order to get around this issue, we build the packages for Debian Wheezy with [clang-3.4](http://clang.llvm.org/), and the packages for Ubuntu Precise use a [backported gcc-4.8](https://launchpad.net/~ubuntu-toolchain-r/+archive/ubuntu/test).
+In order to get around this issue, we build the packages for Debian Wheezy with [clang-3.4](http://clang.llvm.org/). Ubuntu Precise ships with [clang-3.4](http://clang.llvm.org) available, so we use that instead of GCC.
 
 The relevant bits of our build scripts to install the needed compilers looks like this:
 
@@ -18,11 +18,7 @@ The relevant bits of our build scripts to install the needed compilers looks lik
 if [ "x${DIST}" == "xprecise" ]; then
   echo "Calling $0"
   apt-get update
-  apt-get -y install curl
-  echo "deb http://ppa.launchpad.net/ubuntu-toolchain-r/test/ubuntu precise main" >> /etc/apt/sources.list
-  apt-key adv --keyserver keyserver.ubuntu.com --recv-keys BA9EF27F
-  apt-get update
-  apt-get install -y gcc-4.8 g++-4.8
+  apt-get install -y clang-3.4
 fi
 
 if [ "x${DIST}" == "xwheezy" ]; then
@@ -40,9 +36,9 @@ To actually use these compilers during the build, the scripts look like this:
 
 ```bash
 if [ "x${DIST}" == "xprecise" ]; then
-  CC=/usr/bin/gcc-4.8
+  CC=/usr/bin/clang
   export CC
-  CXX=/usr/bin/g++-4.8
+  CXX=/usr/bin/clang++
   export CXX
 fi
 
