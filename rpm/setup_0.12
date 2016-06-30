@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.12 repo onto an
+# Script to install the NodeSource Node.js v0.12 repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -14,12 +14,12 @@
 #
 
 SCRSUFFIX="_0.12"
-NODENAME="Node.js 0.12"
+NODENAME="Node.js v0.12"
 NODEREPO="pub_0.12"
 NODEPKG="nodejs"
 
 print_status() {
-  local outp=$(echo "$1" | sed -r 's/\\n/\\n## /mg')
+  local outp=$(echo "$1") # | sed -r 's/\\n/\\n## /mg')
   echo
   echo -e "## ${outp}"
   echo
@@ -75,7 +75,40 @@ exec_cmd() {
 }
 
 node_deprecation_warning() {
-    if [ "X${NODENAME}" == "XNode.js v0.10" ]; then
+echo "X${NODENAME} == XNode.js v5.x"
+    if [[ "X${NODENAME}" == "Xio.js v1.x" ||
+          "X${NODENAME}" == "Xio.js v2.x" ||
+          "X${NODENAME}" == "Xio.js v3.x" ||
+          "X${NODENAME}" == "XNode.js v5.x" ]]; then
+
+        print_bold \
+"                            DEPRECATION WARNING                            " "\
+${bold}${NODENAME} is no longer actively supported!${normal}
+
+  ${bold}You will not receive security or critical stability updates${normal} for this version.
+
+  You should migrate to a supported version of Node.js as soon as possible.
+  Use the installation script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+        echo
+        echo "Continuing in 10 seconds ..."
+        echo
+        sleep 10
+
+    elif [ "X${NODENAME}" == "XNode.js v0.10" ]; then
+
         print_bold \
 "                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
 Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
@@ -103,7 +136,9 @@ Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal
         echo "Continuing in 5 seconds ..."
         echo
         sleep 5
+
     elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
+
         print_bold \
 "                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
 Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
@@ -131,13 +166,14 @@ Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${nor
         echo "Continuing in 3 seconds ..."
         echo
         sleep 3
+
     fi
 }
 
 script_deprecation_warning() {
     if [ "X${SCRSUFFIX}" == "X" ]; then
         print_bold \
-"                            DEPRECATION WARNING                            " "\
+"                         SCRIPT DEPRECATION WARNING                         " "\
 This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used to
   install Node.js v0.10, is being deprecated and will eventually be made
   inactive.
