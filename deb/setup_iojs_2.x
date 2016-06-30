@@ -14,11 +14,50 @@
 #
 
 export DEBIAN_FRONTEND=noninteractive
+SCRSUFFIX="_iojs_2.x"
+NODENAME="io.js v2.x"
+NODEREPO="iojs_2.x"
+NODEPKG="iojs"
 
 print_status() {
     echo
     echo "## $1"
     echo
+}
+
+if test -t 1; then # if terminal
+    ncolors=$(which tput > /dev/null && tput colors) # supports color
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+        termcols=$(tput cols)
+        bold="$(tput bold)"
+        underline="$(tput smul)"
+        standout="$(tput smso)"
+        normal="$(tput sgr0)"
+        black="$(tput setaf 0)"
+        red="$(tput setaf 1)"
+        green="$(tput setaf 2)"
+        yellow="$(tput setaf 3)"
+        blue="$(tput setaf 4)"
+        magenta="$(tput setaf 5)"
+        cyan="$(tput setaf 6)"
+        white="$(tput setaf 7)"
+    fi
+fi
+
+print_bold() {
+    title="$1"
+    text="$2"
+
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
+    echo
+    echo -e "  ${bold}${yellow}${title}${normal}"
+    echo
+    echo -en "  ${text}"
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
 }
 
 bail() {
@@ -35,10 +74,136 @@ exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
 
+node_deprecation_warning() {
+    if [[ "X${NODENAME}" == "Xio.js v1.x" ||
+          "X${NODENAME}" == "Xio.js v2.x" ||
+          "X${NODENAME}" == "Xio.js v3.x" ||
+          "X${NODENAME}" == "XNode.js v5.x" ]]; then
+
+        print_bold \
+"                            DEPRECATION WARNING                            " "\
+${bold}${NODENAME} is no longer actively supported!${normal}
+
+  ${bold}You will not receive security or critical stability updates${normal} for this version.
+
+  You should migrate to a supported version of Node.js as soon as possible.
+  Use the installation script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+        echo
+        echo "Continuing in 10 seconds ..."
+        echo
+        sleep 10
+
+    elif [ "X${NODENAME}" == "XNode.js v0.10" ]; then
+
+        print_bold \
+"                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
+Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 5 seconds ..."
+        echo
+        sleep 5
+
+    elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
+
+        print_bold \
+"                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
+Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 3 seconds ..."
+        echo
+        sleep 3
+
+    fi
+}
+
+script_deprecation_warning() {
+    if [ "X${SCRSUFFIX}" == "X" ]; then
+        print_bold \
+"                         SCRIPT DEPRECATION WARNING                         " "\
+This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used to
+  install Node.js v0.10, is being deprecated and will eventually be made
+  inactive.
+
+  You should use the script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://deb.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 10 seconds (press Ctrl-C to abort) ..."
+        echo
+        sleep 10
+    fi
+}
 
 setup() {
 
-print_status "Installing the NodeSource io.js v2.x repo..."
+script_deprecation_warning
+
+print_status "Installing the NodeSource ${NODENAME} repo..."
 
 
 PRE_INSTALL_PKGS=""
@@ -111,10 +276,10 @@ fi
 print_status "Confirming \"${DISTRO}\" is supported..."
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/iojs_2.x/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "curl -sLf -o /dev/null 'https://deb.nodesource.com/${NODEREPO}/dists/${DISTRO}/Release'"
     RC=$?
 else
-    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/iojs_2.x/dists/${DISTRO}/Release'"
+    exec_cmd_nobail "wget -qO /dev/null -o /dev/null 'https://deb.nodesource.com/${NODEREPO}/dists/${DISTRO}/Release'"
     RC=$?
 fi
 
@@ -138,16 +303,18 @@ else
     exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
 fi
 
-print_status 'Creating apt sources list file for the NodeSource io.js v2.x repo...'
+print_status 'Creating apt sources list file for the NodeSource ${NODENAME} repo...'
 
-exec_cmd "echo 'deb https://deb.nodesource.com/iojs_2.x ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/iojs_2.x ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+exec_cmd "echo 'deb-src https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
 
 print_status 'Running `apt-get update` for you...'
 
 exec_cmd 'apt-get update'
 
-print_status 'Run `apt-get install iojs` (as root) to install io.js v2.x and npm'
+node_deprecation_warning
+
+print_status 'Run `apt-get install ${NODEPKG}` (as root) to install ${NODENAME} and npm'
 
 }
 
