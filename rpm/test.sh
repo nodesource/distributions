@@ -31,7 +31,7 @@ testCheckDistro () {
   echo "echo ${uname}" > _test_bin/uname
   chmod 755 _test_bin/uname
 
-  _result=$(PATH=_test_bin/:${PATH} ./_test_check_distro.sh | sed '/^\+.*$/d')
+  _result=$(PATH=_test_bin/:${PATH} NODEREPO=pub_0.10 ./_test_check_distro.sh | sed '/^\+.*$/d')
   local result=$_result
 
   if [[ $? -ne 0 ]]; then
@@ -79,6 +79,8 @@ testCheckDistro  redhat-release-workstation-6Workstation-6.5.0.2.el6.x86_64 x86_
 testCheckDistro  redhat-release-client-7.2-7.el7.x86_64            x86_64  el       7           x86_64   https://rpm.nodesource.com/pub_0.10/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
 
 testCheckDistro  sl-release-7.1-3.sl7.x86_64                       x86_64  el       7           x86_64   https://rpm.nodesource.com/pub_0.10/el/7/x86_64/nodesource-release-el7-1.noarch.rpm
+
+testCheckDistro  enterprise-release-5-0.0.22                       x86_64  el       5           x86_64   https://rpm.nodesource.com/pub_0.10/el/5/x86_64/nodesource-release-el5-1.noarch.rpm
 
 clean
 
