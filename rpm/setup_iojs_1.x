@@ -247,7 +247,7 @@ fi
 
 if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
-elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
+elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
     DIST_TYPE=fc
