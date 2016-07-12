@@ -205,6 +205,10 @@ script_deprecation_warning
 
 print_status "Installing the NodeSource ${NODENAME} repo..."
 
+if $(uname -m | grep -Eq ^armv6); then
+    print_status "You appear to be running on ARMv6 hardware. Unfortunately this is not currently supported by the NodeSource Linux distributions. Please use the 'linux-armv6l' binary tarballs available directly from nodejs.org for Node.js v4 and later."
+    exit 1
+fi
 
 PRE_INSTALL_PKGS=""
 
