@@ -256,6 +256,7 @@ check_alt() {
 }
 
 check_alt "Kali"          "sana"     "Debian" "jessie"
+check_alt "Kali"          "kali-rolling" "Debian" "jessie"
 check_alt "Debian"        "stretch"  "Debian" "jessie"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
@@ -271,7 +272,7 @@ check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
-check_alt "Tanglu"        "chromodoris"  "Debian" "jessie"
+check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
