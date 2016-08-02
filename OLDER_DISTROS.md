@@ -6,7 +6,7 @@ Unfortunately, this is more complicated in certain instances than in others. Due
 
 ### Debian Style Distributions
 
-Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
+Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the default versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
 
 In order to get around this issue, we build the packages for Debian Wheezy with [clang-3.4](http://clang.llvm.org/). Ubuntu Precise ships with [clang-3.4](http://clang.llvm.org) available, so we use that instead of GCC.
 
