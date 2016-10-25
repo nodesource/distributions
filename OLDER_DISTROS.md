@@ -10,7 +10,7 @@ Two such examples that highlight this situation are the Debian Wheezy and Ubuntu
 
 In order to get around this issue, we build the packages <= v6.x for Debian Wheezy with [clang-3.4](http://clang.llvm.org/). Ubuntu Precise ships with [clang-3.4](http://clang.llvm.org) available, so we use that instead of GCC.
 
-The current expectation for v7.x of Node is that going forward, it will require use of even newer parts of the C++ standard. This will in turn require a compiler newer than both the `gcc` that ships on these distributions and `clang-3.4`. For this reason, we do not support Wheezy or Precise on version 7.x of Node.
+The current expectation for v7.x of Node is that going forward, it will require use of even newer parts of the C++ standard than v6.x did. This will in turn require a compiler newer than both the `gcc` that ships on these distributions and `clang-3.4`. For this reason, we do not support Wheezy or Precise on version 7.x of Node.
 
 The relevant bits of our build scripts to install the needed compilers looks like this:
 
