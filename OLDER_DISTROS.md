@@ -8,7 +8,9 @@ Unfortunately, this is more complicated in certain instances than in others. Due
 
 Two such examples that highlight this situation are the Debian Wheezy and Ubuntu Precise releases. Both are still currently receiving security updates. However, the default versions of the `C++` compilers that each ships with are not modern enough to build the current iterations of the V8 Javascript engine.
 
-In order to get around this issue, we build the packages for Debian Wheezy with [clang-3.4](http://clang.llvm.org/). Ubuntu Precise ships with [clang-3.4](http://clang.llvm.org) available, so we use that instead of GCC.
+In order to get around this issue, we build the packages <= v6.x for Debian Wheezy with [clang-3.4](http://clang.llvm.org/). Ubuntu Precise ships with [clang-3.4](http://clang.llvm.org) available, so we use that instead of GCC.
+
+The current expectation for v7.x of Node is that going forward, it will require use of even newer parts of the C++ standard. This will in turn require a compiler newer than both the `gcc` that ships on these distributions and `clang-3.4`. For this reason, we do not support Wheezy or Precise on version 7.x of Node.
 
 The relevant bits of our build scripts to install the needed compilers looks like this:
 
