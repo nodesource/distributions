@@ -42,7 +42,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **amd64** (64-bit)
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
 
-*PLEASE NOTE* that `armhf` builds are **NOT** available for Debian Wheezy or Ubuntu Precise. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+*PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy or Ubuntu Precise. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 **Supported Ubuntu versions:**
 
@@ -91,6 +91,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v7.x**:
+
+* NOTE: Debian Wheezy and Ubuntu Precise packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_7.x | bash -
+apt-get install -y nodejs
+```
 
 **Node.js v6.x**:
 
@@ -285,7 +299,6 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **Fedora 24 (Twenty Four)** (32-bit and 64-bit) **[For Node >= 4.4.6]**
 * **Fedora 23 (Twenty Three)** (32-bit and 64-bit) **[For Node >= 4.2.x]**
-* **Fedora 22 (Twenty Two)** (32-bit and 64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
 
