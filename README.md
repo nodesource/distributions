@@ -24,12 +24,16 @@ Please file an issue if you are experiencing a problem or would like to discuss 
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
+## Table of Contents
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
   - [Installation instructions](#debinstall)
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
 * **[Tests](#tests)**
+* **[FAQ](#questions)**
+* **[Requested Distributions](#requests)**
+* **[License](#project-license)**
 
 <a name="deb"></a>
 ## Debian and Ubuntu based distributions
@@ -378,7 +382,7 @@ To test an installation is working (and that the setup scripts are working!) use
 ```text
 curl -sL https://deb.nodesource.com/test | bash -
 ```
-
+<a name="questions"></a>
 # FAQ
 
 ---
@@ -423,6 +427,7 @@ Q: What is the current status of IPv6 support?
 
 A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
 
+<a name="requests"></a>
 # Requested Distributions
 
 We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
@@ -434,6 +439,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 
+<a name="authors-contributors"></a>
 ## Authors and Contributors
 
 <table><tbody>
@@ -459,6 +465,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 
 Contributions are welcomed from anyone wanting to improve this project!
 
+<a name="project-license"></a>
 ## License
 
 This material is Copyright (c) 2016 NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
