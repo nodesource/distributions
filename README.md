@@ -407,7 +407,7 @@ A: You probably need to clear out your package manager's cache. Take a look at [
 
 Q: I'm trying to install Node.js on Centos 5 and it is failing, why?
 
-A: Do to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
+A: Due to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
 
 ---
 
