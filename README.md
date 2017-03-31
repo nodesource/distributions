@@ -45,6 +45,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **i386** (32-bit)
 * **amd64** (64-bit)
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
+* **arm64** (ARM 64-bit hard-float, ARMv8 and up: _aarch64-linux-gnu_)
 
 *PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy or Ubuntu Precise. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
