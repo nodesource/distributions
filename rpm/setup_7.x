@@ -53,8 +53,8 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release)
+echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -qf /etc/oracle-release"
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release  || rpm -qf /etc/oracle-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
@@ -75,7 +75,7 @@ incorrect or would like your architecture to be considered for support. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
+if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl|oraclelinux)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
     DIST_TYPE=el
