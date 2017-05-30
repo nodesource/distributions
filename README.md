@@ -53,16 +53,16 @@ NodeSource will continue to maintain the following architectures and may add add
 
 NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
-* **Ubuntu 16.10** (Yakkety Yak) [Node 0.10.x and 0.12.x not supported]
+* **Ubuntu 16.10** (Yakkety Yak)
+* **Ubuntu 17.04** (Zesty Zappus)
 
 **Supported Debian versions:**
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
 
-* **Debian 7** (wheezy)
+* **Debian 7** (wheezy) [Node.js > 6.x is not supported on Debian Wheezy]
 * **Debian 8 / stable** (jessie)
 * **Debian testing** (stretch, aliased to jessie)
 * **Debian unstable** (sid)
@@ -96,6 +96,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v8.x**:
+
+* NOTE: Debian Wheezy and Ubuntu Precise packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
+apt-get install -y nodejs
+```
 
 **Node.js v7.x**:
 
@@ -315,6 +329,14 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 8.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```text
+curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+```
 
 **NodeJS 7.x**
 
