@@ -379,7 +379,7 @@ curl -sL https://rpm.nodesource.com/setup_0.12 | bash -
 **NodeJS 0.10.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup | bash -
+curl -sL https://rpm.nodesource.com/setup | sudo bash -
 ```
 
 Then install, as root:
