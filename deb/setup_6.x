@@ -318,8 +318,19 @@ fi
 
 print_status "Creating apt sources list file for the NodeSource ${NODENAME} repo..."
 
-exec_cmd "echo 'deb https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
-exec_cmd "echo 'deb-src https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+# install armhf packages on arm64
+case $(dpkg --print-architecture) in
+	arm64)
+		exec_cmd 'dpkg --add-architecture armhf'
+		ARCHSUFFIX=':armhf'
+		exec_cmd "echo 'deb [arch=armhf] https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+		exec_cmd "echo 'deb-src [arch=armhf] https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+ 		;;
+ 	*)
+ 		exec_cmd "echo 'deb https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
+		exec_cmd "echo 'deb-src https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+		;;
+esac
 
 print_status 'Running `apt-get update` for you...'
 
@@ -327,7 +338,7 @@ exec_cmd 'apt-get update'
 
 node_deprecation_warning
 
-print_status "Run \`apt-get install ${NODEPKG}\` (as root) to install ${NODENAME} and npm"
+print_status "Run \`apt-get install ${NODEPKG}${ARCHSUFFIX}\` (as root) to install ${NODENAME} and npm"
 
 }
 
