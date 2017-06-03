@@ -3,20 +3,20 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v6.x repo onto a
+# Script to install the NodeSource Node.js v8.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_6.x | bash -
+# curl -sL https://deb.nodesource.com/setup_8.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_6.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_8.x | bash -
 #
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_6.x"
-NODENAME="Node.js v6.x"
-NODEREPO="node_6.x"
+SCRSUFFIX="_8.x"
+NODENAME="Node.js v8.x"
+NODEREPO="node_8.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -271,8 +271,6 @@ check_alt "elementaryOS"  "freya"    "Ubuntu" "trusty"
 check_alt "elementaryOS"  "loki"     "Ubuntu" "xenial"
 check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
-check_alt "SolydXK"       "jessie"   "Debian" "jessie"
-check_alt "SolydXK"       "solydxk"  "Debian" "jessie"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
