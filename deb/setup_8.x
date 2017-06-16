@@ -3,20 +3,20 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v0.10 repo onto a
+# Script to install the NodeSource Node.js v8.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_0.10 | bash -
+# curl -sL https://deb.nodesource.com/setup_8.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_0.10 | bash -
+# wget -qO- https://deb.nodesource.com/setup_8.x | bash -
 #
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_0.10"
-NODENAME="Node.js v0.10"
-NODEREPO="node_0.10"
+SCRSUFFIX="_8.x"
+NODENAME="Node.js v8.x"
+NODEREPO="node_8.x"
 NODEPKG="nodejs"
 
 print_status() {
