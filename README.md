@@ -64,7 +64,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Debian 7** (wheezy) [Node.js > 6.x is not supported on Debian Wheezy]
 * **Debian 8 / stable** (jessie)
-* **Debian testing** (stretch, aliased to jessie)
+* **Debian 9** (stretch)
 * **Debian unstable** (sid)
 
 **Supported Linux Mint versions:**
