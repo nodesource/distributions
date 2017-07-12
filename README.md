@@ -47,7 +47,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
 * **arm64** (ARM 64-bit hard-float, ARMv8 and up: _aarch64-linux-gnu_)
 
-*PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy or Ubuntu Precise. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+*PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 **Supported Ubuntu versions:**
 
@@ -99,7 +99,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Node.js v8.x**:
 
-* NOTE: Debian Wheezy and Ubuntu Precise packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -113,7 +113,7 @@ apt-get install -y nodejs
 
 **Node.js v7.x**:
 
-* NOTE: Debian Wheezy and Ubuntu Precise packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -127,7 +127,7 @@ apt-get install -y nodejs
 
 **Node.js v6.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -141,7 +141,7 @@ apt-get install -y nodejs
 
 **Node.js v5.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -155,7 +155,7 @@ apt-get install -y nodejs
 
 **Node.js v4.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -273,7 +273,7 @@ curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-ke
 VERSION=node_6.x
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
 # - For Debian distributions: wheezey, jessie, sid, etc...
-# - For Ubuntu distributions: precise, trusty, xenial, etc...
+# - For Ubuntu distributions: trusty, xenial, etc...
 # - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
 DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
