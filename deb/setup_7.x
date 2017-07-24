@@ -3,21 +3,21 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource io.js v3.x repo onto a
+# Script to install the NodeSource Node.js v7.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_iojs_3.x | bash -
+# curl -sL https://deb.nodesource.com/setup_7.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_iojs_3.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_7.x | bash -
 #
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_iojs_3.x"
-NODENAME="io.js v3.x"
-NODEREPO="iojs_3.x"
-NODEPKG="iojs"
+SCRSUFFIX="_7.x"
+NODENAME="Node.js v7.x"
+NODEREPO="node_7.x"
+NODEPKG="nodejs"
 
 print_status() {
     echo
@@ -257,7 +257,6 @@ check_alt() {
 
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
-check_alt "Debian"        "stretch"  "Debian" "jessie"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rafaela"  "Ubuntu" "trusty"
@@ -265,6 +264,7 @@ check_alt "Linux Mint"    "rebecca"  "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rosa"     "Ubuntu" "trusty"
 check_alt "Linux Mint"    "sarah"    "Ubuntu" "xenial"
 check_alt "Linux Mint"    "serena"   "Ubuntu" "xenial"
+check_alt "Linux Mint"    "sonya"    "Ubuntu" "xenial"
 check_alt "LMDE"          "betsy"    "Debian" "jessie"
 check_alt "elementaryOS"  "luna"     "Ubuntu" "precise"
 check_alt "elementaryOS"  "freya"    "Ubuntu" "trusty"
@@ -274,7 +274,6 @@ check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
-check_alt "WahaLinux"     "hijra"       "Debian" "jessie"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

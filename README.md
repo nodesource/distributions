@@ -1,7 +1,7 @@
 # [NodeSource](http://nsrc.io/release-updates-1) Node.js and io.js Binary Distributions
 
 <a href="https://nodesource.com">
-  ![Linux Distributions](https://nodesource.com/assets/external/linux-distributions.svg)
+  <img src="https://nodesource.com/assets/external/linux-distributions.svg">
 <a/>
 
 This repository contains the source of the **[NodeSource](http://nsrc.io/release-updates-1)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
@@ -24,12 +24,16 @@ Please file an issue if you are experiencing a problem or would like to discuss 
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
+## Table of Contents
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
   - [Installation instructions](#debinstall)
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
 * **[Tests](#tests)**
+* **[FAQ](#questions)**
+* **[Requested Distributions](#requests)**
+* **[License](#project-license)**
 
 <a name="deb"></a>
 ## Debian and Ubuntu based distributions
@@ -41,25 +45,26 @@ NodeSource will continue to maintain the following architectures and may add add
 * **i386** (32-bit)
 * **amd64** (64-bit)
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
+* **arm64** (ARM 64-bit hard-float, ARMv8 and up: _aarch64-linux-gnu_)
 
-*PLEASE NOTE* that `armhf` builds are **NOT** available for Debian Wheezy or Ubuntu Precise. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+*PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 **Supported Ubuntu versions:**
 
 NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
 
-* **Ubuntu 12.04 LTS** (Precise Pangolin)
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
-* **Ubuntu 15.10** (Wily Werewolf)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
+* **Ubuntu 16.10** (Yakkety Yak)
+* **Ubuntu 17.04** (Zesty Zappus)
 
 **Supported Debian versions:**
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
 
-* **Debian 7** (wheezy)
+* **Debian 7** (wheezy) [Node.js > 6.x is not supported on Debian Wheezy]
 * **Debian 8 / stable** (jessie)
-* **Debian testing** (stretch, aliased to jessie)
+* **Debian 9** (stretch)
 * **Debian unstable** (sid)
 
 **Supported Linux Mint versions:**
@@ -92,9 +97,37 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v8.x**:
+
+* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_8.x | bash -
+apt-get install -y nodejs
+```
+
+**Node.js v7.x**:
+
+* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_7.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v6.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -108,7 +141,7 @@ apt-get install -y nodejs
 
 **Node.js v5.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -122,7 +155,7 @@ apt-get install -y nodejs
 
 **Node.js v4.x**:
 
-* NOTE: If you are using Ubuntu Precise or Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -237,10 +270,10 @@ curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-ke
 
 ```sh
 # Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
-VERSION=node_5.x
+VERSION=node_6.x
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
 # - For Debian distributions: wheezey, jessie, sid, etc...
-# - For Ubuntu distributions: precise, trusty, xenial, etc...
+# - For Ubuntu distributions: trusty, xenial, etc...
 # - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
 DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
@@ -285,7 +318,6 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **Fedora 24 (Twenty Four)** (32-bit and 64-bit) **[For Node >= 4.4.6]**
 * **Fedora 23 (Twenty Three)** (32-bit and 64-bit) **[For Node >= 4.2.x]**
-* **Fedora 22 (Twenty Two)** (32-bit and 64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
 
@@ -297,6 +329,22 @@ Current instructions for installing, as listed on the [Node.js Wiki](https://git
 Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 8.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```text
+curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+```
+
+**NodeJS 7.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```text
+curl -sL https://rpm.nodesource.com/setup_7.x | bash -
+```
 
 **NodeJS 6.x**
 
@@ -357,7 +405,7 @@ To test an installation is working (and that the setup scripts are working!) use
 ```text
 curl -sL https://deb.nodesource.com/test | bash -
 ```
-
+<a name="questions"></a>
 # FAQ
 
 ---
@@ -382,7 +430,7 @@ A: You probably need to clear out your package manager's cache. Take a look at [
 
 Q: I'm trying to install Node.js on Centos 5 and it is failing, why?
 
-A: Do to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
+A: Due to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
 
 ---
 
@@ -402,6 +450,7 @@ Q: What is the current status of IPv6 support?
 
 A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
 
+<a name="requests"></a>
 # Requested Distributions
 
 We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
@@ -413,6 +462,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 
+<a name="authors-contributors"></a>
 ## Authors and Contributors
 
 <table><tbody>
@@ -438,6 +488,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 
 Contributions are welcomed from anyone wanting to improve this project!
 
+<a name="project-license"></a>
 ## License
 
 This material is Copyright (c) 2016 NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
