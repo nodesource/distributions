@@ -255,6 +255,7 @@ check_alt() {
     fi
 }
 
+check_alt "deepin" "unstable" "Ubuntu" "xenial"
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
