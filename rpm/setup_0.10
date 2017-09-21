@@ -395,7 +395,7 @@ fi
 node_deprecation_warning
 
 print_status "\
-Run \`\033[1myum install -y ${NODEPKG}\033[22m\` (as root) to install ${NODENAME} and npm.\n\
+Running \`\033[1myum install -y ${NODEPKG}\033[22m\` (as root) to install ${NODENAME} and npm.\n\
 You may also need development tools to build native addons:\n\
   \`yum install -y gcc-c++ make\`\
 "

@@ -327,7 +327,7 @@ exec_cmd 'apt-get update'
 
 node_deprecation_warning
 
-print_status "Run \`apt-get install ${NODEPKG}\` (as root) to install ${NODENAME} and npm"
+print_status "Running \`apt-get install ${NODEPKG}\` (as root) to install ${NODENAME} and npm"
 
 }
 
