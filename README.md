@@ -141,20 +141,6 @@ curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v5.x**:
-
-* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_5.x | bash -
-apt-get install -y nodejs
-```
-
 **Node.js v4.x**:
 
 * NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
