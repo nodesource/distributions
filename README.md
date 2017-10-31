@@ -316,6 +316,14 @@ Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
+**NodeJS 9.x**
+
+* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+
+```text
+curl -sL https://rpm.nodesource.com/setup_9.x | bash -
+```
+
 **NodeJS 8.x**
 
 * NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
