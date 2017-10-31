@@ -127,20 +127,6 @@ curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v7.x**:
-
-* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_7.x | bash -
-apt-get install -y nodejs
-```
-
 **Node.js v6.x**:
 
 * NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
