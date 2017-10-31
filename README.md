@@ -332,28 +332,12 @@ curl -sL https://rpm.nodesource.com/setup_9.x | bash -
 curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 ```
 
-**NodeJS 7.x**
-
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```text
-curl -sL https://rpm.nodesource.com/setup_7.x | bash -
-```
-
 **NodeJS 6.x**
 
 * NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```text
 curl -sL https://rpm.nodesource.com/setup_6.x | bash -
-```
-
-**NodeJS 5.x**
-
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```text
-curl -sL https://rpm.nodesource.com/setup_5.x | bash -
 ```
 
 **NodeJS 4.x**
