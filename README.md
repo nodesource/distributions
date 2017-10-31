@@ -57,6 +57,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 * **Ubuntu 16.10** (Yakkety Yak)
 * **Ubuntu 17.04** (Zesty Zappus)
+* **Ubuntu 17.10** (Artful Aardvark)
 
 **Supported Debian versions:**
 
@@ -65,6 +66,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Debian 7** (wheezy) [Node.js > 6.x is not supported on Debian Wheezy]
 * **Debian 8 / stable** (jessie)
 * **Debian 9** (stretch)
+* **Debian 10 / testing** (buster)
 * **Debian unstable** (sid)
 
 **Supported Linux Mint versions:**
