@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v6.x repo onto a
+# Script to install the NodeSource Node.js v6.x LTS Boron repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -15,7 +15,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_6.x"
-NODENAME="Node.js v6.x"
+NODENAME="Node.js v6.x LTS Boron"
 NODEREPO="node_6.x"
 NODEPKG="nodejs"
 
@@ -274,6 +274,7 @@ check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
+check_alt "PureOS"        "green"    "Debian" "jessie"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

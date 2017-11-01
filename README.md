@@ -96,6 +96,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Hydrogen (rc2)** (via Debian 8)
 
+**Supported PureOS versions:**
+
+* **PureOS 8 "Green"** (via Debian 8)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
