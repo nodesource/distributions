@@ -18,7 +18,7 @@ If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Soli
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
-For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
+For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Oracle Linux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
@@ -299,6 +299,12 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported CloudLinux versions:**
 * **CloudLinux 6** (32-bit and 64-bit)
+
+**Supported Oracle Linux versions:**
+
+* **Oracle Linux 6** (64-bit) **[For Node < 4.x]**
+* **Oracle Linux 6** (64-bit) **[For Node >= 4.x]**
+* **Oracle Linux 7** (64-bit)
 
 **Supported Fedora versions:**
 
