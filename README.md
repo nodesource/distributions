@@ -75,6 +75,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
+* **Linux Mint 18 "Sarah"** (via Ubuntu 16.04 LTS)
+* **Linux Mint 18.1 "Serena"** (via Ubuntu 16.04 LTS)
+* **Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)
+* **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
 
 **Supported elementary OS versions:**
