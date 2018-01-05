@@ -92,6 +92,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Trisquel 6 "Toutatis"** (via Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
 
+**Supported SolydXK versions:**
+
+* **SolydXK "jessie"** (via Debian 8)
+
 **Supported BOSS versions:**
 
 * **BOSS 5.0 "Anokha"** (via Debian 7)
