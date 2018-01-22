@@ -4,19 +4,49 @@ set -xe
 
 __dirname="$(CDPATH= cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-# release
-#NODE_VERSION="9.4.0"
-#NODE_DISTTYPE="release"
-#NODE_TAG=""
+while getopts "r:g" opt; do
+  case $opt in
+    r)
+      echo "Updating for latest $OPTARG release" >&2
+      # release
+      NODE_VERSION="$(curl -sL https://nodejs.org/download/release/index.tab | awk '/^v'"$OPTARG"'\..*\Wsrc\W/ { print substr($1, 2); exit }')"
+      NODE_DISTTYPE="release"
+      NODE_TAG=""
+      ;;
+    g)
+      echo "Pushing to git" >&2
+      UPDATE_GIT=yes
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      exit
+  esac
+done
 
-# nightly
-NODE_VERSION="$(curl -sL https://nodejs.org/download/nightly/index.tab | awk '/^v[1-9].*\Wsrc\W/ { print substr($1, 2); exit }')"
-NODE_DISTTYPE="nightly"
-NODE_TAG="v${NODE_VERSION}"
+# not a release?
+if [ -z ${NODE_DISTTYPE+x} ]; then
+  # nightly
+  NODE_VERSION="$(curl -sL https://nodejs.org/download/nightly/index.tab | awk '/^v[1-9].*\Wsrc\W/ { print substr($1, 2); exit }')"
+  NODE_DISTTYPE="nightly"
+  NODE_TAG="v${NODE_VERSION}"
+fi
+
+echo "NODE_VERSION=$NODE_VERSION"
+echo "NODE_DISTTYPE=$NODE_DISTTYPE"
+echo "NODE_TAG=$NODE_TAG"
+
+if [ "X${UPDATE_GIT}" = "Xyes" ]; then
+  git clean -fdx
+  git reset HEAD --hard
+  git checkout master --force
+  git pull -r origin/master
+fi
+
+# Write snapcraft.yaml for this config
 
 envsubst << EOF > ${__dirname}/snapcraft.yaml
 name: node
-version: 'v${NODE_VERSION:0:30}'
+version: '${NODE_VERSION:0:30}'
 summary: Node.js
 description: |
   A JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. https://nodejs.org/
@@ -49,3 +79,9 @@ parts:
     source: https://yarnpkg.com/latest.tar.gz
     plugin: dump
 EOF
+
+if [ "X${UPDATE_GIT}" = "Xyes" ] && [ -n "$(git status --porcelain $__dirname)" ]; then
+  echo "Updating git repo and pushing ..."
+  git commit $__dirname -m "snap: (auto) updated to ${NODE_VERSION}"
+  git push origin master
+fi
