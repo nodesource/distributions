@@ -1,0 +1,33 @@
+name: node
+version: 'v10.0.0-nightly201801218803b69c'
+summary: Node.js
+description: |
+  A JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. https://nodejs.org/
+
+grade: stable
+confinement: classic
+
+apps:
+  node:
+    command: bin/node
+  npm:
+    command: bin/npm
+  yarn:
+    command: bin/yarn.js
+
+parts:
+  node:
+    plugin: make
+    source-type: tar
+    source: https://nodejs.org/download/nightly/v10.0.0-nightly201801218803b69c72/node-v10.0.0-nightly201801218803b69c72.tar.gz
+    build-packages:
+      - g++
+      - make
+      - python2.7
+      - ccache
+    prepare: |
+      ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/nightly/ --tag=v10.0.0-nightly201801218803b69c72
+  yarn:
+    source-type: tar
+    source: https://yarnpkg.com/latest.tar.gz
+    plugin: dump
