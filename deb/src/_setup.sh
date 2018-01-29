@@ -257,7 +257,7 @@ check_alt() {
 
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
-check_alt "Sparky Linux"  "Nibiru"   "Debian" "jessie"
+check_alt "Sparky Linux"  "Nibiru"   "Debian" "buster"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rafaela"  "Ubuntu" "trusty"
