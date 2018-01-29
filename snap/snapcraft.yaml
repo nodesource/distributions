@@ -1,5 +1,5 @@
 name: node
-version: '10.0.0-nightly201801295c8ce90c'
+version: '9.4.0'
 summary: Node.js
 description: |
   A JavaScript runtime built on Chrome's V8 JavaScript engine. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient. Node.js' package ecosystem, npm, is the largest ecosystem of open source libraries in the world. https://nodejs.org/
@@ -19,14 +19,14 @@ parts:
   node:
     plugin: make
     source-type: tar
-    source: https://nodejs.org/download/nightly/v10.0.0-nightly201801295c8ce90c2f/node-v10.0.0-nightly201801295c8ce90c2f.tar.gz
+    source: https://nodejs.org/download/release/v9.4.0/node-v9.4.0.tar.gz
     build-packages:
       - g++
       - make
       - python2.7
       - ccache
     prepare: |
-      ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/nightly/ --tag=nightly201801295c8ce90c2f
+      ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/release/ --tag=
   yarn:
     source-type: tar
     source: https://yarnpkg.com/latest.tar.gz
