@@ -39,7 +39,7 @@ if [ "X${UPDATE_GIT}" = "Xyes" ]; then
   git clean -fdx
   git reset HEAD --hard
   git checkout master --force
-  git pull -r origin/master
+  git pull -r origin master
 fi
 
 # Write snapcraft.yaml for this config
