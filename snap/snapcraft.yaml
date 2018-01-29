@@ -26,7 +26,7 @@ parts:
       - python2.7
       - ccache
     prepare: |
-      ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/nightly/ --tag=v10.0.0-nightly20180126fa33f026cc
+      ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/nightly/ --tag=nightly20180126fa33f026cc
   yarn:
     source-type: tar
     source: https://yarnpkg.com/latest.tar.gz

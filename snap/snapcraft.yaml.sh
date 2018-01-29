@@ -28,7 +28,7 @@ if [ -z ${NODE_DISTTYPE+x} ]; then
   # nightly
   NODE_VERSION="$(curl -sL https://nodejs.org/download/nightly/index.tab | awk '/^v[1-9].*\Wsrc\W/ { print substr($1, 2); exit }')"
   NODE_DISTTYPE="nightly"
-  NODE_TAG="v${NODE_VERSION}"
+  NODE_TAG="$(echo $NODE_VERSION | sed -E 's/^[^-]+-//')"
 fi
 
 echo "NODE_VERSION=$NODE_VERSION"
