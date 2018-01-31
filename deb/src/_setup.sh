@@ -278,6 +278,7 @@ check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
 check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
+check_alt "Devuan"        "ceres"  "Debian" "sid"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
