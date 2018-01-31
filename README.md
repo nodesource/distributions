@@ -100,6 +100,12 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Hydrogen (rc2)** (via Debian 8)
 
+**Supported Devuan versions:**
+
+* **Jessie** (via Debian 8)
+* **Ascii** (via Debian 9)
+* **Ceres** (via Debian unstable)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
