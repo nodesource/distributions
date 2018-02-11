@@ -120,6 +120,13 @@ incorrect. Include your 'distribution package' name: ${DISTRO_PKG}. \
 
 fi
 
+## Determine which package installation tool is used, DNF or YUM. Will use
+## this for both installation and providing advice on what commands to run.
+if [[ -x /bin/dnf ]]; then
+  YUM=dnf
+else
+  YUM=yum
+fi
 
 ## Given the distro, version and arch, construct the url for
 ## the appropriate nodesource-release package (it's noarch but
@@ -156,8 +163,8 @@ if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
 
   print_status "Checking if EPEL is enabled..."
 
-  echo "+ yum repolist enabled 2> /dev/null | grep epel"
-  repolist=$(yum repolist enabled 2> /dev/null | grep epel)
+  echo "+ $YUM repolist enabled 2> /dev/null | grep epel"
+  repolist=$($YUM repolist enabled 2> /dev/null | grep epel)
 
   if [ "X${repolist}" == "X" ]; then
     print_status "Finding current EPEL release RPM..."
@@ -217,15 +224,15 @@ if [ "X${EXISTING_NODE}" != "X" ]; then
 
   print_status "\
 Your system appears to already have Node.js installed from an alternative source.\n\
-Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.\
+Run \`\033[1m$YUM remove -y nodejs npm\033[22m\` (as root) to remove these first.\
 "
 
 fi
 
 print_status "\
-Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 7.x and npm.\n\
+Run \`\033[1m$YUM install -y nodejs\033[22m\` (as root) to install Node.js 7.x and npm.\n\
 You may also need development tools to build native addons:\n\
-  \`yum install -y gcc-c++ make\`\
+  \`$YUM install -y gcc-c++ make\`\
 "
 
 ## Alternative to install dev tools: `yum groupinstall 'Development Tools'
