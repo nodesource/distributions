@@ -7,6 +7,10 @@ RELEASES=( "pub_0.10::nodejs:Node.js v0.10"
            "pub_iojs_2.x:_iojs_2.x:iojs:io.js v2.x"
            "pub_4.x:_4.x:nodejs:Node.js v4.x LTS Argon"
            "pub_5.x:_5.x:nodejs:Node.js v5.x"
+           "pub_6.x:_6.x:nodejs:Node.js v6.x LTS Boron"
+           "pub_7.x:_7.x:nodejs:Node.js v7.x"
+           "pub_8.x:_8.x:nodejs:Node.js v8.x LTS Carbon"
+           "pub_9.x:_9.x:nodejs:Node.js v9.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
