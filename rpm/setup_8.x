@@ -3,19 +3,19 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v6.x LTS Boron repo onto an
+# Script to install the NodeSource Node.js v8.x LTS Carbon repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+# curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup_6.x | bash -
+# wget -qO- https://rpm.nodesource.com/setup_8.x | bash -
 #
 
-SCRSUFFIX="_6.x"
-NODENAME="Node.js v6.x LTS Boron"
-NODEREPO="pub_6.x"
+SCRSUFFIX="_8.x"
+NODENAME="Node.js v8.x LTS Carbon"
+NODEREPO="pub_8.x"
 NODEPKG="nodejs"
 
 print_status() {

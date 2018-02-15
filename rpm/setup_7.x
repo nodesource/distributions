@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 7.x repo onto an
+# Script to install the NodeSource Node.js v7.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -13,11 +13,51 @@
 # wget -qO- https://rpm.nodesource.com/setup_7.x | bash -
 #
 
+SCRSUFFIX="_7.x"
+NODENAME="Node.js v7.x"
+NODEREPO="pub_7.x"
+NODEPKG="nodejs"
+
 print_status() {
-  local outp=$(echo "$1" | sed -r 's/\\n/\\n## /mg')
+  local outp=$(echo "$1") # | sed -r 's/\\n/\\n## /mg')
   echo
   echo -e "## ${outp}"
   echo
+}
+
+if test -t 1; then # if terminal
+    ncolors=$(which tput > /dev/null && tput colors) # supports color
+    if test -n "$ncolors" && test $ncolors -ge 8; then
+        termcols=$(tput cols)
+        bold="$(tput bold)"
+        underline="$(tput smul)"
+        standout="$(tput smso)"
+        normal="$(tput sgr0)"
+        black="$(tput setaf 0)"
+        red="$(tput setaf 1)"
+        green="$(tput setaf 2)"
+        yellow="$(tput setaf 3)"
+        blue="$(tput setaf 4)"
+        magenta="$(tput setaf 5)"
+        cyan="$(tput setaf 6)"
+        white="$(tput setaf 7)"
+    fi
+fi
+
+print_bold() {
+    title="$1"
+    text="$2"
+
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
+    echo
+    echo -e "  ${bold}${yellow}${title}${normal}"
+    echo
+    echo -en "  ${text}"
+    echo
+    echo "${red}================================================================================${normal}"
+    echo "${red}================================================================================${normal}"
 }
 
 bail() {
@@ -34,7 +74,137 @@ exec_cmd() {
   exec_cmd_nobail "$1" || bail
 }
 
-print_status "Installing the NodeSource Node.js 7.x repo..."
+node_deprecation_warning() {
+echo "X${NODENAME} == XNode.js v5.x"
+    if [[ "X${NODENAME}" == "Xio.js v1.x" ||
+          "X${NODENAME}" == "Xio.js v2.x" ||
+          "X${NODENAME}" == "Xio.js v3.x" ||
+          "X${NODENAME}" == "XNode.js v5.x" ]]; then
+
+        print_bold \
+"                            DEPRECATION WARNING                            " "\
+${bold}${NODENAME} is no longer actively supported!${normal}
+
+  ${bold}You will not receive security or critical stability updates${normal} for this version.
+
+  You should migrate to a supported version of Node.js as soon as possible.
+  Use the installation script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+        echo
+        echo "Continuing in 10 seconds ..."
+        echo
+        sleep 10
+
+    elif [ "X${NODENAME}" == "XNode.js v0.10" ]; then
+
+        print_bold \
+"                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
+Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 5 seconds ..."
+        echo
+        sleep 5
+
+    elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
+
+        print_bold \
+"                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
+Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
+
+  This means you will not continue to receive security or critical stability
+  updates for this version of Node.js beyond that time.
+
+  You should begin migration to a newer version of Node.js as soon as
+  possible. Use the installation script that corresponds to the version of
+  Node.js you wish to install. e.g.
+
+   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 3 seconds ..."
+        echo
+        sleep 3
+
+    fi
+}
+
+script_deprecation_warning() {
+    if [ "X${SCRSUFFIX}" == "X" ]; then
+        print_bold \
+"                         SCRIPT DEPRECATION WARNING                         " "\
+This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used to
+  install Node.js v0.10, is being deprecated and will eventually be made
+  inactive.
+
+  You should use the script that corresponds to the version of Node.js you
+  wish to install. e.g.
+
+   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+
+  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
+  may be appropriate for you.
+
+  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
+  information about which versions of Node.js and which Linux distributions
+  are supported and how to use the install scripts.
+    ${bold}https://github.com/nodesource/distributions${normal}
+"
+
+        echo
+        echo "Continuing in 10 seconds (press Ctrl-C to abort) ..."
+        echo
+        sleep 10
+    fi
+}
+
+setup() {
+
+script_deprecation_warning
+
+print_status "Installing the NodeSource ${NODENAME} repo..."
 
 print_status "Inspecting system..."
 
@@ -77,7 +247,7 @@ fi
 
 if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
-elif [[ $DISTRO_PKG =~ ^system-release- ]]; then # Amazon Linux
+elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
     DIST_TYPE=fc
@@ -103,7 +273,7 @@ else
 
   ## Using the redhat-release-server-X, centos-release-X, etc. pattern
   ## extract the major version number of the distro
-  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation)?-([0-9]+).*$/\2/')
+  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation|-client)?-([0-9]+).*$/\2/')
 
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 
@@ -126,7 +296,7 @@ fi
 ## we include the arch in the directory tree anyway)
 RELEASE_URL_VERSION_STRING="${DIST_TYPE}${DIST_VERSION}"
 RELEASE_URL="\
-https://rpm.nodesource.com/pub_7.x/\
+https://rpm.nodesource.com/${NODEREPO}/\
 ${DIST_TYPE}/\
 ${DIST_VERSION}/\
 ${DIST_ARCH}/\
@@ -217,13 +387,15 @@ if [ "X${EXISTING_NODE}" != "X" ]; then
 
   print_status "\
 Your system appears to already have Node.js installed from an alternative source.\n\
-Run \`\033[1myum remove -y nodejs npm\033[22m\` (as root) to remove these first.\
+Run \`\033[1myum remove -y ${NODEPKG} npm\033[22m\` (as root) to remove these first.\
 "
 
 fi
 
+node_deprecation_warning
+
 print_status "\
-Run \`\033[1myum install -y nodejs\033[22m\` (as root) to install Node.js 7.x and npm.\n\
+Run \`\033[1myum install -y ${NODEPKG}\033[22m\` (as root) to install ${NODENAME} and npm.\n\
 You may also need development tools to build native addons:\n\
   \`yum install -y gcc-c++ make\`\
 "
@@ -231,3 +403,8 @@ You may also need development tools to build native addons:\n\
 ## Alternative to install dev tools: `yum groupinstall 'Development Tools'
 
 exit 0
+
+}
+
+## Defer setup until we have the complete script
+setup
