@@ -276,6 +276,7 @@ check_alt "Trisquel"      "flidas"   "Ubuntu" "xenial"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
+check_alt "PureOS"        "green"    "Ubuntu" "xenial"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
