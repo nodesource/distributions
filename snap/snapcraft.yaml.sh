@@ -4,7 +4,7 @@ set -xe
 
 __dirname="$(CDPATH= cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-while getopts "r:g" opt; do
+while getopts "r:g:" opt; do
   case $opt in
     r)
       echo "Updating for latest $OPTARG release" >&2
@@ -14,8 +14,9 @@ while getopts "r:g" opt; do
       NODE_TAG=""
       ;;
     g)
-      echo "Pushing to git" >&2
+      echo "Pushing to git $OPTARG" >&2
       UPDATE_GIT=yes
+      GIT_BRANCH=$OPTARG
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
@@ -38,8 +39,8 @@ echo "NODE_TAG=$NODE_TAG"
 if [ "X${UPDATE_GIT}" = "Xyes" ]; then
   git clean -fdx
   git reset HEAD --hard
-  git checkout master --force
-  git pull -r origin master
+  git checkout $GIT_BRANCH --force
+  git pull -r origin $GIT_BRANCH
 fi
 
 # Write snapcraft.yaml for this config
@@ -83,5 +84,5 @@ EOF
 if [ "X${UPDATE_GIT}" = "Xyes" ] && [ -n "$(git status --porcelain $__dirname)" ]; then
   echo "Updating git repo and pushing ..."
   git commit $__dirname -m "snap: (auto) updated to ${NODE_VERSION}"
-  git push origin master
+  git push origin $GIT_BRANCH
 fi
