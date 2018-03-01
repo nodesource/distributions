@@ -27,6 +27,9 @@ parts:
       - ccache
     prepare: |
       ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/nightly/ --tag=nightly201802283f78d3fcf8
+    install: |
+      mkdir -p /etc
+      echo "prefix = /usr/local" >> /etc/npmrc
   yarn:
     source-type: tar
     source: https://yarnpkg.com/latest.tar.gz
