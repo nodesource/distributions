@@ -85,7 +85,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **elementary OS Luna** (via Ubuntu 12.04 LTS)
 * **elementary OS Freya** (via Ubuntu 14.04 LTS)
-* **elementary OS Loki** (via Ubuntu 16.04)
+* **elementary OS Loki** (via Ubuntu 16.04 LTS)
+* **elementary OS Juno** (via Ubuntu 18.04 LTS)
 
 **Supported Trisquel versions:**
 
