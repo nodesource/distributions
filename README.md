@@ -291,13 +291,13 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 6** (32-bit and 64-bit) **[For Node < 4.x]**
+* **RHEL 5** (32-bit and 64-bit) **[For Node < 4.x]**
 * **RHEL 6** (64-bit) **[For Node >= 4.x]**
 * **RHEL 7** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 6** (32-bit and 64-bit) **[For Node < 4.x]**
+* **CentOS 5** (32-bit and 64-bit) **[For Node < 4.x]**
 * **CentOS 6** (64-bit) **[For Node >= 4.x]**
 * **CentOS 7** (64-bit)
 
@@ -306,8 +306,8 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
-* **Fedora 26 (Twenty Six)** (32-bit and 64-bit) **[For Node >= 6.11.0]**
 * **Fedora 25 (Twenty Five)** (32-bit and 64-bit) **[For Node >= 4.7.2]**
+* **Fedora 26 (Twenty Six)** (32-bit and 64-bit) **[For Node >= 6.11.0]**
 
 Equivalent versions of Korora Linux should also be supported.
 
