@@ -283,6 +283,7 @@ check_alt "PureOS"        "green"    "Debian" "sid"
 check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
 check_alt "Devuan"        "ceres"    "Debian" "sid"
+check_alt "Deepin"        "panda"    "Debian" "sid"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
