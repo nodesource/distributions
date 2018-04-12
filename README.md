@@ -58,6 +58,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 16.10** (Yakkety Yak)
 * **Ubuntu 17.04** (Zesty Zappus)
 * **Ubuntu 17.10** (Artful Aardvark)
+* **Ubuntu 18.04** (Bionic Beaver)
 
 **Supported Debian versions:**
 
