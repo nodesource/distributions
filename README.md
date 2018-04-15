@@ -103,6 +103,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 **Supported BOSS versions:**
 
 * **BOSS 5.0 "Anokha"** (via Debian 7)
+* **BOSS 6.0 "Anoop"** (via Debian 8)
 
 **Supported BunsenLabs versions:**
 
@@ -474,6 +475,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Misha Brukman</th><td><a href="https://github.com/mbrukman">GitHub/mbrukman</a></td><td></td></tr>
 <tr><th align="left">Simon Lydell</th><td><a href="https://github.com/lydell">GitHub/lydell</a></td><td></td></tr>
 <tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
+<tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
