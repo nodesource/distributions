@@ -1,20 +1,12 @@
 # [NodeSource](https://nodesource.com) Node.js and io.js Binary Distributions
 
-<a href="https://nodesource.com">
-  <img src="https://nodesource.com/assets/external/linux-distributions.svg">
-<a/>
+[![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
 This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
 
-----------------------------------
-
-<a href="https://nodesource.com/products/nsolid">
-  <img src="https://downloads.nodesource.com/img/nsolid.svg" width="25%">
-</a>
+[![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
 
 If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
-
-----------------------------------
 
 For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
 
