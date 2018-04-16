@@ -1,10 +1,10 @@
-# [NodeSource](http://nsrc.io/release-updates-1) Node.js and io.js Binary Distributions
+# [NodeSource](https://nodesource.com) Node.js and io.js Binary Distributions
 
 <a href="https://nodesource.com">
   <img src="https://nodesource.com/assets/external/linux-distributions.svg">
 <a/>
 
-This repository contains the source of the **[NodeSource](http://nsrc.io/release-updates-1)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
+This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
 
 ----------------------------------
 
