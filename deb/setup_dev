@@ -100,9 +100,9 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
 
-  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
-  information about which versions of Node.js and which Linux distributions
-  are supported and how to use the install scripts.
+  The ${bold}NodeSource${normal} Node.js distributions repository contains
+  information both about supported versions of Node.js and supported Linux
+  distributions. To learn more about usage, see the repository:
     ${bold}https://github.com/nodesource/distributions${normal}
 "
         echo
