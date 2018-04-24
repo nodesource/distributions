@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v5.x repo onto an
+# Script to install the NodeSource Node.js 5.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -14,7 +14,7 @@
 #
 
 SCRSUFFIX="_5.x"
-NODENAME="Node.js v5.x"
+NODENAME="Node.js 5.x"
 NODEREPO="pub_5.x"
 NODEPKG="nodejs"
 
@@ -75,11 +75,14 @@ exec_cmd() {
 }
 
 node_deprecation_warning() {
-echo "X${NODENAME} == XNode.js v5.x"
-    if [[ "X${NODENAME}" == "Xio.js v1.x" ||
-          "X${NODENAME}" == "Xio.js v2.x" ||
-          "X${NODENAME}" == "Xio.js v3.x" ||
-          "X${NODENAME}" == "XNode.js v5.x" ]]; then
+    if [[ "X${NODENAME}" == "Xio.js 1.x" ||
+          "X${NODENAME}" == "Xio.js 2.x" ||
+          "X${NODENAME}" == "Xio.js 3.x" ||
+          "X${NODENAME}" == "XNode.js 0.10" ||
+          "X${NODENAME}" == "XNode.js 0.12" ||
+          "X${NODENAME}" == "XNode.js 4.x LTS Argon" ||
+          "X${NODENAME}" == "XNode.js 5.x" ||
+          "X${NODENAME}" == "XNode.js 7.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -91,82 +94,21 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
 
-  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
-  may be appropriate for you.
-
-  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
-  information about which versions of Node.js and which Linux distributions
-  are supported and how to use the install scripts.
-    ${bold}https://github.com/nodesource/distributions${normal}
-"
-        echo
-        echo "Continuing in 10 seconds ..."
-        echo
-        sleep 10
-
-    elif [ "X${NODENAME}" == "XNode.js v0.10" ]; then
-
-        print_bold \
-"                     NODE.JS v0.10 DEPRECATION WARNING                      " "\
-Node.js v0.10 will cease to be actively supported in ${bold}October 2016${normal}.
-
-  This means you will not continue to receive security or critical stability
-  updates for this version of Node.js beyond that time.
-
-  You should begin migration to a newer version of Node.js as soon as
-  possible. Use the installation script that corresponds to the version of
-  Node.js you wish to install. e.g.
-
-   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
-
-  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
-  may be appropriate for you.
+  Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
+  version may be appropriate for you.
 
   The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
   information about which versions of Node.js and which Linux distributions
   are supported and how to use the install scripts.
     ${bold}https://github.com/nodesource/distributions${normal}
 "
-
         echo
-        echo "Continuing in 5 seconds ..."
+        echo "Continuing in 20 seconds ..."
         echo
-        sleep 5
-
-    elif [ "X${NODENAME}" == "XNode.js v0.12" ]; then
-
-        print_bold \
-"                     NODE.JS v0.12 DEPRECATION WARNING                      " "\
-Node.js v0.12 will cease to be actively supported ${bold}at the end of 2016${normal}.
-
-  This means you will not continue to receive security or critical stability
-  updates for this version of Node.js beyond that time.
-
-  You should begin migration to a newer version of Node.js as soon as
-  possible. Use the installation script that corresponds to the version of
-  Node.js you wish to install. e.g.
-
-   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
-
-  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
-  may be appropriate for you.
-
-  The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
-  information about which versions of Node.js and which Linux distributions
-  are supported and how to use the install scripts.
-    ${bold}https://github.com/nodesource/distributions${normal}
-"
-
-        echo
-        echo "Continuing in 3 seconds ..."
-        echo
-        sleep 3
-
+        sleep 20
     fi
 }
 
@@ -175,17 +117,16 @@ script_deprecation_warning() {
         print_bold \
 "                         SCRIPT DEPRECATION WARNING                         " "\
 This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used to
-  install Node.js v0.10, is being deprecated and will eventually be made
-  inactive.
+  install Node.js v0.10, is deprecated and will eventually be made inactive.
 
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_4.x — Node.js v4 LTS \"Argon\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_6.x — Node.js v6 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
 
-  Please see ${bold}https://github.com/nodejs/LTS/${normal} for details about which version
-  may be appropriate for you.
+  Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
+  version may be appropriate for you.
 
   The ${bold}NodeSource${normal} Node.js Linux distributions GitHub repository contains
   information about which versions of Node.js and which Linux distributions
@@ -194,28 +135,27 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
 "
 
         echo
-        echo "Continuing in 10 seconds (press Ctrl-C to abort) ..."
+        echo "Continuing in 20 seconds (press Ctrl-C to abort) ..."
         echo
-        sleep 10
+        sleep 20
     fi
 }
 
 setup() {
 
 script_deprecation_warning
+node_deprecation_warning
 
 print_status "Installing the NodeSource ${NODENAME} repo..."
 
 print_status "Inspecting system..."
 
 if [ ! -x /bin/rpm ]; then
-  print_status "\
-You don't appear to be running an Enterprise Linux based \
-system, please contact NodeSource at \
-https://github.com/nodesource/distributions/issues if you think this \
-is incorrect or would like your distribution to be considered for \
-support.\
-"
+  print_status """You don't appear to be running an Enterprise Linux based system,
+please contact NodeSource at https://github.com/nodesource/distributions/issues
+if you think this is incorrect or would like your distribution to be considered
+for support.
+"""
   exit 1
 fi
 
@@ -342,15 +282,14 @@ if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
       exit 1
     fi
 
-    print_status "\
-The EPEL (Extra Packages for Enterprise Linux) repository is a\n\
-prerequisite for installing Node.js on your operating system. Please\n\
-add it and re-run this setup script.\n\
-\n\
-The EPEL repository RPM is available at:\n\
-  ${epel_url}${epel}\n\
-You can try installing with: \`rpm -ivh <url>\`\
-"
+    print_status """The EPEL (Extra Packages for Enterprise Linux) repository is a
+prerequisite for installing Node.js on your operating system. Please
+add it and re-run this setup script.
+
+The EPEL repository RPM is available at:
+  ${epel_url}${epel}
+You can try installing with: \`rpm -ivh <url>\`
+"""
 
     exit 1
   fi
@@ -385,22 +324,19 @@ EXISTING_NODE=$(rpm -qa 'node|npm|iojs' | grep -v nodesource)
 
 if [ "X${EXISTING_NODE}" != "X" ]; then
 
-  print_status "\
-Your system appears to already have Node.js installed from an alternative source.\n\
-Run \`\033[1myum remove -y ${NODEPKG} npm\033[22m\` (as root) to remove these first.\
-"
+  print_status """Your system appears to already have Node.js installed from an alternative source.
+Run \`${bold}sudo yum remove -y ${NODEPKG} npm${normal}\` to remove these first.
+"""
 
 fi
 
-node_deprecation_warning
-
-print_status "\
-Run \`\033[1myum install -y ${NODEPKG}\033[22m\` (as root) to install ${NODENAME} and npm.\n\
-You may also need development tools to build native addons:\n\
-  \`yum install -y gcc-c++ make\`\
-"
-
-## Alternative to install dev tools: `yum groupinstall 'Development Tools'
+print_status """Run \`${bold}sudo yum install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
+## You may also need development tools to build native addons:
+     sudo yum install gcc-c++ make
+## To install the Yarn package manager, run:
+     curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
+     sudo yum install yarn
+"""
 
 exit 0
 
