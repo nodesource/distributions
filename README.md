@@ -1,16 +1,12 @@
-# [NodeSource](https://nodesource.com) Node.js and io.js Binary Distributions
+# [NodeSource](https://nodesource.com) Node.js Binary Distributions
 
 [![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
-This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** and **[io.js](https://iojs.org)** Binary Distributions setup and support scripts.
+This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm, .deb and Snap packages as well as their setup and support scripts.
 
 [![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
 
 If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
-
-For **Debian / Ubuntu** based distributions, see the **[deb](./deb)** directory for the source of the two setup scripts located at <https://deb.nodesource.com/setup> and <https://deb.nodesource.com/setup_dev>.
-
-For **Enterprise Linux** based distributions (Red Hat® Enterprise Linux® / RHEL, CentOS, CloudLinux, Fedora), see the **[rpm](./rpm)** directory for the source of setup script located at <https://rpm.nodesource.com/setup>.
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
@@ -22,6 +18,10 @@ Pull requests are encouraged if you have changes you believe would improve the s
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
+* **[Snap packages](#snap)**
+  - [About](#snapabout)
+  - [Installation instructions](#snapinstall)
+  - [Advanced usage](#snapadvanced)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -34,12 +34,10 @@ Pull requests are encouraged if you have changes you believe would improve the s
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit)
+* **i386** (32-bit)—**not available for Node.js 10 and later**
 * **amd64** (64-bit)
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
-* **arm64** (ARM 64-bit hard-float, ARMv8 and up: _aarch64-linux-gnu_)
-
-*PLEASE NOTE* that `armhf` builds *AND* builds >= v7.x are **NOT** available for Debian Wheezy. For more information read about [Node.JS >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
 **Supported Ubuntu versions:**
 
@@ -47,24 +45,20 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 * **Ubuntu 14.04 LTS** (Trusty Tahr)
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
-* **Ubuntu 16.10** (Yakkety Yak)
 * **Ubuntu 17.04** (Zesty Zappus)
-* **Ubuntu 17.10** (Artful Aardvark)
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
 
 **Supported Debian versions:**
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
 
-* **Debian 7** (wheezy) [Node.js > 6.x is not supported on Debian Wheezy]
-* **Debian 8 / stable** (jessie)
-* **Debian 9** (stretch)
-* **Debian 10 / testing** (buster)
-* **Debian unstable** (sid)
+* **Debian 8 / stable** (Jessie)
+* **Debian 9** (Stretch)
+* **Debian 10 / testing** (Buster)
+* **Debian unstable** (Sid)
 
 **Supported Linux Mint versions:**
 
-* **Linux Mint 13 "Maya"** (via Ubuntu 12.04 LTS)
 * **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
 * **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
@@ -82,15 +76,14 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported elementary OS versions:**
 
-* **elementary OS Luna** (via Ubuntu 12.04 LTS)
 * **elementary OS Freya** (via Ubuntu 14.04 LTS)
 * **elementary OS Loki** (via Ubuntu 16.04 LTS)
 * **elementary OS Juno** (via Ubuntu 18.04 LTS)
 
 **Supported Trisquel versions:**
 
-* **Trisquel 6 "Toutatis"** (via Ubuntu 12.04 LTS)
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
+* **Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)
 
 **Supported BOSS versions:**
 
@@ -98,28 +91,25 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported BunsenLabs versions:**
 
-* **Hydrogen (rc2)** (via Debian 8)
+* **Hydrogen** (via Debian 8)
+* **Helium** (via Debian 9)
 
 <a name="debinstall"></a>
 ### Installation instructions
 
-**Node.js v9.x**:
-
-* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**Node.js v10.x**:
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_9.x | bash -
+curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 ```
 
 **Node.js v8.x**:
-
-* NOTE: Debian Wheezy packages are NOT available for this release. Please reference [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```sh
 # Using Ubuntu
@@ -133,8 +123,6 @@ apt-get install -y nodejs
 
 **Node.js v6.x**:
 
-* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
 ```sh
 # Using Ubuntu
 curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
@@ -143,82 +131,6 @@ sudo apt-get install -y nodejs
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs
-```
-
-**Node.js v4.x**:
-
-* NOTE: If you are using Debian Wheezy, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_4.x | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v0.12**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_0.12 | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_0.12 | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v0.10**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_0.10 | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_0.10 | bash -
-apt-get install -y nodejs
-```
-
-**io.js v3.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_iojs_3.x | sudo -E bash -
-sudo apt-get install -y iojs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_iojs_3.x | bash -
-apt-get install -y iojs
-```
-
-**io.js v2.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_iojs_2.x | sudo -E bash -
-sudo apt-get install -y iojs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_iojs_2.x | bash -
-apt-get install -y iojs
-```
-
-**io.js v1.x**:
-
-_Note: this branch of io.js is not actively maintained and is not recommended for production use._
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo -E bash -
-sudo apt-get install -y iojs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_iojs_1.x | bash -
-apt-get install -y iojs
 ```
 
 ***Optional***: install build tools
@@ -243,7 +155,7 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 
 ```sh
 # add-apt-repository may not be present on some Ubuntu releases:
-#sudo apt-get install python-software-properties
+# sudo apt-get install python-software-properties
 sudo add-apt-repository -y -r ppa:chris-lea/node.js
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
@@ -252,20 +164,19 @@ sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 **2. Add the NodeSource package signing key**
 
 ```sh
-curl --silent https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 ```
 
 **3. Add the desired NodeSource repository**
 
-
 ```sh
-# Replace with the branch of Node.js or io.js you want to install: node_0.10, node_0.12, node_4.x, node_5.x, etc...
-VERSION=node_6.x
+# Replace with the branch of Node.js or io.js you want to install: node_6.x, node_8.x, etc...
+VERSION=node_8.x
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
-# - For Debian distributions: wheezey, jessie, sid, etc...
-# - For Ubuntu distributions: trusty, xenial, etc...
+# - For Debian distributions: jessie, sid, etc...
+# - For Ubuntu distributions: xenial, bionic, etc...
 # - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
 DISTRO="$(lsb_release -s -c)"
 echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
@@ -286,51 +197,43 @@ sudo apt-get install nodejs
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit, not available for all distros)
+* **i386** (32-bit)—not available for all distros and **not available for Node.js 10 and later**
 * **x86_64** (64-bit)
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 5** (32-bit and 64-bit) **[For Node < 4.x]**
-* **RHEL 6** (64-bit) **[For Node >= 4.x]**
+* **RHEL 6** (64-bit)
 * **RHEL 7** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 5** (32-bit and 64-bit) **[For Node < 4.x]**
-* **CentOS 6** (64-bit) **[For Node >= 4.x]**
+* **CentOS 6** (64-bit)
 * **CentOS 7** (64-bit)
 
 **Supported CloudLinux versions:**
-* **CloudLinux 6** (32-bit and 64-bit)
+* **CloudLinux 6** (32-bit for Node <= 10.x and 64-bit)
 
 **Supported Fedora versions:**
 
-* **Fedora 25 (Twenty Five)** (32-bit and 64-bit) **[For Node >= 4.7.2]**
-* **Fedora 26 (Twenty Six)** (32-bit and 64-bit) **[For Node >= 6.11.0]**
+* **Fedora 26** (32-bit for Node <= 10.x and 64-bit)
+* **Fedora 27** (32-bit for Node <= 10.x and 64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
 
 <a name="rpminstall"></a>
 ### Installation instructions
 
-Current instructions for installing, as listed on the [Node.js Wiki](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager):
-
-Note that the Node.js packages for EL 5 (RHEL5 and CentOS 5) depend on the [EPEL](https://fedoraproject.org/wiki/EPEL) repository being available. The setup script will check and provide instructions if it is not installed.
+_NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
-**NodeJS 9.x**
-
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
+**NodeJS 10.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup_9.x | bash -
+curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 ```
 
 **NodeJS 8.x**
-
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
 
 ```text
 curl -sL https://rpm.nodesource.com/setup_8.x | bash -
@@ -338,36 +241,8 @@ curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 
 **NodeJS 6.x**
 
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
 ```text
 curl -sL https://rpm.nodesource.com/setup_6.x | bash -
-```
-
-**NodeJS 4.x**
-
-* NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js >= 4.x on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md).
-
-```text
-curl -sL https://rpm.nodesource.com/setup_4.x | bash -
-```
-
-**NodeJS 0.12.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_0.12 | bash -
-```
-
-**NodeJS 0.10.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup | bash -
-```
-
-Then install, as root:
-
-```text
-yum install -y nodejs
 ```
 
 ***Optional***: install build tools
@@ -379,6 +254,64 @@ yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
 
+<a name="snap"></a>
+## Snap packages
+
+<a href="https://snapcraft.io/"><img src="images/snapcraft.png" width="560" height="175.6" title="Snapcraft"></a>
+
+<a name="snapabout"></a>
+### About
+
+[Snaps](https://docs.snapcraft.io/snaps/) are containerized software packages designed to work across cloud, desktop, and IoT devices. They work natively on most popular Linux distributions and feature automatic transactional updates.
+
+The NodeSource-managed Node.js snap contains the Node.js runtime, along the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
+
+The Node.js snap can currently be installed on Arch Linux,Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
+
+<a name="snapinstall"></a>
+### Installation instructions
+
+The `snap` command ships with Ubuntu, from version 16.04 and later. If you do not have it installed, follow the instructions on snapcraft to install [_snapd_](https://docs.snapcraft.io/core/install).
+
+Snaps are delivered via "channels", for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
+
+```
+sudo snap install node --classic --channel=8
+```
+
+Substituting `8` for the major version you want to install. Both LTS and Current versions of Node.js are available via snapcraft.
+
+The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully support so `--classic` may not be necessary or even supported.
+
+Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for channel you selected.
+
+#### Switching channels
+
+You can use the `refresh` command to switch to a new channel at any time:
+
+```
+sudo snap refresh node --channel=10
+```
+
+Once switched, snapd will update Node.js for the new channel you have selected.
+
+#### Bleeding-edge Node.js
+
+Users feeling adventurous or interested in testing the latest code from the Node.js core developers can install from the "edge" channel. This has an element of risk: it is a direct pipeline from the upstream Node.js [git repository](https://github.com/nodejs/node) to the snap store every day and previews the ongoing development work and may include breaking changes slated for the next major version of Node.js. This is only recommend for those users who are willing to participate in testing and bug reporting upstream:
+
+```
+sudo snap install node --classic --channel=edge
+```
+
+### Not recommended for production deployments
+
+Due to their auto-updating nature, snaps are not necessarily appropriate for the deployment of your Node.js applications to production. NodeSource recommends a stable and integration-tested deployment pipeline for production applications such as the .deb or .rpm distributions outlined above. However, snaps are an excellent way to keep developer machines updated and allow for trivial and convenient switching between Node.js versions.
+
+<a name="snapadvanced"></a>
+### Advanced usage
+
+The `snap` man page, or Canonical’s [advanced snap usage](https://tutorials.ubuntu.com/tutorial/advanced-snap-usage) tutorial contains details of advanced snapd functionality.
+
 <a name="tests"></a>
 ## Tests
 
@@ -389,8 +322,6 @@ curl -sL https://deb.nodesource.com/test | bash -
 ```
 <a name="questions"></a>
 # FAQ
-
----
 
 Q: How do I use this repo when behind a proxy?
 
@@ -410,9 +341,9 @@ A: You probably need to clear out your package manager's cache. Take a look at [
 
 ---
 
-Q: I'm trying to install Node.js on Centos 5 and it is failing, why?
+Q: I'm trying to install Node.js on CentOS 5 / RHEL 5 and it is failing, why?
 
-A: Due to the limitations of the compiler tool chain on Centos5, we currently can only support Node.js 0.10 on that release. See [issue #190](https://github.com/nodesource/distributions/issues/190)
+A: Due to the limitations of the compiler toolchain on EL 5 and its end of general support, we no longer support. See [issue #190](https://github.com/nodesource/distributions/issues/190)
 
 ---
 
@@ -424,7 +355,7 @@ A: Node.js 4.x and newer require a 64bit os for rpms. See [issue #268](https://g
 
 Q: Why have certain versions of platforms/releases stopped receiving updates to Node.js?
 
-A: Unfortunately, newer versions of v8 require a modern compiler toolchain. On some platforms, such as ARM wheezy, that toolchain is not available. See [issue #247](https://github.com/nodesource/distributions/issues/247)
+A: Unfortunately, newer versions of V8 require a modern compiler toolchain. On some platforms, such as ARM wheezy, that toolchain is not available. See [issue #247](https://github.com/nodesource/distributions/issues/247)
 
 ---
 
@@ -473,7 +404,7 @@ Contributions are welcomed from anyone wanting to improve this project!
 <a name="project-license"></a>
 ## License
 
-This material is Copyright (c) 2016 NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
+This material is Copyright (c) NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
 
 ------------------------------------------------------------------
 
