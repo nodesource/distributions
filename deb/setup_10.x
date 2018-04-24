@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js v10.x LTS Dubnium repo onto a
+# Script to install the NodeSource Node.js v10.x Dubnium repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -15,7 +15,7 @@
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_10.x"
-NODENAME="Node.js v10.x LTS Dubnium"
+NODENAME="Node.js v10.x Dubnium"
 NODEREPO="node_10.x"
 NODEPKG="nodejs"
 

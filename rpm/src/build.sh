@@ -11,7 +11,7 @@ RELEASES=( "pub_0.10::nodejs:Node.js v0.10"
            "pub_7.x:_7.x:nodejs:Node.js v7.x"
            "pub_8.x:_8.x:nodejs:Node.js v8.x LTS Carbon"
            "pub_9.x:_9.x:nodejs:Node.js v9.x"
-           "node_10.x:_10.x:nodejs:Node.js v10.x LTS Dubnium"
+           "node_10.x:_10.x:nodejs:Node.js v10.x Dubnium"
          )
 SOURCE=_setup.sh
 DEST=../setup
