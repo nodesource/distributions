@@ -1,17 +1,18 @@
 #!/usr/bin/env bash
 
-RELEASES=( "pub_0.10::nodejs:Node.js v0.10"
-           "pub_0.10:_0.10:nodejs:Node.js v0.10"
-           "pub_0.12:_0.12:nodejs:Node.js v0.12"
-           "pub_iojs_1.x:_iojs_1.x:iojs:io.js v1.x"
-           "pub_iojs_2.x:_iojs_2.x:iojs:io.js v2.x"
-           "pub_4.x:_4.x:nodejs:Node.js v4.x LTS Argon"
-           "pub_5.x:_5.x:nodejs:Node.js v5.x"
-           "pub_6.x:_6.x:nodejs:Node.js v6.x LTS Boron"
-           "pub_7.x:_7.x:nodejs:Node.js v7.x"
-           "pub_8.x:_8.x:nodejs:Node.js v8.x LTS Carbon"
-           "pub_9.x:_9.x:nodejs:Node.js v9.x"
-           "node_10.x:_10.x:nodejs:Node.js v10.x Dubnium"
+RELEASES=( "pub_0.10::nodejs:Node.js 0.10"
+           "pub_0.10:_0.10:nodejs:Node.js 0.10"
+           "pub_0.12:_0.12:nodejs:Node.js 0.12"
+           "pub_iojs_1.x:_iojs_1.x:iojs:io.js 1.x"
+           "pub_iojs_2.x:_iojs_2.x:iojs:io.js 2.x"
+           "pub_iojs_3.x:_iojs_3.x:iojs:io.js 3.x"
+           "pub_4.x:_4.x:nodejs:Node.js 4.x LTS Argon"
+           "pub_5.x:_5.x:nodejs:Node.js 5.x"
+           "pub_6.x:_6.x:nodejs:Node.js 6.x LTS Boron"
+           "pub_7.x:_7.x:nodejs:Node.js 7.x"
+           "pub_8.x:_8.x:nodejs:Node.js 8.x LTS Carbon"
+           "pub_9.x:_9.x:nodejs:Node.js 9.x"
+           "pub_10.x:_10.x:nodejs:Node.js 10.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
