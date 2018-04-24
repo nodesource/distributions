@@ -2,7 +2,7 @@
 
 [![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
-This repository contains the source of the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions setup and support scripts.
+This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm, .deb and Snap packages as well as their setup and support scripts.
 
 [![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
 
@@ -18,6 +18,10 @@ Pull requests are encouraged if you have changes you believe would improve the s
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
+* **[Snap packages](#snap)**
+  - [About](#snapabout)
+  - [Installation instructions](#snapinstall)
+  - [Advanced usage](#snapadvanced)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -249,6 +253,64 @@ To compile and install native addons from npm you may also need to install build
 yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
+
+<a name="snap"></a>
+## Snap packages
+
+<a href="https://snapcraft.io/"><img src="images/snapcraft.png" width="560" height="175.6" title="Snapcraft"></a>
+
+<a name="snapabout"></a>
+### About
+
+[Snaps](https://docs.snapcraft.io/snaps/) are containerized software packages designed to work across cloud, desktop, and IoT devices. They work natively on most popular Linux distributions and feature automatic transactional updates.
+
+The NodeSource-managed Node.js snap contains the Node.js runtime, along the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
+
+The Node.js snap can currently be installed on Arch Linux,Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
+
+<a name="snapinstall"></a>
+### Installation instructions
+
+The `snap` command ships with Ubuntu, from version 16.04 and later. If you do not have it installed, follow the instructions on snapcraft to install [_snapd_](https://docs.snapcraft.io/core/install).
+
+Snaps are delivered via "channels", for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
+
+```
+sudo snap install node --classic --channel=8
+```
+
+Substituting `8` for the major version you want to install. Both LTS and Current versions of Node.js are available via snapcraft.
+
+The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully support so `--classic` may not be necessary or even supported.
+
+Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for channel you selected.
+
+#### Switching channels
+
+You can use the `refresh` command to switch to a new channel at any time:
+
+```
+sudo snap refresh node --channel=10
+```
+
+Once switched, snapd will update Node.js for the new channel you have selected.
+
+#### Bleeding-edge Node.js
+
+Users feeling adventurous or interested in testing the latest code from the Node.js core developers can install from the "edge" channel. This has an element of risk: it is a direct pipeline from the upstream Node.js [git repository](https://github.com/nodejs/node) to the snap store every day and previews the ongoing development work and may include breaking changes slated for the next major version of Node.js. This is only recommend for those users who are willing to participate in testing and bug reporting upstream:
+
+```
+sudo snap install node --classic --channel=edge
+```
+
+### Not recommended for production deployments
+
+Due to their auto-updating nature, snaps are not necessarily appropriate for the deployment of your Node.js applications to production. NodeSource recommends a stable and integration-tested deployment pipeline for production applications such as the .deb or .rpm distributions outlined above. However, snaps are an excellent way to keep developer machines updated and allow for trivial and convenient switching between Node.js versions.
+
+<a name="snapadvanced"></a>
+### Advanced usage
+
+The `snap` man page, or Canonical’s [advanced snap usage](https://tutorials.ubuntu.com/tutorial/advanced-snap-usage) tutorial contains details of advanced snapd functionality.
 
 <a name="tests"></a>
 ## Tests
