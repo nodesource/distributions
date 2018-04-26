@@ -72,7 +72,6 @@ parts:
       - g++
       - make
       - python2.7
-      - ccache
     prepare: |
       ./configure --prefix=/ --release-urlbase=https://nodejs.org/download/${NODE_DISTTYPE}/ --tag=${NODE_TAG}
     install: |
@@ -82,6 +81,10 @@ parts:
     source-type: tar
     source: https://yarnpkg.com/latest.tar.gz
     plugin: dump
+    # Yarn has a problem with lifecycle scripts when used inside snap, they don't complete properly, with exit code !=0.
+    # Replacing the spinner with proper stdio appears to fix it.
+    install: |
+      sed -i "s/var stdio = spinner ? undefined : 'inherit';/var stdio = 'inherit';/" \$SNAPCRAFT_PART_INSTALL/lib/cli.js
 EOF
 
 if [ "X${UPDATE_GIT}" = "Xyes" ] && [ -n "$(git status --porcelain $__dirname)" ]; then
