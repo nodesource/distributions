@@ -227,6 +227,7 @@ check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
 check_alt "Devuan"        "ceres"    "Debian" "sid"
 check_alt "Deepin"        "panda"    "Debian" "sid"
+check_alt "Deepin"        "unstable" "Debian" "sid"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
