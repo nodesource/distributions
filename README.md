@@ -359,6 +359,12 @@ A: Unfortunately, newer versions of V8 require a modern compiler toolchain. On s
 
 ---
 
+Q: Why is my Node.js version newer than the one of the script I’ve run?
+
+A: Your package manager is probably installing a newer Node.js version from a different source. See [issue #657](https://github.com/nodesource/distributions/issues/657)
+
+---
+
 Q: What is the current status of IPv6 support?
 
 A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
