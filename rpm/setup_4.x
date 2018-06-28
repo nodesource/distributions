@@ -204,7 +204,7 @@ Include your 'distribution package' name: ${DISTRO_PKG}. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^system-release-201[4-9]\. ]]; then  #NOTE: not really future-proof
+if [[ $DISTRO_PKG =~ ^system-release ]]; then
 
   # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
   DIST_VERSION=7
