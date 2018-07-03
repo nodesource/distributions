@@ -43,7 +43,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
 
-* **Ubuntu 14.04 LTS** (Trusty Tahr)
+* **Ubuntu 14.04 LTS** (Trusty Tahr) - **not available for Node.js 10 and later**
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 * **Ubuntu 17.10** (Artful Aardvark)
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
@@ -59,9 +59,9 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported Linux Mint versions:**
 
-* **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS)
-* **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS)
-* **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS)
+* **Linux Mint 17 "Qiana"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
+* **Linux Mint 17.1 "Rebecca"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
+* **Linux Mint 17.2 "Rafaela"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **Linux Mint 18 "Sarah"** (via Ubuntu 16.04 LTS)
 * **Linux Mint 18.1 "Serena"** (via Ubuntu 16.04 LTS)
 * **Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)
@@ -76,18 +76,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported elementary OS versions:**
 
-* **elementary OS Freya** (via Ubuntu 14.04 LTS)
+* **elementary OS Freya** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **elementary OS Loki** (via Ubuntu 16.04 LTS)
 * **elementary OS Juno** (via Ubuntu 18.04 LTS)
 
 **Supported Trisquel versions:**
 
-* **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS)
+* **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)
 
 **Supported BOSS versions:**
 
-* **BOSS 5.0 "Anokha"** (via Debian 7)
+* **BOSS 5.0 "Anokha"** (via Debian 7) - **not available for Node.js 10 and later**
 
 **Supported BunsenLabs versions:**
 
