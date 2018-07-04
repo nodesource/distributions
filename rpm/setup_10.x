@@ -94,8 +94,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://rpm.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_10.x — Node.js v10 Current${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -122,8 +122,8 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://rpm.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_10.x — Node.js v10 Current${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
