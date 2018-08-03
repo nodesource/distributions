@@ -52,8 +52,8 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
 
-* **Debian 8 / stable** (Jessie)
-* **Debian 9** (Stretch)
+* **Debian 8 / oldstable** (Jessie)
+* **Debian 9 / stable** (Stretch)
 * **Debian 10 / testing** (Buster)
 * **Debian unstable** (Sid)
 
