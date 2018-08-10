@@ -198,6 +198,7 @@ check_alt() {
     fi
 }
 
+check_alt "SolydXK"       "solydxk-9" "Debian" "stretch" 
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
 check_alt "Sparky Linux"  "Nibiru"   "Debian" "buster"
