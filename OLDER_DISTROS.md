@@ -1,4 +1,4 @@
-## [Node.js](https://nodejs.org) on Older Linux Distributions
+### [Node.js](https://nodejs.org) on Older Linux Distributions
 
 At [NodeSource](https://nodesource.com), one of our primary missions is to encourage adoption of Node.js as much as possible. One of the ways we do this is by supplying binary packages of Node in formats compatible with the package management systems of various [Linux Distributions](https://github.com/nodesource/distributions/), so long as those distributions are still getting security updates from their respective sponsor entities.
 
