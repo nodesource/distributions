@@ -197,6 +197,7 @@ check_alt() {
         DISTRO="${4}"
     fi
 }
+
 check_alt "SolydXK"       "solydxk-9" "Debian" "stretch"
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
@@ -223,6 +224,7 @@ check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "Trisquel"      "flidas"   "Ubuntu" "xenial"
 check_alt "Uruk GNU/Linux" "lugalbanda" "Ubuntu" "xenial"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
+check_alt "BOSS"          "anoop"   "Debian" "jessie"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "bunsenlabs"    "helium"   "Debian" "stretch"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
