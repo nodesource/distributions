@@ -173,6 +173,8 @@ if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
 elif [ "X${UNAME_ARCH}" == "Xx86_64" ]; then
   DIST_ARCH=x86_64
+elif [ "X${UNAME_ARCH}" == "Xaarch64" ]; then
+  DIST_ARCH=aarch64
 else
 
   print_status "\
