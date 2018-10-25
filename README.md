@@ -45,8 +45,8 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 * **Ubuntu 14.04 LTS** (Trusty Tahr) - **not available for Node.js 10 and later**
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
-* **Ubuntu 17.10** (Artful Aardvark)
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
+* **Ubuntu 18.10** (Cosmic Cuttlefish)
 
 **Supported Debian versions:**
 
@@ -97,6 +97,19 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v11.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_11.x | bash -
+apt-get install -y nodejs
+```
+
 
 **Node.js v10.x**:
 
@@ -216,7 +229,6 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
-* **Fedora 26** (32-bit for Node <= 10.x and 64-bit)
 * **Fedora 27** (32-bit for Node <= 10.x and 64-bit)
 * **Fedora 28** (64-bit)
 
@@ -228,6 +240,12 @@ Equivalent versions of Korora Linux should also be supported.
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 11.x**
+
+```text
+curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+```
 
 **NodeJS 10.x**
 
