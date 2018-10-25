@@ -14,6 +14,7 @@ RELEASES=( "node_0.10::nodejs:Node.js 0.10"
            "node_8.x:_8.x:nodejs:Node.js 8.x LTS Carbon"
            "node_9.x:_9.x:nodejs:Node.js 9.x"
            "node_10.x:_10.x:nodejs:Node.js 10.x"
+           "node_11.x:_11.x:nodejs:Node.js 11.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
