@@ -231,6 +231,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **Fedora 27** (32-bit for Node <= 10.x and 64-bit)
 * **Fedora 28** (64-bit)
+* **Fedora 29** (64-bit) for Node >= 10.13.0
 
 Equivalent versions of Korora Linux should also be supported.
 
