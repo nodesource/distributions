@@ -60,6 +60,8 @@ apps:
     command: bin/node
   npm:
     command: bin/npm
+  npx:
+    command: bin/npx
   yarn:
     command: bin/yarn.js
 
