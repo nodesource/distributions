@@ -170,6 +170,12 @@ if [ ! -x /usr/bin/curl ] && [ ! -x /usr/bin/wget ]; then
     PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} curl"
 fi
 
+# Used by apt-key to add new keys
+
+if [ ! -x /usr/bin/gpg ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} gnupg"
+fi
+
 # Populating Cache
 print_status "Populating apt-get cache..."
 exec_cmd 'apt-get update'
