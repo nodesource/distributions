@@ -245,25 +245,28 @@ Run as root on RHEL, CentOS, CloudLinux or Fedora:
 **NodeJS 11.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup_11.x | bash -
+curl -sL https://rpm.nodesource.com/setup_11.x | sudo -E bash -
+sudo yum install -y nodejs
 ```
 
 **NodeJS 10.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo -E bash -
+sudo yum install -y nodejs
 ```
 
 **NodeJS 8.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+curl -sL https://rpm.nodesource.com/setup_8.x | sudo -E bash -
+sudo yum install -y nodejs
 ```
 
 **NodeJS 6.x**
 
 ```text
-curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+curl -sL https://rpm.nodesource.com/setup_6.x | sudo -E bash -
 ```
 
 ***Optional***: install build tools
