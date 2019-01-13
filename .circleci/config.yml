@@ -1,0 +1,45 @@
+version: 2
+aliases:
+  - &envinfo
+    name: Run envinfo
+    command: |
+      npm i -g envinfo && envinfo
+
+jobs:
+  ubuntu-test:
+    working_directory: ~/repo
+    docker:
+      - image: ubuntu
+    steps:
+      - checkout
+      - run: apt update && apt install gnupg -y # see https://github.com/nodesource/distributions/pull/758
+      - run: bash deb/setup_11.x
+      - run: apt install nodejs -y
+      - run: *envinfo
+  debian-test:
+    working_directory: ~/repo
+    docker:
+      - image: debian
+    steps:
+      - checkout
+      - run: apt update && apt install gnupg -y # see https://github.com/nodesource/distributions/pull/758
+      - run: bash deb/setup_11.x
+      - run: apt install nodejs -y
+      - run: *envinfo
+  centos-test:
+    working_directory: ~/repo
+    docker:
+      - image: centos
+    steps:
+      - checkout
+      - run: bash rpm/setup_11.x
+      - run: yum install nodejs -y
+      - run: *envinfo
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - ubuntu-test
+      - debian-test
+      - centos-test
