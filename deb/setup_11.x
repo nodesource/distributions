@@ -18,6 +18,7 @@ SCRSUFFIX="_11.x"
 NODENAME="Node.js 11.x"
 NODEREPO="node_11.x"
 NODEPKG="nodejs"
+DISTROID="$(lsb_release -s -i)"
 
 print_status() {
     echo
@@ -195,6 +196,16 @@ check_alt() {
         echo "## You seem to be using ${1} version ${DISTRO}."
         echo "## This maps to ${3} \"${4}\"... Adjusting for you..."
         DISTRO="${4}"
+    elif [ "X${DISTROID}" == "X${1}" ]; then
+        DISTROVER="$(lsb_release -r -s)"
+        if [ "X${DISTROVER:0:2}" != "X4." ]; then
+            DISTRO="n/a"
+            return
+        fi
+        echo
+        echo "## You seem to be using ${DISTROID} version ${DISTROVER}."
+        echo "## This maps to ${3} \"${4}\"... Adjusting for you..."
+        DISTRO="${4}"
     fi
 }
 
@@ -238,6 +249,7 @@ check_alt "Deepin"        "unstable" "Debian" "sid"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
 check_alt "Continuum"     "mx-linux" "Debian" "stretch"
+check_alt "Parrot"        "stable"   "Debian" "buster"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."
@@ -284,6 +296,16 @@ print_status "Creating apt sources list file for the NodeSource ${NODENAME} repo
 
 exec_cmd "echo 'deb https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' > /etc/apt/sources.list.d/nodesource.list"
 exec_cmd "echo 'deb-src https://deb.nodesource.com/${NODEREPO} ${DISTRO} main' >> /etc/apt/sources.list.d/nodesource.list"
+
+if [ "${DISTROID}" == "Parrot" ]; then
+    print_status 'Pinning `deb.nodesource.com` respository with proper priority...'
+
+    PARROTPINNING="/etc/apt/preferences.d/parrot-pinning"
+    exec_cmd "echo >> ${PARROTPINNING}"
+    exec_cmd "echo 'Package: nodejs' >> ${PARROTPINNING}"
+    exec_cmd "echo 'Pin: origin deb.nodesource.com' >> ${PARROTPINNING}"
+    exec_cmd "echo 'Pin-Priority: 1001' >> ${PARROTPINNING}"
+fi
 
 print_status 'Running `apt-get update` for you...'
 
