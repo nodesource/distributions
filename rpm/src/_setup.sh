@@ -185,7 +185,7 @@ incorrect or would like your architecture to be considered for support. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
+if [[ $DISTRO_PKG =~ ^(redhat|centos|clearos|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
