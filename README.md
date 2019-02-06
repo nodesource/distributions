@@ -73,6 +73,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Jessie** (via Debian 8)
 * **Ascii** (via Debian 9)
+* **Beowulf** (via Debian 10)
 * **Ceres** (via Debian unstable)
 
 **Supported elementary OS versions:**
