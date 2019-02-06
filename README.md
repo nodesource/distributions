@@ -170,7 +170,9 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 
 ```sh
 # add-apt-repository may not be present on some Ubuntu releases:
+# Try one of:
 # sudo apt-get install python-software-properties
+# sudo apt-get install software-properties-common
 sudo add-apt-repository -y -r ppa:chris-lea/node.js
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
