@@ -2,6 +2,8 @@
 
 [![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
+[![CircleCI](https://circleci.com/gh/nodesource/distributions/tree/master.svg?style=svg)](https://circleci.com/gh/nodesource/distributions/tree/master)
+
 This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm, .deb and Snap packages as well as their setup and support scripts.
 
 [![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
