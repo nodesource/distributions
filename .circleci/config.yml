@@ -13,7 +13,7 @@ jobs:
     steps:
       - checkout
       - run: apt update
-      - run: bash deb/setup_11.x
+      - run: bash deb/setup_12.x
       - run: apt install nodejs -y
       - run: *envinfo
   debian-test:
@@ -23,7 +23,7 @@ jobs:
     steps:
       - checkout
       - run: apt update
-      - run: bash deb/setup_11.x
+      - run: bash deb/setup_12.x
       - run: apt install nodejs -y
       - run: *envinfo
   centos-test:
@@ -32,7 +32,7 @@ jobs:
       - image: centos
     steps:
       - checkout
-      - run: bash rpm/setup_11.x
+      - run: bash rpm/setup_12.x
       - run: yum install nodejs -y
       - run: *envinfo
   fedora-test:
@@ -41,7 +41,7 @@ jobs:
       - image: fedora
     steps:
       - checkout
-      - run: bash rpm/setup_11.x
+      - run: bash rpm/setup_12.x
       - run: dnf install nodejs -y
       - run: *envinfo
 
