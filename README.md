@@ -49,6 +49,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
 * **Ubuntu 18.10** (Cosmic Cuttlefish)
+* **UBuntu 19.04** (Disco Dingo)
 
 **Supported Debian versions:**
 
