@@ -3,6 +3,7 @@
 set -xe
 
 __dirname="$(CDPATH= cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+STRIP_NPX=no
 
 while getopts "r:g:" opt; do
   case $opt in
@@ -12,6 +13,10 @@ while getopts "r:g:" opt; do
       NODE_VERSION="$(curl -sL https://nodejs.org/download/release/index.tab | awk '/^v'"$OPTARG"'\..*[^a-z0-9]src[^a-z0-9]/ { print substr($1, 2); exit }')"
       NODE_DISTTYPE="release"
       NODE_TAG=""
+      if [ "X${OPTARG}" = "X6" ]; then
+        # no npx in the npm that comes with Node 6
+        STRIP_NPX=yes
+      fi
       ;;
     g)
       echo "Pushing to git $OPTARG" >&2
@@ -64,6 +69,8 @@ apps:
     command: bin/npx
   yarn:
     command: bin/yarn.js
+  yarnpkg:
+    command: bin/yarn.js
 
 parts:
   node:
@@ -88,6 +95,10 @@ parts:
     install: |
       sed -i "s/var stdio = spinner ? undefined : 'inherit';/var stdio = 'inherit';/" \$SNAPCRAFT_PART_INSTALL/lib/cli.js
 EOF
+
+if [ "X${STRIP_NPX}" = "Xyes" ]; then
+  sed -i '/^.*npx.*$/d' ${__dirname}/snapcraft.yaml
+fi
 
 if [ "X${UPDATE_GIT}" = "Xyes" ] && [ -n "$(git status --porcelain $__dirname)" ]; then
   echo "Updating git repo and pushing ..."
