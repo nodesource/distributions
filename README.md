@@ -152,18 +152,6 @@ curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v6.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_6.x | bash -
-apt-get install -y nodejs
-```
-
 ***Optional***: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
@@ -281,12 +269,6 @@ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 
 ```text
 curl -sL https://rpm.nodesource.com/setup_8.x | bash -
-```
-
-**NodeJS 6.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
 ***Optional***: install build tools
@@ -450,6 +432,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
 <tr><th align="left">Jorge Maldonado Ventura</th><td><a href="https://notabug.org/jorgesumle">NotABug/jorgesumle</a></td><td></td></tr>
 <tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
+<tr><th align="left">Yashar Fakhari</th><td><a href="https://github.com/yasharf">GitHub/yasharf</a></td><td><a href="https://twitter.com/YasharF3">Twitter/@YasharF3</a></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
