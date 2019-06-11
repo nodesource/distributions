@@ -6,9 +6,7 @@
 
 This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm, .deb and Snap packages as well as their setup and support scripts.
 
-[![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
-
-If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
+If you are looking for NodeSource's low-impact Node.js performance monitoring platform, please visit **<https://accounts.nodesource.com/sign-up>**
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
