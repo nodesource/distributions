@@ -2,11 +2,11 @@
 
 [![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
+[![CircleCI](https://circleci.com/gh/nodesource/distributions/tree/master.svg?style=svg)](https://circleci.com/gh/nodesource/distributions/tree/master)
+
 This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm, .deb and Snap packages as well as their setup and support scripts.
 
-[![NodeSource](images/nsolid-logo-dark.svg)](https://nodesource.com/products/nsolid)
-
-If you are looking for NodeSource's Enterprise-grade Node.js platform, **[N|Solid](https://nodesource.com/products/nsolid)**, please visit **<https://downloads.nodesource.com/>**
+If you are looking for NodeSource's low-impact Node.js performance monitoring platform, please **[get started here](https://accounts.nodesource.com/sign-up-linuxdistro).**
 
 Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
 
@@ -47,6 +47,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 16.04 LTS** (Xenial Xerus)
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
 * **Ubuntu 18.10** (Cosmic Cuttlefish)
+* **Ubuntu 19.04** (Disco Dingo)
 
 **Supported Debian versions:**
 
@@ -67,6 +68,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)
 * **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
+* **Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)
 
 **Supported Devuan versions:**
 
@@ -97,6 +99,19 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v12.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_12.x | bash -
+apt-get install -y nodejs
+```
+
 
 **Node.js v11.x**:
 
@@ -132,18 +147,6 @@ sudo apt-get install -y nodejs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_8.x | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v6.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_6.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -242,6 +245,12 @@ _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [runnin
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
+**NodeJS 12.x**
+
+```text
+curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+```
+
 **NodeJS 11.x**
 
 ```text
@@ -258,12 +267,6 @@ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 
 ```text
 curl -sL https://rpm.nodesource.com/setup_8.x | bash -
-```
-
-**NodeJS 6.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_6.x | bash -
 ```
 
 ***Optional***: install build tools
@@ -427,6 +430,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
 <tr><th align="left">Jorge Maldonado Ventura</th><td><a href="https://notabug.org/jorgesumle">NotABug/jorgesumle</a></td><td></td></tr>
 <tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
+ <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!

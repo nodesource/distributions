@@ -170,6 +170,12 @@ if [ ! -x /usr/bin/curl ] && [ ! -x /usr/bin/wget ]; then
     PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} curl"
 fi
 
+# Used by apt-key to add new keys
+
+if [ ! -x /usr/bin/gpg ]; then
+    PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} gnupg"
+fi
+
 # Populating Cache
 print_status "Populating apt-get cache..."
 exec_cmd 'apt-get update'
@@ -213,6 +219,7 @@ check_alt "Linux Mint"    "serena"   "Ubuntu" "xenial"
 check_alt "Linux Mint"    "sonya"    "Ubuntu" "xenial"
 check_alt "Linux Mint"    "sylvia"   "Ubuntu" "xenial"
 check_alt "Linux Mint"    "tara"     "Ubuntu" "bionic"
+check_alt "Linux Mint"    "tessa"    "Ubuntu" "bionic"
 check_alt "LMDE"          "betsy"    "Debian" "jessie"
 check_alt "LMDE"          "cindy"    "Debian" "stretch"
 check_alt "elementaryOS"  "luna"     "Ubuntu" "precise"
@@ -236,6 +243,7 @@ check_alt "Deepin"        "panda"    "Debian" "sid"
 check_alt "Deepin"        "unstable" "Debian" "sid"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
+check_alt "Continuum"     "mx-linux" "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

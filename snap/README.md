@@ -1,11 +1,9 @@
 # Node.js Snap for https://snapcraft.io/
 
-[![Snap Status](https://build.snapcraft.io/badge/nodesource/distributions.svg)](https://build.snapcraft.io/user/nodesource/distributions)
+Snap usage documentation @ https://github.com/nodesource/distributions#snap
 
-> Snaps are containerised software packages that are simple to create and install. They auto-update and are safe to run. And because they bundle their dependencies, they work on all major Linux systems without modification.
+`snapcraft.yaml.sh` in this directory is used to generate a `snapcraft.yaml` for each of the supported Node.js release lines that are published as shap channels.
 
-This is a work in progress, currently supporting Node.js Nightly versions, updated every 24 hours from the Node.js _master_ branch.
+When executed with `-r <release line>`, the _release line_ is used as the channel and the latest version for that release line is included in the confituration. If `-r` is not supplied, "nightly" is the release line used and this is published to the "edge" snap channel.
 
-1. **Install snapd on your distribution:** https://docs.snapcraft.io/core/install
-2. **Install Node.js Nightly**: `$ snap install node --edge`
-
+When executed with `-g <branch>` the _branch_ is first fetched from `origin`, then after generating a new `snapcraft.yaml` is commited and pushed back to the _branch_. This is used in a private repository along with cron to push builds to Launchpad to trigger automatic builds when new versions of Node.js are released.
