@@ -68,7 +68,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)
 * **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
+* **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
 * **Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)
 
 **Supported Devuan versions:**
 
@@ -400,7 +403,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 
 * OpenSUSE - [Issue #199](https://github.com/nodesource/distributions/issues/199)
 * Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
-* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
