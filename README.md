@@ -69,6 +69,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
 * **Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)
 
 **Supported Devuan versions:**
 
