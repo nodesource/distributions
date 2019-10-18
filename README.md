@@ -101,6 +101,11 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Hydrogen** (via Debian 8)
 * **Helium** (via Debian 9)
 
+**Supported MX Linux versions:**
+
+* **MX Linux 17 " "Horizon"** (via Debian 9)
+* **MX Linux 18 " "Continuum"** (via Debian 9)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
