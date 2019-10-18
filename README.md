@@ -3,7 +3,7 @@
 
 -------------
 
-Everything below this line will kept in sync with original NodeSource repository. 
+Everything below this line will kept in sync with original NodeSource repository (upstream). 
 
 -------------
 
