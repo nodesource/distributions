@@ -106,6 +106,11 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **MX Linux 17 " "Horizon"** (via Debian 9)
 * **MX Linux 18 " "Continuum"** (via Debian 9)
 
+**Supported Deepin versions:**
+
+* **Deepin Lion** (via Debian 9)
+* **Deepin Stable** (via Debian 9)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
