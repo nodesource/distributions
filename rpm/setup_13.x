@@ -3,19 +3,19 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 12.x repo onto an
+# Script to install the NodeSource Node.js 13.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+# curl -sL https://rpm.nodesource.com/setup_13.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup_12.x | bash -
+# wget -qO- https://rpm.nodesource.com/setup_13.x | bash -
 #
 
-SCRSUFFIX="_12.x"
-NODENAME="Node.js 12.x"
-NODEREPO="pub_12.x"
+SCRSUFFIX="_13.x"
+NODENAME="Node.js 13.x"
+NODEREPO="pub_13.x"
 NODEPKG="nodejs"
 
 print_status() {
