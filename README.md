@@ -1,5 +1,4 @@
-**Just visit:** [My Node.js Distribution site](https://node.melroy.org/)
-
+# Visit [Melroy's Node.js Distribution website](https://node.melroy.org/)
 
 -------------
 
@@ -7,7 +6,7 @@ Everything below this line will kept in sync with original NodeSource repository
 
 -------------
 
-# [NodeSource](https://nodesource.com) Node.js Binary Distributions
+## [NodeSource](https://nodesource.com) Node.js Binary Distributions
 
 [![NodeSource](images/ns-linux-distributions.svg)](https://nodesource.com)
 
