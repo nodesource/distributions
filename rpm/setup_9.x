@@ -12,6 +12,12 @@
 #   or
 # wget -qO- https://rpm.nodesource.com/setup_9.x | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/rpm/src
+# please don't submit pull requests against the built scripts.
+#
 
 SCRSUFFIX="_9.x"
 NODENAME="Node.js 9.x"
@@ -213,7 +219,7 @@ else
 
   ## Using the redhat-release-server-X, centos-release-X, etc. pattern
   ## extract the major version number of the distro
-  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation|-client)?-([0-9]+).*$/\2/')
+  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation|-client|-common)?-([0-9]+).*$/\2/')
 
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 

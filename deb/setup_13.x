@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 8.x LTS Carbon repo onto a
+# Script to install the NodeSource Node.js 13.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_8.x | bash -
+# curl -sL https://deb.nodesource.com/setup_13.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_8.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_13.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_8.x"
-NODENAME="Node.js 8.x LTS Carbon"
-NODEREPO="node_8.x"
+SCRSUFFIX="_13.x"
+NODENAME="Node.js 13.x"
+NODEREPO="node_13.x"
 NODEPKG="nodejs"
 
 print_status() {
