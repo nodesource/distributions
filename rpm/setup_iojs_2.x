@@ -12,6 +12,12 @@
 #   or
 # wget -qO- https://rpm.nodesource.com/setup_iojs_2.x | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/rpm/src
+# please don't submit pull requests against the built scripts.
+#
 
 SCRSUFFIX="_iojs_2.x"
 NODENAME="io.js 2.x"

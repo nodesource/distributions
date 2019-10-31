@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource {{name}} repo onto a
+# Script to install the NodeSource Node.js 13.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup{{suffix}} | bash -
+# curl -sL https://deb.nodesource.com/setup_13.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup{{suffix}} | bash -
+# wget -qO- https://deb.nodesource.com/setup_13.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,10 +21,10 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="{{suffix}}"
-NODENAME="{{name}}"
-NODEREPO="{{repo}}"
-NODEPKG="{{package}}"
+SCRSUFFIX="_13.x"
+NODENAME="Node.js 13.x"
+NODEREPO="node_13.x"
+NODEPKG="nodejs"
 
 print_status() {
     echo
@@ -227,7 +227,6 @@ check_alt "Linux Mint"    "sonya"    "Ubuntu" "xenial"
 check_alt "Linux Mint"    "sylvia"   "Ubuntu" "xenial"
 check_alt "Linux Mint"    "tara"     "Ubuntu" "bionic"
 check_alt "Linux Mint"    "tessa"    "Ubuntu" "bionic"
-check_alt "Linux Mint"    "tina"     "Ubuntu" "bionic"
 check_alt "LMDE"          "betsy"    "Debian" "jessie"
 check_alt "LMDE"          "cindy"    "Debian" "stretch"
 check_alt "elementaryOS"  "luna"     "Ubuntu" "precise"
@@ -246,16 +245,12 @@ check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
 check_alt "PureOS"        "green"    "Debian" "sid"
 check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
-check_alt "Devuan"        "beowulf"  "Debian" "buster"
 check_alt "Devuan"        "ceres"    "Debian" "sid"
 check_alt "Deepin"        "panda"    "Debian" "sid"
 check_alt "Deepin"        "unstable" "Debian" "sid"
-check_alt "Deepin"        "lion"     "Debian" "stretch"
-check_alt "Deepin"        "stable"   "Debian" "stretch"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
-check_alt "MX"            "Continuum" "Debian" "stretch"
-check_alt "Ubilinux"      "dolcetto" "Debian" "stretch"
+check_alt "Continuum"     "mx-linux" "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

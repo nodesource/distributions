@@ -12,6 +12,12 @@
 #   or
 # wget -qO- https://rpm.nodesource.com/setup_5.x | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/rpm/src
+# please don't submit pull requests against the built scripts.
+#
 
 SCRSUFFIX="_5.x"
 NODENAME="Node.js 5.x"

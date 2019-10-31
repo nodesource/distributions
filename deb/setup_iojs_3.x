@@ -12,6 +12,13 @@
 #   or
 # wget -qO- https://deb.nodesource.com/setup_iojs_3.x | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/deb/src
+# please don't submit pull requests against the built scripts.
+#
+
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_iojs_3.x"
