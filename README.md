@@ -64,7 +64,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Debian 8** (Jessie)
 * **Debian 9 / oldstable** (Stretch)
-* **Debian 10 / stable ** (Buster)
+* **Debian 10 / stable** (Buster)
 * **Debian 11 / testing** (Bullseye)
 * **Debian unstable** (Sid)
 
