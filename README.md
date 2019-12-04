@@ -102,8 +102,8 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported MX Linux versions:**
 
-* **Horizon** (via Debian 9)
-* **Continuum** (via Debian 9)
+* **MX-17 Horizon** (via Debian 9)
+* **MX-18 Continuum** (via Debian 9)
 
 <a name="debinstall"></a>
 ### Installation instructions
