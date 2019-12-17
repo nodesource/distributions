@@ -437,7 +437,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
-* Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
