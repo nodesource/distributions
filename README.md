@@ -97,6 +97,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **BOSS 5.0 "Anokha"** (via Debian 7) - **not available for Node.js 10 and later**
 * **BOSS 6.0 "Anoop"** (via Debian 8)
+* **BOSS 7.0 "Drishti"** (via Debian 9)
 
 **Supported BunsenLabs versions:**
 
@@ -438,6 +439,9 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
+* Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
+* PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
+* Sparky Linux - [Issue #476](https://github.com/nodesource/distributions/issues/476)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
