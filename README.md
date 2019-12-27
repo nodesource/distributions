@@ -272,6 +272,8 @@ Equivalent versions of Korora Linux should also be supported.
 
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
+The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
+
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 **NodeJS 13.x**
