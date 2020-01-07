@@ -124,7 +124,6 @@ curl -sL https://deb.nodesource.com/setup_13.x | bash -
 apt-get install -y nodejs
 ```
 
-
 **Node.js v12.x**:
 
 ```sh
@@ -137,20 +136,6 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-
-**Node.js v11.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_11.x | bash -
-apt-get install -y nodejs
-```
-
-
 **Node.js v10.x**:
 
 ```sh
@@ -160,18 +145,6 @@ sudo apt-get install -y nodejs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v8.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 ```
 
