@@ -249,33 +249,35 @@ Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 **NodeJS 13.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_13.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_13.x | sudo bash -
 ```
 
 **NodeJS 12.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
-**NodeJS 11.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_11.x | bash -
-```
 
 **NodeJS 10.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
-**NodeJS 8.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_8.x | bash -
-```
 
 ***Optional***: install build tools
 
