@@ -124,7 +124,6 @@ curl -sL https://deb.nodesource.com/setup_13.x | bash -
 apt-get install -y nodejs
 ```
 
-
 **Node.js v12.x**:
 
 ```sh
@@ -137,20 +136,6 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-
-**Node.js v11.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_11.x | bash -
-apt-get install -y nodejs
-```
-
-
 **Node.js v10.x**:
 
 ```sh
@@ -160,18 +145,6 @@ sudo apt-get install -y nodejs
 
 # Using Debian, as root
 curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v8.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -276,33 +249,35 @@ Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
 **NodeJS 13.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_13.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_13.x | sudo bash -
 ```
 
 **NodeJS 12.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
-**NodeJS 11.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_11.x | bash -
-```
 
 **NodeJS 10.x**
 
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
-**NodeJS 8.x**
-
-```text
-curl -sL https://rpm.nodesource.com/setup_8.x | bash -
-```
 
 ***Optional***: install build tools
 

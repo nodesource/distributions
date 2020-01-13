@@ -88,7 +88,11 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 0.12" ||
           "X${NODENAME}" == "XNode.js 4.x LTS Argon" ||
           "X${NODENAME}" == "XNode.js 5.x" ||
-          "X${NODENAME}" == "XNode.js 7.x" ]]; then
+          "X${NODENAME}" == "XNode.js 6.x LTS Boron" ||
+          "X${NODENAME}" == "XNode.js 7.x" ||
+          "X${NODENAME}" == "XNode.js 8.x LTS Carbon" ||
+          "X${NODENAME}" == "XNode.js 9.x" ||
+          "X${NODENAME}" == "XNode.js 11.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -100,8 +104,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -128,8 +132,8 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
