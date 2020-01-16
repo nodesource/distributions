@@ -306,6 +306,17 @@ You can try installing with: \`rpm -ivh <url>\`
 
 fi
 
+## Disable AppStream repository due to installation conflicts for EL8
+## Otherwise, it will not install the NodeSource's version of Node.js
+if [[ "X${DIST_TYPE}${DIST_VERSION}" == "Xel8" ]]; then
+    print_status """As yum will try to install Node.js from the AppStream repository
+instead of the NodeSource repository, the AppStream's version of Node.js has to be disabled.
+## Run \`${bold}sudo yum module enable -y nodejs${normal}\` to reactivate the AppStream's Node.js repository.
+"""
+echo "+ yum module disable -y nodejs"
+yum module disable -y nodejs
+fi
+
 print_status "Downloading release setup RPM..."
 
 ## Two-step process to install the nodesource-release RPM,
