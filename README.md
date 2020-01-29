@@ -73,6 +73,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)
 * **Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)
 * **Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)
+* **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
 
 **Supported Devuan versions:**
 
@@ -109,6 +110,11 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **MX-17 Horizon** (via Debian 9)
 * **MX-18 Continuum** (via Debian 9)
 * **MX-19 Patito Feo** (via Debian 10)
+
+**Supported Sparky Linux versions:**
+
+* **Sparky 4.x "Tyche"** (via Debian 9)
+* **Sparky 5.x "Nibiru"** (via Debian 10)
 
 <a name="debinstall"></a>
 ### Installation instructions
@@ -417,7 +423,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 * Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
 * PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
-* Sparky Linux - [Issue #476](https://github.com/nodesource/distributions/issues/476)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors

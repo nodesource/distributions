@@ -217,6 +217,7 @@ check_alt() {
 check_alt "SolydXK"       "solydxk-9" "Debian" "stretch"
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
+check_alt "Sparky Linux"  "Tyche"    "Debian" "stretch"
 check_alt "Sparky Linux"  "Nibiru"   "Debian" "buster"
 check_alt "MX Linux 17"   "Horizon"  "Debian" "stretch"
 check_alt "MX Linux 18"   "Continuum" "Debian" "stretch"
