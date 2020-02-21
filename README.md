@@ -116,6 +116,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Sparky 4.x "Tyche"** (via Debian 9)
 * **Sparky 5.x "Nibiru"** (via Debian 10)
 
+**Supported PureOS Linux versions:**
+
+* **PureOS 9.0 "Amber"** (via Debian 10)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
@@ -423,6 +427,8 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 * Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
 * PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
+* Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
+* MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
