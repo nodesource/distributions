@@ -304,16 +304,16 @@ yum install gcc-c++ make
 
 [Snaps](https://docs.snapcraft.io/snaps/) are containerized software packages designed to work across cloud, desktop, and IoT devices. They work natively on most popular Linux distributions and feature automatic transactional updates.
 
-The NodeSource-managed Node.js snap contains the Node.js runtime, along the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
+The NodeSource-managed Node.js snap contains the Node.js runtime, along with the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
 
-The Node.js snap can currently be installed on Arch Linux,Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
+The Node.js snap can currently be installed on Arch Linux, Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
 
 <a name="snapinstall"></a>
 ### Installation instructions
 
 The `snap` command ships with Ubuntu, from version 16.04 and later. If you do not have it installed, follow the instructions on snapcraft to install [_snapd_](https://docs.snapcraft.io/core/install).
 
-Snaps are delivered via "channels", for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
+Snaps are delivered via "channels"; for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
 
 ```
 sudo snap install node --classic --channel=8
@@ -321,9 +321,9 @@ sudo snap install node --classic --channel=8
 
 Substituting `8` for the major version you want to install. Both LTS and Current versions of Node.js are available via snapcraft.
 
-The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully support so `--classic` may not be necessary or even supported.
+The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully supported so `--classic` may not be necessary or even supported.
 
-Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for channel you selected.
+Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for the channel you selected.
 
 #### Switching channels
 
