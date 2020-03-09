@@ -228,13 +228,11 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 6** (64-bit) - **not available for Node.js 12.x and later**
 * **RHEL 7** (64-bit)
 * **RHEL 8** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 6** (64-bit) - **not available for Node.js 12.x and later**
 * **CentOS 7** (64-bit)
 * **CentOS 8** (64-bit)
 
@@ -243,9 +241,6 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
-* **Fedora 27** (32-bit) - **not available for Node.js 11.x and later** and (64-bit) - **not available for Node.js 12.x and later**
-* **Fedora 28** (64-bit) - **available for Node.js 8.11.2 and later**
-* **Fedora 29** (64-bit) - **available for Node.js 10.13.0 and later**
 * **Fedora 30** (64-bit) - **available for Node.js 10.16.0 and later**
 * **Fedora 31** (64-bit) - **available for Node.js 10.17.0 and later**
 
