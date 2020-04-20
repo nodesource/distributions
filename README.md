@@ -85,10 +85,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported elementary OS versions:**
 
-* **elementary OS Freya** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
-* **elementary OS Loki** (via Ubuntu 16.04 LTS)
-* **elementary OS Juno** (via Ubuntu 18.04 LTS)
-* **elementary OS Hera** (via Ubuntu 18.04 LTS)
+* **elementary OS 0.3 Freya** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
+* **elementary OS 0.4 Loki** (via Ubuntu 16.04 LTS)
+* **elementary OS 5 Juno** (via Ubuntu 18.04 LTS)
+* **elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)
 
 **Supported Trisquel versions:**
 
