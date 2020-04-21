@@ -124,6 +124,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v14.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v13.x**:
 
 ```sh
@@ -253,6 +265,16 @@ Equivalent versions of Korora Linux should also be supported.
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
+
+**NodeJS 14.x**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+```
 
 **NodeJS 13.x**
 
