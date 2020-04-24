@@ -49,6 +49,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 18.10** (Cosmic Cuttlefish)
 * **Ubuntu 19.04** (Disco Dingo)
 * **Ubuntu 19.10** (Eoan Ermine)
+* **Ubuntu 20.04** (Focal Fossa)
 
 **Supported Debian versions:**
 
@@ -100,6 +101,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **BOSS 5.0 "Anokha"** (via Debian 7) - **not available for Node.js 10 and later**
 * **BOSS 6.0 "Anoop"** (via Debian 8)
 * **BOSS 7.0 "Drishti"** (via Debian 9)
+* **BOSS 8.0 "Unnati"** (via Debian 10)
 
 **Supported BunsenLabs versions:**
 
@@ -256,6 +258,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **Fedora 30** (64-bit) - **available for Node.js 10.16.0 and later**
 * **Fedora 31** (64-bit) - **available for Node.js 10.17.0 and later**
+* **Fedora 32** (64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
 
