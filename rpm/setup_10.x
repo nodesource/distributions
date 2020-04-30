@@ -199,6 +199,8 @@ if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
+elif [[ $DISTRO_PKG =~ ^alinux-release-2 ]]; then # Aliyun Linux
+    DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
     DIST_TYPE=fc
 else
@@ -219,6 +221,9 @@ if [[ $DISTRO_PKG =~ ^system-release ]]; then
   # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
   DIST_VERSION=7
 
+elif [[ $DISTRO_PKG =~ ^alinux-release-2 ]]; then
+  # Aliyun Linux 2, compatible with CentOS 7 - https://www.alibabacloud.com/help/doc-detail/111881.htm
+  DIST_VERSION=7
 else
 
   ## Using the redhat-release-server-X, centos-release-X, etc. pattern
