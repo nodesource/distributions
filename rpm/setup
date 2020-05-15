@@ -104,8 +104,9 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js v14 LTS \"Fermium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -304,6 +305,17 @@ You can try installing with: \`rpm -ivh <url>\`
     exit 1
   fi
 
+fi
+
+## Disable AppStream repository due to installation conflicts for EL8
+## Otherwise, it will not install the NodeSource's version of Node.js
+if [[ "X${DIST_TYPE}${DIST_VERSION}" == "Xel8" ]]; then
+    print_status """As yum will try to install Node.js from the AppStream repository
+instead of the NodeSource repository, the AppStream's version of Node.js has to be disabled.
+## Run \`${bold}sudo yum module enable -y nodejs${normal}\` to reactivate the AppStream's Node.js repository.
+"""
+echo "+ yum module disable -y nodejs"
+yum module disable -y nodejs
 fi
 
 print_status "Downloading release setup RPM..."
