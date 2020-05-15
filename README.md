@@ -49,7 +49,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 18.10** (Cosmic Cuttlefish)
 * **Ubuntu 19.04** (Disco Dingo)
 * **Ubuntu 19.10** (Eoan Ermine)
-* **Ubuntu 20.04** (Focal Fossa)
+* **Ubuntu 20.04 LTS** (Focal Fossa)
 
 **Supported Debian versions:**
 
