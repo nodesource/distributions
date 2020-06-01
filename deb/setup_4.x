@@ -93,7 +93,8 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 7.x" ||
           "X${NODENAME}" == "XNode.js 8.x LTS Carbon" ||
           "X${NODENAME}" == "XNode.js 9.x" ||
-          "X${NODENAME}" == "XNode.js 11.x" ]]; then
+          "X${NODENAME}" == "XNode.js 11.x" ||
+          "X${NODENAME}" == "XNode.js 13.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -134,8 +135,9 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
 

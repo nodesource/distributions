@@ -138,18 +138,6 @@ curl -sL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v13.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_13.x | bash -
-apt-get install -y nodejs
-```
-
 **Node.js v12.x**:
 
 ```sh
@@ -277,16 +265,6 @@ curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 
 # No root privileges 
 curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
-```
-
-**NodeJS 13.x**
-
-```sh
-# As root
-curl -sL https://rpm.nodesource.com/setup_13.x | bash -
-
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_13.x | sudo bash -
 ```
 
 **NodeJS 12.x**
