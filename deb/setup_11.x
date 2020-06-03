@@ -268,6 +268,7 @@ check_alt "Deepin"        "unstable" "Debian" "sid"
 check_alt "Deepin"        "stable"   "Debian" "buster"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
+check_alt "Astra Linux"   "orel"     "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

@@ -123,6 +123,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **PureOS 9.0 "Amber"** (via Debian 10)
 
+**Supported Astra Linux CE versions:**
+
+* **Astra Linux CE 2.12 "Orel"** (via Debian 9)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
