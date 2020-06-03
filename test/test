@@ -43,7 +43,6 @@ print_status "Creating test package ..."
 cat > server.js << EOF
   const http = require('http')
       , bl   = require('bl')
-      , bt   = require('buffertools')
 
   http.createServer(function (req, res) {
     req.pipe(bl(function (err, data) {
@@ -53,7 +52,8 @@ cat > server.js << EOF
         res.end(err.stack)
       } else {
         res.statusCode = 200
-        res.end(bt.reverse(data.slice()))
+        b = new Buffer.from(data.slice())
+        res.end(b.reverse())
       }
       setTimeout(function () {
         process.exit(0)
@@ -78,7 +78,7 @@ cat > test.js << EOF
       var rev     = data.toString('hex')
         , orig    = Buffer.concat(rnd)
         , i       = orig.length - 1
-        , origRev = new Buffer(orig.length)
+        , origRev = new Buffer.alloc(orig.length)
 
       for (; i >= 0; i--)
         origRev[orig.length - i - 1] = orig[i]
@@ -102,7 +102,6 @@ cat > package.json << EOF
     "main": "server.js",
     "dependencies": {
       "bl": "~0.9.1",
-      "buffertools": "~2.1.2",
       "hyperquest": "~0.3.0"
     },
     "scripts": {
