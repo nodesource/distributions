@@ -137,9 +137,9 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_14.x | bash -
-apt-get install -y nodejs
+# Using Debian
+sudo bash -c 'curl -sL https://deb.nodesource.com/setup_14.x | bash -'
+sudo apt-get install -y nodejs
 ```
 
 **Node.js v12.x**:
@@ -149,9 +149,9 @@ apt-get install -y nodejs
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
-apt-get install -y nodejs
+# Using Debian
+sudo bash -c 'curl -sL https://deb.nodesource.com/setup_12.x | bash -'
+sudo apt-get install -y nodejs
 ```
 
 **Node.js v10.x**:
@@ -161,9 +161,9 @@ apt-get install -y nodejs
 curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs
+# Using Debian
+sudo bash -c 'curl -sL https://deb.nodesource.com/setup_10.x | bash -'
+sudo apt-get install -y nodejs
 ```
 
 ***Optional***: install build tools
