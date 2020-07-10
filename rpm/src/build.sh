@@ -17,6 +17,8 @@ RELEASES=( "pub_0.10::nodejs:Node.js 0.10"
            "pub_12.x:_12.x:nodejs:Node.js 12.x"
            "pub_13.x:_13.x:nodejs:Node.js 13.x"
            "pub_14.x:_14.x:nodejs:Node.js 14.x"
+           "pub_12.x:_lts.x:nodejs:Node.js 12.x"
+           "pub_14.x:_current.x:nodejs:Node.js 14.x"
          )
 SOURCE=_setup.sh
 DEST=../setup

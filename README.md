@@ -167,6 +167,30 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 ```
 
+**Node.js LTS (v12.x)**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+```
+
+**Node.js Current (v14.x)**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_current.x | bash -
+apt-get install -y nodejs
+```
+
 ***Optional***: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
@@ -262,7 +286,7 @@ _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [runnin
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
-**NodeJS 14.x**
+**Node.js v14.x**
 
 ```sh
 # As root
@@ -272,7 +296,7 @@ curl -sL https://rpm.nodesource.com/setup_14.x | bash -
 curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
 ```
 
-**NodeJS 12.x**
+**Node.js v12.x**
 
 ```sh
 # As root
@@ -283,7 +307,7 @@ curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
 
-**NodeJS 10.x**
+**Node.js v10.x**
 
 ```sh
 # As root
@@ -293,6 +317,25 @@ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
+**Node.js LTS (12.x)**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+```
+
+**Node.js Current (14.x)**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_current.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -
+```
 
 ***Optional***: install build tools
 
