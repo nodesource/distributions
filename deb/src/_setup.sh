@@ -183,7 +183,7 @@ if [ ! -x /usr/bin/curl ] && [ ! -x /usr/bin/wget ]; then
     PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} curl"
 fi
 
-# Used by apt-key to add new keys
+# Used to add new keys
 
 if [ ! -x /usr/bin/gpg ]; then
     PRE_INSTALL_PKGS="${PRE_INSTALL_PKGS} gnupg"
@@ -307,9 +307,9 @@ fi
 print_status 'Adding the NodeSource signing key to your keyring...'
 
 if [ -x /usr/bin/curl ]; then
-    exec_cmd 'curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
+    exec_cmd 'curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key > /etc/apt/trusted.gpg.d/nodesource.com.gpg.asc'
 else
-    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -'
+    exec_cmd 'wget -qO- https://deb.nodesource.com/gpgkey/nodesource.gpg.key > /etc/apt/trusted.gpg.d/nodesource.com.gpg.asc'
 fi
 
 print_status "Creating apt sources list file for the NodeSource ${NODENAME} repo..."
@@ -325,7 +325,7 @@ print_status """Run \`${bold}sudo apt-get install -y ${NODEPKG}${normal}\` to in
 ## You may also need development tools to build native addons:
      sudo apt-get install gcc g++ make
 ## To install the Yarn package manager, run:
-     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+     curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | sudo tee /etc/apt/trusted.gpg.d/yarnpkg.com.gpg.asc
      echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list
      sudo apt-get update && sudo apt-get install yarn
 """
