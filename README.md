@@ -53,12 +53,13 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 **Supported Debian versions:**
 
-NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
+NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable and testing.
 
 * **Debian 8 / oldoldstable** (Jessie)
 * **Debian 9 / oldstable** (Stretch)
 * **Debian 10 / stable** (Buster)
 * **Debian unstable** (Sid)
+* **Debian testing** (Bullseye)
 
 **Supported Linux Mint versions:**
 
@@ -108,6 +109,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Hydrogen** (via Debian 8)
 * **Helium** (via Debian 9)
+* **Lithium** (via Debian 10)
 
 **Supported MX Linux versions:**
 
