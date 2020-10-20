@@ -133,6 +133,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v15.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_15.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v14.x**:
 
 ```sh
@@ -181,7 +193,7 @@ curl -sL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v14.x)**:
+**Node.js Current (v15.x)**:
 
 ```sh
 # Using Ubuntu
@@ -288,6 +300,16 @@ _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [runnin
 
 Run as root on RHEL, CentOS, CloudLinux or Fedora:
 
+**Node.js v15.x**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_15.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_15.x | sudo bash -
+```
+
 **Node.js v14.x**
 
 ```sh
@@ -329,7 +351,7 @@ curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (14.x)**
+**Node.js Current (15.x)**
 
 ```sh
 # As root

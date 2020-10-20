@@ -109,6 +109,7 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
    * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js 15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -138,6 +139,7 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
    * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
    * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js 15 \"Fifteen\"${normal}
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
 
