@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource io.js 3.x repo onto an
+# Script to install the NodeSource Node.js 15.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup_iojs_3.x | bash -
+# curl -sL https://rpm.nodesource.com/setup_15.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup_iojs_3.x | bash -
+# wget -qO- https://rpm.nodesource.com/setup_15.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,10 +19,10 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX="_iojs_3.x"
-NODENAME="io.js 3.x"
-NODEREPO="pub_iojs_3.x"
-NODEPKG="iojs"
+SCRSUFFIX="_15.x"
+NODENAME="Node.js 15.x"
+NODEREPO="pub_15.x"
+NODEPKG="nodejs"
 
 print_status() {
   local outp=$(echo "$1") # | sed -r 's/\\n/\\n## /mg')
