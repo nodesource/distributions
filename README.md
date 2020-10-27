@@ -182,7 +182,7 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js LTS (v12.x)**:
+**Node.js LTS (v14.x)**:
 
 ```sh
 # Using Ubuntu
@@ -342,7 +342,7 @@ curl -sL https://rpm.nodesource.com/setup_10.x | bash -
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
-**Node.js LTS (12.x)**
+**Node.js LTS (14.x)**
 
 ```sh
 # As root
