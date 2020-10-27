@@ -291,6 +291,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 30** (64-bit) - **available for Node.js 10.16.0 and later**
 * **Fedora 31** (64-bit) - **available for Node.js 10.17.0 and later**
 * **Fedora 32** (64-bit)
+* **Fedora 33** (64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
 
