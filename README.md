@@ -98,6 +98,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)
+* **Trisquel 9 "Etiona"** (via Ubuntu 18.04 LTS)
 
 **Supported BOSS versions:**
 
