@@ -296,12 +296,17 @@ NodeSource will continue to maintain the following architectures and may add add
 
 Equivalent versions of Korora Linux should also be supported.
 
+**Supported Amazon Linux versions:**
+
+* **Amazon Linux** (64-bit)
+* **Amazon Linux 2** (64-bit)
+
 <a name="rpminstall"></a>
 ### Installation instructions
 
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
-Run as root on RHEL, CentOS, CloudLinux or Fedora:
+Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
 **Node.js v15.x**
 
@@ -332,7 +337,6 @@ curl -sL https://rpm.nodesource.com/setup_12.x | bash -
 # No root privileges 
 curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
-
 
 **Node.js v10.x**
 
