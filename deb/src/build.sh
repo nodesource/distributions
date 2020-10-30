@@ -17,6 +17,10 @@ RELEASES=( "node_0.10::nodejs:Node.js 0.10"
            "node_11.x:_11.x:nodejs:Node.js 11.x"
            "node_12.x:_12.x:nodejs:Node.js 12.x"
            "node_13.x:_13.x:nodejs:Node.js 13.x"
+           "node_14.x:_14.x:nodejs:Node.js 14.x"
+           "node_15.x:_15.x:nodejs:Node.js 15.x"
+           "node_14.x:_lts.x:nodejs:Node.js 14.x"
+           "node_15.x:_current.x:nodejs:Node.js 15.x"
          )
 SOURCE=_setup.sh
 DEST=../setup
