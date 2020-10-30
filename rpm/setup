@@ -12,6 +12,12 @@
 #   or
 # wget -qO- https://rpm.nodesource.com/setup | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/rpm/src
+# please don't submit pull requests against the built scripts.
+#
 
 SCRSUFFIX=""
 NODENAME="Node.js 0.10"
@@ -82,7 +88,12 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 0.12" ||
           "X${NODENAME}" == "XNode.js 4.x LTS Argon" ||
           "X${NODENAME}" == "XNode.js 5.x" ||
-          "X${NODENAME}" == "XNode.js 7.x" ]]; then
+          "X${NODENAME}" == "XNode.js 6.x LTS Boron" ||
+          "X${NODENAME}" == "XNode.js 7.x" ||
+          "X${NODENAME}" == "XNode.js 8.x LTS Carbon" ||
+          "X${NODENAME}" == "XNode.js 9.x" ||
+          "X${NODENAME}" == "XNode.js 11.x" ||
+          "X${NODENAME}" == "XNode.js 13.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -94,8 +105,10 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js v14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -122,8 +135,10 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js v8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js v14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -211,9 +226,9 @@ if [[ $DISTRO_PKG =~ ^system-release ]]; then
 
 else
 
-  ## Using the redhat-release-server-X, centos-release-X, etc. pattern
+  ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
   ## extract the major version number of the distro
-  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+-release(-server|-workstation|-client)?-([0-9]+).*$/\2/')
+  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream)?-release(-server|-workstation|-client|-common)?-([0-9]+).*$/\3/')
 
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 
@@ -294,6 +309,17 @@ You can try installing with: \`rpm -ivh <url>\`
     exit 1
   fi
 
+fi
+
+## Disable AppStream repository due to installation conflicts for EL8
+## Otherwise, it will not install the NodeSource's version of Node.js
+if [[ "X${DIST_TYPE}${DIST_VERSION}" == "Xel8" ]]; then
+    print_status """As yum will try to install Node.js from the AppStream repository
+instead of the NodeSource repository, the AppStream's version of Node.js has to be disabled.
+## Run \`${bold}sudo yum module enable -y nodejs${normal}\` to reactivate the AppStream's Node.js repository.
+"""
+echo "+ yum module disable -y nodejs"
+yum module disable -y nodejs
 fi
 
 print_status "Downloading release setup RPM..."

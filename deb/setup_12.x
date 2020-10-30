@@ -12,6 +12,13 @@
 #   or
 # wget -qO- https://deb.nodesource.com/setup_12.x | bash -
 #
+# CONTRIBUTIONS TO THIS SCRIPT
+#
+# This script is built from a template in
+# https://github.com/nodesource/distributions/tree/master/deb/src
+# please don't submit pull requests against the built scripts.
+#
+
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_12.x"
@@ -82,7 +89,12 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 0.12" ||
           "X${NODENAME}" == "XNode.js 4.x LTS Argon" ||
           "X${NODENAME}" == "XNode.js 5.x" ||
-          "X${NODENAME}" == "XNode.js 7.x" ]]; then
+          "X${NODENAME}" == "XNode.js 6.x LTS Boron" ||
+          "X${NODENAME}" == "XNode.js 7.x" ||
+          "X${NODENAME}" == "XNode.js 8.x LTS Carbon" ||
+          "X${NODENAME}" == "XNode.js 9.x" ||
+          "X${NODENAME}" == "XNode.js 11.x" ||
+          "X${NODENAME}" == "XNode.js 13.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -94,8 +106,10 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js 8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 Current${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js 15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -122,9 +136,10 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_8.x — Node.js 8 LTS \"Carbon\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 Current${normal}
-
+   * ${green}https://deb.nodesource.com/setup_10.x — Node.js 10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_15.x — Node.js 15 \"Fifteen\"${normal}
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
 
@@ -207,8 +222,11 @@ check_alt() {
 check_alt "SolydXK"       "solydxk-9" "Debian" "stretch"
 check_alt "Kali"          "sana"     "Debian" "jessie"
 check_alt "Kali"          "kali-rolling" "Debian" "jessie"
+check_alt "Sparky Linux"  "Tyche"    "Debian" "stretch"
 check_alt "Sparky Linux"  "Nibiru"   "Debian" "buster"
 check_alt "MX Linux 17"   "Horizon"  "Debian" "stretch"
+check_alt "MX Linux 18"   "Continuum" "Debian" "stretch"
+check_alt "MX Linux 19"   "patito feo" "Debian" "buster"
 check_alt "Linux Mint"    "maya"     "Ubuntu" "precise"
 check_alt "Linux Mint"    "qiana"    "Ubuntu" "trusty"
 check_alt "Linux Mint"    "rafaela"  "Ubuntu" "trusty"
@@ -220,30 +238,42 @@ check_alt "Linux Mint"    "sonya"    "Ubuntu" "xenial"
 check_alt "Linux Mint"    "sylvia"   "Ubuntu" "xenial"
 check_alt "Linux Mint"    "tara"     "Ubuntu" "bionic"
 check_alt "Linux Mint"    "tessa"    "Ubuntu" "bionic"
+check_alt "Linux Mint"    "tina"     "Ubuntu" "bionic"
+check_alt "Linux Mint"    "tricia"   "Ubuntu" "bionic"
+check_alt "Linux Mint"    "ulyana"   "Ubuntu" "focal"
 check_alt "LMDE"          "betsy"    "Debian" "jessie"
 check_alt "LMDE"          "cindy"    "Debian" "stretch"
+check_alt "LMDE"          "debbie"   "Debian" "buster"
 check_alt "elementaryOS"  "luna"     "Ubuntu" "precise"
 check_alt "elementaryOS"  "freya"    "Ubuntu" "trusty"
 check_alt "elementaryOS"  "loki"     "Ubuntu" "xenial"
 check_alt "elementaryOS"  "juno"     "Ubuntu" "bionic"
+check_alt "elementaryOS"  "hera"     "Ubuntu" "bionic"
 check_alt "Trisquel"      "toutatis" "Ubuntu" "precise"
 check_alt "Trisquel"      "belenos"  "Ubuntu" "trusty"
 check_alt "Trisquel"      "flidas"   "Ubuntu" "xenial"
+check_alt "Trisquel"      "etiona"   "Ubuntu" "bionic"
 check_alt "Uruk GNU/Linux" "lugalbanda" "Ubuntu" "xenial"
 check_alt "BOSS"          "anokha"   "Debian" "wheezy"
-check_alt "BOSS"          "anoop"   "Debian" "jessie"
+check_alt "BOSS"          "anoop"    "Debian" "jessie"
+check_alt "BOSS"          "drishti"  "Debian" "stretch"
+check_alt "BOSS"          "unnati"   "Debian" "buster"
 check_alt "bunsenlabs"    "bunsen-hydrogen" "Debian" "jessie"
 check_alt "bunsenlabs"    "helium"   "Debian" "stretch"
+check_alt "bunsenlabs"    "lithium"  "Debian" "buster"
 check_alt "Tanglu"        "chromodoris" "Debian" "jessie"
 check_alt "PureOS"        "green"    "Debian" "sid"
+check_alt "PureOS"        "amber"    "Debian" "buster"
 check_alt "Devuan"        "jessie"   "Debian" "jessie"
 check_alt "Devuan"        "ascii"    "Debian" "stretch"
+check_alt "Devuan"        "beowulf"  "Debian" "buster"
 check_alt "Devuan"        "ceres"    "Debian" "sid"
 check_alt "Deepin"        "panda"    "Debian" "sid"
 check_alt "Deepin"        "unstable" "Debian" "sid"
+check_alt "Deepin"        "stable"   "Debian" "buster"
 check_alt "Pardus"        "onyedi"   "Debian" "stretch"
 check_alt "Liquid Lemur"  "lemur-3"  "Debian" "stretch"
-check_alt "Continuum"     "mx-linux" "Debian" "stretch"
+check_alt "Astra Linux"   "orel"     "Debian" "stretch"
 
 if [ "X${DISTRO}" == "Xdebian" ]; then
   print_status "Unknown Debian-based distribution, checking /etc/debian_version..."

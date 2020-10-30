@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 6.x LTS Boron repo onto a
+# Script to install the NodeSource Node.js 15.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_6.x | bash -
+# curl -sL https://deb.nodesource.com/setup_15.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_6.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_15.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_6.x"
-NODENAME="Node.js 6.x LTS Boron"
-NODEREPO="node_6.x"
+SCRSUFFIX="_15.x"
+NODENAME="Node.js 15.x"
+NODEREPO="node_15.x"
 NODEPKG="nodejs"
 
 print_status() {

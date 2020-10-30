@@ -48,15 +48,19 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 18.04 LTS** (Bionic Beaver)
 * **Ubuntu 18.10** (Cosmic Cuttlefish)
 * **Ubuntu 19.04** (Disco Dingo)
+* **Ubuntu 19.10** (Eoan Ermine)
+* **Ubuntu 20.04 LTS** (Focal Fossa)
+* **Ubuntu 20.10** (Groovy Gorilla)
 
 **Supported Debian versions:**
 
-NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable.
+NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable and testing.
 
-* **Debian 8 / oldstable** (Jessie)
-* **Debian 9 / stable** (Stretch)
-* **Debian 10 / testing** (Buster)
+* **Debian 8 / oldoldstable** (Jessie)
+* **Debian 9 / oldstable** (Stretch)
+* **Debian 10 / stable** (Buster)
 * **Debian unstable** (Sid)
+* **Debian testing** (Bullseye)
 
 **Supported Linux Mint versions:**
 
@@ -69,36 +73,91 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
 * **Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)
+* **Linux Mint 20 "Ulyana"** (via Ubuntu 20.04 LTS)
+* **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
+* **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
 
 **Supported Devuan versions:**
 
-* **Jessie** (via Debian 8)
-* **Ascii** (via Debian 9)
-* **Ceres** (via Debian unstable)
+* **Jessie / oldstable** (via Debian 8)
+* **Ascii / stable** (via Debian 9)
+* **Beowulf / testing** (via Debian 10)
+* **Ceres / unstable** (via Debian unstable)
 
 **Supported elementary OS versions:**
 
 * **elementary OS Freya** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **elementary OS Loki** (via Ubuntu 16.04 LTS)
 * **elementary OS Juno** (via Ubuntu 18.04 LTS)
+* **elementary OS Hera** (via Ubuntu 18.04 LTS)
 
 **Supported Trisquel versions:**
 
 * **Trisquel 7 "Belenos"** (via Ubuntu 14.04 LTS) - **not available for Node.js 10 and later**
 * **Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)
+* **Trisquel 9 "Etiona"** (via Ubuntu 18.04 LTS)
 
 **Supported BOSS versions:**
 
 * **BOSS 5.0 "Anokha"** (via Debian 7) - **not available for Node.js 10 and later**
 * **BOSS 6.0 "Anoop"** (via Debian 8)
+* **BOSS 7.0 "Drishti"** (via Debian 9)
+* **BOSS 8.0 "Unnati"** (via Debian 10)
 
 **Supported BunsenLabs versions:**
 
 * **Hydrogen** (via Debian 8)
 * **Helium** (via Debian 9)
+* **Lithium** (via Debian 10)
+
+**Supported MX Linux versions:**
+
+* **MX-17 Horizon** (via Debian 9)
+* **MX-18 Continuum** (via Debian 9)
+* **MX-19 Patito Feo** (via Debian 10)
+
+**Supported Sparky Linux versions:**
+
+* **Sparky 4.x "Tyche"** (via Debian 9)
+* **Sparky 5.x "Nibiru"** (via Debian 10)
+
+**Supported PureOS Linux versions:**
+
+* **PureOS 9.0 "Amber"** (via Debian 10)
+
+**Supported Astra Linux CE versions:**
+
+* **Astra Linux CE 2.12 "Orel"** (via Debian 9)
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v15.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_15.x | bash -
+apt-get install -y nodejs
+```
+
+**Node.js v14.x**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_14.x | bash -
+apt-get install -y nodejs
+```
 
 **Node.js v12.x**:
 
@@ -112,20 +171,6 @@ curl -sL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-
-**Node.js v11.x**:
-
-```sh
-# Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_11.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_11.x | bash -
-apt-get install -y nodejs
-```
-
-
 **Node.js v10.x**:
 
 ```sh
@@ -138,15 +183,27 @@ curl -sL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v8.x**:
+**Node.js LTS (v14.x)**:
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_8.x | bash -
+curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+apt-get install -y nodejs
+```
+
+**Node.js Current (v15.x)**:
+
+```sh
+# Using Ubuntu
+curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -sL https://deb.nodesource.com/setup_current.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -214,59 +271,101 @@ sudo apt-get install nodejs
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit)—not available for all distros and **not available for Node.js 10 and later**
+* **i386** (32-bit) — not available for all distros and **not available for Node.js 10.x and later**
 * **x86_64** (64-bit)
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 6** (64-bit)
 * **RHEL 7** (64-bit)
+* **RHEL 8** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 6** (64-bit)
 * **CentOS 7** (64-bit)
+* **CentOS 8** (64-bit)
+* **CentOS 8 Stream** (64-bit)
 
 **Supported CloudLinux versions:**
 * **CloudLinux 6** (32-bit for Node <= 10.x and 64-bit)
 
 **Supported Fedora versions:**
 
-* **Fedora 27** (32-bit for Node <= 10.x and 64-bit)
-* **Fedora 28** (64-bit)
-* **Fedora 29** (64-bit) for Node >= 10.13.0
+* **Fedora 31** (64-bit) - **available for Node.js 10.17.0 and later**
+* **Fedora 32** (64-bit)
+* **Fedora 33** (64-bit)
 
 Equivalent versions of Korora Linux should also be supported.
+
+**Supported Amazon Linux versions:**
+
+* **Amazon Linux** (64-bit)
+* **Amazon Linux 2** (64-bit)
 
 <a name="rpminstall"></a>
 ### Installation instructions
 
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
-Run as root on RHEL, CentOS, CloudLinux or Fedora:
+Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
-**NodeJS 12.x**
+**Node.js v15.x**
 
-```text
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_15.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_15.x | sudo bash -
+```
+
+**Node.js v14.x**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+```
+
+**Node.js v12.x**
+
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
-**NodeJS 11.x**
+**Node.js v10.x**
 
-```text
-curl -sL https://rpm.nodesource.com/setup_11.x | bash -
-```
-
-**NodeJS 10.x**
-
-```text
+```sh
+# As root
 curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
-**NodeJS 8.x**
+**Node.js LTS (14.x)**
 
-```text
-curl -sL https://rpm.nodesource.com/setup_8.x | bash -
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+```
+
+**Node.js Current (15.x)**
+
+```sh
+# As root
+curl -sL https://rpm.nodesource.com/setup_current.x | bash -
+
+# No root privileges 
+curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -
 ```
 
 ***Optional***: install build tools
@@ -288,16 +387,16 @@ yum install gcc-c++ make
 
 [Snaps](https://docs.snapcraft.io/snaps/) are containerized software packages designed to work across cloud, desktop, and IoT devices. They work natively on most popular Linux distributions and feature automatic transactional updates.
 
-The NodeSource-managed Node.js snap contains the Node.js runtime, along the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
+The NodeSource-managed Node.js snap contains the Node.js runtime, along with the two most widely-used package managers, npm and Yarn. They are delivered from the [snapcraft store](https://snapcraft.io/) and are automatically built and pushed for each supported Node.js release line. Generally you will have a new version of Node.js automatically running on your computer the same day it is released on [nodejs.org](https://nodejs.org/).
 
-The Node.js snap can currently be installed on Arch Linux,Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
+The Node.js snap can currently be installed on Arch Linux, Debian, Fedora, Linux Mint, Manjaro, OpenEmbedded/Yocto, OpernWrt, Solus, Ubuntu and many other distributions built on top these. NodeSource has not tested the Node.js snap on all of these distributions and feedback is welcome in this repository if you run into problems.
 
 <a name="snapinstall"></a>
 ### Installation instructions
 
 The `snap` command ships with Ubuntu, from version 16.04 and later. If you do not have it installed, follow the instructions on snapcraft to install [_snapd_](https://docs.snapcraft.io/core/install).
 
-Snaps are delivered via "channels", for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
+Snaps are delivered via "channels"; for Node.js, the channel names are the major-version number of Node.js. So select a supported Node.js version and install with:
 
 ```
 sudo snap install node --classic --channel=8
@@ -305,9 +404,9 @@ sudo snap install node --classic --channel=8
 
 Substituting `8` for the major version you want to install. Both LTS and Current versions of Node.js are available via snapcraft.
 
-The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully support so `--classic` may not be necessary or even supported.
+The `--classic` argument is required here as Node.js needs full access to your system in order to be useful, therefore it needs snap’s "classic confinement". By default, snaps are much more restricted in their ability to access your disk and network and must request special access from you where they need it. Note that on some Linux distributions, the snap confinement mechanisms are not fully supported so `--classic` may not be necessary or even supported.
 
-Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for channel you selected.
+Once installed, the `node`, `npm` and `yarn` commands are available for use and will remain updated for the channel you selected.
 
 #### Switching channels
 
@@ -405,6 +504,9 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
 * Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
+* PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
+* Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
+* MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
@@ -430,7 +532,8 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
 <tr><th align="left">Jorge Maldonado Ventura</th><td><a href="https://notabug.org/jorgesumle">NotABug/jorgesumle</a></td><td></td></tr>
 <tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
- <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
+<tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
+<tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
