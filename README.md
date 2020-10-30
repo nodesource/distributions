@@ -132,6 +132,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Astra Linux CE 2.12 "Orel"** (via Debian 9)
 
+**Supported Ubilinux versions:**
+
+* **Ubilinux 4.0 "Dolcetto"** (via Debian 9)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
