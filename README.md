@@ -298,8 +298,6 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 32** (64-bit)
 * **Fedora 33** (64-bit)
 
-Equivalent versions of Korora Linux should also be supported.
-
 **Supported Amazon Linux versions:**
 
 * **Amazon Linux** (64-bit)
