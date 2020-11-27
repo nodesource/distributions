@@ -277,6 +277,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **i386** (32-bit) — not available for all distros and **not available for Node.js 10.x and later**
 * **x86_64** (64-bit)
+* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
 **Supported Red Hat® Enterprise Linux® versions:**
 

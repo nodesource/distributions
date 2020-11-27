@@ -105,10 +105,10 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js v14 LTS \"Fermium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_15.x — Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -135,10 +135,10 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x — Node.js v10 LTS \"Dubnium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_12.x — Node.js v12 LTS \"Erbium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js v14 LTS \"Fermium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_15.x — Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -188,6 +188,8 @@ if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
 elif [ "X${UNAME_ARCH}" == "Xx86_64" ]; then
   DIST_ARCH=x86_64
+elif [ "X${UNAME_ARCH}" == "Xaarch64" ]; then
+  DIST_ARCH=aarch64
 else
 
   print_status "\
