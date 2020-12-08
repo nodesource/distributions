@@ -34,7 +34,6 @@ Pull requests are encouraged if you have changes you believe would improve the s
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit)—**not available for Node.js 10 and later**
 * **amd64** (64-bit)
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
 * **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
