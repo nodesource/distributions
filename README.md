@@ -92,6 +92,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **elementary OS 0.4 Loki** (via Ubuntu 16.04 LTS)
 * **elementary OS 5 Juno** (via Ubuntu 18.04 LTS)
 * **elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)
+* **elementary OS 6 Odin** (via Ubuntu 20.04 LTS)
 
 **Supported Trisquel versions:**
 
