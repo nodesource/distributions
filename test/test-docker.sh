@@ -11,9 +11,9 @@ TARGETS="            \
 
 CMD="                                                   \
      apt-get update && apt-get install curl -y          \
-  && curl -sL https://deb.nodesource.com/setup | bash - \
+  && curl -fsSL https://deb.nodesource.com/setup | bash - \
   && apt-get install nodejs build-essential python -y          \
-  && curl -sL https://deb.nodesource.com/test | bash -  \
+  && curl -fsSL https://deb.nodesource.com/test | bash -  \
 "
 
 for target in $TARGETS; do
