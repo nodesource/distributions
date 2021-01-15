@@ -247,6 +247,7 @@ curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key ad
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 ```
+The key ID is `1655A0AB68576280`.
 
 **3. Add the desired NodeSource repository**
 
