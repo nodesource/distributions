@@ -32,7 +32,7 @@ print_status() {
 }
 
 if test -t 1; then # if terminal
-    ncolors=$(which tput > /dev/null && tput colors) # supports color
+    ncolors=$(command -v tput > /dev/null && tput colors) # supports color
     if test -n "$ncolors" && test $ncolors -ge 8; then
         termcols=$(tput cols)
         bold="$(tput bold)"
