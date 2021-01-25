@@ -552,7 +552,7 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 
 ------------------------------------------------------------------
 
-*Supported with love by [Chris Lea](https://github.com/chrislea), [Rod Vagg](https://github.com/rvagg) and the [NodeSource](https://nodesource.com) team*
+*Supported with love by the [NodeSource](https://nodesource.com) team*
 
 *This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*<br>
 *Ubuntu is a registered trademark of Canonical Ltd.*<br>
