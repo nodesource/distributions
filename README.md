@@ -144,11 +144,11 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_15.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_15.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -156,11 +156,11 @@ apt-get install -y nodejs
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_14.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -168,11 +168,11 @@ apt-get install -y nodejs
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_12.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -180,11 +180,11 @@ apt-get install -y nodejs
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_10.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_10.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -192,11 +192,11 @@ apt-get install -y nodejs
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_lts.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -204,11 +204,11 @@ apt-get install -y nodejs
 
 ```sh
 # Using Ubuntu
-curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # Using Debian, as root
-curl -sL https://deb.nodesource.com/setup_current.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -243,7 +243,7 @@ sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 **2. Add the NodeSource package signing key**
 
 ```sh
-curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
 ```
@@ -319,60 +319,60 @@ Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_15.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_15.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_15.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_15.x | sudo bash -
 ```
 
 **Node.js v14.x**
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_14.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_14.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
 ```
 
 **Node.js v12.x**
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_12.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_12.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
 **Node.js v10.x**
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_10.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_10.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
 **Node.js LTS (14.x)**
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_lts.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
 **Node.js Current (15.x)**
 
 ```sh
 # As root
-curl -sL https://rpm.nodesource.com/setup_current.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
 
-# No root privileges 
-curl -sL https://rpm.nodesource.com/setup_current.x | sudo bash -
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
 ```
 
 ***Optional***: install build tools
@@ -447,8 +447,8 @@ The `snap` man page, or Canonical’s [advanced snap usage](https://tutorials.ub
 
 To test an installation is working (and that the setup scripts are working!) use:
 
-```text
-curl -sL https://deb.nodesource.com/test | bash -
+```sh
+curl -fsSL https://deb.nodesource.com/test | bash -
 ```
 <a name="questions"></a>
 # FAQ
