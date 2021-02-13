@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto an
+# Script to install the NodeSource Node.js 8.x LTS Carbon repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup | bash -
+# curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup | bash -
+# wget -qO- https://rpm.nodesource.com/setup_8.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,9 +19,9 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX=""
-NODENAME="Node.js 0.10"
-NODEREPO="pub_0.10"
+SCRSUFFIX="_8.x"
+NODENAME="Node.js 8.x LTS Carbon"
+NODEREPO="pub_8.x"
 NODEPKG="nodejs"
 
 print_status() {

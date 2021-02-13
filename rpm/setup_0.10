@@ -8,9 +8,9 @@
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup | bash -
+# curl -sL https://rpm.nodesource.com/setup_0.10 | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup | bash -
+# wget -qO- https://rpm.nodesource.com/setup_0.10 | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,7 +19,7 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX=""
+SCRSUFFIX="_0.10"
 NODENAME="Node.js 0.10"
 NODEREPO="pub_0.10"
 NODEPKG="nodejs"

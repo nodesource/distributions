@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto an
+# Script to install the NodeSource io.js 3.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup | bash -
+# curl -sL https://rpm.nodesource.com/setup_iojs_3.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup | bash -
+# wget -qO- https://rpm.nodesource.com/setup_iojs_3.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,10 +19,10 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX=""
-NODENAME="Node.js 0.10"
-NODEREPO="pub_0.10"
-NODEPKG="nodejs"
+SCRSUFFIX="_iojs_3.x"
+NODENAME="io.js 3.x"
+NODEREPO="pub_iojs_3.x"
+NODEPKG="iojs"
 
 print_status() {
   local outp=$(echo "$1") # | sed -r 's/\\n/\\n## /mg')

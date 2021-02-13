@@ -1,6 +1,5 @@
 const http = require('http')
     , bl   = require('bl')
-    , bt   = require('buffertools')
 
 http.createServer(function (req, res) {
   req.pipe(bl(function (err, data) {
@@ -10,7 +9,8 @@ http.createServer(function (req, res) {
       res.end(err.stack)
     } else {
       res.statusCode = 200
-      res.end(bt.reverse(data.slice()))
+      b = new Buffer.from(data.slice())
+      res.end(b.reverse())
     }
     setTimeout(function () {
       process.exit(0)

@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto a
+# Script to install the NodeSource Node.js 13.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup | bash -
+# curl -sL https://deb.nodesource.com/setup_13.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup | bash -
+# wget -qO- https://deb.nodesource.com/setup_13.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX=""
-NODENAME="Node.js 0.10"
-NODEREPO="node_0.10"
+SCRSUFFIX="_13.x"
+NODENAME="Node.js 13.x"
+NODEREPO="node_13.x"
 NODEPKG="nodejs"
 
 print_status() {

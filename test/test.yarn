@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NPM_CACHE=".npm-test-cache"
+YARN_CACHE=".yarn-test-cache"
 TEST_DIR="_test-node-install"
 OWD=$(pwd)
 
@@ -31,9 +31,9 @@ exec_cmd() {
     exec_cmd_nobail "$1" || bail
 }
 
-print_status "Testing Node.js and npm installation ..."
+print_status "Testing Node.js and Yarn installation ..."
 
-exec_cmd "mkdir ${TEST_DIR} && cd ${TEST_DIR}"
+exec_cmd "mkdir -p ${TEST_DIR} && cd ${TEST_DIR}"
 
 # because the previous cd was in a subshell and only for show
 cd $TEST_DIR
@@ -105,7 +105,7 @@ cat > package.json << EOF
       "hyperquest": "~0.3.0"
     },
     "scripts": {
-      "test": "npm start; node test.js",
+      "test": "yarn start; node test.js",
       "start": "node server.js &"
     }
   }
@@ -113,10 +113,10 @@ EOF
 
 print_status "Installing dependencies ..."
 
-exec_cmd "npm install --spin=false --loglevel=info --cache=${NPM_CACHE}"
+exec_cmd "yarn install --cache-folder ${YARN_CACHE}"
 
 print_status "Running test ..."
 
-exec_cmd "npm test"
+exec_cmd "yarn test"
 
 cleanup

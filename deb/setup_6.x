@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto a
+# Script to install the NodeSource Node.js 6.x LTS Boron repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup | bash -
+# curl -sL https://deb.nodesource.com/setup_6.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup | bash -
+# wget -qO- https://deb.nodesource.com/setup_6.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX=""
-NODENAME="Node.js 0.10"
-NODEREPO="node_0.10"
+SCRSUFFIX="_6.x"
+NODENAME="Node.js 6.x LTS Boron"
+NODEREPO="node_6.x"
 NODEPKG="nodejs"
 
 print_status() {

@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 0.10 repo onto a
+# Script to install the NodeSource io.js 2.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup | bash -
+# curl -sL https://deb.nodesource.com/setup_iojs_2.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup | bash -
+# wget -qO- https://deb.nodesource.com/setup_iojs_2.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,10 +21,10 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX=""
-NODENAME="Node.js 0.10"
-NODEREPO="node_0.10"
-NODEPKG="nodejs"
+SCRSUFFIX="_iojs_2.x"
+NODENAME="io.js 2.x"
+NODEREPO="iojs_2.x"
+NODEPKG="iojs"
 
 print_status() {
     echo

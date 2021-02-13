@@ -4,7 +4,6 @@
   "main": "server.js",
   "dependencies": {
     "bl": "~0.9.1",
-    "buffertools": "~2.1.2",
     "hyperquest": "~0.3.0"
   },
   "scripts": {
