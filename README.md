@@ -506,7 +506,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 
 * OpenSUSE - [Issue #199](https://github.com/nodesource/distributions/issues/199)
 * Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
-* LinuxMint Nadia - [Issue #269](https://github.com/nodesource/distributions/issues/269)
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
@@ -514,6 +513,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
 * Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
 * MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
+* Alma Linux - [Issue #1166](https://github.com/nodesource/distributions/issues/1166)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
