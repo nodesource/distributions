@@ -319,7 +319,7 @@ local_node_key="$keyring/nodesource.gpg"
 if [ -x /usr/bin/curl ]; then
     exec_cmd "curl -s $node_key_url | gpg --dearmor | tee $local_node_key >/dev/null"
 else
-    exec_cmd "wget -O - $node_key_url | gpg --dearmor | tee $local_node_key >/dev/null"
+    exec_cmd "wget -q -O - $node_key_url | gpg --dearmor | tee $local_node_key >/dev/null"
 fi
 
 print_status "Creating apt sources list file for the NodeSource ${NODENAME} repo..."
