@@ -77,7 +77,6 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported Devuan versions:**
 
-* **Jessie / oldstable** (via Debian 8)
 * **Ascii / stable** (via Debian 9)
 * **Beowulf / testing** (via Debian 10)
 * **Ceres / unstable** (via Debian unstable)
@@ -287,7 +286,6 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
-* **Fedora 31** (64-bit) - **available for Node.js 10.17.0 and later**
 * **Fedora 32** (64-bit)
 * **Fedora 33** (64-bit)
 
@@ -488,6 +486,12 @@ A: Your package manager is probably installing a newer Node.js version from a di
 Q: What is the current status of IPv6 support?
 
 A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
+
+---
+
+Q: I cannot install Node.js on Debian Jessie or Ubuntu Trusty Tahr: GPG error, why?
+
+A: See [issue #1181](https://github.com/nodesource/distributions/issues/1181)
 
 <a name="requests"></a>
 # Requested Distributions
