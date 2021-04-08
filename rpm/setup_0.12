@@ -105,10 +105,10 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -135,10 +135,10 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_10.x - Node.js v10 LTS \"Dubnium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -202,7 +202,7 @@ incorrect or would like your architecture to be considered for support. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^(redhat|centos|cloudlinux|sl)- ]]; then
+if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|cloudlinux|sl)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
