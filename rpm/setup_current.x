@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 15.x repo onto an
+# Script to install the NodeSource Node.js 16.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -20,8 +20,8 @@
 #
 
 SCRSUFFIX="_current.x"
-NODENAME="Node.js 15.x"
-NODEREPO="pub_15.x"
+NODENAME="Node.js 16.x"
+NODEREPO="pub_16.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -109,6 +109,7 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -139,6 +140,7 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
