@@ -49,6 +49,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 19.10** (Eoan Ermine)
 * **Ubuntu 20.04 LTS** (Focal Fossa)
 * **Ubuntu 20.10** (Groovy Gorilla)
+* **Ubuntu 21.04** (Hirsute Hippo)
 
 **Supported Debian versions:**
 
@@ -129,6 +130,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v16.x**:
+
+```sh
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v15.x**:
 
 ```sh
@@ -189,7 +202,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v15.x)**:
+**Node.js Current (v16.x)**:
 
 ```sh
 # Using Ubuntu
@@ -292,6 +305,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **Fedora 32** (64-bit)
 * **Fedora 33** (64-bit)
+* **Fedora 34** (64-bit)
 
 **Supported Amazon Linux versions:**
 
@@ -306,6 +320,16 @@ _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [runnin
 The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
+
+**Node.js v16.x**
+
+```sh
+# As root
+curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
+
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
+```
 
 **Node.js v15.x**
 
@@ -357,7 +381,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (15.x)**
+**Node.js Current (16.x)**
 
 ```sh
 # As root
