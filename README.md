@@ -178,18 +178,6 @@ curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js v10.x**:
-
-```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_10.x | bash -
-apt-get install -y nodejs
-```
-
 **Node.js LTS (v14.x)**:
 
 ```sh
@@ -279,7 +267,6 @@ sudo apt-get install nodejs
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **i386** (32-bit) — not available for all distros and **not available for Node.js 10.x and later**
 * **x86_64** (64-bit)
 * **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
@@ -359,16 +346,6 @@ curl -fsSL https://rpm.nodesource.com/setup_12.x | bash -
 
 # No root privileges
 curl -fsSL https://rpm.nodesource.com/setup_12.x | sudo bash -
-```
-
-**Node.js v10.x**
-
-```sh
-# As root
-curl -fsSL https://rpm.nodesource.com/setup_10.x | bash -
-
-# No root privileges
-curl -fsSL https://rpm.nodesource.com/setup_10.x | sudo bash -
 ```
 
 **Node.js LTS (14.x)**
