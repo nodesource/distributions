@@ -94,7 +94,8 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 9.x" ||
           "X${NODENAME}" == "XNode.js 10.x" ||
           "X${NODENAME}" == "XNode.js 11.x" ||
-          "X${NODENAME}" == "XNode.js 13.x" ]]; then
+          "X${NODENAME}" == "XNode.js 13.x" ||
+          "X${NODENAME}" == "XNode.js 15.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
@@ -108,7 +109,6 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
 
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
@@ -138,7 +138,6 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
 
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_15.x - Node.js v15 \"Fifteen\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
