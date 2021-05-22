@@ -1,3 +1,4 @@
+ 
 #!/bin/bash
 
 # Discussion, issues and change requests at:
@@ -180,7 +181,7 @@ fi
 
 ## Check distro and arch
 echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release)
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
@@ -208,6 +209,8 @@ if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|cloudlinux|sl)- ]]; then
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
+    DIST_TYPE=fc
+elif [[ $DISTRO_PKG =~ ^(fedora)-release- ]]; then
     DIST_TYPE=fc
 else
 
