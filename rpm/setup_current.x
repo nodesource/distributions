@@ -180,6 +180,7 @@ fi
 ## Check distro and arch
 echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release"
 DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release)
+echo $(rpm -1 --whatprovides redhat-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
