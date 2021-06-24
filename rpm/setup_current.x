@@ -237,7 +237,7 @@ else
   else
     DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\3/')
   fi
-
+  
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 
     print_status "\
@@ -339,7 +339,6 @@ echo "+ mktemp"
 RPM_TMP=$(mktemp || bail)
 
 exec_cmd "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
-echo "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
 
 print_status "Installing release setup RPM..."
 
