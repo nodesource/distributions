@@ -178,8 +178,8 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release)
+echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release"
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
@@ -208,6 +208,8 @@ elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & A
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
     DIST_TYPE=fc
+elif [[ $DISTRO_PKG =~ fedora-release- ]]; then
+    DIST_TYPE=fc
 else
 
   print_status "\
@@ -230,8 +232,12 @@ else
 
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
   ## extract the major version number of the distro
-  DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common)?-([0-9]+).*$/\3/')
-
+  if [[ $DIST_TYPE =~ fc ]]; then 
+    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\4/')    
+  else
+    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\3/')
+  fi
+  
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
 
     print_status "\
