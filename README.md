@@ -73,6 +73,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)
 * **Linux Mint 20 "Ulyana"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.1 "Ulyssa"** (via Ubuntu 20.04 LTS)
+* **Linux Mint 20.2 "Uma"**    (via Ubuntu 20.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
 * **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
 
