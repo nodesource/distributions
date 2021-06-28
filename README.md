@@ -274,6 +274,10 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **AlmaLinux 8** (64-bit)
 
+**Supported Rocky Linux OS versions:**
+
+* **Rocky 8** (64-bit)
+
 **Supported CloudLinux versions:**
 * **CloudLinux 6** (32-bit for Node <= 10.x and 64-bit)
 
