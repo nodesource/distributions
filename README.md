@@ -279,6 +279,11 @@ NodeSource will continue to maintain the following architectures and may add add
 
 * **AlmaLinux 8** (64-bit)
 
+**Supported Mageia Linux versions:**
+
+* **Mageia 7** (64-bit)
+* **Mageia 8** (64-bit)
+
 **Supported Rocky Linux OS versions:**
 
 * **Rocky 8** (64-bit)
