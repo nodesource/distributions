@@ -222,24 +222,29 @@ sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 **2. Add the NodeSource package signing key**
 
 ```sh
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+KEYRING=/usr/share/keyrings/nodesource.gpg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
 # wget can also be used:
-# wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+# wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
+gpg --no-default-keyring --keyring "$KEYRING" --list-keys
 ```
-The key ID is `1655A0AB68576280`.
+The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
 
 **3. Add the desired NodeSource repository**
 
 ```sh
 # Replace with the branch of Node.js or io.js you want to install: node_6.x, node_8.x, etc...
 VERSION=node_8.x
+# Replace with the keyring above, if different
+KEYRING=/usr/share/keyrings/nodesource.gpg
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
 # - For Debian distributions: jessie, sid, etc...
 # - For Ubuntu distributions: xenial, bionic, etc...
 # - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
 DISTRO="$(lsb_release -s -c)"
-echo "deb https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
+
 ```
 
 **4. Update package lists and install Node.js**
