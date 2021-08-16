@@ -202,7 +202,7 @@ incorrect or would like your architecture to be considered for support. \
 
 fi
 
-if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|rocky|cloudlinux|sl)- ]]; then
+if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|rocky|cloudlinux|mageia|sl)- ]]; then
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
@@ -235,7 +235,7 @@ else
   if [[ $DIST_TYPE =~ fc ]]; then 
     DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\4/')    
   else
-    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\3/')
+    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container|-Default)?-([0-9]+).*$/\3/')
   fi
   
   if ! [[ $DIST_VERSION =~ ^[0-9][0-9]?$ ]]; then
@@ -365,6 +365,8 @@ Run \`${bold}sudo yum remove -y ${NODEPKG} npm${normal}\` to remove these first.
 fi
 
 print_status """Run \`${bold}sudo yum install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
+## You may run dnf if yum is not available:
+     sudo dnf install -y nodejs
 ## You may also need development tools to build native addons:
      sudo yum install gcc-c++ make
 ## To install the Yarn package manager, run:
