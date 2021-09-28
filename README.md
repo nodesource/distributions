@@ -18,10 +18,6 @@ Pull requests are encouraged if you have changes you believe would improve the s
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
-* **[Snap packages](#snap)**
-  - [About](#snapabout)
-  - [Installation instructions](#snapinstall)
-  - [Advanced usage](#snapadvanced)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -55,10 +51,11 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable and testing.
 
-* **Debian 9 / oldstable** (Stretch)
-* **Debian 10 / stable** (Buster)
+* **Debian 9 / oldoldstable** (Stretch)
+* **Debian 10 / oldstable** (Buster)
+* **Debian 11 / stable** (Bullseye)
 * **Debian unstable** (Sid)
-* **Debian testing** (Bullseye)
+* **Debian testing** (Bookworm)
 
 **Supported Linux Mint versions:**
 
