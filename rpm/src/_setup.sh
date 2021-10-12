@@ -336,7 +336,7 @@ print_status "Downloading release setup RPM..."
 ## Download to a tmp file then install it directly with `rpm`.
 ## We don't rely on RPM's ability to fetch from HTTPS directly
 echo "+ mktemp"
-RPM_TMP=$(mktemp || bail)
+RPM_TMP=$(mktemp) || bail
 
 exec_cmd "curl -sL -o '${RPM_TMP}' '${RELEASE_URL}'"
 
