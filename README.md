@@ -46,6 +46,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 20.04 LTS** (Focal Fossa)
 * **Ubuntu 20.10** (Groovy Gorilla)
 * **Ubuntu 21.04** (Hirsute Hippo)
+* **Ubuntu 21.10** (Impish Indri)
 
 **Supported Debian versions:**
 
