@@ -357,8 +357,21 @@ print_status "Checking for existing installations..."
 ## installed, need to inform if they are there
 echo "+ rpm -qa 'node|npm' | grep -v nodesource"
 EXISTING_NODE=$(rpm -qa 'node|npm|iojs' | grep -v nodesource)
-16
-16
+
+if [ "X${EXISTING_NODE}" != "X" ]; then
+
+  print_status """Your system appears to already have Node.js installed from an alternative source.
+Run \`${bold}sudo yum remove -y ${NODEPKG} npm${normal}\` to remove these first.
+"""
+
+fi
+
+print_status """Run \`${bold}sudo yum install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
+## You may run dnf if yum is not available:
+     sudo dnf install -y nodejs
+## You may also need development tools to build native addons:
+     sudo yum install gcc-c++ make
+## To install the Yarn package manager, run:
      curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
      sudo yum install yarn
 """
