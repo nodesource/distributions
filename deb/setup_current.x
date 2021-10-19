@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 16.x repo onto a
+# Script to install the NodeSource Node.js 17.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -22,8 +22,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_current.x"
-NODENAME="Node.js 16.x"
-NODEREPO="node_16.x"
+NODENAME="Node.js 17.x"
+NODEREPO="node_17.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -111,6 +111,7 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_17.x — Node.js 17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -140,6 +141,7 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
    * ${green}https://deb.nodesource.com/setup_12.x — Node.js 12 LTS \"Erbium\"${normal}
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
+   * ${green}https://deb.nodesource.com/setup_17.x — Node.js 17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.

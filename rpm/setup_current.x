@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 16.x repo onto an
+# Script to install the NodeSource Node.js 17.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -20,8 +20,8 @@
 #
 
 SCRSUFFIX="_current.x"
-NODENAME="Node.js 16.x"
-NODEREPO="pub_16.x"
+NODENAME="Node.js 17.x"
+NODEREPO="pub_17.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -110,6 +110,7 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_17.x - Node.js v17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -139,6 +140,7 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_17.x - Node.js v17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -355,21 +357,8 @@ print_status "Checking for existing installations..."
 ## installed, need to inform if they are there
 echo "+ rpm -qa 'node|npm' | grep -v nodesource"
 EXISTING_NODE=$(rpm -qa 'node|npm|iojs' | grep -v nodesource)
-
-if [ "X${EXISTING_NODE}" != "X" ]; then
-
-  print_status """Your system appears to already have Node.js installed from an alternative source.
-Run \`${bold}sudo yum remove -y ${NODEPKG} npm${normal}\` to remove these first.
-"""
-
-fi
-
-print_status """Run \`${bold}sudo yum install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
-## You may run dnf if yum is not available:
-     sudo dnf install -y nodejs
-## You may also need development tools to build native addons:
-     sudo yum install gcc-c++ make
-## To install the Yarn package manager, run:
+16
+16
      curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
      sudo yum install yarn
 """

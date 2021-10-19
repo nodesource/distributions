@@ -129,6 +129,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v17.x**:
+
+```sh
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_17.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v16.x**:
 
 ```sh
@@ -177,7 +189,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v16.x)**:
+**Node.js Current (v17.x)**:
 
 ```sh
 # Using Ubuntu
@@ -309,6 +321,16 @@ The Nodesource RPM package signing key is available here: https://rpm.nodesource
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
+**Node.js v17.x**
+
+```sh
+# As root
+curl -fsSL https://rpm.nodesource.com/setup_17.x | bash -
+
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_17.x | sudo bash -
+```
+
 **Node.js v16.x**
 
 ```sh
@@ -349,7 +371,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (16.x)**
+**Node.js Current (17.x)**
 
 ```sh
 # As root
@@ -472,6 +494,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
 <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
 <tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
+<tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
