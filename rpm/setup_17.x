@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 6.x LTS Boron repo onto an
+# Script to install the NodeSource Node.js 17.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup_6.x | bash -
+# curl -sL https://rpm.nodesource.com/setup_17.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup_6.x | bash -
+# wget -qO- https://rpm.nodesource.com/setup_17.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,9 +19,9 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX="_6.x"
-NODENAME="Node.js 6.x LTS Boron"
-NODEREPO="pub_6.x"
+SCRSUFFIX="_17.x"
+NODENAME="Node.js 17.x"
+NODEREPO="pub_17.x"
 NODEPKG="nodejs"
 
 print_status() {

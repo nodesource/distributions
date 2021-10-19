@@ -110,6 +110,7 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_17.x - Node.js v17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -139,6 +140,7 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
    * ${green}https://rpm.nodesource.com/setup_12.x - Node.js v12 LTS \"Erbium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_17.x - Node.js v17 \"Seventeen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
