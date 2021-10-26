@@ -177,7 +177,7 @@ curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js LTS (v14.x)**:
+**Node.js LTS (v16.x)**:
 
 ```sh
 # Using Ubuntu
@@ -361,7 +361,7 @@ curl -fsSL https://rpm.nodesource.com/setup_12.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
-**Node.js LTS (14.x)**
+**Node.js LTS (16.x)**
 
 ```sh
 # As root
