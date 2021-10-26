@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 14.x repo onto a
+# Script to install the NodeSource Node.js 16.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -22,8 +22,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_lts.x"
-NODENAME="Node.js 14.x"
-NODEREPO="node_14.x"
+NODENAME="Node.js 16.x"
+NODEREPO="node_16.x"
 NODEPKG="nodejs"
 
 print_status() {

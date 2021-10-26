@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 14.x repo onto an
+# Script to install the NodeSource Node.js 16.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -20,8 +20,8 @@
 #
 
 SCRSUFFIX="_lts.x"
-NODENAME="Node.js 14.x"
-NODEREPO="pub_14.x"
+NODENAME="Node.js 16.x"
+NODEREPO="pub_16.x"
 NODEPKG="nodejs"
 
 print_status() {
