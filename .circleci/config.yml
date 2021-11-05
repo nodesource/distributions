@@ -38,7 +38,7 @@ jobs:
   fedora-test:
     working_directory: ~/repo
     docker:
-      - image: fedora
+      - image: fedora:34
     steps:
       - checkout
       - run: bash rpm/setup_16.x
