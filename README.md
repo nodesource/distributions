@@ -303,9 +303,9 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Fedora versions:**
 
-* **Fedora 32** (64-bit)
 * **Fedora 33** (64-bit)
 * **Fedora 34** (64-bit)
+* **Fedora 35** (64-bit)
 
 **Supported Amazon Linux versions:**
 
