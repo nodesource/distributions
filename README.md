@@ -77,8 +77,9 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported Devuan versions:**
 
-* **Ascii / stable** (via Debian 9)
-* **Beowulf / testing** (via Debian 10)
+* **Ascii / oldoldstable** (via Debian 9)
+* **Beowulf / oldstable** (via Debian 10)
+* **Chimaera / stable** (via Debian 11)
 * **Ceres / unstable** (via Debian unstable)
 
 **Supported elementary OS versions:**
