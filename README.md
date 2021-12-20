@@ -119,6 +119,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 **Supported PureOS Linux versions:**
 
 * **PureOS 9.0 "Amber"** (via Debian 10)
+* **PureOS 10.0 "Byzantium"** (via Debian 11)
 
 **Supported Astra Linux CE versions:**
 
