@@ -115,6 +115,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Sparky 4.x "Tyche"** (via Debian 9)
 * **Sparky 5.x "Nibiru"** (via Debian 10)
+* **Sparky 6.x "Po Tolo"** (via Debian 11)
 
 **Supported PureOS Linux versions:**
 
