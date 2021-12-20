@@ -110,6 +110,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **MX-17 Horizon** (via Debian 9)
 * **MX-18 Continuum** (via Debian 9)
 * **MX-19 Patito Feo** (via Debian 10)
+* **MX-21 Wildflower** (via Debian 11)
 
 **Supported Sparky Linux versions:**
 
