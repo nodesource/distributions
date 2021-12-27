@@ -474,6 +474,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
 * MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
 * Parrot OS - [Issue #1205](https://github.com/nodesource/distributions/issues/1205)
+* GuixSD - [Issue #1297](https://github.com/nodesource/distributions/issues/1297)
 
 <a name="authors-contributors"></a>
 ## Authors and Contributors
