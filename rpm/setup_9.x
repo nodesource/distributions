@@ -235,7 +235,7 @@ else
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
   ## extract the major version number of the distro
   if [[ $DIST_TYPE =~ fc ]]; then 
-    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container)?-([0-9]+).*$/\4/')    
+    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container|-kde|-cloud|-xfce)?-([0-9]+).*$/\4/')    
   else
     DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container|-Default)?-([0-9]+).*$/\3/')
   fi
