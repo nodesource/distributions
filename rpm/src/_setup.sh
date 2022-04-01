@@ -174,6 +174,12 @@ if you think this is incorrect or would like your distribution to be considered
 for support.
 """
   exit 1
+elif [ -x /bin/yum ]; then
+  PKG_MGR=yum
+elif [ -x /bin/dnf ]; then
+  PKG_MGR=dnf
+elif [ -x /bin/microdnf ]; then
+  PKG_MGR=microdnf
 fi
 
 ## Annotated section for auto extraction in test.sh
@@ -291,8 +297,8 @@ if [ "$DIST_TYPE" == "el" ] && [ "$DIST_VERSION" == "5" ]; then
 
   print_status "Checking if EPEL is enabled..."
 
-  echo "+ yum repolist enabled 2> /dev/null | grep epel"
-  repolist=$(yum repolist enabled 2> /dev/null | grep epel)
+  echo "+ ${PKG_MGR} repolist enabled 2> /dev/null | grep epel"
+  repolist=$(${PKG_MGR} repolist enabled 2> /dev/null | grep epel)
 
   if [ "X${repolist}" == "X" ]; then
     print_status "Finding current EPEL release RPM..."
@@ -324,12 +330,12 @@ fi
 ## Disable AppStream repository due to installation conflicts for EL8
 ## Otherwise, it will not install the NodeSource's version of Node.js
 if [[ "X${DIST_TYPE}${DIST_VERSION}" == "Xel8" ]]; then
-    print_status """As yum will try to install Node.js from the AppStream repository
+    print_status """As ${PKG_MGR} will try to install Node.js from the AppStream repository
 instead of the NodeSource repository, the AppStream's version of Node.js has to be disabled.
-## Run \`${bold}sudo yum module enable -y nodejs${normal}\` to reactivate the AppStream's Node.js repository.
+## Run \`${bold}sudo ${PKG_MGR} module enable -y nodejs${normal}\` to reactivate the AppStream's Node.js repository.
 """
-echo "+ yum module disable -y nodejs"
-yum module disable -y nodejs
+echo "+ ${PKG_MGR} module disable -y nodejs"
+${PKG_MGR} module disable -y nodejs
 fi
 
 print_status "Downloading release setup RPM..."
@@ -361,19 +367,17 @@ EXISTING_NODE=$(rpm -qa 'node|npm|iojs' | grep -v nodesource)
 if [ "X${EXISTING_NODE}" != "X" ]; then
 
   print_status """Your system appears to already have Node.js installed from an alternative source.
-Run \`${bold}sudo yum remove -y ${NODEPKG} npm${normal}\` to remove these first.
+Run \`${bold}sudo ${PKG_MGR} remove -y ${NODEPKG} npm${normal}\` to remove these first.
 """
 
 fi
 
-print_status """Run \`${bold}sudo yum install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
-## You may run dnf if yum is not available:
-     sudo dnf install -y nodejs
+print_status """Run \`${bold}sudo ${PKG_MGR} install -y ${NODEPKG}${normal}\` to install ${NODENAME} and npm.
 ## You may also need development tools to build native addons:
-     sudo yum install gcc-c++ make
+     sudo ${PKG_MGR} install gcc-c++ make
 ## To install the Yarn package manager, run:
      curl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
-     sudo yum install yarn
+     sudo ${PKG_MGR} install yarn
 """
 
 exit 0

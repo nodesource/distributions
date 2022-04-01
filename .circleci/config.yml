@@ -44,6 +44,17 @@ jobs:
       - run: bash rpm/setup_16.x
       - run: dnf install nodejs -y
       - run: *envinfo
+  atomic-test:
+    working_directory: ~/repo
+    docker:
+      - image: centos
+    steps:
+      - checkout
+      - run: yum install microdnf -y
+      - run: rm /bin/yum
+      - run: bash rpm/setup_16.x
+      - run: microdnf install nodejs -y
+      - run: *envinfo
 
 workflows:
   version: 2
@@ -53,3 +64,4 @@ workflows:
       - debian-test
       - centos-test
       - fedora-test
+      - atomic-test
