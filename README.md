@@ -339,6 +339,16 @@ The Nodesource RPM package signing key is available here: https://rpm.nodesource
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
+**Node.js v18.x**
+
+```sh
+# As root
+curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+
+# No root privileges
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+```
+
 **Node.js v17.x**
 
 ```sh
@@ -389,7 +399,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (17.x)**
+**Node.js Current (18.x)**
 
 ```sh
 # As root
