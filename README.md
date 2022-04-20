@@ -135,6 +135,18 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v18.x**:
+
+```sh
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# Using Debian, as root
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+apt-get install -y nodejs
+```
+
 **Node.js v17.x**:
 
 ```sh
@@ -195,7 +207,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v17.x)**:
+**Node.js Current (v18.x)**:
 
 ```sh
 # Using Ubuntu
