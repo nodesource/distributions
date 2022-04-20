@@ -29,7 +29,7 @@ jobs:
   centos-test:
     working_directory: ~/repo
     docker:
-      - image: centos
+      - image: centos:7
     steps:
       - checkout
       - run: bash rpm/setup_16.x
