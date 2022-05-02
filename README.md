@@ -75,6 +75,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 20.3 "Una"** (via Ubuntu 20.04 LTS)
 * **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
 * **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
+* **Linux Mint Debian Edition (LMDE) 5 "Elsie"** (via Debian 11)
 
 **Supported Devuan versions:**
 
