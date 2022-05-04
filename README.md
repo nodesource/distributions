@@ -47,6 +47,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 20.10** (Groovy Gorilla)
 * **Ubuntu 21.04** (Hirsute Hippo)
 * **Ubuntu 21.10** (Impish Indri)
+* **Ubuntu 22.04** (Jammy Jellyfish)
 
 **Supported Debian versions:**
 
@@ -181,18 +182,6 @@ sudo apt-get install -y nodejs
 
 # Using Debian, as root
 curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-apt-get install -y nodejs
-```
-
-**Node.js v12.x**:
-
-```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_12.x | bash -
 apt-get install -y nodejs
 ```
 
@@ -378,16 +367,6 @@ curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
 
 # No root privileges
 curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
-```
-
-**Node.js v12.x**
-
-```sh
-# As root
-curl -fsSL https://rpm.nodesource.com/setup_12.x | bash -
-
-# No root privileges
-curl -fsSL https://rpm.nodesource.com/setup_12.x | sudo bash -
 ```
 
 **Node.js LTS (16.x)**
