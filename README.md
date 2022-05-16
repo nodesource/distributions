@@ -15,6 +15,7 @@ Pull requests are encouraged if you have changes you believe would improve the s
 ## Table of Contents
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
   - [Installation instructions](#debinstall)
+  - [Uninstall instructions](#debuninstall)
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
@@ -217,6 +218,18 @@ To compile and install native addons from npm you may also need to install build
 # use `sudo` on Ubuntu or run this as root on debian
 apt-get install -y build-essential
 ```
+
+<a name="debuninstall"></a>
+### Uninstall `nodejs` Ubuntu & Debian packages 
+
+To completely remove Node.js installed from the deb.nodesource.com package methods above:
+
+```sh
+# use `sudo` on Ubuntu or run this as root on debian
+apt-get purge nodejs
+rm -r /etc/apt/sources.list.d/nodesource.list
+```
+
 
 <a name="debmanual"></a>
 ### Manual installation
