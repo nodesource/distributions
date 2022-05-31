@@ -38,11 +38,11 @@ NodeSource will continue to maintain the following architectures and may add add
 
 NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
 
-* **Ubuntu 16.04 LTS** (Xenial Xerus)
-* **Ubuntu 18.04 LTS** (Bionic Beaver)
-* **Ubuntu 18.10** (Cosmic Cuttlefish)
-* **Ubuntu 19.04** (Disco Dingo)
-* **Ubuntu 19.10** (Eoan Ermine)
+* ~~**Ubuntu 16.04 LTS** (Xenial Xerus)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Ubuntu 18.04 LTS** (Bionic Beaver)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Ubuntu 18.10** (Cosmic Cuttlefish)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Ubuntu 19.04** (Disco Dingo)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Ubuntu 19.10** (Eoan Ermine)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Ubuntu 20.04 LTS** (Focal Fossa)
 * **Ubuntu 20.10** (Groovy Gorilla)
 * **Ubuntu 21.04** (Hirsute Hippo)
@@ -53,7 +53,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 
 NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable and testing.
 
-* **Debian 9 / oldoldstable** (Stretch)
+* ~~**Debian 9 / oldoldstable** (Stretch)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Debian 10 / oldstable** (Buster)
 * **Debian 11 / stable** (Bullseye)
 * **Debian unstable** (Sid)
@@ -61,63 +61,63 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported Linux Mint versions:**
 
-* **Linux Mint 18 "Sarah"** (via Ubuntu 16.04 LTS)
-* **Linux Mint 18.1 "Serena"** (via Ubuntu 16.04 LTS)
-* **Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)
-* **Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)
-* **Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)
-* **Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)
-* **Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)
-* **Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)
-* **Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)
+* ~~**Linux Mint 18 "Sarah"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 18.1 "Serena"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Linux Mint 20 "Ulyana"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.1 "Ulyssa"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.2 "Uma"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.3 "Una"** (via Ubuntu 20.04 LTS)
-* **Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)
+* ~~**Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
 * **Linux Mint Debian Edition (LMDE) 5 "Elsie"** (via Debian 11)
 
 **Supported Devuan versions:**
 
-* **Ascii / oldoldstable** (via Debian 9)
+* ~~**Ascii / oldoldstable** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Beowulf / oldstable** (via Debian 10)
 * **Chimaera / stable** (via Debian 11)
 * **Ceres / unstable** (via Debian unstable)
 
 **Supported elementary OS versions:**
 
-* **elementary OS 0.4 Loki** (via Ubuntu 16.04 LTS)
-* **elementary OS 5 Juno** (via Ubuntu 18.04 LTS)
-* **elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)
+* ~~**elementary OS 0.4 Loki** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**elementary OS 5 Juno** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **elementary OS 6 Odin** (via Ubuntu 20.04 LTS)
 * **elementary OS 6.1 Jolnir** (via Ubuntu 20.04 LTS)
 
 **Supported Trisquel versions:**
 
-* **Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)
-* **Trisquel 9 "Etiona"** (via Ubuntu 18.04 LTS)
+* ~~**Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Trisquel 9 "Etiona"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 
 **Supported BOSS versions:**
 
-* **BOSS 7.0 "Drishti"** (via Debian 9)
+* ~~**BOSS 7.0 "Drishti"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **BOSS 8.0 "Unnati"** (via Debian 10)
 
 **Supported BunsenLabs versions:**
 
-* **Helium** (via Debian 9)
+* ~~**Helium** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Lithium** (via Debian 10)
 
 **Supported MX Linux versions:**
 
-* **MX-17 Horizon** (via Debian 9)
-* **MX-18 Continuum** (via Debian 9)
+* ~~**MX-17 Horizon** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**MX-18 Continuum** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **MX-19 Patito Feo** (via Debian 10)
 * **MX-21 Wildflower** (via Debian 11)
 
 **Supported Sparky Linux versions:**
 
-* **Sparky 4.x "Tyche"** (via Debian 9)
+* ~~**Sparky 4.x "Tyche"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Sparky 5.x "Nibiru"** (via Debian 10)
 * **Sparky 6.x "Po Tolo"** (via Debian 11)
 
@@ -128,11 +128,11 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Supported Astra Linux CE versions:**
 
-* **Astra Linux CE 2.12 "Orel"** (via Debian 9)
+* ~~**Astra Linux CE 2.12 "Orel"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 
 **Supported Ubilinux versions:**
 
-* **Ubilinux 4.0 "Dolcetto"** (via Debian 9)
+* ~~**Ubilinux 4.0 "Dolcetto"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 
 <a name="debinstall"></a>
 ### Installation instructions
@@ -284,12 +284,12 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Red Hat® Enterprise Linux® versions:**
 
-* **RHEL 7** (64-bit)
+* ~~**RHEL 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **RHEL 8** (64-bit)
 
 **Supported CentOS versions:**
 
-* **CentOS 7** (64-bit)
+* ~~**CentOS 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **CentOS 8** (64-bit)
 * **CentOS 8 Stream** (64-bit)
 
@@ -299,7 +299,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Mageia Linux versions:**
 
-* **Mageia 7** (64-bit)
+* ~~**Mageia 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Mageia 8** (64-bit)
 
 **Supported Rocky Linux OS versions:**
