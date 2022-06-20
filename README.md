@@ -19,6 +19,7 @@ Pull requests are encouraged if you have changes you believe would improve the s
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
+  - [Uninstall instructions](#rpmuninstall)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -419,6 +420,20 @@ To test an installation is working (and that the setup scripts are working!) use
 ```sh
 curl -fsSL https://deb.nodesource.com/test | bash -
 ```
+
+<a name="rpmuninstall"></a>
+### Uninstall `nodejs` Enterprise Linux packages 
+
+To completely remove Node.js installed from the rpm.nodesource.com package methods above:
+
+```sh
+# use `sudo` or run this as root
+yum remove nodejs
+rm -r /etc/yum.repos.d/nodesource*.repo
+yum clean all
+```
+
+
 <a name="questions"></a>
 # FAQ
 
