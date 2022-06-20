@@ -412,15 +412,6 @@ yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
 
-<a name="tests"></a>
-## Tests
-
-To test an installation is working (and that the setup scripts are working!) use:
-
-```sh
-curl -fsSL https://deb.nodesource.com/test | bash -
-```
-
 <a name="rpmuninstall"></a>
 ### Uninstall `nodejs` Enterprise Linux packages 
 
@@ -433,6 +424,14 @@ rm -r /etc/yum.repos.d/nodesource*.repo
 yum clean all
 ```
 
+<a name="tests"></a>
+## Tests
+
+To test an installation is working (and that the setup scripts are working!) use:
+
+```sh
+curl -fsSL https://deb.nodesource.com/test | bash -
+```
 
 <a name="questions"></a>
 # FAQ
