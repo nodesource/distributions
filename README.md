@@ -15,9 +15,11 @@ Pull requests are encouraged if you have changes you believe would improve the s
 ## Table of Contents
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
   - [Installation instructions](#debinstall)
+  - [Uninstall instructions](#debuninstall)
   - [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
   - [Installation instructions](#rpminstall)
+  - [Uninstall instructions](#rpmuninstall)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -218,6 +220,18 @@ To compile and install native addons from npm you may also need to install build
 apt-get install -y build-essential
 ```
 
+<a name="debuninstall"></a>
+### Uninstall `nodejs` Ubuntu & Debian packages 
+
+To completely remove Node.js installed from the deb.nodesource.com package methods above:
+
+```sh
+# use `sudo` on Ubuntu or run this as root on debian
+apt-get purge nodejs
+rm -r /etc/apt/sources.list.d/nodesource.list
+```
+
+
 <a name="debmanual"></a>
 ### Manual installation
 
@@ -398,6 +412,18 @@ yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
 
+<a name="rpmuninstall"></a>
+### Uninstall `nodejs` Enterprise Linux packages 
+
+To completely remove Node.js installed from the rpm.nodesource.com package methods above:
+
+```sh
+# use `sudo` or run this as root
+yum remove nodejs
+rm -r /etc/yum.repos.d/nodesource*.repo
+yum clean all
+```
+
 <a name="tests"></a>
 ## Tests
 
@@ -406,6 +432,7 @@ To test an installation is working (and that the setup scripts are working!) use
 ```sh
 curl -fsSL https://deb.nodesource.com/test | bash -
 ```
+
 <a name="questions"></a>
 # FAQ
 
