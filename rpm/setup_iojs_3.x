@@ -96,7 +96,8 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 11.x" ||
           "X${NODENAME}" == "XNode.js 12.x" ||
           "X${NODENAME}" == "XNode.js 13.x" ||
-          "X${NODENAME}" == "XNode.js 15.x" ]]; then
+          "X${NODENAME}" == "XNode.js 15.x" ||
+          "X${NODENAME}" == "XNode.js 17.x" ]]; then
 
         print_bold \
 "                            DEPRECATION WARNING                            " "\
