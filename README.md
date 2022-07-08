@@ -246,6 +246,7 @@ KEYRING=/usr/share/keyrings/nodesource.gpg
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
+chmod 644 "$KEYRING"
 gpg --no-default-keyring --keyring "$KEYRING" --list-keys
 ```
 The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
