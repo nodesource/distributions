@@ -142,6 +142,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * **Parrot OS 5.0 "Electro Ara"** (via Debian 11)
 
+**Supported Deepin Linux versions:**
+
+* **Deepin 20 "Apricot"** (via Debian 10)
+
 <a name="debinstall"></a>
 ### Installation instructions
 
@@ -482,7 +486,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
 * Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
 * FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
-* Deepin - [Issue #638](https://github.com/nodesource/distributions/issues/638)
 * PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
 * Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
 * MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
