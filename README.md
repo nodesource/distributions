@@ -105,6 +105,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 * ~~**BOSS 7.0 "Drishti"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **BOSS 8.0 "Unnati"** (via Debian 10)
+* **BOSS 9.0 "Urja"** (via Debian 11)
 
 **Supported BunsenLabs versions:**
 
@@ -136,6 +137,10 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 **Supported Ubilinux versions:**
 
 * ~~**Ubilinux 4.0 "Dolcetto"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+
+**Supported Parrot OS Linux versions:**
+
+* **Parrot OS 5.0 "Electro Ara"** (via Debian 11)
 
 <a name="debinstall"></a>
 ### Installation instructions
@@ -481,7 +486,6 @@ We, unfortunately, do not have the resources necessary to support and test the p
 * PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
 * Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
 * MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
-* Parrot OS - [Issue #1205](https://github.com/nodesource/distributions/issues/1205)
 * GuixSD - [Issue #1297](https://github.com/nodesource/distributions/issues/1297)
 * XCP-ng - [Issue #1061](https://github.com/nodesource/distributions/issues/1061)
 * VzLinux - [Issue #1060](https://github.com/nodesource/distributions/issues/1060)
