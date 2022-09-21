@@ -263,8 +263,8 @@ The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
 **3. Add the desired NodeSource repository**
 
 ```sh
-# Replace with the branch of Node.js or io.js you want to install: node_6.x, node_8.x, etc...
-VERSION=node_8.x
+# Replace with the branch of Node.js or io.js you want to install: node_8.x, node_16.x, etc...
+VERSION=node_16.x
 # Replace with the keyring above, if different
 KEYRING=/usr/share/keyrings/nodesource.gpg
 # The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
