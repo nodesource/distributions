@@ -151,61 +151,71 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 **Node.js v18.x**:
 
+##### Using Ubuntu
 ```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - \ &&
 sudo apt-get install -y nodejs
+```
 
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+##### Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \ &&
 apt-get install -y nodejs
 ```
 
 **Node.js v16.x**:
 
+##### Using Ubuntu
 ```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - \ &&
 sudo apt-get install -y nodejs
+```
 
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+##### Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_16.x | bash - \ &&
 apt-get install -y nodejs
 ```
 
 **Node.js v14.x**:
 
+##### Using Ubuntu
 ```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - \ &&
 sudo apt-get install -y nodejs
+```
 
+```sh
 # Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+curl -fsSL https://deb.nodesource.com/setup_14.x | bash - \ &&
 apt-get install -y nodejs
 ```
 
 **Node.js LTS (v16.x)**:
 
+##### Using Ubuntu
 ```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - \ &&
 sudo apt-get install -y nodejs
+```
 
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash -
+##### Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \ &&
 apt-get install -y nodejs
 ```
 
 **Node.js Current (v18.x)**:
 
+##### Using Ubuntu
 ```sh
-# Using Ubuntu
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - \ &&
 sudo apt-get install -y nodejs
+```
 
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_current.x | bash -
+#####  Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | bash - \ &&
 apt-get install -y nodejs
 ```
 
@@ -213,8 +223,8 @@ apt-get install -y nodejs
 
 To compile and install native addons from npm you may also need to install build tools:
 
+##### use `sudo` on Ubuntu or run this as root on debian
 ```sh
-# use `sudo` on Ubuntu or run this as root on debian
 apt-get install -y build-essential
 ```
 
@@ -223,9 +233,9 @@ apt-get install -y build-essential
 
 To completely remove Node.js installed from the deb.nodesource.com package methods above:
 
+##### use `sudo` on Ubuntu or run this as root on debian
 ```sh
-# use `sudo` on Ubuntu or run this as root on debian
-apt-get purge nodejs
+apt-get purge nodejs \ &&
 rm -r /etc/apt/sources.list.d/nodesource.list
 ```
 
@@ -244,8 +254,8 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 ```sh
 # add-apt-repository may not be present on some Ubuntu releases:
 # sudo apt-get install python-software-properties
-sudo add-apt-repository -y -r ppa:chris-lea/node.js
-sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list
+sudo add-apt-repository -y -r ppa:chris-lea/node.js \ &&
+sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list \ &&
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
 ```
 
@@ -343,51 +353,61 @@ Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
 **Node.js v18.x**
 
+##### As root
 ```sh
-# As root
 curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+```
 
-# No root privileges
+##### No root privileges
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
 ```
 
 **Node.js v16.x**
 
+##### As root
 ```sh
-# As root
 curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
+```
 
-# No root privileges
+##### No root privileges
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
 ```
 
 **Node.js v14.x**
 
+##### As root
 ```sh
-# As root
 curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
+```
 
-# No root privileges
+##### No root privileges
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
 ```
 
 **Node.js LTS (16.x)**
 
+##### As root
 ```sh
-# As root
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
+```
 
-# No root privileges
+##### No root privileges
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
 **Node.js Current (18.x)**
 
+##### As root
 ```sh
-# As root
 curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
+```
 
-# No root privileges
+##### No root privileges
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
 ```
 
@@ -405,10 +425,10 @@ yum install gcc-c++ make
 
 To completely remove Node.js installed from the rpm.nodesource.com package methods above:
 
+#### use `sudo` or run this as root
 ```sh
-# use `sudo` or run this as root
-yum remove nodejs
-rm -r /etc/yum.repos.d/nodesource*.repo
+yum remove nodejs \ &&
+rm -r /etc/yum.repos.d/nodesource*.repo \ &&
 yum clean all
 ```
 
