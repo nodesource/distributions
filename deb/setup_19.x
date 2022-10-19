@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 12.x repo onto a
+# Script to install the NodeSource Node.js 19.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_12.x | bash -
+# curl -sL https://deb.nodesource.com/setup_19.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_12.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_19.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -21,9 +21,9 @@
 
 
 export DEBIAN_FRONTEND=noninteractive
-SCRSUFFIX="_12.x"
-NODENAME="Node.js 12.x"
-NODEREPO="node_12.x"
+SCRSUFFIX="_19.x"
+NODENAME="Node.js 19.x"
+NODEREPO="node_19.x"
 NODEPKG="nodejs"
 
 print_status() {

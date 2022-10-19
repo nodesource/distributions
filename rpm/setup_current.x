@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 18.x repo onto an
+# Script to install the NodeSource Node.js 19.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -20,8 +20,8 @@
 #
 
 SCRSUFFIX="_current.x"
-NODENAME="Node.js 18.x"
-NODEREPO="pub_18.x"
+NODENAME="Node.js 19.x"
+NODEREPO="pub_19.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -111,7 +111,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
 
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
-   * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 \"Eighteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 \"Hydrogen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -140,7 +141,8 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
 
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
-   * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 \"Eighteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 \"Hydrogen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -235,7 +237,7 @@ else
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
   ## extract the major version number of the distro
   if [[ $DIST_TYPE =~ fc ]]; then 
-    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container|-kde|-cloud|-xfce)?-([0-9]+).*$/\4/')    
+    DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/.*fedora([[:alpha:]]+(-stream|-linux)?)?-release(-server|-workstation|-client|-common|-container|-kde|-cloud|-xfce|-cinnamon)?-([0-9]+).*$/\4/')    
   else
     DIST_VERSION=$(echo $DISTRO_PKG | sed -r 's/^[[:alpha:]]+(-stream|-linux)?-release(-server|-workstation|-client|-common|-container|-Default)?-([0-9]+).*$/\3/')
   fi

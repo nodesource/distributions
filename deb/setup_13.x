@@ -112,7 +112,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
 
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Eighteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Hydrogen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -141,7 +142,8 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
 
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Eighteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Hydrogen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
