@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 9.x repo onto an
+# Script to install the NodeSource Node.js 19.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://rpm.nodesource.com/setup_9.x | bash -
+# curl -sL https://rpm.nodesource.com/setup_19.x | bash -
 #   or
-# wget -qO- https://rpm.nodesource.com/setup_9.x | bash -
+# wget -qO- https://rpm.nodesource.com/setup_19.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
@@ -19,9 +19,9 @@
 # please don't submit pull requests against the built scripts.
 #
 
-SCRSUFFIX="_9.x"
-NODENAME="Node.js 9.x"
-NODEREPO="pub_9.x"
+SCRSUFFIX="_19.x"
+NODENAME="Node.js 19.x"
+NODEREPO="pub_19.x"
 NODEPKG="nodejs"
 
 print_status() {

@@ -50,6 +50,7 @@ NodeSource will maintain Ubuntu distributions in active support by Canonical, in
 * **Ubuntu 21.04** (Hirsute Hippo)
 * **Ubuntu 21.10** (Impish Indri)
 * **Ubuntu 22.04** (Jammy Jellyfish)
+* **Ubuntu 22.10** (Kinetic Kudu)
 
 **Supported Debian versions:**
 
@@ -148,6 +149,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 <a name="debinstall"></a>
 ### Installation instructions
+
+**Node.js v19.x**:
+
+##### Using Ubuntu
+```sh
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
+apt-get install -y nodejs
+```
 
 **Node.js v18.x**:
 
@@ -336,6 +351,7 @@ NodeSource will continue to maintain the following architectures and may add add
 * **Fedora 33** (64-bit)
 * **Fedora 34** (64-bit)
 * **Fedora 35** (64-bit)
+* **Fedora 36** (64-bit)
 
 **Supported Amazon Linux versions:**
 
@@ -350,6 +366,18 @@ _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [runnin
 The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
+
+**Node.js v19.x**
+
+##### As root
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_19.x | bash -
+```
+
+##### No root privileges
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_19.x | sudo bash -
+```
 
 **Node.js v18.x**
 
