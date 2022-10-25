@@ -206,7 +206,7 @@ curl -fsSL https://deb.nodesource.com/setup_14.x | bash - &&\
 apt-get install -y nodejs
 ```
 
-**Node.js LTS (v16.x)**:
+**Node.js LTS (v18.x)**:
 
 ##### Using Ubuntu
 ```sh
@@ -220,7 +220,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v18.x)**:
+**Node.js Current (v19.x)**:
 
 ##### Using Ubuntu
 ```sh
@@ -415,7 +415,7 @@ curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
 ```
 
-**Node.js LTS (16.x)**
+**Node.js LTS (18.x)**
 
 ##### As root
 ```sh
@@ -427,7 +427,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (18.x)**
+**Node.js Current (19.x)**
 
 ##### As root
 ```sh

@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 16.x repo onto a
+# Script to install the NodeSource Node.js 18.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -22,8 +22,8 @@
 
 export DEBIAN_FRONTEND=noninteractive
 SCRSUFFIX="_lts.x"
-NODENAME="Node.js 16.x"
-NODEREPO="node_16.x"
+NODENAME="Node.js 18.x"
+NODEREPO="node_18.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -110,9 +110,9 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Hydrogen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
@@ -140,9 +140,9 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 LTS \"Fermium\"${normal} (recommended)
+   * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
-   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 \"Hydrogen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
