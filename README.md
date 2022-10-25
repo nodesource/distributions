@@ -355,8 +355,8 @@ NodeSource will continue to maintain the following architectures and may add add
 
 **Supported Amazon Linux versions:**
 
-* **Amazon Linux** (64-bit)
-* **Amazon Linux 2** (64-bit)
+* ~~**Amazon Linux** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
+* ~~**Amazon Linux 2** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 
 <a name="rpminstall"></a>
 ### Installation instructions
