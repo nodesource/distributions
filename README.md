@@ -78,6 +78,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * **Linux Mint 20.2 "Uma"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 20.3 "Una"** (via Ubuntu 20.04 LTS)
 * **Linux Mint 21 "Vanessa"** (via Ubuntu 22.04 LTS)
+* **Linux Mint 21.1 "Vera"** (via Ubuntu 22.04 LTS)
 * ~~**Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
 * **Linux Mint Debian Edition (LMDE) 5 "Elsie"** (via Debian 11)
