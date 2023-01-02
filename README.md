@@ -283,6 +283,7 @@ curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor 
 # wget can also be used:
 # wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
 gpg --no-default-keyring --keyring "$KEYRING" --list-keys
+chmod a+r /usr/share/keyrings/nodesource.gpg
 ```
 The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
 
