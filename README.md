@@ -97,6 +97,7 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 * ~~**elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
 * **elementary OS 6 Odin** (via Ubuntu 20.04 LTS)
 * **elementary OS 6.1 Jolnir** (via Ubuntu 20.04 LTS)
+* **elementary OS 7 horus** (via Ubuntu 22.04 LTS)
 
 **Supported Trisquel versions:**
 
