@@ -471,6 +471,10 @@ To test an installation is working (and that the setup scripts are working!) use
 ```sh
 curl -fsSL https://deb.nodesource.com/test | bash -
 ```
+How to check the installed nodejs version?
+```
+node -v
+```
 
 <a name="questions"></a>
 # FAQ
