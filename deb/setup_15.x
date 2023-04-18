@@ -113,7 +113,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
    * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_20.x — Node.js 20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -143,7 +144,8 @@ This script, located at ${bold}https://deb.nodesource.com/setup${normal}, used t
    * ${green}https://deb.nodesource.com/setup_14.x — Node.js 14 \"Fermium\"${normal}
    * ${green}https://deb.nodesource.com/setup_16.x — Node.js 16 \"Gallium\"${normal}
    * ${green}https://deb.nodesource.com/setup_18.x — Node.js 18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal} (current)
+   * ${green}https://deb.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\"${normal}
+   * ${green}https://deb.nodesource.com/setup_20.x — Node.js 20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
