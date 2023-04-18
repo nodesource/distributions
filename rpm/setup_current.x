@@ -3,7 +3,7 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 19.x repo onto an
+# Script to install the NodeSource Node.js 20.x repo onto an
 # Enterprise Linux or Fedora Core based system.
 #
 # Run as root or insert `sudo -E` before `bash`:
@@ -20,8 +20,8 @@
 #
 
 SCRSUFFIX="_current.x"
-NODENAME="Node.js 19.x"
-NODEREPO="pub_19.x"
+NODENAME="Node.js 20.x"
+NODEREPO="pub_20.x"
 NODEPKG="nodejs"
 
 print_status() {
@@ -112,7 +112,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_20.x — Node.js v20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -142,7 +143,8 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_20.x — Node.js v20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.

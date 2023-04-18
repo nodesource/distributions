@@ -112,7 +112,8 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_20.x — Node.js v20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
@@ -142,7 +143,8 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
    * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
-   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal} (current)
+   * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
+   * ${green}https://rpm.nodesource.com/setup_20.x — Node.js v20 \"Iron\"${normal} (current)
 
   Please see ${bold}https://github.com/nodejs/Release${normal} for details about which
   version may be appropriate for you.
