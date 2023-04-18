@@ -152,6 +152,20 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 <a name="debinstall"></a>
 ### Installation instructions
 
+**Node.js v20.x**:
+
+##### Using Ubuntu
+```sh
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+```sh
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+apt-get install -y nodejs
+```
+
 **Node.js v19.x**:
 
 ##### Using Ubuntu
@@ -222,7 +236,7 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
 apt-get install -y nodejs
 ```
 
-**Node.js Current (v19.x)**:
+**Node.js Current (v20.x)**:
 
 ##### Using Ubuntu
 ```sh
