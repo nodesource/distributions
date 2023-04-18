@@ -597,7 +597,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
 <tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
 <tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
-<tr><th align="left">Dave Reid</th><td><a href="https://github.com/davereid">GitHub/davereud</a></td><td></td></tr>
+<tr><th align="left">Dave Reid</th><td><a href="https://github.com/davereid">GitHub/davereid</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
