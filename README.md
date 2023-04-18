@@ -384,6 +384,18 @@ The Nodesource RPM package signing key is available here: https://rpm.nodesource
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
+**Node.js v20.x**
+
+##### As root
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
+```
+
+##### No root privileges
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+```
+
 **Node.js v19.x**
 
 ##### As root
@@ -444,7 +456,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 ```
 
-**Node.js Current (19.x)**
+**Node.js Current (20.x)**
 
 ##### As root
 ```sh
@@ -585,6 +597,7 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
 <tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
 <tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
+<tr><th align="left">Dave Reid</th><td><a href="https://github.com/davereid">GitHub/davereud</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
