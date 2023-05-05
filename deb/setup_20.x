@@ -3,14 +3,14 @@
 # Discussion, issues and change requests at:
 #   https://github.com/nodesource/distributions
 #
-# Script to install the NodeSource Node.js 19.x repo onto a
+# Script to install the NodeSource Node.js 20.x repo onto a
 # Debian or Ubuntu system.
 #
 # Run as root or insert `sudo -E` before `bash`:
 #
-# curl -sL https://deb.nodesource.com/setup_19.x | bash -
+# curl -sL https://deb.nodesource.com/setup_20.x | bash -
 #   or
-# wget -qO- https://deb.nodesource.com/setup_19.x | bash -
+# wget -qO- https://deb.nodesource.com/setup_20.x | bash -
 #
 # CONTRIBUTIONS TO THIS SCRIPT
 #
