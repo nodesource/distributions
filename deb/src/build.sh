@@ -24,6 +24,7 @@ RELEASES=( "node_0.10::nodejs:Node.js 0.10"
            "node_18.x:_18.x:nodejs:Node.js 18.x"
            "node_19.x:_19.x:nodejs:Node.js 19.x"
            "node_18.x:_lts.x:nodejs:Node.js 18.x"
+           "node_20.x:_20.x:nodejs:Node.js 20.x"
            "node_20.x:_current.x:nodejs:Node.js 20.x"
          )
 SOURCE=_setup.sh
