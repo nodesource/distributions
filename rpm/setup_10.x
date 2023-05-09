@@ -96,6 +96,7 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 11.x" ||
           "X${NODENAME}" == "XNode.js 12.x" ||
           "X${NODENAME}" == "XNode.js 13.x" ||
+          "X${NODENAME}" == "XNode.js 14.x" ||
           "X${NODENAME}" == "XNode.js 15.x" ||
           "X${NODENAME}" == "XNode.js 17.x" ]]; then
 
@@ -109,7 +110,6 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
@@ -140,7 +140,6 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
@@ -184,28 +183,11 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-##echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release"
-##DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
-PKG_LIST=(
-  "redhat-release"
-  "centos-release"
-  "cloudlinux-release"
-  "sl-release"
-  "fedora-release"
-  "system-release"
-  )
+echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release"
+DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
 
-for PKG in "${PKG_LIST[@]}"; do
-  rpm -q --whatprovides ${PKG}
-  if [ $? -eq 0 ]; then
-    echo "exec ${PKG}" 
-    DISTRO_PKG=$(rpm -q --whatprovides ${PKG})
-    echo "Release package: ""${DISTRO_PKG}"
-    break
-  fi
-done
 
 if [ "X${UNAME_ARCH}" == "Xi686" ]; then
   DIST_ARCH=i386
@@ -227,11 +209,11 @@ fi
 
 if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|rocky|cloudlinux|mageia|sl)- ]]; then
     DIST_TYPE=el
-elif [[ $DISTRO_PKG =~ ^system-release-(2023) ]]; then # Amazon Linux 2023 and possibly 2025
-    DIST_TYPE=al
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
+    DIST_TYPE=fc
+elif [[ $DISTRO_PKG =~ fedora-release- ]]; then
     DIST_TYPE=fc
 else
 
@@ -240,21 +222,19 @@ You don't appear to be running a supported version of Enterprise Linux. \
 Please contact NodeSource at \
 https://github.com/nodesource/distributions/issues if you think this is \
 incorrect or would like your architecture to be considered for support. \
-Include your 'distribution package' name in the list: ${PKG_LIST[*]}. \
+Include your 'distribution package' name: ${DISTRO_PKG}. \
 "
   exit 1
 
 fi
 
-if [[ $DISTRO_PKG =~ ^system-release-2-14 ]]; then
+if [[ $DISTRO_PKG =~ ^system-release ]]; then
 
   # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
   DIST_VERSION=7
-elif [[ $DISTRO_PKG =~ ^system-release-2023 ]]; then
 
-  # Amazon Linux 2023
-  DIST_VERSION=2023
 else
+
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
   ## extract the major version number of the distro
   if [[ $DIST_TYPE =~ fc ]]; then 

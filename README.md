@@ -208,20 +208,6 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
 apt-get install -y nodejs
 ```
 
-**Node.js v14.x**:
-
-##### Using Ubuntu
-```sh
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-```sh
-# Using Debian, as root
-curl -fsSL https://deb.nodesource.com/setup_14.x | bash - &&\
-apt-get install -y nodejs
-```
-
 **Node.js LTS (v18.x)**:
 
 ##### Using Ubuntu
@@ -430,18 +416,6 @@ curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
 ##### No root privileges
 ```sh
 curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
-```
-
-**Node.js v14.x**
-
-##### As root
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_14.x | bash -
-```
-
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_14.x | sudo bash -
 ```
 
 **Node.js LTS (18.x)**

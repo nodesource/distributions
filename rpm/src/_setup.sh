@@ -96,6 +96,7 @@ node_deprecation_warning() {
           "X${NODENAME}" == "XNode.js 11.x" ||
           "X${NODENAME}" == "XNode.js 12.x" ||
           "X${NODENAME}" == "XNode.js 13.x" ||
+          "X${NODENAME}" == "XNode.js 14.x" ||
           "X${NODENAME}" == "XNode.js 15.x" ||
           "X${NODENAME}" == "XNode.js 17.x" ]]; then
 
@@ -109,7 +110,6 @@ ${bold}${NODENAME} is no longer actively supported!${normal}
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
@@ -140,7 +140,6 @@ This script, located at ${bold}https://rpm.nodesource.com/setup${normal}, used t
   You should use the script that corresponds to the version of Node.js you
   wish to install. e.g.
 
-   * ${green}https://rpm.nodesource.com/setup_14.x - Node.js v14 \"Fermium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_16.x - Node.js v16 \"Gallium\"${normal}
    * ${green}https://rpm.nodesource.com/setup_18.x - Node.js v18 LTS \"Hydrogen\"${normal} (recommended)
    * ${green}https://rpm.nodesource.com/setup_19.x — Node.js v19 \"Nineteen\"${normal}
