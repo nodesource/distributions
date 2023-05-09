@@ -183,10 +183,29 @@ fi
 #-check-distro-#
 
 ## Check distro and arch
-echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release"
-DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
+##echo "+ rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release"
+##DISTRO_PKG=$(rpm -q --whatprovides redhat-release || rpm -q --whatprovides centos-release || rpm -q --whatprovides cloudlinux-release || rpm -q --whatprovides sl-release || rpm -q --whatprovides fedora-release)
 echo "+ uname -m"
 UNAME_ARCH=$(uname -m)
+
+PKG_LIST=(
+  "redhat-release"
+  "centos-release"
+  "cloudlinux-release"
+  "sl-release"
+  "fedora-release"
+  "system-release"
+  )
+
+for PKG in "${PKG_LIST[@]}"; do
+  rpm -q --whatprovides ${PKG}
+  if [ $? -eq 0 ]; then
+    echo "exec ${PKG}" 
+    DISTRO_PKG=$(rpm -q --whatprovides ${PKG})
+    echo "Release package: ""${DISTRO_PKG}"
+    break
+  fi
+done
 
 
 if [ "X${UNAME_ARCH}" == "Xi686" ]; then
@@ -209,6 +228,8 @@ fi
 
 if [[ $DISTRO_PKG =~ ^(redhat|centos|almalinux|rocky|cloudlinux|mageia|sl)- ]]; then
     DIST_TYPE=el
+elif [[ $DISTRO_PKG =~ ^system-release-(2023) ]]; then # Amazon Linux 2023 and possibly 2025
+    DIST_TYPE=al
 elif [[ $DISTRO_PKG =~ ^(enterprise|system)-release- ]]; then # Oracle Linux & Amazon Linux
     DIST_TYPE=el
 elif [[ $DISTRO_PKG =~ ^(fedora|korora)- ]]; then
@@ -222,17 +243,20 @@ You don't appear to be running a supported version of Enterprise Linux. \
 Please contact NodeSource at \
 https://github.com/nodesource/distributions/issues if you think this is \
 incorrect or would like your architecture to be considered for support. \
-Include your 'distribution package' name: ${DISTRO_PKG}. \
+Include your 'distribution package' name in the list: ${PKG_LIST[*]}. \
 "
   exit 1
 
 fi
 
-if [[ $DISTRO_PKG =~ ^system-release ]]; then
+if [[ $DISTRO_PKG =~ ^system-release-2-14 ]]; then
 
   # Amazon Linux, for 2014.* use el7, older versions are unknown, perhaps el6
   DIST_VERSION=7
+elif [[ $DISTRO_PKG =~ ^system-release-2023 ]]; then
 
+  # Amazon Linux 2023
+  DIST_VERSION=2023
 else
 
   ## Using the redhat-release-server-X, centos-release-X, centos-stream-release-X, etc. pattern
