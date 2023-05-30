@@ -160,6 +160,12 @@ curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
+##### Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash - &&\
+sudo apt-get install -y nodejs
+```
+
 ##### Using Debian, as root
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
@@ -171,6 +177,12 @@ apt-get install -y nodejs
 ##### Using Ubuntu
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_19.x | sudo bash - &&\
 sudo apt-get install -y nodejs
 ```
 
@@ -188,6 +200,12 @@ curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
+##### Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash - &&\
+sudo apt-get install -y nodejs
+```
+
 ##### Using Debian, as root
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
@@ -199,6 +217,12 @@ apt-get install -y nodejs
 ##### Using Ubuntu
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash - &&\
 sudo apt-get install -y nodejs
 ```
 
@@ -216,6 +240,12 @@ curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
+##### Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash - &&\
+sudo apt-get install -y nodejs
+```
+
 ##### Using Debian, as root
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
@@ -227,6 +257,12 @@ apt-get install -y nodejs
 ##### Using Ubuntu
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+#####  Using Debian
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo bash - &&\
 sudo apt-get install -y nodejs
 ```
 
