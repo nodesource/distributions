@@ -19,7 +19,7 @@ jobs:
   debian-test:
     working_directory: ~/repo
     docker:
-      - image: debian
+      - image: debian:11.6
     steps:
       - checkout
       - run: apt update
