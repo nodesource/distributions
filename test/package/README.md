@@ -1,1 +1,0 @@
-This is the package embedded in the test script, changes made here should be copied back into test.sh manually.

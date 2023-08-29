@@ -4,31 +4,51 @@
 
 [![CircleCI](https://circleci.com/gh/nodesource/distributions/tree/master.svg?style=svg)](https://circleci.com/gh/nodesource/distributions/tree/master)
 
-This repository contains documentation for using the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
+This repository contains the instructions to install the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
 
-If you are looking for NodeSource's low-impact Node.js performance monitoring platform, please **[get started here](https://accounts.nodesource.com/sign-up-linuxdistro).**
+If you're looking for NodeSource's low-impact Node.js performance monitoring platform, please **[get started here](https://accounts.nodesource.com/sign-up-linuxdistro).**
 
-Please file an issue if you are experiencing a problem or would like to discuss something related to the distributions.
+## **New Update ⚠️**
 
-Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
+We'd like to inform you of important changes to our distribution repository [nodesource/distributions](https://github.com/nodesource/distributions).
+
+**What's New:**
+
+- _**Default Installer:** We now default to NSolid runtime, an enterprise build of Node.js bundled with the advanced native C++ component, the N|Solid Agent. This agent runs independently, providing direct access to the core elements and statistics of Node.js, libuv, and the V8 JavaScript engine._
+  _This is not a breaking change and you can keep running your app as it is._
+  _It's important mention you can still install nodejes from the same repository_
+- _**Package Changes:** DEB and RPM packages are now available under the `nodistro` codename. We no longer package the installer coupled to specific versions. This means you can install NSolid or Node.js on almost any distro that meets the minimum requirements._
+- _**Installation Scripts:** The installation scripts `setup_XX.x` are no longer supported and are not needed anymore, as the installation process is straightforward for any RPM and DEB distro._
+- **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discusison space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
+
+Looking for the previous Documentation [README.md](./OLD_README.md)
 
 ## Table of Contents
-* **[Debian and Ubuntu based distributions](#deb)** (deb)
-  - [Installation instructions](#debinstall)
-  - [Uninstall instructions](#debuninstall)
-  - [Manual installation](#debmanual)
-* **[Enterprise Linux based distributions](#rpm)** (rpm)
-  - [Installation instructions](#rpminstall)
-  - [Uninstall instructions](#rpmuninstall)
-* **[Tests](#tests)**
-* **[FAQ](#questions)**
-* **[Requested Distributions](#requests)**
-* **[License](#project-license)**
 
-<a name="deb"></a>
+* **[Debian and Ubuntu based distributions](#debian-and-ubuntu-based-distributions)** (deb)
+  - [Available architectures](#available-architectures)
+  - [Supported Versions](#supported-versions)
+    - [Ubuntu versions](#ubuntu-versions)
+    - [Debian versions](#debian-versions)
+  - [Installation instructions](#installation-instructions)
+  - [Uninstall instructions](#debuninstall)
+  - [Manual installation](#manual-installation)
+* **[Enterprise Linux based distributions](#enterprise-linux-based-distributions)** (rpm)
+  - [Available architectures](#available-architectures-1)
+  - [Supported Versions](#supported-versions-1)
+    - [Fedora versions](#fedora-versions)
+    - [Redhat versions](#redhat-versions)
+    - [Amazon Linux versions](#amazon-linux-versions)
+  - [Installation instructions](#installation-instructions-1)
+  - [Uninstall instructions](#uninstall-nodejs-enterprise-linux-packages)
+* **[Nodejs Release Calendar](#nodejs-release-calendar)**
+* [FAQ](#faq)
+* [Authors and Contributors](#authors-and-contributors)
+* [License](#license)
+
 ## Debian and Ubuntu based distributions
 
-**Available architectures:**
+### **Available architectures**
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
@@ -36,412 +56,139 @@ NodeSource will continue to maintain the following architectures and may add add
 * **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
 * **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
-**Supported Ubuntu versions:**
+### **Supported Versions**
 
-NodeSource will maintain Ubuntu distributions in active support by Canonical, including LTS and the intermediate releases.
+#### **Ubuntu versions**
 
-* ~~**Ubuntu 16.04 LTS** (Xenial Xerus)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Ubuntu 18.04 LTS** (Bionic Beaver)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Ubuntu 18.10** (Cosmic Cuttlefish)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Ubuntu 19.04** (Disco Dingo)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Ubuntu 19.10** (Eoan Ermine)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Ubuntu 20.04 LTS** (Focal Fossa)
-* **Ubuntu 20.10** (Groovy Gorilla)
-* **Ubuntu 21.04** (Hirsute Hippo)
-* **Ubuntu 21.10** (Impish Indri)
-* **Ubuntu 22.04** (Jammy Jellyfish)
-* **Ubuntu 22.10** (Kinetic Kudu)
+| Distro Name          | Node 16x | Node 18x | Node 20x |
+| :------------------- | :------: | :------: | :------: |
+| Ubuntu Bionic ^18.04 |    ✅    |    ❌    |    ❌    |
+| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |
+| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |
 
-**Supported Debian versions:**
+#### **Debian versions**
 
-NodeSource will maintain support for stable, testing and unstable releases of Debian, due to the long release cycle a considerable number of users are running unstable and testing.
+| Distro Name        | Node 16x | Node 18x | Node 20x |
+| :----------------- | :------: | :------: | :------: |
+| Debian 8 Jessie    |    ✅    |    ❌    |    ❌    |
+| Debian 9 Stretch   |    ✅    |    ❌    |    ❌    |
+| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |
+| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |
+| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |
 
-* ~~**Debian 9 / oldoldstable** (Stretch)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Debian 10 / oldstable** (Buster)
-* **Debian 11 / stable** (Bullseye)
-* **Debian unstable** (Sid)
-* **Debian testing** (Bookworm)
+> _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
-**Supported Linux Mint versions:**
+### Installation Instructions
 
-* ~~**Linux Mint 18 "Sarah"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 18.1 "Serena"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 18.2 "Sonya"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 18.3 "Sylvia"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint Debian Edition (LMDE) 2 "Betsy"** (via Debian 8)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 19 "Tara"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 19.1 "Tessa"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 19.2 "Tina"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Linux Mint 19.3 "Tricia"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Linux Mint 20 "Ulyana"** (via Ubuntu 20.04 LTS)
-* **Linux Mint 20.1 "Ulyssa"** (via Ubuntu 20.04 LTS)
-* **Linux Mint 20.2 "Uma"** (via Ubuntu 20.04 LTS)
-* **Linux Mint 20.3 "Una"** (via Ubuntu 20.04 LTS)
-* **Linux Mint 21 "Vanessa"** (via Ubuntu 22.04 LTS)
-* **Linux Mint 21.1 "Vera"** (via Ubuntu 22.04 LTS)
-* ~~**Linux Mint Debian Edition (LMDE) 3 "Cindy"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Linux Mint Debian Edition (LMDE) 4 "Debbie"** (via Debian 10)
-* **Linux Mint Debian Edition (LMDE) 5 "Elsie"** (via Debian 11)
+#### **Node.js**
 
-**Supported Devuan versions:**
+> _If you're root, you could just ommit the sudo_
 
-* ~~**Ascii / oldoldstable** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Beowulf / oldstable** (via Debian 10)
-* **Chimaera / stable** (via Debian 11)
-* **Ceres / unstable** (via Debian unstable)
+1. Donwload and import the Nodesource GPG key
 
-**Supported elementary OS versions:**
-
-* ~~**elementary OS 0.4 Loki** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**elementary OS 5 Juno** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**elementary OS 5.1 Hera** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **elementary OS 6 Odin** (via Ubuntu 20.04 LTS)
-* **elementary OS 6.1 Jolnir** (via Ubuntu 20.04 LTS)
-* **elementary OS 7 horus** (via Ubuntu 22.04 LTS)
-
-**Supported Trisquel versions:**
-
-* ~~**Trisquel 8 "Flidas"** (via Ubuntu 16.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Trisquel 9 "Etiona"** (via Ubuntu 18.04 LTS)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-
-**Supported BOSS versions:**
-
-* ~~**BOSS 7.0 "Drishti"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **BOSS 8.0 "Unnati"** (via Debian 10)
-* **BOSS 9.0 "Urja"** (via Debian 11)
-
-**Supported BunsenLabs versions:**
-
-* ~~**Helium** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Lithium** (via Debian 10)
-
-**Supported MX Linux versions:**
-
-* ~~**MX-17 Horizon** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**MX-18 Continuum** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **MX-19 Patito Feo** (via Debian 10)
-* **MX-21 Wildflower** (via Debian 11)
-
-**Supported Sparky Linux versions:**
-
-* ~~**Sparky 4.x "Tyche"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Sparky 5.x "Nibiru"** (via Debian 10)
-* **Sparky 6.x "Po Tolo"** (via Debian 11)
-
-**Supported PureOS Linux versions:**
-
-* **PureOS 9.0 "Amber"** (via Debian 10)
-* **PureOS 10.0 "Byzantium"** (via Debian 11)
-
-**Supported Astra Linux CE versions:**
-
-* ~~**Astra Linux CE 2.12 "Orel"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-
-**Supported Ubilinux versions:**
-
-* ~~**Ubilinux 4.0 "Dolcetto"** (via Debian 9)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-
-**Supported Parrot OS Linux versions:**
-
-* **Parrot OS 5.0 "Electro Ara"** (via Debian 11)
-
-**Supported Deepin Linux versions:**
-
-* **Deepin 20 "Apricot"** (via Debian 10)
-
-<a name="debinstall"></a>
-### Installation instructions
-
-**Node.js v20.x**:
-
-##### Using Ubuntu
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl gnupg
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 ```
 
-##### Using Debian, as root
+2. Create deb repository
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-apt-get install -y nodejs
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 ```
 
-**Node.js v19.x**:
+> ***Optional***: ``NODE_MAJOR`` can be changed depending on the version you need.
+>
+> ```sh
+> NODE_MAJOR=16
+> NODE_MAJOR=18
+> NODE_MAJOR=20
+> ```
 
-##### Using Ubuntu
+3. Run Update and Install
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get update
+sudo apt-get install nodejs -y
 ```
 
-##### Using Debian, as root
-```sh
-curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
-apt-get install -y nodejs
-```
-
-**Node.js v18.x**:
-
-##### Using Ubuntu
-```sh
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-##### Using Debian, as root
-```sh
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
-apt-get install -y nodejs
-```
-
-**Node.js v16.x**:
-
-##### Using Ubuntu
-```sh
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-##### Using Debian, as root
-```sh
-curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-apt-get install -y nodejs
-```
-
-**Node.js LTS (v18.x)**:
-
-##### Using Ubuntu
-```sh
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-##### Using Debian, as root
-```sh
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
-apt-get install -y nodejs
-```
-
-**Node.js Current (v20.x)**:
-
-##### Using Ubuntu
-```sh
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
-```
-
-#####  Using Debian, as root
-```sh
-curl -fsSL https://deb.nodesource.com/setup_current.x | bash - &&\
-apt-get install -y nodejs
-```
-
-***Optional***: install build tools
-
-To compile and install native addons from npm you may also need to install build tools:
-
-##### use `sudo` on Ubuntu or run this as root on debian
-```sh
-apt-get install -y build-essential
-```
-
-<a name="debuninstall"></a>
-### Uninstall `nodejs` Ubuntu & Debian packages 
+### Uninstall `nodejs` Ubuntu & Debian packages
 
 To completely remove Node.js installed from the deb.nodesource.com package methods above:
 
 ##### use `sudo` on Ubuntu or run this as root on debian
+
 ```sh
 apt-get purge nodejs &&\
-rm -r /etc/apt/sources.list.d/nodesource.list
+rm -r /etc/apt/sources.list.d/nodesource.list &&\
+rm -r /etc/apt/keyrings/nodesource.gpg
 ```
 
+## Enterprise Linux Based Distributions
 
-<a name="debmanual"></a>
-### Manual installation
-
-If you're not a fan of `curl <url> | bash -`, or are using an unsupported distribution, you can try a manual installation.
-
-These instructions assume `sudo` is present, however some distributions do not include this command by default, particularly those focused on a minimal environment. In this case, you should install `sudo` or `su` to root to run the commands directly.
-
-**1. Remove the old PPA if it exists**
-
-This step is only required if you previously used Chris Lea's Node.js PPA.
-
-```sh
-# add-apt-repository may not be present on some Ubuntu releases:
-# sudo apt-get install python-software-properties
-sudo add-apt-repository -y -r ppa:chris-lea/node.js &&\
-sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list &&\
-sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
-```
-
-**2. Add the NodeSource package signing key**
-
-```sh
-KEYRING=/usr/share/keyrings/nodesource.gpg
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
-# wget can also be used:
-# wget --quiet -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor | sudo tee "$KEYRING" >/dev/null
-gpg --no-default-keyring --keyring "$KEYRING" --list-keys
-chmod a+r /usr/share/keyrings/nodesource.gpg
-```
-The key ID is `9FD3B784BC1C6FC31A8A0A1C1655A0AB68576280`.
-
-**3. Add the desired NodeSource repository**
-
-```sh
-# Replace with the branch of Node.js or io.js you want to install: node_8.x, node_16.x, etc...
-VERSION=node_16.x
-# Replace with the keyring above, if different
-KEYRING=/usr/share/keyrings/nodesource.gpg
-# The below command will set this correctly, but if lsb_release isn't available, you can set it manually:
-# - For Debian distributions: jessie, sid, etc...
-# - For Ubuntu distributions: xenial, bionic, etc...
-# - For Debian or Ubuntu derived distributions your best option is to use the codename corresponding to the upstream release your distribution is based off. This is an advanced scenario and unsupported if your distribution is not listed as supported per earlier in this README.
-DISTRO="$(lsb_release -s -c)"
-echo "deb [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO main" | sudo tee -a /etc/apt/sources.list.d/nodesource.list
-
-```
-
-**4. Update package lists and install Node.js**
-
-```sh
-sudo apt-get update
-sudo apt-get install nodejs
-```
-
-<a name="rpm"></a>
-## Enterprise Linux based distributions
-
-**Available architectures:**
+### **Available architectures**
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
 * **x86_64** (64-bit)
 * **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
-**Supported Red Hat® Enterprise Linux® versions:**
+### **Supported Versions**
 
-* ~~**RHEL 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **RHEL 8** (64-bit)
+#### **Fedora versions**
 
-**Supported CentOS versions:**
+| Distro Name           | Node 16x | Node 18x | Node 20x |
+| :-------------------- | :------: | :------: | :------: |
+| Fedora >= 20 (20->28) |    ✅    |    ❌    |    ❌    |
+| Fedora >= 29          |    ✅    |    ✅    |    ✅    |
+| Fedora >= 36          |    ✅    |    ✅    |    ✅    |
 
-* ~~**CentOS 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **CentOS 8** (64-bit)
-* **CentOS 8 Stream** (64-bit)
+#### **Redhat versions**
 
-**Supported AlmaLinux OS versions:**
+| Distro Name | Node 16x | Node 18x | Node 20x |
+| :---------- | :------: | :------: | :------: |
+| Redhat 7    |    ✅    |    ❌    |    ❌    |
+| Redhat 8    |    ✅    |    ✅    |    ✅    |
+| Redhat 9    |    ✅    |    ✅    |    ✅    |
 
-* **AlmaLinux 8** (64-bit)
+#### **Amazon Linux versions**
 
-**Supported Mageia Linux versions:**
+| Distro Name       | Node 16x | Node 18x | Node 20x |
+| :---------------- | :------: | :------: | :------: |
+| Amazon Linux 2    |    ✅    |    ❌    |    ❌    |
+| Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |
 
-* ~~**Mageia 7** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* **Mageia 8** (64-bit)
+> _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
-**Supported Rocky Linux OS versions:**
+### Installation Instructions
 
-* **Rocky 8** (64-bit)
+The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
 
-**Supported CloudLinux versions:**
-* **CloudLinux 6** (32-bit for Node <= 10.x and 64-bit)
+> _If you're root, you could just ommit the sudo_
 
-**Supported Fedora versions:**
+#### **Node.js v20.x**
 
-* **Fedora 33** (64-bit)
-* **Fedora 34** (64-bit)
-* **Fedora 35** (64-bit)
-* **Fedora 36** (64-bit)
-
-**Supported Amazon Linux versions:**
-
-* ~~**Amazon Linux** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Amazon Linux 2** (64-bit)~~ *WARNING: BUILD SYSTEM CURRENTLY BROKEN FOR NODEJS 18+*
-* ~~**Amazon Linux 2023** (64-bit)
-
-<a name="rpminstall"></a>
-### Installation instructions
-
-_NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
-
-The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
-
-Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
-
-**Node.js v20.x**
-
-##### As root
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
+sudo yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install nodejs -y
 ```
 
-##### No root privileges
+#### **Node.js v18.x**
+
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install nodejs -y
 ```
 
-**Node.js v19.x**
+#### **Node.js v16.x**
 
-##### As root
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_19.x | bash -
+sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install nodejs -y
 ```
 
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_19.x | sudo bash -
-```
-
-**Node.js v18.x**
-
-##### As root
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
-```
-
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-```
-
-**Node.js v16.x**
-
-##### As root
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
-```
-
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_16.x | sudo bash -
-```
-
-**Node.js LTS (18.x)**
-
-##### As root
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
-```
-
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-```
-
-**Node.js Current (20.x)**
-
-##### As root
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
-```
-
-##### No root privileges
-```sh
-curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
-```
 
 ***Optional***: install build tools
 
@@ -452,100 +199,37 @@ yum install gcc-c++ make
 # or: yum groupinstall 'Development Tools'
 ```
 
-<a name="rpmuninstall"></a>
-### Uninstall `nodejs` Enterprise Linux packages 
+### Uninstall `nodejs` Enterprise Linux packages
 
 To completely remove Node.js installed from the rpm.nodesource.com package methods above:
 
 #### use `sudo` or run this as root
+
 ```sh
 yum remove nodejs &&\
 rm -r /etc/yum.repos.d/nodesource*.repo &&\
 yum clean all
 ```
 
-<a name="tests"></a>
-## Tests
+## Nodejs Release Calendar
 
-To test an installation is working (and that the setup scripts are working!) use:
+[![Node Releases Calendar](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)](https://nodejs.dev/en/about/releases)
+_source: https://nodejs.dev_
 
-```sh
-curl -fsSL https://deb.nodesource.com/test | bash -
-```
-
-<a name="questions"></a>
 # FAQ
 
-Q: How do I use this repo when behind a proxy?
+Q: How do I migrate to the new repo?
 
-A: Please take a look at [issue #9](https://github.com/nodesource/distributions/issues/9)
+A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki/How-to-migrate-to-the-new-repository)
 
 ---
 
 Q: How do I pin to specific versions of Node.js?
 
-A: Please take a look at [issue #33](https://github.com/nodesource/distributions/issues/33#issuecomment-169345680)
+A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki/How-to-select-the-Node.js-version-to-install)
 
 ---
 
-Q: I upgraded to a new major version of Node.js using the scripts, but the old version is still being installed, what is going on?
-
-A: You probably need to clear out your package manager's cache. Take a look at [issue #191](https://github.com/nodesource/distributions/issues/191)
-
----
-
-Q: I'm trying to install Node.js on CentOS 5 / RHEL 5 and it is failing, why?
-
-A: Due to the limitations of the compiler toolchain on EL 5 and its end of general support, we no longer support. See [issue #190](https://github.com/nodesource/distributions/issues/190)
-
----
-
-Q: I'm seeing "Your distribution, identified as "*.i686" or "*.i386, is not currently supported, why?
-
-A: Node.js 4.x and newer require a 64bit os for rpms. See [issue #268](https://github.com/nodesource/distributions/issues/268)
-
----
-
-Q: Why have certain versions of platforms/releases stopped receiving updates to Node.js?
-
-A: Unfortunately, newer versions of V8 require a modern compiler toolchain. On some platforms, such as ARM wheezy, that toolchain is not available. See [issue #247](https://github.com/nodesource/distributions/issues/247)
-
----
-
-Q: Why is my Node.js version newer than the one of the script I’ve run?
-
-A: Your package manager is probably installing a newer Node.js version from a different source. See [issue #657](https://github.com/nodesource/distributions/issues/657)
-
----
-
-Q: What is the current status of IPv6 support?
-
-A: See [issue #170](https://github.com/nodesource/distributions/issues/170)
-
----
-
-Q: I cannot install Node.js on Debian Jessie or Ubuntu Trusty Tahr: GPG error, why?
-
-A: See [issue #1181](https://github.com/nodesource/distributions/issues/1181)
-
-<a name="requests"></a>
-# Requested Distributions
-
-We, unfortunately, do not have the resources necessary to support and test the plethora of Linux releases in the wild, so we rely on community members such as yourself to get support on your favorite distributions! This is a list of releases that have been requested by the community. If you are interested in contributing to this project, this would be a great place to start!
-
-* OpenSUSE - [Issue #199](https://github.com/nodesource/distributions/issues/199)
-* Scientific Linux - [Issue #251](https://github.com/nodesource/distributions/issues/251)
-* TANGLU Bartholomea - [Issue #81](https://github.com/nodesource/distributions/issues/81)
-* Korora - [Issue #130](https://github.com/nodesource/distributions/issues/130)
-* FreePBX - [Issue #257](https://github.com/nodesource/distributions/issues/257)
-* PopOS - [Issue #924](https://github.com/nodesource/distributions/issues/924)
-* Kylin - [Issue #1011](https://github.com/nodesource/distributions/issues/1011)
-* MakuluLinux - [Issue #1012](https://github.com/nodesource/distributions/issues/1012)
-* GuixSD - [Issue #1297](https://github.com/nodesource/distributions/issues/1297)
-* XCP-ng - [Issue #1061](https://github.com/nodesource/distributions/issues/1061)
-* VzLinux - [Issue #1060](https://github.com/nodesource/distributions/issues/1060)
-
-<a name="authors-contributors"></a>
 ## Authors and Contributors
 
 <table><tbody>
@@ -572,21 +256,22 @@ We, unfortunately, do not have the resources necessary to support and test the p
 <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
 <tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
 <tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
+<tr><th align="left">Jefferson Rios</th><td><a href="https://github.com/riosje">GitHub/riosje</a></td><td></td></tr>
 </tbody></table>
 
 Contributions are welcomed from anyone wanting to improve this project!
 
-<a name="project-license"></a>
 ## License
 
 This material is Copyright (c) NodeSource and licensed under the MIT license. All rights not explicitly granted in the MIT license are reserved. See the included [LICENSE.md](./LICENSE.md) file for more details.
 
-------------------------------------------------------------------
+---
 
 *Supported with love by the [NodeSource](https://nodesource.com) team*
 
-*This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*<br>
-*Ubuntu is a registered trademark of Canonical Ltd.*<br>
-*Debian is a registered trademark owned by Software in the Public Interest, Inc.*<br>
-*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*<br>
+*This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*`<br>`
+*Ubuntu is a registered trademark of Canonical Ltd.*`<br>`
+*Debian is a registered trademark owned by Software in the Public Interest, Inc.*`<br>`
+*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*`<br>`
+*Amazon Linux are trademarks of Amazon Web Services, Inc*`<br>`
 *CloudLinux is a trademark of Cloud Linux, Inc*
