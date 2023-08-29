@@ -185,7 +185,7 @@ sudo yum install nodejs -y
 #### **Node.js v16.x**
 
 ```sh
-sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
 sudo yum install nodejs -y
 ```
 
