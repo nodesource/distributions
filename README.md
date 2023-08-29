@@ -14,9 +14,6 @@ We'd like to inform you of important changes to our distribution repository [nod
 
 **What's New:**
 
-- _**Default Installer:** We now default to NSolid runtime, an enterprise build of Node.js bundled with the advanced native C++ component, the N|Solid Agent. This agent runs independently, providing direct access to the core elements and statistics of Node.js, libuv, and the V8 JavaScript engine._
-  _This is not a breaking change and you can keep running your app as it is._
-  _It's important mention you can still install nodejes from the same repository_
 - _**Package Changes:** DEB and RPM packages are now available under the `nodistro` codename. We no longer package the installer coupled to specific versions. This means you can install NSolid or Node.js on almost any distro that meets the minimum requirements._
 - _**Installation Scripts:** The installation scripts `setup_XX.x` are no longer supported and are not needed anymore, as the installation process is straightforward for any RPM and DEB distro._
 - **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discusison space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
