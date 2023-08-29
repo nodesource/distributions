@@ -81,7 +81,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 > _If you're root, you could just ommit the sudo_
 
-1. Donwload and import the Nodesource GPG key
+1. Download and import the Nodesource GPG key
 
 ```sh
 sudo apt-get update
