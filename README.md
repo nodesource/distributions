@@ -235,7 +235,9 @@ Q: There is not folder listing available when visit one of the following URLs
   https://rpm.nodesource.com/pub_20.x/
 
 A: Some people used this to download some specific verions of NodeJs or even create some mirror of our repo
+
    Please take a look at this [issue](https://github.com/nodesource/distributions/issues/1633)
+   
    Also we have a section in our wiki for the people who need to create a mirror [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
 
 ---
@@ -280,8 +282,14 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 *Supported with love by the [NodeSource](https://nodesource.com) team*
 
 *This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*
+
 *Ubuntu is a registered trademark of Canonical Ltd.*
+
 *Debian is a registered trademark owned by Software in the Public Interest, Inc.*
+
 *Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
+
 *Amazon Linux are trademarks of Amazon Web Services, Inc*
+
 *CloudLinux is a trademark of Cloud Linux, Inc*
+
