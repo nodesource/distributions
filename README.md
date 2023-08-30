@@ -230,13 +230,13 @@ A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki
 
 ---
 
-Q: There is not folder listing available when visit one the followings
+Q: There is not folder listing available when visit one of the following URLs
   https://deb.nodesource.com/node_XX.x/pool/main/n/
   https://rpm.nodesource.com/pub_20.x/
 
 A: Some people used this to download some specific verions of NodeJs or even create some mirror of our repo
-Please take a look at this [issue](https://github.com/nodesource/distributions/issues/1633)
-Also we have a section in our wiki for the people who need to create a mirror [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
+   Please take a look at this [issue](https://github.com/nodesource/distributions/issues/1633)
+   Also we have a section in our wiki for the people who need to create a mirror [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
 
 ---
 
