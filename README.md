@@ -79,7 +79,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Node.js**
 
-> _If you're root, you could just omit the sudo_
+> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
 
 1. Download and import the Nodesource GPG key
 
@@ -164,7 +164,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
 
-> _If you're root, you could just omit the sudo_
+> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
 
 #### **Node.js v20.x**
 
