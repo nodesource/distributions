@@ -16,7 +16,7 @@ We'd like to inform you of important changes to our distribution repository [nod
 
 - _**Package Changes:** DEB and RPM packages are now available under the `nodistro` codename. We no longer package the installer coupled to specific versions. This means you can install Node.js on almost any distro that meets the minimum requirements._
 - _**Installation Scripts:** The installation scripts `setup_XX.x` are no longer supported and are not needed anymore, as the installation process is straightforward for any RPM and DEB distro._
-- **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discusison space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
+- **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discussion space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
 
 Looking for the previous Documentation [README.md](./OLD_README.md)
 
