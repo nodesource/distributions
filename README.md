@@ -16,7 +16,7 @@ We'd like to inform you of important changes to our distribution repository [nod
 
 - _**Package Changes:** DEB and RPM packages are now available under the `nodistro` codename. We no longer package the installer coupled to specific versions. This means you can install Node.js on almost any distro that meets the minimum requirements._
 - _**Installation Scripts:** The installation scripts `setup_XX.x` are no longer supported and are not needed anymore, as the installation process is straightforward for any RPM and DEB distro._
-- **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discusison space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
+- **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discussion space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
 
 Looking for the previous Documentation [README.md](./OLD_README.md)
 
@@ -79,7 +79,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Node.js**
 
-> _If you're root, you could just ommit the sudo_
+> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
 
 1. Download and import the Nodesource GPG key
 
@@ -164,7 +164,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
 
-> _If you're root, you could just ommit the sudo_
+> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
 
 #### **Node.js v20.x**
 
@@ -230,15 +230,17 @@ A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki
 
 ---
 
-Q: There is not folder listing available when visit one of the following URLs
+Q: Why is there no folder listing available when I visit the following URLs?
   https://deb.nodesource.com/node_XX.x/pool/main/n/
+
   https://rpm.nodesource.com/pub_20.x/
 
-A: Some people used this to download some specific verions of NodeJs or even create some mirror of our repo
+A: This issue may arise because some users utilize the above URLs to download specific versions of Node.js or create mirrors of our repository.
 
-   Please take a look at this [issue](https://github.com/nodesource/distributions/issues/1633)
-   
-   Also we have a section in our wiki for the people who need to create a mirror [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
+For more information and possible solutions, please refer to the following resources:
+
+   * [Github issue](https://github.com/nodesource/distributions/issues/1633)
+   * [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
 
 ---
 
