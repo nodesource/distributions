@@ -170,21 +170,21 @@ The Nodesource RPM package signing key is available here: https://rpm.nodesource
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y
+sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 #### **Node.js v18.x**
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y
+sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 #### **Node.js v16.x**
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y
+sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 
