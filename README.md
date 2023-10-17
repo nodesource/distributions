@@ -56,21 +56,21 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Ubuntu versions**
 
-| Distro Name          | Node 16x | Node 18x | Node 20x |
-| :------------------- | :------: | :------: | :------: |
-| Ubuntu Bionic ^18.04 |    ✅    |    ❌    |    ❌    |
-| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |
-| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |
+| Distro Name          | Node 16x | Node 18x | Node 20x | Node 21x |
+| :------------------- | :------: | :------: | :------: |  :------: |
+| Ubuntu Bionic ^18.04 |    ✅    |    ❌    |    ❌    |    ❌    |
+| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |
+| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Debian versions**
 
-| Distro Name        | Node 16x | Node 18x | Node 20x |
-| :----------------- | :------: | :------: | :------: |
-| Debian 8 Jessie    |    ✅    |    ❌    |    ❌    |
-| Debian 9 Stretch   |    ✅    |    ❌    |    ❌    |
-| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |
-| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |
-| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |
+| Distro Name        | Node 16x | Node 18x | Node 20x | Node 21x |
+| :----------------- | :------: | :------: | :------: | :------: |
+| Debian 8 Jessie    |    ✅    |    ❌    |    ❌    |    ❌    |
+| Debian 9 Stretch   |    ✅    |    ❌    |    ❌    |    ❌    |
+| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
@@ -102,6 +102,7 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 > NODE_MAJOR=16
 > NODE_MAJOR=18
 > NODE_MAJOR=20
+> NODE_MAJOR=21
 > ```
 
 3. Run Update and Install
@@ -164,6 +165,13 @@ NodeSource will continue to maintain the following architectures and may add add
 The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
 
 > _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
+
+#### **Node.js v21.x**
+
+```sh
+sudo yum install https://rpm.nodesource.com/pub_21.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
+sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+```
 
 #### **Node.js v20.x**
 
