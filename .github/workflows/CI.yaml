@@ -1,0 +1,84 @@
+name: 'Test Installation Scripts'
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deb:
+    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [18, 20, 21]
+        os: ["ubuntu:22.04", "debian:10"]
+    container:
+      image: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Update and Install Dependencies
+        run: |
+          apt-get update -y
+          apt-get install curl git -y
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Run Istallation Script
+        run: ./scripts/nsolid_setup_deb.sh ${{ matrix.version }}
+
+      - name: Install Nodejs
+        run: |
+          apt-get install nodejs -y
+
+      - name: Validate Node Version
+        run: |
+          node -e "console.log(process.version)"
+          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+            exit 1
+          fi
+
+  rpm:
+    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [18, 20, 21]
+        os: ["fedora:36", "amazonlinux:2023"]
+    container:
+      image: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Update and Install Dependencies
+        run: |
+          yum update -y
+          yum install git -y
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Run Istallation Script
+        run: ./scripts/nsolid_setup_rpm.sh ${{ matrix.version }}
+
+      - name: Install Nodejs
+        run: |
+          yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+
+      - name: Validate Node Version
+        run: |
+          node -e "console.log(process.version)"
+          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+            exit 1
+          fi
