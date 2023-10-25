@@ -4,6 +4,8 @@
 
 [![CircleCI](https://circleci.com/gh/nodesource/distributions/tree/master.svg?style=svg)](https://circleci.com/gh/nodesource/distributions/tree/master)
 
+[![Github Actions Test](https://github.com/nodesource/distributions/actions/workflows/CI.yaml/badge.svg)](https://github.com/nodesource/distributions/actions/workflows/CI.yaml)
+
 This repository contains the instructions to install the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
 
 If you're looking for NodeSource's low-impact Node.js performance monitoring platform, please **[get started here](https://accounts.nodesource.com/sign-up-linuxdistro).**
@@ -214,6 +216,34 @@ To completely remove Node.js installed from the rpm.nodesource.com package metho
 yum remove nodejs &&\
 rm -r /etc/yum.repos.d/nodesource*.repo &&\
 yum clean all
+```
+
+## Installation Scripts
+
+We've created some scripts to make easy the repo configuration.
+> This only works from Node16 forwards
+
+#### DEB
+
+> change the version as needed `./nsolid_setup_deb.sh 20` 
+
+```SHELL
+curl -SLO https://deb.nodesource.com/nsolid_setup_deb.sh
+chmod 500 nsolid_setup_deb.sh
+./nsolid_setup_deb.sh 21
+apt-get install nodejs -y
+```
+
+
+#### RPM
+
+> change the version as needed `./nsolid_setup_deb.sh 20` 
+
+```SHELL
+curl -SLO https://rpm.nodesource.com/nsolid_setup_rpm.sh
+chmod 500 nsolid_setup_rpm.sh
+./nsolid_setup_rpm.sh 21
+yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ```
 
 ## Nodejs Release Calendar
