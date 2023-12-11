@@ -79,7 +79,7 @@ installPreReqs() {
     mkdir -p /usr/share/keyrings
 
     # Run 'curl' and 'gpg'
-    if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg; then
+    if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor > /usr/share/keyrings/nodesource.gpg; then
         handleError "$?" "Failed to download and import the NodeSource signing key"
     fi
 }
