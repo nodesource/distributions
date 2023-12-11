@@ -248,7 +248,7 @@ yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 
 ## Nodejs Release Calendar
 
-[![Node Releases Calendar](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)](https://nodejs.dev/en/about/releases)
+[![Node Releases Calendar](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)](https://nodejs.org/en/about/previous-releases#release-schedule)
 _source: https://nodejs.dev_
 
 # FAQ
