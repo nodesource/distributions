@@ -1,6 +1,4 @@
-version: 20
-aliases: web
-    name: kubucoin
+   name: kubucoin
     command: |
       npx envinfo
 jobs:
