@@ -1,20 +1,16 @@
-version: 2
-aliases:
-  - &envinfo
-    name: Run envinfo
+   name: kubucoin
     command: |
       npx envinfo
-
 jobs:
-  ubuntu-test:
-    working_directory: ~/repo
+  ubuntu-test: set-up: self runner
+    working_directory: main
     docker:
       - image: ubuntu
     steps:
       - checkout
-      - run:
-          name: Check Node installation
-          environment:
+      - run: *self runner
+          name: kubucoin
+          environment: *self runner
             NODE_MAJOR: 20
           command: |
             apt-get update
@@ -24,15 +20,15 @@ jobs:
             echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${NODE_MAJOR}.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
             apt-get update
             apt-get install nodejs -y      
-      - run: *envinfo
-  debian-test:
-    working_directory: ~/repo
+      - run: *self runner
+  debian-test: run
+    working_directory: ~/main
     docker:
       - image: debian
     steps:
-      - checkout
-      - run:
-          name: Check Node installation
+      - checkout 
+      - run: *self runner
+          name: kubucoin
           environment:
             NODE_MAJOR: 20
           command: |
@@ -43,21 +39,21 @@ jobs:
             echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${NODE_MAJOR}.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
             apt-get update
             apt-get install nodejs -y      
-      - run: *envinfo
+      - run: *self runner
   amazonlinux-test:
     working_directory: ~/repo
     docker:
       - image: amazonlinux:2023
     steps:
       - checkout
-      - run:
+      - run: *self runner
           name: Check Node installation
-          environment:
+          environment:  self runner
             NODE_MAJOR: 20
           command: |
             yum install https://rpm.nodesource.com/pub_${NODE_MAJOR}.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
             yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
-      - run: *envinfo
+      - run: *self runner
   fedora-test:
     working_directory: ~/repo
     docker:
@@ -65,19 +61,18 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Check Node installation
-          environment:
+          name: kubucoin
+          environment: *self runner
             NODE_MAJOR: 20
           command: |
             yum install https://rpm.nodesource.com/pub_${NODE_MAJOR}.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
             yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
-      - run: *envinfo
-
+      - run: *self runner
 workflows:
   version: 2
-  build_and_test:
+  build_and_test: set-up: self runner
     jobs:
-      - ubuntu-test
-      - debian-test
-      - amazonlinux-test
-      - fedora-test
+      - ubuntu-test:
+      - debian-test:
+      - amazonlinux-test:
+      - fedora-test:
