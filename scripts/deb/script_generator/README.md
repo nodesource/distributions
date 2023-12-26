@@ -1,6 +1,6 @@
 # Node.js Version Setup Scripts
 
-This repository contains scripts for setting up different versions of Node.js on RPM-based Linux systems.
+This repository contains scripts for setting up different versions of Node.js on Debian based Linux systems.
 
 ## Modifying the Scripts
 
@@ -22,10 +22,9 @@ Replace `XX.x` with the version number of the script you want to run. For exampl
 
 Each script in this repository performs the following steps:
 
-1. Checks if the system is an RPM-based Linux distribution.
-2. Configures the NodeSource Node.js RPM repository for the specified version of Node.js.
-3. Checks if `dnf` or `yum` is available and updates the system using the available package manager.
-4. Logs a message indicating that the repository is configured and updated, and instructs the user to run `dnf install nodejs -y` or `yum install nodejs -y` to complete the installation.
+1. Checks if the system is an Debian based Linux distribution.
+2. Configures the NodeSource Node.js DEB repository for the specified version of Node.js.
+3. Logs a message indicating that the repository is configured and updated, and instructs the user to run `apt-get install nodejs -y` to complete the installation.
 
 The `setup_current` and `setup_latest` scripts are special scripts that install the current and latest versions of Node.js, respectively. The current version is 20.x and the latest version is 21.x.
 
@@ -44,7 +43,7 @@ This script iterates over a list of versions (currently 18.x, 20.x, and 21.x), a
 After generating the scripts, you can deploy them to an S3 bucket using the AWS CLI. Here is the command to do so:
 
 ```bash
-aws s3 sync scripts/rpm/ s3://rpm.nodesource.com/ --exclude "*/**"
+aws s3 sync scripts/deb/ s3://deb.nodesource.com/ --exclude "*/**"
 ```
 
-This command syncs all the files in the scripts/rpm/ directory (but not its subdirectories) with the s3://rpm.nodesource.com/ bucket. Make sure to replace s3://rpm.nodesource.com/ with the path to your own S3 bucket.
+This command syncs all the files in the scripts/deb/ directory (but not its subdirectories) with the s3://deb.nodesource.com/ bucket. Make sure to replace s3://deb.nodesource.com/ with the path to your own S3 bucket.

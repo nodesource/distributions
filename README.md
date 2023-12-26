@@ -24,14 +24,14 @@ Looking for the previous Documentation [README.md](./OLD_README.md)
 
 ## Table of Contents
 
-* **[Debian and Ubuntu based distributions](#debian-and-ubuntu-based-distributions)** (deb)
+- **[Debian and Ubuntu based distributions](#debian-and-ubuntu-based-distributions)** (deb)
   - [Available architectures](#available-architectures)
   - [Supported Versions](#supported-versions)
     - [Ubuntu versions](#ubuntu-versions)
     - [Debian versions](#debian-versions)
   - [Installation instructions](#installation-instructions)
   - [Uninstall instructions](#uninstall-nodejs-ubuntu--debian-packages)
-* **[Enterprise Linux based distributions](#enterprise-linux-based-distributions)** (rpm)
+- **[Enterprise Linux based distributions](#enterprise-linux-based-distributions)** (rpm)
   - [Available architectures](#available-architectures-1)
   - [Supported Versions](#supported-versions-1)
     - [Fedora versions](#fedora-versions)
@@ -39,10 +39,10 @@ Looking for the previous Documentation [README.md](./OLD_README.md)
     - [Amazon Linux versions](#amazon-linux-versions)
   - [Installation instructions](#installation-instructions-1)
   - [Uninstall instructions](#uninstall-nodejs-enterprise-linux-packages)
-* **[Nodejs Release Calendar](#nodejs-release-calendar)**
-* [FAQ](#faq)
-* [Authors and Contributors](#authors-and-contributors)
-* [License](#license)
+- **[Nodejs Release Calendar](#nodejs-release-calendar)**
+- [FAQ](#faq)
+- [Authors and Contributors](#authors-and-contributors)
+- [License](#license)
 
 ## Debian and Ubuntu based distributions
 
@@ -50,9 +50,9 @@ Looking for the previous Documentation [README.md](./OLD_README.md)
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **amd64** (64-bit)
-* **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
-* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
+- **amd64** (64-bit)
+- **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
+- **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
 ### **Supported Versions**
 
@@ -85,8 +85,8 @@ NodeSource will continue to maintain the following architectures and may add add
 1. Download and import the Nodesource GPG key
 
 ```sh
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
+sudo apt-get update && sudo apt-get install curl -y
+
 sudo mkdir -p /etc/apt/keyrings
 curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
 ```
@@ -98,7 +98,7 @@ NODE_MAJOR=20
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 ```
 
-> ***Optional***: ``NODE_MAJOR`` can be changed depending on the version you need.
+> _**Optional**_: ``NODE_MAJOR`` can be changed depending on the version you need.
 >
 > ```sh
 > NODE_MAJOR=16
@@ -132,8 +132,8 @@ rm -r /etc/apt/keyrings/nodesource.gpg
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **x86_64** (64-bit)
-* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
+- **x86_64** (64-bit)
+- **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
 ### **Supported Versions**
 
@@ -164,7 +164,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 ### Installation Instructions
 
-The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
+The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/gpgkey/nodesource.gpg.key>
 
 > _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
 
@@ -172,30 +172,22 @@ The Nodesource RPM package signing key is available here: https://rpm.nodesource
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_21.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+sudo yum install nodejs -y
 ```
 
 #### **Node.js v20.x**
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+sudo yum install nodejs -y
 ```
 
 #### **Node.js v18.x**
 
 ```sh
 sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+sudo yum install nodejs -y
 ```
-
-#### **Node.js v16.x**
-
-```sh
-sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
-```
-
 
 ***Optional***: install build tools
 
@@ -225,7 +217,7 @@ We've created some scripts to make easy the repo configuration.
 
 #### DEB
 
-> change the version as needed `./nsolid_setup_deb.sh 20` 
+> change the version as needed `./nsolid_setup_deb.sh 20`
 
 ```SHELL
 curl -SLO https://deb.nodesource.com/nsolid_setup_deb.sh
@@ -234,10 +226,9 @@ chmod 500 nsolid_setup_deb.sh
 apt-get install nodejs -y
 ```
 
-
 #### RPM
 
-> change the version as needed `./nsolid_setup_deb.sh 20` 
+> change the version as needed `./nsolid_setup_deb.sh 20`
 
 ```SHELL
 curl -SLO https://rpm.nodesource.com/nsolid_setup_rpm.sh
@@ -249,7 +240,7 @@ yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
 ## Nodejs Release Calendar
 
 [![Node Releases Calendar](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)](https://nodejs.dev/en/about/releases)
-_source: https://nodejs.dev_
+_source: <https://nodejs.dev>_
 
 # FAQ
 
@@ -268,16 +259,16 @@ A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki
 ---
 
 Q: Why is there no folder listing available when I visit the following URLs?
-  https://deb.nodesource.com/node_XX.x/pool/main/n/
+  <https://deb.nodesource.com/node_XX.x/pool/main/n/>
 
-  https://rpm.nodesource.com/pub_20.x/
+  <https://rpm.nodesource.com/pub_20.x/>
 
 A: This issue may arise because some users utilize the above URLs to download specific versions of Node.js or create mirrors of our repository.
 
 For more information and possible solutions, please refer to the following resources:
 
-   * [Github issue](https://github.com/nodesource/distributions/issues/1633)
-   * [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
+- [Github issue](https://github.com/nodesource/distributions/issues/1633)
+- [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
 
 ---
 
@@ -331,4 +322,3 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 *Amazon Linux are trademarks of Amazon Web Services, Inc*
 
 *CloudLinux is a trademark of Cloud Linux, Inc*
-

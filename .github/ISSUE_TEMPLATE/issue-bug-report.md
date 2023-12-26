@@ -11,15 +11,18 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 **Distribution Information:**
- - OS: [e.g. Ubuntu]
- - Version [e.g. focal (20.04)]
- - Other info if applicable [e.g. Docker image XXX, AWS AMI ID]
+
+- OS: [e.g. Ubuntu]
+- Version [e.g. focal (20.04)]
+- Other info if applicable [e.g. Docker image XXX, AWS AMI ID]
 
 **Node Version:**
- - Node: [e.g. Node.js v18.x:]
+
+- Node: [e.g. Node.js v18.x:]
 
 **To Reproduce**
 Steps to reproduce the behavior:
+
 1. Execute Ubuntu Docker Image XX
 2. Execute Installation instructions for Node.js v1x.x:
 3. ....
