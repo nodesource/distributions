@@ -80,46 +80,84 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### Node.js
 
-> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
+**Node.js v21.x**:
 
-#### Node.js v21.x
+##### Using Ubuntu
 
 ```sh
-sudo apt-get update && sudo apt-get install curl -y
-curl -fsSL https://deb.nodesource.com/setup_21.x | sudo bash -
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
-#### Node.js v20.x
+##### Using Debian, as root
 
 ```sh
-sudo apt-get update && sudo apt-get install curl -y
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo bash -
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+apt-get install -y nodejs
 ```
 
-#### Node.js v18.x
+**Node.js v20.x**:
+
+##### Using Ubuntu
 
 ```sh
-sudo apt-get update && sudo apt-get install curl -y
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo bash -
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
-#### Node.js Current (v21.x)
+##### Using Debian, as root
 
 ```sh
-sudo apt-get update && sudo apt-get install curl -y
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo bash -
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+apt-get install -y nodejs
 ```
 
-#### Node.js LTS (v20.x)
+**Node.js v18.x**:
+
+##### Using Ubuntu
 
 ```sh
-sudo apt-get update && sudo apt-get install curl -y
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo bash -
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+apt-get install -y nodejs
+```
+
+**Node.js LTS (v20.x)**:
+
+##### Using Ubuntu
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
+apt-get install -y nodejs
+```
+
+**Node.js Current (v21.x)**:
+
+##### Using Ubuntu
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | bash - &&\
+apt-get install -y nodejs
 ```
 
 ### Uninstall `nodejs` Ubuntu & Debian packages
@@ -174,46 +212,84 @@ NodeSource will continue to maintain the following architectures and may add add
 
 The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/gpgkey/nodesource.gpg.key>
 
-> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
+**Node.js v21.x**
 
-#### Node.js v21.x
+##### As root
 
 ```sh
-sudo yum update -y && sudo yum install curl -y
+curl -fsSL https://rpm.nodesource.com/setup_21.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
-sudo yum install nodejs -y
+yum install -y nodejs
 ```
 
-#### Node.js v20.x
+**Node.js v20.x**
+
+##### As root
 
 ```sh
-sudo yum update -y && sudo yum install curl -y
+curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
-sudo yum install nodejs -y
+yum install -y nodejs
 ```
 
-#### Node.js v18.x
+**Node.js v18.x**
+
+##### As root
 
 ```sh
-sudo yum update -y && sudo yum install curl -y
+curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
 curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-sudo yum install nodejs -y
+yum install -y nodejs
 ```
 
-#### Node.js Current (v21.x)
+**Node.js LTS (20.x)**
+
+##### As root
 
 ```sh
-sudo yum update -y && sudo yum install curl -y
-curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
-sudo yum install nodejs -y
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
+yum install -y nodejs
 ```
 
-#### Node.js LTS (v20.x)
+##### No root privileges
 
 ```sh
-sudo yum update -y && sudo yum install curl -y
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-sudo yum install nodejs -y
+yum install -y nodejs
+```
+
+**Node.js Current (21.x)**
+
+##### As root
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
+yum install -y nodejs
 ```
 
 ***Optional***: install build tools
@@ -330,6 +406,6 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 
 *Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
 
-*Amazon Linux are trademarks of Amazon Web Services, Inc*
+*Amazon Linux is a trademark of Amazon Web Services, Inc.*
 
-*CloudLinux is a trademark of Cloud Linux, Inc*
+*CloudLinux is a trademark of CloudLinux, Inc*
