@@ -185,26 +185,26 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Fedora versions**
 
-| Distro Name           | Node 16x | Node 18x | Node 20x |
-| :-------------------- | :------: | :------: | :------: |
-| Fedora >= 20 (20->28) |    ✅    |    ❌    |    ❌    |
-| Fedora >= 29          |    ✅    |    ✅    |    ✅    |
-| Fedora >= 36          |    ✅    |    ✅    |    ✅    |
+| Distro Name           | Node 16x | Node 18x | Node 20x | Node 21x |
+| :-------------------- | :------: | :------: | :------: | :------: |
+| Fedora >= 20 (20->28) |    ✅    |    ❌    |    ❌    |    ❌    |
+| Fedora >= 29          |    ✅    |    ✅    |    ✅    |    ✅    |
+| Fedora >= 36          |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Redhat versions**
 
-| Distro Name | Node 16x | Node 18x | Node 20x |
-| :---------- | :------: | :------: | :------: |
-| Redhat 7    |    ✅    |    ❌    |    ❌    |
-| Redhat 8    |    ✅    |    ✅    |    ✅    |
-| Redhat 9    |    ✅    |    ✅    |    ✅    |
+| Distro Name | Node 16x | Node 18x | Node 20x | Node 21x |
+| :---------- | :------: | :------: | :------: | :------: |
+| Redhat 7    |    ✅    |    ❌    |    ❌    |    ❌    |
+| Redhat 8    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Redhat 9    |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Amazon Linux versions**
 
-| Distro Name       | Node 16x | Node 18x | Node 20x |
-| :---------------- | :------: | :------: | :------: |
-| Amazon Linux 2    |    ✅    |    ❌    |    ❌    |
-| Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |
+| Distro Name       | Node 16x | Node 18x | Node 20x | Node 21x |
+| :---------------- | :------: | :------: | :------: | :------: |
+| Amazon Linux 2    |    ✅    |    ❌    |    ❌    |    ❌    |
+| Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |    ✅    |
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
