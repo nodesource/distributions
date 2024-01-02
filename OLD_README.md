@@ -12,18 +12,17 @@ Please file an issue if you are experiencing a problem or would like to discuss 
 
 Pull requests are encouraged if you have changes you believe would improve the setup process or increase compatibility across Linux distributions.
 
-
 Looking for the oldversion of [README.md](./OLD_README.md)
 
 ## Table of Contents
 
 * **[Debian and Ubuntu based distributions](#deb)** (deb)
-  - [Installation instructions](#debinstall)
-  - [Uninstall instructions](#debuninstall)
-  - [Manual installation](#debmanual)
+  * [Installation instructions](#debinstall)
+  * [Uninstall instructions](#debuninstall)
+  * [Manual installation](#debmanual)
 * **[Enterprise Linux based distributions](#rpm)** (rpm)
-  - [Installation instructions](#rpminstall)
-  - [Uninstall instructions](#rpmuninstall)
+  * [Installation instructions](#rpminstall)
+  * [Uninstall instructions](#rpmuninstall)
 * **[Tests](#tests)**
 * **[FAQ](#questions)**
 * **[Requested Distributions](#requests)**
@@ -392,7 +391,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 _NOTE: If you are using RHEL 6 or CentOS 6, you might want to read about [running Node.js on older distros](https://github.com/nodesource/distributions/blob/master/OLDER_DISTROS.md)._
 
-The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL
+The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/pub/el/NODESOURCE-GPG-SIGNING-KEY-EL>
 
 Run on RHEL, CentOS, CloudLinux, Amazon Linux or Fedora:
 
@@ -511,6 +510,7 @@ To test an installation is working (and that the setup scripts are working!) use
 
 ```sh
 curl -fsSL https://deb.nodesource.com/test | bash -
+
 ```
 
 `<a name="questions"></a>`
@@ -541,7 +541,7 @@ A: Due to the limitations of the compiler toolchain on EL 5 and its end of gener
 
 ---
 
-Q: I'm seeing "Your distribution, identified as "*.i686" or "*.i386, is not currently supported, why?
+Q: I'm seeing "Your distribution, identified as "_.i686" or "_.i386, is not currently supported, why?
 
 A: Node.js 4.x and newer require a 64bit os for rpms. See [issue #268](https://github.com/nodesource/distributions/issues/268)
 

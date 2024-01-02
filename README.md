@@ -17,44 +17,44 @@ We'd like to inform you of important changes to our distribution repository [nod
 **What's New:**
 
 - _**Package Changes:** DEB and RPM packages are now available under the `nodistro` codename. We no longer package the installer coupled to specific versions. This means you can install Node.js on almost any distro that meets the minimum requirements._
-- _**Installation Scripts:** The installation scripts `setup_XX.x` are no longer supported and are not needed anymore, as the installation process is straightforward for any RPM and DEB distro._
+- **Installation Scripts:** Back by popular demand, the installation scripts have returned and are better than ever. See the installation instructions below for details on how to use them.
+- **RPM Package Signing Key:** The key used to sign RPM packages has changed. We now sign packages using SHA256, providing better support to the community.
 - **Questions and concerns:** To resolve questions and discuss concerns about this update we've opened this discussion space [New distribution&#39;s packages](https://github.com/nodesource/distributions/discussions/#123456)
 
 Looking for the previous Documentation [README.md](./OLD_README.md)
 
 ## Table of Contents
 
-* **[Debian and Ubuntu based distributions](#debian-and-ubuntu-based-distributions)** (deb)
-  - [Available architectures](#available-architectures)
-  - [Supported Versions](#supported-versions)
+- **[Debian and Ubuntu based distributions](#debian-and-ubuntu-based-distributions)** (deb)
+  - [Available architectures](#deb-available-architectures)
+  - [Supported Versions](#deb-supported-versions)
     - [Ubuntu versions](#ubuntu-versions)
     - [Debian versions](#debian-versions)
   - [Installation instructions](#installation-instructions)
   - [Uninstall instructions](#uninstall-nodejs-ubuntu--debian-packages)
-* **[Enterprise Linux based distributions](#enterprise-linux-based-distributions)** (rpm)
-  - [Available architectures](#available-architectures-1)
-  - [Supported Versions](#supported-versions-1)
+- **[Enterprise Linux based distributions](#enterprise-linux-based-distributions)** (rpm)
+  - [Available architectures](#rpm-available-architectures)
+  - [Supported Versions](#rpm-supported-versions)
     - [Fedora versions](#fedora-versions)
     - [Redhat versions](#redhat-versions)
     - [Amazon Linux versions](#amazon-linux-versions)
-  - [Installation instructions](#installation-instructions-1)
   - [Uninstall instructions](#uninstall-nodejs-enterprise-linux-packages)
-* **[Nodejs Release Calendar](#nodejs-release-calendar)**
-* [FAQ](#faq)
-* [Authors and Contributors](#authors-and-contributors)
-* [License](#license)
+- **[Nodejs Release Calendar](#nodejs-release-calendar)**
+- [FAQ](#faq)
+- [Authors and Contributors](#authors-and-contributors)
+- [License](#license)
 
 ## Debian and Ubuntu based distributions
 
-### **Available architectures**
+### DEB Available architectures
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **amd64** (64-bit)
-* **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
-* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
+- **amd64** (64-bit)
+- **armhf** (ARM 32-bit hard-float, ARMv7 and up: _arm-linux-gnueabihf_)
+- **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
-### **Supported Versions**
+### DEB Supported Versions
 
 #### **Ubuntu versions**
 
@@ -78,47 +78,93 @@ NodeSource will continue to maintain the following architectures and may add add
 
 ### Installation Instructions
 
-#### **Node.js**
+#### Node.js
 
-> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
+**Node.js v21.x**:
 
-1. Download and import the Nodesource GPG key
+##### Using Ubuntu
 
 ```sh
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 ```
 
-2. Create deb repository
+##### Using Debian, as root
 
 ```sh
-NODE_MAJOR=20
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+apt-get install -y nodejs
 ```
 
-> ***Optional***: ``NODE_MAJOR`` can be changed depending on the version you need.
->
-> ```sh
-> NODE_MAJOR=16
-> NODE_MAJOR=18
-> NODE_MAJOR=20
-> NODE_MAJOR=21
-> ```
+**Node.js v20.x**:
 
-3. Run Update and Install
+##### Using Ubuntu
 
 ```sh
-sudo apt-get update
-sudo apt-get install nodejs -y
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
+apt-get install -y nodejs
+```
+
+**Node.js v18.x**:
+
+##### Using Ubuntu
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+apt-get install -y nodejs
+```
+
+**Node.js LTS (v20.x)**:
+
+##### Using Ubuntu
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
+apt-get install -y nodejs
+```
+
+**Node.js Current (v21.x)**:
+
+##### Using Ubuntu
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
+```
+
+##### Using Debian, as root
+
+```sh
+curl -fsSL https://deb.nodesource.com/setup_current.x | bash - &&\
+apt-get install -y nodejs
 ```
 
 ### Uninstall `nodejs` Ubuntu & Debian packages
 
 To completely remove Node.js installed from the deb.nodesource.com package methods above:
 
-##### use `sudo` on Ubuntu or run this as root on debian
+#### use `sudo` on Ubuntu or run this as root on debian
 
 ```sh
 apt-get purge nodejs &&\
@@ -128,14 +174,14 @@ rm -r /etc/apt/keyrings/nodesource.gpg
 
 ## Enterprise Linux Based Distributions
 
-### **Available architectures**
+### RPM Available architectures
 
 NodeSource will continue to maintain the following architectures and may add additional ones in the future.
 
-* **x86_64** (64-bit)
-* **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
+- **x86_64** (64-bit)
+- **arm64** (ARM 64-bit, ARMv8 and up: _aarch64-linux-gnu_)
 
-### **Supported Versions**
+### RPM Supported Versions
 
 #### **Fedora versions**
 
@@ -162,40 +208,89 @@ NodeSource will continue to maintain the following architectures and may add add
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
-### Installation Instructions
+### RPM Installation Instructions
 
-The Nodesource RPM package signing key is available here: https://rpm.nodesource.com/gpgkey/nodesource.gpg.key
+The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/gpgkey/nodesource.gpg.key>
 
-> _If you have root access, you can omit the 'sudo' command as you already have full administrative privileges._
+**Node.js v21.x**
 
-#### **Node.js v21.x**
-
-```sh
-sudo yum install https://rpm.nodesource.com/pub_21.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
-```
-
-#### **Node.js v20.x**
+##### As root
 
 ```sh
-sudo yum install https://rpm.nodesource.com/pub_20.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+curl -fsSL https://rpm.nodesource.com/setup_21.x | bash -
+yum install -y nodejs
 ```
 
-#### **Node.js v18.x**
+##### No root privileges
 
 ```sh
-sudo yum install https://rpm.nodesource.com/pub_18.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
+yum install -y nodejs
 ```
 
-#### **Node.js v16.x**
+**Node.js v20.x**
+
+##### As root
 
 ```sh
-sudo yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-sudo yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
+yum install -y nodejs
 ```
 
+##### No root privileges
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
+yum install -y nodejs
+```
+
+**Node.js v18.x**
+
+##### As root
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
+yum install -y nodejs
+```
+
+**Node.js LTS (20.x)**
+
+##### As root
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
+yum install -y nodejs
+```
+
+**Node.js Current (21.x)**
+
+##### As root
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
+yum install -y nodejs
+```
+
+##### No root privileges
+
+```sh
+curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
+yum install -y nodejs
+```
 
 ***Optional***: install build tools
 
@@ -218,40 +313,12 @@ rm -r /etc/yum.repos.d/nodesource*.repo &&\
 yum clean all
 ```
 
-## Installation Scripts
-
-We've created some scripts to make easy the repo configuration.
-> This only works from Node16 forwards
-
-#### DEB
-
-> change the version as needed `./nsolid_setup_deb.sh 20` 
-
-```SHELL
-curl -SLO https://deb.nodesource.com/nsolid_setup_deb.sh
-chmod 500 nsolid_setup_deb.sh
-./nsolid_setup_deb.sh 21
-apt-get install nodejs -y
-```
-
-
-#### RPM
-
-> change the version as needed `./nsolid_setup_deb.sh 20` 
-
-```SHELL
-curl -SLO https://rpm.nodesource.com/nsolid_setup_rpm.sh
-chmod 500 nsolid_setup_rpm.sh
-./nsolid_setup_rpm.sh 21
-yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
-```
-
 ## Nodejs Release Calendar
 
 [![Node Releases Calendar](https://raw.githubusercontent.com/nodejs/Release/main/schedule.svg?sanitize=true)](https://nodejs.dev/en/about/releases)
-_source: https://nodejs.dev_
+_source: <https://nodejs.dev>_
 
-# FAQ
+## FAQ
 
 Q: How do I migrate to the new repo?
 
@@ -268,47 +335,58 @@ A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki
 ---
 
 Q: Why is there no folder listing available when I visit the following URLs?
-  https://deb.nodesource.com/node_XX.x/pool/main/n/
+  <https://deb.nodesource.com/node_XX.x/pool/main/n/>
 
-  https://rpm.nodesource.com/pub_20.x/
+  <https://rpm.nodesource.com/pub_20.x/>
 
 A: This issue may arise because some users utilize the above URLs to download specific versions of Node.js or create mirrors of our repository.
 
 For more information and possible solutions, please refer to the following resources:
 
-   * [Github issue](https://github.com/nodesource/distributions/issues/1633)
-   * [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
+- [Github issue](https://github.com/nodesource/distributions/issues/1633)
+- [Creating a Repository Mirror](https://github.com/nodesource/distributions/wiki/Creating-a-Repository-Mirror:-A-Step%E2%80%90by%E2%80%90Step-Guide)
 
 ---
 
 ## Authors and Contributors
 
-<table><tbody>
-<tr><th align="left">Chris Lea</th><td><a href="https://github.com/chrislea">GitHub/chrislea</a></td><td><a href="http://twitter.com/chrislea">Twitter/@chrislea</a></td></tr>
-<tr><th align="left">Rod Vagg</th><td><a href="https://github.com/rvagg">GitHub/rvagg</a></td><td><a href="http://twitter.com/rvagg">Twitter/@rvagg</a></td></tr>
-<tr><th align="left">William Blankenship</th><td><a href="https://github.com/retrohacker">GitHub/retrohacker</a></td><td><a href="http://twitter.com/retrohack3r">Twitter/@retrohack3r</a></td></tr>
-<tr><th align="left">Harry Truong</th><td><a href="https://github.com/harrytruong">GitHub/harrytruong</a></td><td></td></tr>
-<tr><th align="left">Matteo Brunati</th><td><a href="https://github.com/mattbrun">GitHub/mattbrun</a></td><td></td></tr>
-<tr><th align="left">Brian White</th><td><a href="https://github.com/mscdex">GitHub/mscdex</a></td><td></td></tr>
-<tr><th align="left">Matt Lewandowsky</th><td><a href="https://github.com/lewellyn">GitHub/lewellyn</a></td><td></td></tr>
-<tr><th align="left">Jan-Hendrik Peters</th><td><a href="https://github.com/hennr">GitHub/hennr</a></td><td></td></tr>
-<tr><th align="left">Andris Reinman</th><td><a href="https://github.com/andris9">GitHub/andris9</a></td><td></td></tr>
-<tr><th align="left">Carvilsi</th><td><a href="https://github.com/carvilsi">GitHub/carvilsi</a></td><td></td></tr>
-<tr><th align="left">Krasimir Trenchev</th><td><a href="https://github.com/Ava7">GitHub/Ava7</a></td><td></td></tr>
-<tr><th align="left">Phil Helm</th><td><a href="https://github.com/phelma">GitHub/phelma</a></td><td></td></tr>
-<tr><th align="left">0xmohit</th><td><a href="https://github.com/0xmohit">GitHub/0xmohit</a></td><td></td></tr>
-<tr><th align="left">jdarling</th><td><a href="https://github.com/jdarling">GitHub/jdarling</a></td><td></td></tr>
-<tr><th align="left">Prayag Verma</th><td><a href="https://github.com/pra85">GitHub/pra85</a></td><td></td></tr>
-<tr><th align="left">Misha Brukman</th><td><a href="https://github.com/mbrukman">GitHub/mbrukman</a></td><td></td></tr>
-<tr><th align="left">Simon Lydell</th><td><a href="https://github.com/lydell">GitHub/lydell</a></td><td></td></tr>
-<tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
-<tr><th align="left">Jorge Maldonado Ventura</th><td><a href="https://notabug.org/jorgesumle">NotABug/jorgesumle</a></td><td></td></tr>
-<tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
-<tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
-<tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
-<tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
-<tr><th align="left">Jefferson Rios</th><td><a href="https://github.com/riosje">GitHub/riosje</a></td><td></td></tr>
-</tbody></table>
+### Current Members
+
+<table>
+  <tbody>
+    <tr><th align="left">Adrian Estrada</th><td><a href="https://github.com/edsadr">GitHub/edsadr</a></td><td><a href="https://twitter.com/edsadr">Twitter/@edsadr</a></td></tr>
+    <tr><th align="left">Jesus Paz</th><td><a href="https://github.com/JesusPaz">GitHub/JesusPaz</a></td><td></td></tr>
+    <tr><th align="left">Jefferson Rios</th><td><a href="https://github.com/riosje">GitHub/riosje</a></td><td></td></tr>
+  </tbody>
+</table>
+
+### Past Members
+
+<table>
+  <tbody>
+    <tr><th align="left">Chris Lea</th><td><a href="https://github.com/chrislea">GitHub/chrislea</a></td><td><a href="http://twitter.com/chrislea">Twitter/@chrislea</a></td></tr>
+    <tr><th align="left">Rod Vagg</th><td><a href="https://github.com/rvagg">GitHub/rvagg</a></td><td><a href="http://twitter.com/rvagg">Twitter/@rvagg</a></td></tr>
+    <tr><th align="left">William Blankenship</th><td><a href="https://github.com/retrohacker">GitHub/retrohacker</a></td><td><a href="http://twitter.com/retrohack3r">Twitter/@retrohack3r</a></td></tr>
+    <tr><th align="left">Harry Truong</th><td><a href="https://github.com/harrytruong">GitHub/harrytruong</a></td><td></td></tr>
+    <tr><th align="left">Matteo Brunati</th><td><a href="https://github.com/mattbrun">GitHub/mattbrun</a></td><td></td></tr>
+    <tr><th align="left">Brian White</th><td><a href="https://github.com/mscdex">GitHub/mscdex</a></td><td></td></tr>
+    <tr><th align="left">Matt Lewandowsky</th><td><a href="https://github.com/lewellyn">GitHub/lewellyn</a></td><td></td></tr>
+    <tr><th align="left">Jan-Hendrik Peters</th><td><a href="https://github.com/hennr">GitHub/hennr</a></td><td></td></tr>
+    <tr><th align="left">Andris Reinman</th><td><a href="https://github.com/andris9">GitHub/andris9</a></td><td></td></tr>
+    <tr><th align="left">Carvilsi</th><td><a href="https://github.com/carvilsi">GitHub/carvilsi</a></td><td></td></tr>
+    <tr><th align="left">Krasimir Trenchev</th><td><a href="https://github.com/Ava7">GitHub/Ava7</a></td><td></td></tr>
+    <tr><th align="left">Phil Helm</th><td><a href="https://github.com/phelma">GitHub/phelma</a></td><td></td></tr>
+    <tr><th align="left">0xmohit</th><td><a href="https://github.com/0xmohit">GitHub/0xmohit</a></td><td></td></tr>
+    <tr><th align="left">jdarling</th><td><a href="https://github.com/jdarling">GitHub/jdarling</a></td><td></td></tr>
+    <tr><th align="left">Prayag Verma</th><td><a href="https://github.com/pra85">GitHub/pra85</a></td><td></td></tr>
+    <tr><th align="left">Misha Brukman</th><td><a href="https://github.com/mbrukman">GitHub/mbrukman</a></td><td></td></tr>
+    <tr><th align="left">Simon Lydell</th><td><a href="https://github.com/lydell">GitHub/lydell</a></td><td></td></tr>
+    <tr><th align="left">Sebastian Blei</th><td><a href="https://github.com/iamsebastian">GitHub/iamsebastian</a></td><td></td></tr>
+    <tr><th align="left">Jorge Maldonado Ventura</th><td><a href="https://notabug.org/jorgesumle">NotABug/jorgesumle</a></td><td></td></tr>
+    <tr><th align="left">Mayank Metha</th><td><a href="https://github.com/mayankmetha">GitHub/mayankmetha</a></td><td><a href="https://twitter.com/mayankmethad">Twitter/@mayankmethad</a></td></tr>
+    <tr><th align="left">Iván Iguarán</th><td><a href="https://github.com/igsu">GitHub/igsu</a></td><td></td></tr>
+  </tbody>
+</table>
 
 Contributions are welcomed from anyone wanting to improve this project!
 
@@ -328,7 +406,6 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 
 *Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
 
-*Amazon Linux are trademarks of Amazon Web Services, Inc*
+*Amazon Linux is a trademark of Amazon Web Services, Inc.*
 
-*CloudLinux is a trademark of Cloud Linux, Inc*
-
+*CloudLinux is a trademark of CloudLinux, Inc*

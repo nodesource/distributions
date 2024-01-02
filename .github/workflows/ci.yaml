@@ -1,4 +1,4 @@
-name: 'Test Installation Scripts'
+name: "Test Installation Scripts"
 
 on:
   push:
@@ -22,16 +22,11 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: Update and Install Dependencies
-        run: |
-          apt-get update -y
-          apt-get install curl git -y
-
       - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Run Istallation Script
-        run: ./scripts/nsolid_setup_deb.sh ${{ matrix.version }}
+        run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
         run: |
@@ -59,20 +54,15 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: Update and Install Dependencies
-        run: |
-          yum update -y
-          yum install git -y
-
       - name: Checkout Repo
         uses: actions/checkout@v4
 
       - name: Run Istallation Script
-        run: ./scripts/nsolid_setup_rpm.sh ${{ matrix.version }}
+        run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
         run: |
-          yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+          yum install nodejs -y
 
       - name: Validate Node Version
         run: |

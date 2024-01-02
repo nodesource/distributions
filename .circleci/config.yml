@@ -14,16 +14,9 @@ jobs:
       - checkout
       - run:
           name: Check Node installation
-          environment:
-            NODE_MAJOR: 20
           command: |
-            apt-get update
-            apt-get install -y ca-certificates curl gnupg
-            apt install nodejs -y
-            curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-            echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${NODE_MAJOR}.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
-            apt-get update
-            apt-get install nodejs -y      
+            bash ./scripts/deb/setup_lts.x
+            apt-get install nodejs -y
       - run: *envinfo
   debian-test:
     working_directory: ~/repo
@@ -33,16 +26,9 @@ jobs:
       - checkout
       - run:
           name: Check Node installation
-          environment:
-            NODE_MAJOR: 20
           command: |
-            apt-get update
-            apt-get install -y ca-certificates curl gnupg
-            apt install nodejs -y
-            curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-            echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_${NODE_MAJOR}.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
-            apt-get update
-            apt-get install nodejs -y      
+            bash ./scripts/deb/setup_lts.x
+            apt-get install nodejs -y
       - run: *envinfo
   amazonlinux-test:
     working_directory: ~/repo
@@ -55,8 +41,8 @@ jobs:
           environment:
             NODE_MAJOR: 20
           command: |
-            yum install https://rpm.nodesource.com/pub_${NODE_MAJOR}.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-            yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+            bash ./scripts/rpm/setup_lts.x
+            yum install nodejs -y
       - run: *envinfo
   fedora-test:
     working_directory: ~/repo
@@ -66,11 +52,9 @@ jobs:
       - checkout
       - run:
           name: Check Node installation
-          environment:
-            NODE_MAJOR: 20
           command: |
-            yum install https://rpm.nodesource.com/pub_${NODE_MAJOR}.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-            yum install nodejs -y --setopt=nodesource-nodejs.module_hotfixes=1
+            bash ./scripts/rpm/setup_lts.x
+            yum install nodejs -y
       - run: *envinfo
 
 workflows:
