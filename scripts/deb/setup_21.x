@@ -48,7 +48,7 @@ install_pre_reqs() {
     fi
 
     # Run 'apt-get install'
-    if ! apt-get install -y ca-certificates curl gnupg; then
+    if ! apt-get install -y apt-transport-https ca-certificates curl gnupg; then
         handle_error "$?" "Failed to install packages"
     fi
 
