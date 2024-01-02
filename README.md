@@ -4,7 +4,7 @@
 
 [![CircleCI](https://circleci.com/gh/nodesource/distributions/tree/master.svg?style=svg)](https://circleci.com/gh/nodesource/distributions/tree/master)
 
-[![Github Actions Test](https://github.com/nodesource/distributions/actions/workflows/CI.yaml/badge.svg)](https://github.com/nodesource/distributions/actions/workflows/CI.yaml)
+[![Github Actions Test](https://github.com/nodesource/distributions/actions/workflows/ci.yaml/badge.svg)](https://github.com/nodesource/distributions/actions/workflows/ci.yaml)
 
 This repository contains the instructions to install the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
 
