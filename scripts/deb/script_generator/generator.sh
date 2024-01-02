@@ -9,6 +9,8 @@ create_script() {
     echo "Creating script for Node.js version $version.x"
     if sed "s/NODE_VERSION=\"XX.x\"/NODE_VERSION=\"$version.x\"/g" "$base_script" > "$target_script"; then
         echo "Script created successfully: $target_script"
+        chmod +x "$target_script"
+        echo "Execute permissions set for: $target_script"
     else
         echo "Error: Failed to create script for version $version.x"
         return 1
