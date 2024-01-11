@@ -86,12 +86,12 @@ fi
 if command_exists dnf; then
     log "dnf available, updating..." "info"
     dnf update -y
-    log "Repositorie is configured and updated. Run 'dnf install nodejs -y' to complete the installation." "info"
+    log "Repository is configured and updated. Run 'dnf install nodejs -y' to complete the installation." "info"
     exit 0
 elif command_exists yum; then
     log "yum available, updating..." "info"
     yum update -y
-    log "Repositorie is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
+    log "Repository is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
 else
     handle_error 1 "Neither yum nor dnf package manager was found. Please update your system using your package manager."
 fi
