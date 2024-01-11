@@ -36,6 +36,10 @@ if ! [ -f /etc/redhat-release ] && ! grep -q "Amazon Linux" /etc/system-release 
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
 
+log "Cleaning up old repositories..." "info"
+rm -f /etc/yum.repos.d/nodesource*.repo
+log "Old repositories removed" "info"
+
 # Define Node.js version
 NODE_VERSION="18.x"
 
@@ -48,8 +52,8 @@ case "$SYS_ARCH" in
   *) handle_error 1 "Unsupported architecture: $SYS_ARCH. Only aarch64 and x86_64 are supported." ;;
 esac
 
-# Repository content
-REPO_CONTENT="[nodesource-nodejs]
+# Repository content for Node.js
+NODEJS_REPO_CONTENT="[nodesource-nodejs]
 name=Node.js Packages for Linux RPM based distros - $SYS_ARCH
 baseurl=https://rpm.nodesource.com/pub_${NODE_VERSION}/nodistro/nodejs/$SYS_ARCH
 priority=9
@@ -58,7 +62,25 @@ gpgcheck=1
 gpgkey=https://rpm.nodesource.com/gpgkey/ns-operations-public.key
 module_hotfixes=1"
 
-echo "$REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nodistro.repo > /dev/null
+# Write Node.js repository content
+echo "$NODEJS_REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nodejs.repo > /dev/null
+
+# Repository content for N|Solid
+NSOLID_REPO_CONTENT="[nodesource-nsolid]
+name=N|Solid Packages for Linux RPM based distros - $SYS_ARCH
+baseurl=https://rpm.nodesource.com/pub_${NODE_VERSION}/nodistro/nsolid/$SYS_ARCH
+priority=9
+enabled=1
+gpgcheck=1
+gpgkey=https://rpm.nodesource.com/gpgkey/ns-operations-public.key
+module_hotfixes=1"
+
+# Check if Node.js version is an LTS version
+if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
+  # Write N|Solid repository content
+  echo "$NSOLID_REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nsolid.repo > /dev/null
+  log "Added N|Solid repository for LTS version: $NODE_VERSION" "info"
+fi
 
 # Check for availability of dnf or yum
 if command_exists dnf; then
