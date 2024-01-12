@@ -320,9 +320,15 @@ _source: <https://nodejs.dev>_
 
 ## FAQ
 
-Q: How do I migrate to the new repo?
+Q: Are the scripts deprecated?
 
-A: Please take a look at [wiki](https://github.com/nodesource/distributions/wiki/How-to-migrate-to-the-new-repository)
+A: The scripts are deprecated for the versions of Node.js that are currently outdated. While the packages for these versions still exist, we no longer provide support for them. Our support is exclusively dedicated to the active Node.js versions, which, as of today, are 18, 20, and 21. Users utilizing these versions can confidently use our scripts, but we encourage those using older versions to upgrade for continued support and the best experience.
+
+---
+
+Q: How can I configure the repository manually?
+
+A: If you prefer to manually configure the repository, we have a detailed guide to assist you through the process. Please visit our [Repository Manual Installation Guide](https://github.com/nodesource/distributions/wiki/Repository-Manual-Installation) for comprehensive instructions. This guide is designed to provide step-by-step directions to ensure a smooth and successful manual setup of the repository for your Node.js environment.
 
 ---
 
