@@ -85,12 +85,12 @@ fi
 # Check for availability of dnf or yum
 if command_exists dnf; then
     log "dnf available, updating..." "info"
-    dnf update -y
+    dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
     log "Repository is configured and updated. Run 'dnf install nodejs -y' to complete the installation." "info"
     exit 0
 elif command_exists yum; then
     log "yum available, updating..." "info"
-    yum update -y
+    yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
     log "Repository is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
 else
     handle_error 1 "Neither yum nor dnf package manager was found. Please update your system using your package manager."
