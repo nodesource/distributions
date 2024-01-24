@@ -167,9 +167,9 @@ To completely remove Node.js installed from the deb.nodesource.com package metho
 #### use `sudo` on Ubuntu or run this as root on debian
 
 ```sh
-apt-get purge nodejs &&\
-rm -r /etc/apt/sources.list.d/nodesource.list &&\
-rm -r /etc/apt/keyrings/nodesource.gpg
+sudo apt-get purge nodejs &&\
+sudo rm -r /etc/apt/sources.list.d/nodesource.list &&\
+sudo rm -r /etc/apt/keyrings/nodesource.gpg
 ```
 
 ## Enterprise Linux Based Distributions
