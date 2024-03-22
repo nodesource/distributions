@@ -58,8 +58,8 @@ jobs:
     steps:
       - name: install git
         run: |
-          dnf update -y
-          dnf install git -y
+          yum update -y
+          yum install git -y
 
       - name: Checkout Repo
         uses: actions/checkout@v4
@@ -69,7 +69,7 @@ jobs:
 
       - name: Install Nodejs
         run: |
-          dnf install nodejs -y
+          yum install nodejs -y
 
       - name: Validate Node Version
         run: |
