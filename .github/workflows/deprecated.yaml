@@ -1,0 +1,81 @@
+name: "Test Installation Scripts DEPRECATED VERSIONS"
+
+on:
+  schedule:
+    - cron: "00 00 * * *" # Run every day at midnight
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  deb:
+    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [16]
+        os: ["ubuntu:16.04", "debian:10"]
+    container:
+      image: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Run Istallation Script
+        run: ./scripts/deb/setup_${{ matrix.version }}.x
+
+      - name: Install Nodejs
+        run: |
+          apt-get install nodejs -y
+
+      - name: Validate Node Version
+        run: |
+          node -e "console.log(process.version)"
+          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+            exit 1
+          fi
+
+  rpm:
+    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [16]
+        os: ["fedora:36", "amazonlinux:2"]
+    container:
+      image: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: install git
+        run: |
+          dnf update -y
+          dnf install git -y
+
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Run Istallation Script
+        run: ./scripts/rpm/setup_${{ matrix.version }}.x
+
+      - name: Install Nodejs
+        run: |
+          dnf install nodejs -y
+
+      - name: Validate Node Version
+        run: |
+          node -e "console.log(process.version)"
+          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+            exit 1
+          fi
