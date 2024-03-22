@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         version: [16]
-        os: ["ubuntu:16.04", "debian:10"]
+        os: ["ubuntu:20.04", "debian:10"]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -49,7 +49,7 @@ jobs:
     strategy:
       matrix:
         version: [16]
-        os: ["fedora:36", "amazonlinux:2"]
+        os: ["fedora:29", "amazonlinux:2023"]
     container:
       image: ${{ matrix.os }}
     defaults:
