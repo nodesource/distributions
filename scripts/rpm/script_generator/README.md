@@ -24,8 +24,8 @@ Each script in this repository performs the following steps:
 
 1. Checks if the system is an RPM-based Linux distribution.
 2. Configures the NodeSource Node.js RPM repository for the specified version of Node.js.
-3. Checks if `dnf` or `yum` is available and updates the system using the available package manager.
-4. Logs a message indicating that the repository is configured and updated, and instructs the user to run `dnf install nodejs -y` or `yum install nodejs -y` to complete the installation.
+3. Checks if `dnf`, `yum` or `microdnf` is available and updates the system using the available package manager.
+4. Logs a message indicating that the repository is configured and updated, and instructs the user to run `dnf install nodejs -y`, `yum install nodejs -y` or `microdnf install nodejs -y` to complete the installation.
 
 The `setup_current` and `setup_latest` scripts are special scripts that install the current and latest versions of Node.js, respectively. The current version is 20.x and the latest version is 21.x.
 
