@@ -82,7 +82,7 @@ if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
   log "Added N|Solid repository for LTS version: $NODE_VERSION" "info"
 fi
 
-# Check for availability of dnf or yum
+# Check for availability of dnf, yum or microdnf
 if command_exists dnf; then
     log "dnf available, updating..." "info"
     dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
@@ -92,6 +92,10 @@ elif command_exists yum; then
     log "yum available, updating..." "info"
     yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
     log "Repository is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
+elif command_exists microdnf; then
+    log "microdnf available, updating..." "info"
+    microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
+    log "Repository is configured and updated. Run 'microdnf install nodejs -y' to complete the installation." "info"
 else
-    handle_error 1 "Neither yum nor dnf package manager was found. Please update your system using your package manager."
+    handle_error 1 "Neither yum, dnf nor microdnf package manager was found. Please update your system using your package manager."
 fi

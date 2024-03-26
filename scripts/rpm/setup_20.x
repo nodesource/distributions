@@ -92,6 +92,10 @@ elif command_exists yum; then
     log "yum available, updating..." "info"
     yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
     log "Repository is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
+elif command_exists microdnf; then
+    log "microdnf available, updating..." "info"
+    microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
+    log "Repository is configured and updated. Run 'microdnf install nodejs -y' to complete the installation." "info"
 else
-    handle_error 1 "Neither yum nor dnf package manager was found. Please update your system using your package manager."
+    handle_error 1 "Neither yum, dnf nor microdnf package manager was found. Please update your system using your package manager."
 fi
