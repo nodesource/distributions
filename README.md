@@ -193,11 +193,12 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Redhat versions**
 
-| Distro Name | Node 18x | Node 20x | Node 21x |
-| :---------- | :------: | :------: | :------: |
-| Redhat 7    |    ❌    |    ❌    |    ❌    |
-| Redhat 8    |    ✅    |    ✅    |    ✅    |
-| Redhat 9    |    ✅    |    ✅    |    ✅    |
+| Distro Name      | Node 18x | Node 20x | Node 21x |
+|:-----------------| :------: | :------: | :------: |
+| Redhat 7         |    ❌    |    ❌    |    ❌    |
+| Redhat 8         |    ✅    |    ✅    |    ✅    |
+| Redhat 9         |    ✅    |    ✅    |    ✅    |
+| Redhat 9-minimal |    ✅    |    ✅    |    ✅    |
 
 #### **Amazon Linux versions**
 
