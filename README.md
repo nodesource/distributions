@@ -58,21 +58,21 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Ubuntu versions**
 
-| Distro Name          | Node 18x | Node 20x | Node 21x |
-| :------------------- | :------: | :------: |  :------: |
-| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |
-| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |
-| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |
+| Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x |
+| :------------------- | :------: | :------: | :------: | :------: |
+| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |
+| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |
+| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Debian versions**
 
-| Distro Name        | Node 18x | Node 20x | Node 21x |
-| :----------------- | :------: | :------: | :------: |
-| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |
-| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |
-| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |
-| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |
-| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |
+| Distro Name        | Node 18x | Node 20x | Node 21x | Node 22x |
+| :----------------- | :------: | :------: | :------: | :------: |
+| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |    ❌    |
+| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
@@ -80,19 +80,19 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### Node.js
 
-**Node.js v21.x**:
+**Node.js v22.x**:
 
 ##### Using Ubuntu
 
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_21.x | sudo -E bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
 apt-get install -y nodejs
 ```
 
@@ -185,27 +185,27 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Fedora versions**
 
-| Distro Name           | Node 18x | Node 20x | Node 21x |
-| :-------------------- | :------: | :------: | :------: |
-| Fedora >= 20 (20->28) |    ❌    |    ❌    |    ❌    |
-| Fedora >= 29          |    ✅    |    ✅    |    ✅    |
-| Fedora >= 36          |    ✅    |    ✅    |    ✅    |
+| Distro Name           | Node 18x | Node 20x | Node 21x |  Node 22x |
+| :-------------------- | :------: | :------: | :------: |  :------: |
+| Fedora >= 20 (20->28) |    ❌    |    ❌    |    ❌    |     ❌    |
+| Fedora >= 29          |    ✅    |    ✅    |    ✅    |     ✅    |
+| Fedora >= 36          |    ✅    |    ✅    |    ✅    |     ✅    |
 
 #### **Redhat versions**
 
-| Distro Name      | Node 18x | Node 20x | Node 21x |
-|:-----------------| :------: | :------: | :------: |
-| Redhat 7         |    ❌    |    ❌    |    ❌    |
-| Redhat 8         |    ✅    |    ✅    |    ✅    |
-| Redhat 9         |    ✅    |    ✅    |    ✅    |
-| Redhat 9-minimal |    ✅    |    ✅    |    ✅    |
+| Distro Name      | Node 18x | Node 20x | Node 21x | Node 22x |
+|:-----------------| :------: | :------: | :------: | :------: |
+| Redhat 7         |    ❌    |    ❌    |    ❌    |    ❌    |
+| Redhat 8         |    ✅    |    ✅    |    ✅    |    ✅    |
+| Redhat 9         |    ✅    |    ✅    |    ✅    |    ✅    |
+| Redhat 9-minimal |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Amazon Linux versions**
 
-| Distro Name       | Node 18x | Node 20x | Node 21x |
-| :---------------- | :------: | :------: | :------: |
-| Amazon Linux 2    |    ❌    |    ❌    |    ❌    |
-| Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |
+| Distro Name       | Node 18x | Node 20x | Node 21x | Node 22x |
+| :---------------- | :------: | :------: | :------: | :------: |
+| Amazon Linux 2    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |    ✅    |
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
@@ -213,19 +213,19 @@ NodeSource will continue to maintain the following architectures and may add add
 
 The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/gpgkey/nodesource.gpg.key>
 
-**Node.js v21.x**
+**Node.js v22.x**
 
 ##### As root
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_21.x | bash -
+curl -fsSL https://rpm.nodesource.com/setup_22.x | bash -
 yum install -y nodejs
 ```
 
 ##### No root privileges
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_21.x | sudo bash -
+curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
 yum install -y nodejs
 ```
 
@@ -277,7 +277,7 @@ curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
 yum install -y nodejs
 ```
 
-**Node.js Current (21.x)**
+**Node.js Current (22.x)**
 
 ##### As root
 

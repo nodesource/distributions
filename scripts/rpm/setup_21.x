@@ -82,7 +82,7 @@ if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
   log "Added N|Solid repository for LTS version: $NODE_VERSION" "info"
 fi
 
-# Check for availability of dnf or yum
+# Check for availability of dnf, yum or microdnf
 if command_exists dnf; then
     log "dnf available, updating..." "info"
     dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
