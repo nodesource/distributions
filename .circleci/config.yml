@@ -15,6 +15,7 @@ jobs:
       - run:
           name: Check Node installation
           command: |
+            export DEBIAN_FRONTEND=noninteractive
             bash ./scripts/deb/setup_lts.x
             apt-get install nodejs -y
       - run: *envinfo
