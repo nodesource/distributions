@@ -76,13 +76,13 @@ NodeSource will continue to maintain the following architectures and may add add
 
 > _NOTE: If you are looking to run Node.js in a non-supported Linux version take a look to [Node.js Unofficial Builds](https://unofficial-builds.nodejs.org/)_
 
-### Installation Instructions
+### Installation Instructions (DEB)
 
 #### Node.js
 
-**Node.js v22.x**:
+**Node.js 22**:
 
-##### Using Ubuntu
+##### Using Ubuntu (Node.js 22)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -114,7 +114,7 @@ sudo apt-get install -y curl
    node -v
    ```
 
-##### Using Debian, as root
+##### Using Debian, as root (Node.js 22)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -148,7 +148,7 @@ apt-get install -y curl
 
 **Node.js v20.x**:
 
-##### Using Ubuntu
+##### Using Ubuntu (Node.js 20)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -180,7 +180,7 @@ sudo apt-get install -y curl
    node -v
    ```
 
-##### Using Debian, as root
+##### Using Debian, as root (Node.js 20)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -214,7 +214,7 @@ apt-get install -y curl
 
 **Node.js v18.x**:
 
-##### Using Ubuntu
+##### Using Ubuntu (Node.js 18)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -246,7 +246,7 @@ sudo apt-get install -y curl
    node -v
    ```
 
-##### Using Debian, as root
+##### Using Debian, as root (Node.js 18)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -280,7 +280,7 @@ apt-get install -y curl
 
 **Node.js LTS (v20.x)**:
 
-##### Using Ubuntu
+##### Using Ubuntu (Node.js LTS)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -312,7 +312,7 @@ sudo apt-get install -y curl
    node -v
    ```
 
-##### Using Debian, as root
+##### Using Debian, as root (Node.js LTS)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -344,9 +344,9 @@ apt-get install -y curl
    node -v
    ```
 
-**Node.js Current (v21.x)**:
+**Node.js Current (22)**:
 
-##### Using Ubuntu
+##### Using Ubuntu (Node.js Current)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -378,7 +378,7 @@ sudo apt-get install -y curl
    node -v
    ```
 
-##### Using Debian, as root
+##### Using Debian, as root (Node.js Current)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -461,87 +461,337 @@ NodeSource will continue to maintain the following architectures and may add add
 
 ### RPM Installation Instructions
 
-The Nodesource RPM package signing key is available here: <https://rpm.nodesource.com/gpgkey/nodesource.gpg.key>
+### Installation Instructions (RPM)
 
 **Node.js v22.x**
 
-##### As root
+##### Using RPM-based Systems (Node.js 22)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_22.x | bash -
-yum install -y nodejs
+sudo yum install -y curl
 ```
 
-##### No root privileges
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_22.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js 22)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_22.x | sudo bash -
-yum install -y nodejs
+yum install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_22.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js v20.x**
 
-##### As root
+##### As root (Node.js 20)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_20.x | bash -
-yum install -y nodejs
+sudo yum install -y curl
 ```
 
-##### No root privileges
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_20.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js 20)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_20.x | sudo bash -
-yum install -y nodejs
+yum install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_20.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js v18.x**
 
-##### As root
+##### As root (Node.js 18)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_18.x | bash -
-yum install -y nodejs
+sudo yum install -y curl
 ```
 
-##### No root privileges
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_18.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js 18)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_18.x | sudo bash -
-yum install -y nodejs
+yum install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_18.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js LTS (20.x)**
 
-##### As root
+##### As root (Node.js LTS)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
-yum install -y nodejs
+sudo yum install -y curl
 ```
 
-##### No root privileges
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_lts.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js LTS)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-yum install -y nodejs
+yum install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_lts.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js Current (22.x)**
 
-##### As root
+##### As root (Node.js Current)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_current.x | bash -
-yum install -y nodejs
+sudo yum install -y curl
 ```
 
-##### No root privileges
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_current.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js Current)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
-yum install -y nodejs
+yum install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_current.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 _**Optional**_: install build tools
 
