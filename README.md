@@ -84,81 +84,331 @@ NodeSource will continue to maintain the following architectures and may add add
 
 ##### Using Ubuntu
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ##### Using Debian, as root
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_22.x | bash - &&\
-apt-get install -y nodejs
+apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js v20.x**:
 
 ##### Using Ubuntu
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ##### Using Debian, as root
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-apt-get install -y nodejs
+apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js v18.x**:
 
 ##### Using Ubuntu
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ##### Using Debian, as root
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
-apt-get install -y nodejs
+apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_18.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js LTS (v20.x)**:
 
 ##### Using Ubuntu
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_lts.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ##### Using Debian, as root
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
-apt-get install -y nodejs
+apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_lts.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js Current (v21.x)**:
 
 ##### Using Ubuntu
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_current.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ##### Using Debian, as root
 
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
 ```sh
-curl -fsSL https://deb.nodesource.com/setup_current.x | bash - &&\
-apt-get install -y nodejs
+apt-get install -y curl
 ```
+
+1. **Download the Node.js setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_current.x -o nodesource_setup.sh
+   ```
+
+2. **Run the Node.js setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 ### Uninstall `nodejs` Ubuntu & Debian packages
 
@@ -293,7 +543,7 @@ curl -fsSL https://rpm.nodesource.com/setup_current.x | sudo bash -
 yum install -y nodejs
 ```
 
-***Optional***: install build tools
+_**Optional**_: install build tools
 
 To compile and install native addons from npm you may also need to install build tools:
 
@@ -403,16 +653,16 @@ This material is Copyright (c) NodeSource and licensed under the MIT license. Al
 
 ---
 
-*Supported with love by the [NodeSource](https://nodesource.com) team*
+_Supported with love by the [NodeSource](https://nodesource.com) team_
 
-*This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora.*
+_This project is not affiliated with Debian, Ubuntu, Red Hat, CentOS or Fedora._
 
-*Ubuntu is a registered trademark of Canonical Ltd.*
+_Ubuntu is a registered trademark of Canonical Ltd._
 
-*Debian is a registered trademark owned by Software in the Public Interest, Inc.*
+_Debian is a registered trademark owned by Software in the Public Interest, Inc._
 
-*Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc.*
+_Red Hat, CentOS and Fedora are trademarks of Red Hat, Inc._
 
-*Amazon Linux is a trademark of Amazon Web Services, Inc.*
+_Amazon Linux is a trademark of Amazon Web Services, Inc._
 
-*CloudLinux is a trademark of CloudLinux, Inc*
+_CloudLinux is a trademark of CloudLinux, Inc_
