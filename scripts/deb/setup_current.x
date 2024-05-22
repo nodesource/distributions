@@ -38,6 +38,18 @@ check_os() {
     fi
 }
 
+# Get release version
+version=$(lsb_release -rs)
+
+# min Ubuntu version for proper gpg key placement
+ubuntu_min_version="22.04"
+
+if [[ "$(lsb_release -si)" == "Ubuntu" && "$(echo "$version >= $ubuntu_min_version" | bc)" -eq 1 ]]; then
+  gpgkeypath="/etc/apt/trusted.gpg.d"
+else
+  gpgkeypath="/usr/share/keyrings"
+fi
+
 # Function to Install the script pre-requisites
 install_pre_reqs() {
     log "Installing pre-requisites" "info"
@@ -52,12 +64,24 @@ install_pre_reqs() {
         handle_error "$?" "Failed to install packages"
     fi
 
-    mkdir -p /usr/share/keyrings
-    rm -f /usr/share/keyrings/nodesource.gpg
-    rm -f /etc/apt/sources.list.d/nodesource.list
-
+    # Check if the OS type is Ubuntu and the version is above 22.04
+    if [[ "$(lsb_release -si)" == "Ubuntu" && "$(echo "$version >= $ubuntu_min_version" | bc)" -eq 1 ]]; then
+        # Check if the folder /etc/apt/trusted.gpg.d exists
+        if [[ -d "$gpgkeypath" ]]; then
+            rm -f $gpgkeypath/nodesource.gpg
+            rm -f /etc/apt/sources.list.d/nodesource.list
+        else
+            echo "Error: OS identified as Ubuntu 22.04+ and folder /etc/apt/trusted.gpg.d should exist and does not."
+            exit 1
+        fi
+    else
+        mkdir -p $gpgkeypath
+        rm -f $gpgkeypath/nodesource.gpg
+        rm -f /etc/apt/sources.list.d/nodesource.list
+    fi
+    
     # Run 'curl' and 'gpg'
-    if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg; then
+    if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o $gpgkeypath/nodesource.gpg; then
       handle_error "$?" "Failed to download and import the NodeSource signing key"
     fi
 }
@@ -70,8 +94,8 @@ configure_repo() {
     if [ "$arch" != "amd64" ] && [ "$arch" != "arm64" ] && [ "$arch" != "armhf" ]; then
       handle_error "1" "Unsupported architecture: $arch. Only amd64, arm64, and armhf are supported."
     fi
-
-    echo "deb [arch=$arch signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$node_version nodistro main" | tee /etc/apt/sources.list.d/nodesource.list > /dev/null
+    
+    echo "deb [arch=$arch signed-by=$gpgkeypath/nodesource.gpg] https://deb.nodesource.com/node_$node_version nodistro main" | tee /etc/apt/sources.list.d/nodesource.list > /dev/null
 
     # N|solid Config
     echo "Package: nsolid" | tee /etc/apt/preferences.d/nsolid > /dev/null
