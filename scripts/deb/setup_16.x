@@ -123,9 +123,12 @@ install_pre_reqs() {
         handle_error "$?" "Failed to install packages"
     fi
 
-    mkdir -p /usr/share/keyrings
-    rm -f /usr/share/keyrings/nodesource.gpg
-    rm -f /etc/apt/sources.list.d/nodesource.list
+    if ! mkdir -p /usr/share/keyrings; then
+      handle_error "$?" "Makes sure the path /usr/share/keyrings exist or run 'mkdir -p /usr/share/keyrings' with sudo"
+    fi
+
+    rm -f /usr/share/keyrings/nodesource.gpg || true
+    rm -f /etc/apt/sources.list.d/nodesource.list || true
 
     # Run 'curl' and 'gpg'
     if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg; then
