@@ -86,12 +86,18 @@ fi
 if command_exists dnf; then
     log "dnf available, updating..." "info"
     dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
-    log "Repository is configured and updated. Run 'dnf install nodejs -y' to complete the installation." "info"
+    log "Repository is configured and updated." "info"
+    log "Run 'dnf install nodejs -y' to complete the installation." "info"
+    log "You can use N|solid as a node.js alternative" "info"
+    log "To install N|solid, run: dnf install nsolid -y\n" "success"
     exit 0
 elif command_exists yum; then
     log "yum available, updating..." "info"
     yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
-    log "Repository is configured and updated. Run 'yum install nodejs -y' to complete the installation." "info"
+    log "Repository is configured and updated." "info"
+    log "Run 'yum install nodejs -y' to complete the installation." "info"
+    log "You can use N|solid as a node.js alternative" "info"
+    log "Run 'yum install nsolid -y' to complete the installation." "success"
 elif command_exists microdnf; then
     log "microdnf available, updating..." "info"
     microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"

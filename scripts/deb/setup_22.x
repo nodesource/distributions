@@ -90,7 +90,10 @@ configure_repo() {
     if ! apt-get update -y; then
         handle_error "$?" "Failed to run 'apt-get update'"
     else
-        log "Repository configured successfully. To install Node.js, run: apt-get install nodejs -y" "success"
+        log "Repository configured successfully."
+        log "To install Node.js, run: apt-get install nodejs -y" "info"
+        log "You can use N|solid as a node.js alternative" "info"
+        log "To install N|solid, run: apt-get install nsolid -y \n" "success"
     fi
 }
 
