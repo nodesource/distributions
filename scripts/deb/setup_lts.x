@@ -92,8 +92,8 @@ configure_repo() {
     else
         log "Repository configured successfully."
         log "To install Node.js, run: apt-get install nodejs -y" "info"
-        log "You can use N|solid as a node.js alternative" "info"
-        log "To install N|solid, run: apt-get install nsolid -y \n" "success"
+        log "You can use N|solid Runtime as a node.js alternative" "info"
+        log "To install N|solid Runtime, run: apt-get install nsolid -y \n" "success"
     fi
 }
 
