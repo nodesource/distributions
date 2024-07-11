@@ -6,7 +6,7 @@
 
 [![Github Actions Test](https://github.com/nodesource/distributions/actions/workflows/ci.yaml/badge.svg)](https://github.com/nodesource/distributions/actions/workflows/ci.yaml)
 
-This repository contains the instructions to install the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
+This repository contains the instructions to install the **[NodeSource](https://nodesource.com)** **[Node.js](http://nodejs.org)** and **[N|solid](https://nodesource.com/products/runtime)** Binary Distributions via .rpm and .deb as well as their setup and support scripts.
 
 If you're looking for NodeSource's low-impact Node.js performance monitoring platform, please **[get started here](https://accounts.nodesource.com/sign-up-linuxdistro).**
 
@@ -168,17 +168,37 @@ sudo apt-get install -y curl
    sudo -E bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### Using Debian, as root (Node.js 20)
 
@@ -200,17 +220,37 @@ apt-get install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js v18.x**:
 
@@ -234,17 +274,37 @@ sudo apt-get install -y curl
    sudo -E bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### Using Debian, as root (Node.js 18)
 
@@ -266,17 +326,37 @@ apt-get install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js LTS (v20.x)**:
 
@@ -300,17 +380,37 @@ sudo apt-get install -y curl
    sudo -E bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### Using Debian, as root (Node.js LTS)
 
@@ -332,17 +432,37 @@ apt-get install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js Current (22)**:
 
@@ -410,17 +530,34 @@ apt-get install -y curl
    node -v
    ```
 
+
 ### Uninstall `nodejs` Ubuntu & Debian packages
 
-To completely remove Node.js installed from the deb.nodesource.com package methods above:
+To completely remove Node.js or N|solid installed from the deb.nodesource.com package methods above:
 
 #### use `sudo` on Ubuntu or run this as root on debian
+<details>
+  <summary><b>N|Solid</b></summary>
+
+```sh
+apt-get purge nsolid &&\
+rm -r /etc/apt/sources.list.d/nodesource.list &&\
+rm -r /etc/apt/keyrings/nodesource.gpg
+```
+
+</details>
+
+<details>
+<summary><b>Node.js</b></summary>
 
 ```sh
 apt-get purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\
 rm -r /etc/apt/keyrings/nodesource.gpg
 ```
+
+</details>
+
 
 ## Enterprise Linux Based Distributions
 
@@ -548,20 +685,40 @@ sudo yum install -y curl
 2. **Run the Node.js setup script as root:**
 
    ```sh
-   sudo bash nodesource_setup.sh
+   bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo yum install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      yum install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### No root privileges (Node.js 20)
 
@@ -583,17 +740,37 @@ yum install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   yum install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo yum install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js v18.x**
 
@@ -614,20 +791,40 @@ sudo yum install -y curl
 2. **Run the Node.js setup script as root:**
 
    ```sh
-   sudo bash nodesource_setup.sh
+   bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo yum install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo yum install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### No root privileges (Node.js 18)
 
@@ -646,56 +843,44 @@ yum install -y curl
 2. **Run the Node.js setup script as root:**
 
    ```sh
-   bash nodesource_setup.sh
+   sudo bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   yum install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo yum install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js LTS (20.x)**
 
 ##### As root (Node.js LTS)
-
-Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
-
-```sh
-sudo yum install -y curl
-```
-
-1. **Download the Node.js setup script:**
-
-   ```sh
-   curl -fsSL https://rpm.nodesource.com/setup_lts.x -o nodesource_setup.sh
-   ```
-
-2. **Run the Node.js setup script as root:**
-
-   ```sh
-   sudo bash nodesource_setup.sh
-   ```
-
-3. **Install Node.js:**
-
-   ```sh
-   sudo yum install -y nodejs
-   ```
-
-4. **Verify the installation:**
-
-   ```sh
-   node -v
-   ```
-
-##### No root privileges (Node.js LTS)
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
@@ -715,17 +900,89 @@ yum install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
+
+      **Install Node.js:**
+
+      ```sh
+      yum install -y nodejs
+      ```
+
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
+
+##### No root privileges (Node.js LTS)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+```sh
+sudo yum install -y curl
+```
+
+1. **Download the Node.js setup script:**
 
    ```sh
-   yum install -y nodejs
+   curl -fsSL https://rpm.nodesource.com/setup_lts.x -o nodesource_setup.sh
    ```
 
-4. **Verify the installation:**
+2. **Run the Node.js setup script as root:**
 
    ```sh
-   node -v
+   sudo bash nodesource_setup.sh
    ```
+
+3. **Install Node.js or N|Solid:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo yum install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
+
+      **Install Node.js:**
+
+      ```sh
+      sudo yum install -y nodejs
+      ```
+
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js Current (22.x)**
 
@@ -734,7 +991,7 @@ yum install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo yum install -y curl
+yum install -y curl
 ```
 
 1. **Download the Node.js setup script:**
@@ -746,13 +1003,13 @@ sudo yum install -y curl
 2. **Run the Node.js setup script as root:**
 
    ```sh
-   sudo bash nodesource_setup.sh
+   bash nodesource_setup.sh
    ```
 
 3. **Install Node.js:**
 
    ```sh
-   sudo yum install -y nodejs
+   yum install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -766,7 +1023,7 @@ sudo yum install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-yum install -y curl
+sudo yum install -y curl
 ```
 
 1. **Download the Node.js setup script:**
@@ -778,13 +1035,13 @@ yum install -y curl
 2. **Run the Node.js setup script as root:**
 
    ```sh
-   bash nodesource_setup.sh
+   sudo bash nodesource_setup.sh
    ```
 
 3. **Install Node.js:**
 
    ```sh
-   yum install -y nodejs
+   sudo yum install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -807,12 +1064,28 @@ yum install gcc-c++ make
 To completely remove Node.js installed from the rpm.nodesource.com package methods above:
 
 #### use `sudo` or run this as root
+<details>
+  <summary><b>N|Solid</b></summary>
+
+```sh
+yum remove nsolid &&\
+rm -r /etc/yum.repos.d/nodesource*.repo &&\
+yum clean all
+```
+
+</details>
+
+<details>
+<summary><b>Node.js</b></summary>
 
 ```sh
 yum remove nodejs &&\
 rm -r /etc/yum.repos.d/nodesource*.repo &&\
 yum clean all
 ```
+</details>
+
+
 
 ## Nodejs Release Calendar
 
