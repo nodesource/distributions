@@ -63,6 +63,7 @@ NodeSource will continue to maintain the following architectures and may add add
 | Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |
 | Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 | Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |
+| Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Debian versions**
 
