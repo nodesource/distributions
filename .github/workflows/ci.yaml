@@ -17,7 +17,7 @@ jobs:
     strategy:
       matrix:
         version: [18, 20, 21, 22]
-        os: ["ubuntu:22.04", "debian:10"]
+        os: ["ubuntu:24.04", "ubuntu:22.04", "debian:10"]
     container:
       image: ${{ matrix.os }}
     defaults:
