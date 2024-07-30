@@ -74,7 +74,8 @@ NodeSource will continue to maintain the following architectures and may add add
 | Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |
 | Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |
 
-> _NOTE: If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
+> [!NOTE]
+> If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
 
 ### Installation Instructions (DEB)
 
@@ -592,7 +593,8 @@ NodeSource will continue to maintain the following architectures and may add add
 | Amazon Linux 2    |    ❌    |    ❌    |    ❌    |    ❌    |
 | Amazon Linux 2023 |    ✅    |    ✅    |    ✅    |    ✅    |
 
-> _NOTE: If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
+> [!NOTE]
+> If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
 
 ### RPM Installation Instructions
 
