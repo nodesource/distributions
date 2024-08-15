@@ -59,9 +59,14 @@ install_pre_reqs() {
     rm -f /usr/share/keyrings/nodesource.gpg || true
     rm -f /etc/apt/sources.list.d/nodesource.list || true
 
-    # Run 'curl' and 'gpg'
+    # Run 'curl' and 'gpg' to download and import the NodeSource signing key
     if ! curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg; then
       handle_error "$?" "Failed to download and import the NodeSource signing key"
+    fi
+
+    # Explicitly set the permissions to ensure the file is readable by all
+    if ! chmod 644 /usr/share/keyrings/nodesource.gpg; then
+        handle_error "$?" "Failed to set correct permissions on /usr/share/keyrings/nodesource.gpg"
     fi
 }
 
