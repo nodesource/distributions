@@ -60,7 +60,7 @@ NodeSource will continue to maintain the following architectures and may add add
 
 | Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x |
 | :------------------- | :------: | :------: | :------: | :------: |
-| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |
+| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌https://acrobat.adobe.com/id/urn:aaid:sc:AP:ecee4b73-ca2c-4b74-b019-1cbe995841b9    |    ❌    |
 | Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 | Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |
 | Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |
