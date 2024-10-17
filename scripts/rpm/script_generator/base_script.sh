@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Logger Function       
+# Logger Function
 log() {
   local message="$1"
   local type="$2"
@@ -18,7 +18,7 @@ log() {
   echo -e "${color}${timestamp} - ${message}${endcolor}"
 }
 
-# Error handler function  
+# Error handler function
 handle_error() {
   local exit_code=$1
   local error_message="$2"
@@ -65,8 +65,10 @@ module_hotfixes=1"
 # Write Node.js repository content
 echo "$NODEJS_REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nodejs.repo > /dev/null
 
-# Repository content for N|Solid
-NSOLID_REPO_CONTENT="[nodesource-nsolid]
+# Check if Node.js version is an LTS version
+if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
+  # Repository content for N|Solid
+  NSOLID_REPO_CONTENT="[nodesource-nsolid]
 name=N|Solid Packages for Linux RPM based distros - $SYS_ARCH
 baseurl=https://rpm.nodesource.com/pub_${NODE_VERSION}/nodistro/nsolid/$SYS_ARCH
 priority=9
@@ -75,8 +77,6 @@ gpgcheck=1
 gpgkey=https://rpm.nodesource.com/gpgkey/ns-operations-public.key
 module_hotfixes=1"
 
-# Check if Node.js version is an LTS version
-if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
   # Write N|Solid repository content
   echo "$NSOLID_REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nsolid.repo > /dev/null
   log "Added N|Solid repository for LTS version: $NODE_VERSION" "info"
@@ -85,23 +85,48 @@ fi
 # Check for availability of dnf, yum or microdnf
 if command_exists dnf; then
     log "dnf available, updating..." "info"
-    dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
-    log "Repository is configured and updated." "info"
+    dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
+    
+    # Update N|Solid repository if it's LTS
+    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
+        dnf makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
+        log "Repository is configured and updated." "info"
+        log "You can use N|solid Runtime as a node.js alternative" "info"
+        log "To install N|solid Runtime, run: dnf install nsolid -y" "success"
+    else
+        log "Repository is configured and updated." "info"
+    fi
+    
     log "Run 'dnf install nodejs -y' to complete the installation." "info"
-    log "You can use N|solid Runtime as a node.js alternative" "info"
-    log "To install N|solid Runtime, run: dnf install nsolid -y\n" "success"
     exit 0
 elif command_exists yum; then
     log "yum available, updating..." "info"
-    yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
-    log "Repository is configured and updated." "info"
+    yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
+
+    # Update N|Solid repository if it's LTS
+    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
+        yum makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
+        log "Repository is configured and updated." "info"
+        log "You can use N|solid Runtime as a node.js alternative" "info"
+        log "Run 'yum install nsolid -y' to complete the installation." "success"
+    else
+        log "Repository is configured and updated." "info"
+    fi
+    
     log "Run 'yum install nodejs -y' to complete the installation." "info"
-    log "You can use N|solid Runtime as a node.js alternative" "info"
-    log "Run 'yum install nsolid -y' to complete the installation." "success"
 elif command_exists microdnf; then
     log "microdnf available, updating..." "info"
-    microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs" --enablerepo="nodesource-nsolid"
-    log "Repository is configured and updated. Run 'microdnf install nodejs -y' to complete the installation." "info"
+    microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
+
+    # Update N|Solid repository if it's LTS
+    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]]; then
+        microdnf makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
+        log "Repository is configured and updated. Run 'microdnf install nsolid -y' to complete the installation." "info"
+    else
+        log "Repository is configured and updated." "info"
+    fi
+    
+    log "Run 'microdnf install nodejs -y' to complete the installation." "info"
 else
     handle_error 1 "Neither yum, dnf nor microdnf package manager was found. Please update your system using your package manager."
 fi

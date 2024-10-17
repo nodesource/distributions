@@ -58,27 +58,94 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Ubuntu versions**
 
-| Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x |
-| :------------------- | :------: | :------: | :------: | :------: |
-| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |
-| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |
-| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |
-| Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |
+| Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |
+| :------------------- | :------: | :------: | :------: | :------: | :------: |
+| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
 
 #### **Debian versions**
 
-| Distro Name        | Node 18x | Node 20x | Node 21x | Node 22x |
-| :----------------- | :------: | :------: | :------: | :------: |
-| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |    ❌    |
-| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |    ❌    |
-| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |
-| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |
-| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |
+| Distro Name        | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |
+| :----------------- | :------: | :------: | :------: | :------: | :------: |
+| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
 
 > [!NOTE]
 > If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
 
 ### Installation Instructions (DEB)
+
+**Node.js 23.x**:
+
+##### Using Ubuntu (Node.js 23)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+```sh
+sudo apt-get install -y curl
+```
+
+1. **Download the setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script with sudo:**
+
+   ```sh
+   sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### Using Debian, as root (Node.js 23)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+```sh
+apt-get install -y curl
+```
+
+1. **Download the setup script:**
+
+   ```sh
+   curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script with sudo:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   apt-get install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
 
 **Node.js 22.x**:
 
@@ -464,7 +531,7 @@ apt-get install -y curl
       ```
    </details>
 
-**Node.js Current (22)**:
+**Node.js Current (23)**:
 
 ##### Using Ubuntu (Node.js Current)
 
@@ -572,20 +639,20 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Fedora versions**
 
-| Distro Name           | Node 18x | Node 20x | Node 21x |  Node 22x |
-| :-------------------- | :------: | :------: | :------: |  :------: |
-| Fedora >= 20 (20->28) |    ❌    |    ❌    |    ❌    |     ❌    |
-| Fedora >= 29          |    ✅    |    ✅    |    ✅    |     ✅    |
-| Fedora >= 36          |    ✅    |    ✅    |    ✅    |     ✅    |
+| Distro Name           | Node 18x | Node 20x | Node 21x |  Node 22x |  Node 23x |
+| :-------------------- | :------: | :------: | :------: |  :------: | :------: |
+| Fedora >= 20 (20->28) |    ❌    |    ❌    |    ❌    |     ❌    |    ❌    |
+| Fedora >= 29          |    ✅    |    ✅    |    ✅    |     ✅    |     ✅    |
+| Fedora >= 36          |    ✅    |    ✅    |    ✅    |     ✅    |     ✅    |
 
 #### **Redhat versions**
 
-| Distro Name      | Node 18x | Node 20x | Node 21x | Node 22x |
-|:-----------------| :------: | :------: | :------: | :------: |
-| Redhat 7         |    ❌    |    ❌    |    ❌    |    ❌    |
-| Redhat 8         |    ✅    |    ✅    |    ✅    |    ✅    |
-| Redhat 9         |    ✅    |    ✅    |    ✅    |    ✅    |
-| Redhat 9-minimal |    ✅    |    ✅    |    ✅    |    ✅    |
+| Distro Name      | Node 18x | Node 20x | Node 21x | Node 22x |  Node 23x |
+|:-----------------| :------: | :------: | :------: | :------: | :------: |
+| Redhat 7         |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
+| Redhat 8         |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Redhat 9         |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Redhat 9-minimal |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
 
 #### **Amazon Linux versions**
 
@@ -600,6 +667,72 @@ NodeSource will continue to maintain the following architectures and may add add
 ### RPM Installation Instructions
 
 ### Installation Instructions (RPM)
+
+**Node.js v23.x**
+
+##### Using RPM-based Systems (Node.js 23)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+```sh
+sudo yum install -y curl
+```
+
+1. **Download the setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_23.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script as root:**
+
+   ```sh
+   sudo bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   sudo yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
+
+##### No root privileges (Node.js 23)
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+```sh
+yum install -y curl
+```
+
+1. **Download the setup script:**
+
+   ```sh
+   curl -fsSL https://rpm.nodesource.com/setup_23.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script as root:**
+
+   ```sh
+   bash nodesource_setup.sh
+   ```
+
+3. **Install Node.js:**
+
+   ```sh
+   yum install -y nodejs
+   ```
+
+4. **Verify the installation:**
+
+   ```sh
+   node -v
+   ```
 
 **Node.js v22.x**
 
@@ -985,7 +1118,7 @@ sudo yum install -y curl
       ```
    </details>
 
-**Node.js Current (22.x)**
+**Node.js Current (23.x)**
 
 ##### As root (Node.js Current)
 
