@@ -33,7 +33,7 @@ for version in "${versions[@]}"; do
 done
 
 # Define LTS and current Node.js versions
-lts_version="20"
+lts_version="22"
 current_version="23"
 
 # Create setup_lts and setup_current scripts
