@@ -147,7 +147,7 @@ apt-get install -y curl
    ```
 
 
-**Node.js 22.x**:
+**Node.js v22.x**:
 
 ##### Using Ubuntu (Node.js 22)
 
@@ -169,17 +169,37 @@ sudo apt-get install -y curl
    sudo -E bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install N|Solid or Node.js:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      sudo apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   sudo apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      sudo apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 ##### Using Debian, as root (Node.js 22)
 
@@ -201,17 +221,37 @@ apt-get install -y curl
    bash nodesource_setup.sh
    ```
 
-3. **Install Node.js:**
+3. **Install N|Solid or Node.js:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+      apt-get install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+      nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
 
-   ```sh
-   apt-get install -y nodejs
-   ```
+      **Install Node.js:**
 
-4. **Verify the installation:**
+      ```sh
+      apt-get install -y nodejs
+      ```
 
-   ```sh
-   node -v
-   ```
+      **Verify the installation:**
+
+      ```sh
+      node -v
+      ```
+   </details>
 
 **Node.js v20.x**:
 
