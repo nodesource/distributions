@@ -465,7 +465,7 @@ apt-get install -y curl
       ```
    </details>
 
-**Node.js LTS (v20.x)**:
+**Node.js LTS (v22.x)**:
 
 ##### Using Ubuntu (Node.js LTS)
 
@@ -1052,7 +1052,7 @@ yum install -y curl
       ```
    </details>
 
-**N|Solid or Node.js LTS (20.x)**
+**N|Solid or Node.js LTS (22.x)**
 
 ##### As root (N|Solid or Node.js LTS)
 
