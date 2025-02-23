@@ -649,7 +649,7 @@ To completely remove Node.js or N|solid installed from the deb.nodesource.com pa
 ```sh
 apt-get purge nsolid &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\
-rm -r /etc/apt/keyrings/nodesource.gpg
+rm -r /usr/share/keyrings/nodesource.gpg
 ```
 
 </details>
@@ -660,7 +660,7 @@ rm -r /etc/apt/keyrings/nodesource.gpg
 ```sh
 apt-get purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\
-rm -r /etc/apt/keyrings/nodesource.gpg
+rm -r /usr/share/keyrings/nodesource.gpg
 ```
 
 </details>
