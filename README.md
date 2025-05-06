@@ -58,22 +58,22 @@ NodeSource will continue to maintain the following architectures and may add add
 
 #### **Ubuntu versions**
 
-| Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |
-| :------------------- | :------: | :------: | :------: | :------: | :------: |
-| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
-| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-| Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Distro Name          | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |  Node 24x |
+| :------------------- | :------: | :------: | :------: | :------: | :------: |  :------: |
+| Ubuntu Bionic ^18.04 |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |     ❌    |
+| Ubuntu Focal ^20.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Ubuntu Jammy ^22.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Ubuntu Noble ^24.04  |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
 
 #### **Debian versions**
 
-| Distro Name        | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |
-| :----------------- | :------: | :------: | :------: | :------: | :------: |
-| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
-| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |
-| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
-| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |
+| Distro Name        | Node 18x | Node 20x | Node 21x | Node 22x | Node 23x |  Node 24x |
+| :----------------- | :------: | :------: | :------: | :------: | :------: |  :------: |
+| Debian 8 Jessie    |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |     ❌    |
+| Debian 9 Stretch   |    ❌    |    ❌    |    ❌    |    ❌    |    ❌    |     ❌    |
+| Debian 10 Buster   |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Debian 11 Bullseye |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
+| Debian 12 Bookworm |    ✅    |    ✅    |    ✅    |    ✅    |    ✅    |     ✅    |
 
 > [!NOTE]
 > If you are looking to run Node.js in a non-supported Linux version [contact NodeSource](https://nodesource.com/pages/contact-us.html) to get enterprise support for your specific needs.
@@ -571,7 +571,7 @@ apt-get install -y curl
       ```
    </details>
 
-**Node.js Current (23)**:
+**Node.js Current (24)**:
 
 ##### Using Ubuntu (Node.js Current)
 
@@ -1158,7 +1158,7 @@ sudo yum install -y curl
       ```
    </details>
 
-**Node.js Current (23.x)**
+**Node.js Current (24.x)**
 
 ##### As root (Node.js Current)
 
