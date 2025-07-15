@@ -27,7 +27,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Run Istallation Script
+      - name: Fix sources.list for Debian 10
+        if: contains(matrix.os, 'debian:10')
+        run: |
+          echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list
+          apt-get -o Acquire::Check-Valid-Until=false -o Acquire::AllowInsecureRepositories=true update
+
+      - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
@@ -37,12 +43,11 @@ jobs:
       - name: Validate Node Version
         run: |
           node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
           if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
-
   rpm:
     name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
     runs-on: ubuntu-latest
