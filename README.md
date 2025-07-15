@@ -102,9 +102,9 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 3. **Install N|Solid (or Node.js):**
    <details>
-     <summary><b>NSolid</b></summary>
+     <summary><b>N|Solid</b></summary>
    
-      **Install NSolid:**
+      **Install N|Solid:**
    
       ```sh
         sudo apt install -y nsolid
@@ -154,9 +154,9 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
      sudo bash -E nodesource_setup.sh
    ```
 
-3. **Install NSolid or Node.js:**
+3. **Install N|Solid or Node.js:**
    <details>
-     <summary><b>NSolid</b></summary>
+     <summary><b>N|Solid</b></summary>
    
       **Install N|Solid:**
    
@@ -210,9 +210,9 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 3. **Install N|Solid (or Node.js):**
    <details>
-     <summary><b>NSolid</b></summary>
+     <summary><b>N|Solid</b></summary>
    
-      **Install NSolid:**
+      **Install N|Solid:**
    
       ```sh
         sudo apt install -y nsolid
@@ -264,9 +264,9 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 3. **Install N|Solid (or Node.js):**
    <details>
-     <summary><b>NSolid</b></summary>
+     <summary><b>N|Solid</b></summary>
    
-      **Install NSolid:**
+      **Install N|Solid:**
    
       ```sh
         sudo apt install -y nsolid
@@ -318,9 +318,9 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 3. **Install N|Solid (or Node.js):**
    <details>
-     <summary><b>NSolid</b></summary>
+     <summary><b>N|Solid</b></summary>
    
-      **Install NSolid:**
+      **Install N|Solid:**
    
       ```sh
         sudo apt install -y nsolid
@@ -370,7 +370,7 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
      sudo -E bash nodesource_setup.sh
    ```
 
-3. **Install NSolid or Node.js:**
+3. **Install N|Solid or Node.js:**
    <details>
      <summary><b>N|Solid</b></summary>
    
