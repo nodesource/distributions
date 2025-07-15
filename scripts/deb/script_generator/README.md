@@ -24,7 +24,7 @@ Each script in this repository performs the following steps:
 
 1. Checks if the system is an Debian based Linux distribution.
 2. Configures the NodeSource Node.js DEB repository for the specified version of Node.js.
-3. Logs a message indicating that the repository is configured and updated, and instructs the user to run `apt-get install nodejs -y` to complete the installation.
+3. Logs a message indicating that the repository is configured and updated, and instructs the user to run `apt install nodejs -y` to complete the installation.
 
 The `setup_current` and `setup_latest` scripts are special scripts that install the current and latest versions of Node.js, respectively. The current version is 20.x and the latest version is 21.x.
 

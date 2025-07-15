@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [16]
-        os: ["ubuntu:20.04", "debian:10"]
+        version: [ 16 ]
+        os: [ "ubuntu:20.04", "debian:10" ]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -32,7 +32,7 @@ jobs:
 
       - name: Install Nodejs
         run: |
-          apt-get install nodejs -y
+          apt install nodejs -y
 
       - name: Validate Node Version
         run: |
@@ -48,8 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [16]
-        os: ["fedora:29", "amazonlinux:2023"]
+        version: [ 16 ]
+        os: [ "fedora:29", "amazonlinux:2023" ]
     container:
       image: ${{ matrix.os }}
     defaults:

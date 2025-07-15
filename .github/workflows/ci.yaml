@@ -11,45 +11,48 @@ on:
       - master
 
 jobs:
-  deb:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        version: [18, 20, 22, 23, 24]
-        os: ["ubuntu:24.04", "ubuntu:22.04", "debian:10"]
-    container:
-      image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+deb:
+  name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+  runs-on: ubuntu-latest
+  strategy:
+    matrix:
+      version: [ 18, 20, 22, 23, 24 ]
+      os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:10" ]
+  container:
+    image: ${{ matrix.os }}
+  defaults:
+    run:
+      shell: bash
+  steps:
+    - name: Checkout Repo
+      uses: actions/checkout@v4
 
-      - name: Run Istallation Script
-        run: ./scripts/deb/setup_${{ matrix.version }}.x
+    - name: Fix sources.list for Debian 10
+      if: contains(matrix.os, 'debian:10')
+      run: |
+        echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list
+        apt-get -o Acquire::Check-Valid-Until=false -o Acquire::AllowInsecureRepositories=true update
 
-      - name: Install Nodejs
-        run: |
-          apt-get install nodejs -y
+    - name: Run Installation Script
+      run: ./scripts/deb/setup_${{ matrix.version }}.x
 
-      - name: Validate Node Version
-        run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
-            exit 1
-          fi
+    - name: Install Nodejs
+      run: apt install nodejs -y
 
+    - name: Validate Node Version
+      run: |
+        node -e "console.log(process.version)"
+        NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+        if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+          echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          exit 1
   rpm:
     name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [18, 20, 22, 23, 24]
-        os: ["fedora:36", "amazonlinux:2023", "rockylinux:9", "redhat/ubi9:latest"]
+        version: [ 18, 20, 22, 23, 24 ]
+        os: [ "fedora:36", "amazonlinux:2023", "rockylinux:9", "redhat/ubi9:latest" ]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -85,8 +88,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [18, 20, 22, 23, 24]
-        os: ["rockylinux:9-minimal", "redhat/ubi9-minimal:latest"]
+        version: [ 18, 20, 22, 23, 24 ]
+        os: [ "rockylinux:9-minimal", "redhat/ubi9-minimal:latest" ]
     container:
       image: ${{ matrix.os }}
     defaults:

@@ -87,7 +87,7 @@ NodeSource will continue to maintain the following architectures and may add add
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -105,7 +105,7 @@ sudo apt-get install -y curl
 3. **Install Node.js:**
 
    ```sh
-   sudo apt-get install -y nodejs
+   sudo apt install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -119,7 +119,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -137,7 +137,7 @@ apt-get install -y curl
 3. **Install Node.js:**
 
    ```sh
-   apt-get install -y nodejs
+   apt install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -154,7 +154,7 @@ apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -176,7 +176,7 @@ sudo apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      sudo apt-get install -y nsolid
+      sudo apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -191,7 +191,7 @@ sudo apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      sudo apt-get install -y nodejs
+      sudo apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -206,7 +206,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -228,7 +228,7 @@ apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      apt-get install -y nsolid
+      apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -243,7 +243,7 @@ apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      apt-get install -y nodejs
+      apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -260,7 +260,7 @@ apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -282,7 +282,7 @@ sudo apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      sudo apt-get install -y nsolid
+      sudo apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -297,7 +297,7 @@ sudo apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      sudo apt-get install -y nodejs
+      sudo apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -312,7 +312,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -334,7 +334,7 @@ apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      apt-get install -y nsolid
+      apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -349,7 +349,7 @@ apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      apt-get install -y nodejs
+      apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -366,7 +366,7 @@ apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -388,7 +388,7 @@ sudo apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      sudo apt-get install -y nsolid
+      sudo apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -403,7 +403,7 @@ sudo apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      sudo apt-get install -y nodejs
+      sudo apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -418,7 +418,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -440,7 +440,7 @@ apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      apt-get install -y nsolid
+      apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -455,7 +455,7 @@ apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      apt-get install -y nodejs
+      apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -472,7 +472,7 @@ apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -494,7 +494,7 @@ sudo apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      sudo apt-get install -y nsolid
+      sudo apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -509,7 +509,7 @@ sudo apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      sudo apt-get install -y nodejs
+      sudo apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -524,7 +524,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -546,7 +546,7 @@ apt-get install -y curl
       **Install N|Solid:**
    
       ```sh
-      apt-get install -y nsolid
+      apt install -y nsolid
       ```
    
       **Verify the installation:**
@@ -561,7 +561,7 @@ apt-get install -y curl
       **Install Node.js:**
 
       ```sh
-      apt-get install -y nodejs
+      apt install -y nodejs
       ```
 
       **Verify the installation:**
@@ -578,7 +578,7 @@ apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-sudo apt-get install -y curl
+sudo apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -596,7 +596,7 @@ sudo apt-get install -y curl
 3. **Install Node.js:**
 
    ```sh
-   sudo apt-get install -y nodejs
+   sudo apt install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -610,7 +610,7 @@ sudo apt-get install -y curl
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
 ```sh
-apt-get install -y curl
+apt install -y curl
 ```
 
 1. **Download the setup script:**
@@ -628,7 +628,7 @@ apt-get install -y curl
 3. **Install Node.js:**
 
    ```sh
-   apt-get install -y nodejs
+   apt install -y nodejs
    ```
 
 4. **Verify the installation:**
@@ -647,7 +647,7 @@ To completely remove Node.js or N|solid installed from the deb.nodesource.com pa
   <summary><b>N|Solid</b></summary>
 
 ```sh
-apt-get purge nsolid &&\
+apt purge nsolid &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\
 rm -r /etc/apt/keyrings/nodesource.gpg
 ```
@@ -658,7 +658,7 @@ rm -r /etc/apt/keyrings/nodesource.gpg
 <summary><b>Node.js</b></summary>
 
 ```sh
-apt-get purge nodejs &&\
+apt purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list &&\
 rm -r /etc/apt/keyrings/nodesource.gpg
 ```
