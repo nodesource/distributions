@@ -80,18 +80,18 @@ NodeSource will continue to maintain the following architectures and may add add
 
 ### Installation Instructions (DEB)
 
-##### Node.js 24
+##### Node.js Current
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
-```sh
-  sudo apt install -y curl
-```
+  ```sh
+    sudo apt install -y curl
+  ```
 
 1. **Download the setup script:**
 
    ```sh
-     curl -fsSL https://deb.nodesource.com/setup_24.x -o nodesource_setup.sh
+     curl -fsSL https://deb.nodesource.com/setup_current.x -o nodesource_setup.sh
    ```
 
 2. **Run the setup script:**
@@ -134,175 +134,13 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 ---
 
-##### Node.js 23
+##### Node.js LTS
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
-```sh
-  sudo apt install -y curl
-```
-
-1. **Download the setup script:**
-
-   ```sh
-     curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
-   ```
-
-2. **Run the setup script:**
-
-   ```sh
-     sudo -E bash nodesource_setup.sh
-   ```
-
-3. **Install N|Solid (or Node.js):**
-   <details>
-     <summary><b>NSolid</b></summary>
-   
-      **Install NSolid:**
-   
-      ```sh
-        sudo apt install -y nsolid
-      ```
-   
-      **Verify the installation:**
-   
-      ```sh
-        nsolid -v
-      ```
-   </details>
-   <details>
-     <summary><b>Node.js</b></summary>
-
-      **Install Node.js:**
-
-      ```sh
-        sudo apt install -y nodejs
-      ```
-
-      **Verify the installation:**
-
-      ```sh
-        node -v
-      ```
-   </details>
-
----
-
-##### Node.js 22 with N|Solid
-
-Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
-
-```sh
-  sudo apt install -y curl
-```
-
-1. **Download the setup script:**
-
-```sh
-   curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
-```
-
-2. **Run the setup script:**
-
-```sh
-   sudo -E bash nodesource_setup.sh
-```
-
-3. **Install N|Solid (or Node.js):**
-   <details>
-     <summary><b>NSolid</b></summary>
-   
-      **Install NSolid:**
-   
-      ```sh
-        sudo apt install -y nsolid
-      ```
-   
-      **Verify the installation:**
-   
-      ```sh
-        nsolid -v
-      ```
-   </details>
-   <details>
-     <summary><b>Node.js</b></summary>
-
-      **Install Node.js:**
-
-      ```sh
-        sudo apt install -y nodejs
-      ```
-
-      **Verify the installation:**
-
-      ```sh
-        node -v
-      ```
-   </details>
-
----
-
-##### Node.js 20 with N|Solid
-
-Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
-
-```sh
-  sudo apt install -y curl
-```
-
-1. **Download the setup script:**
-
-   ```sh
-     curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
-   ```
-
-2. **Run the setup script:**
-
-   ```sh
-     sudo -E bash nodesource_setup.sh
-   ```
-
-3. **Install NSolid or Node.js:**
-   <details>
-     <summary><b>N|Solid</b></summary>
-   
-      **Install N|Solid:**
-   
-      ```sh
-        sudo apt install -y nsolid
-      ```
-   
-      **Verify the installation:**
-   
-      ```sh
-        nsolid -v
-      ```
-   </details>
-   <details>
-     <summary><b>Node.js</b></summary>
-
-      **Install Node.js:**
-
-      ```sh
-        sudo apt install -y nodejs
-      ```
-
-      **Verify the installation:**
-
-      ```sh
-        node -v
-      ```
-   </details>
-
----
-
-##### Node.js LTS with N|Solid
-
-Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
-
-```sh
-  sudo apt install -y curl
-```
+  ```sh
+    sudo apt install -y curl
+  ```
 
 1. **Download the setup script:**
 
@@ -350,18 +188,18 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
 
 ---
 
-##### Node.js Current
+##### Node.js 24
 
 Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
 
-```sh
-  sudo apt install -y curl
-```
+  ```sh
+    sudo apt install -y curl
+  ```
 
 1. **Download the setup script:**
 
    ```sh
-     curl -fsSL https://deb.nodesource.com/setup_current.x -o nodesource_setup.sh
+     curl -fsSL https://deb.nodesource.com/setup_24.x -o nodesource_setup.sh
    ```
 
 2. **Run the setup script:**
@@ -402,19 +240,181 @@ Before you begin, ensure that `curl` is installed on your system. If `curl` is n
       ```
    </details>
 
+---
 
-### Uninstall `nsolid` or `nodejs` Ubuntu & Debian packages
+##### Node.js 23 
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+  ```sh
+    sudo apt install -y curl
+  ```
+
+1. **Download the setup script:**
+
+   ```sh
+     curl -fsSL https://deb.nodesource.com/setup_23.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script:**
+
+   ```sh
+     sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install N|Solid (or Node.js):**
+   <details>
+     <summary><b>NSolid</b></summary>
+   
+      **Install NSolid:**
+   
+      ```sh
+        sudo apt install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+        nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
+
+      **Install Node.js:**
+
+      ```sh
+        sudo apt install -y nodejs
+      ```
+
+      **Verify the installation:**
+
+      ```sh
+        node -v
+      ```
+   </details>
+
+---
+
+##### Node.js 22
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+  ```sh
+    sudo apt install -y curl
+  ```
+
+1. **Download the setup script:**
+
+```sh
+   curl -fsSL https://deb.nodesource.com/setup_22.x -o nodesource_setup.sh
+```
+
+2. **Run the setup script:**
+
+```sh
+   sudo -E bash nodesource_setup.sh
+```
+
+3. **Install N|Solid (or Node.js):**
+   <details>
+     <summary><b>NSolid</b></summary>
+   
+      **Install NSolid:**
+   
+      ```sh
+        sudo apt install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+        nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
+
+      **Install Node.js:**
+
+      ```sh
+        sudo apt install -y nodejs
+      ```
+
+      **Verify the installation:**
+
+      ```sh
+        node -v
+      ```
+   </details>
+
+---
+
+##### Node.js 20
+
+Before you begin, ensure that `curl` is installed on your system. If `curl` is not installed, you can install it using the following command:
+
+  ```sh
+    sudo apt install -y curl
+  ```
+
+1. **Download the setup script:**
+
+   ```sh
+     curl -fsSL https://deb.nodesource.com/setup_20.x -o nodesource_setup.sh
+   ```
+
+2. **Run the setup script:**
+
+   ```sh
+     sudo -E bash nodesource_setup.sh
+   ```
+
+3. **Install NSolid or Node.js:**
+   <details>
+     <summary><b>N|Solid</b></summary>
+   
+      **Install N|Solid:**
+   
+      ```sh
+        sudo apt install -y nsolid
+      ```
+   
+      **Verify the installation:**
+   
+      ```sh
+        nsolid -v
+      ```
+   </details>
+   <details>
+     <summary><b>Node.js</b></summary>
+
+      **Install Node.js:**
+
+      ```sh
+        sudo apt install -y nodejs
+      ```
+
+      **Verify the installation:**
+
+      ```sh
+        node -v
+      ```
+   </details>
+
+---
+
+### Uninstall `nsolid` or `nodejs`
 
 To completely remove Node.js or N|solid installed from the deb.nodesource.com package methods above:
 
-#### use `sudo` on Ubuntu or run this as root on debian
 <details>
   <summary><b>N|Solid</b></summary>
 
 ```sh
-  sudo apt purge nsolid &&\
-  rm -r /etc/apt/sources.list.d/nodesource.list &&\
-  rm -r /etc/apt/keyrings/nodesource.gpg
+  sudo apt autoremove --purge nsolid &&\
+  sudo rm -r /etc/apt/sources.list.d/nodesource.list &&\
+  sudo rm -r /etc/apt/keyrings/nodesource.gpg
 ```
 
 </details>
@@ -423,13 +423,14 @@ To completely remove Node.js or N|solid installed from the deb.nodesource.com pa
 <summary><b>Node.js</b></summary>
 
 ```sh
-  sudo apt purge nodejs &&\
-  rm -r /etc/apt/sources.list.d/nodesource.list &&\
-  rm -r /etc/apt/keyrings/nodesource.gpg
+  sudo apt autoremove --purge nodejs &&\
+  sudo rm -r /etc/apt/sources.list.d/nodesource.list &&\
+  sudo rm -r /etc/apt/keyrings/nodesource.gpg
 ```
 
 </details>
 
+---
 
 ## Enterprise Linux Based Distributions
 
