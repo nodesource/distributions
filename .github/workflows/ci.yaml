@@ -41,11 +41,13 @@ jobs:
 
       - name: Validate Node Version
         run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
-            exit 1
+         node -e "console.log(process.version)"
+         NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
+        
+         if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+          echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          exit 1
+         fi
 
   rpm:
     name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
