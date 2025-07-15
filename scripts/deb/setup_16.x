@@ -113,13 +113,13 @@ check_os() {
 install_pre_reqs() {
     log "Installing pre-requisites" "info"
 
-    # Run 'apt-get update'
-    if ! apt-get update -y; then
-        handle_error "$?" "Failed to run 'apt-get update'"
+    # Run 'apt update'
+    if ! apt update -y; then
+        handle_error "$?" "Failed to run 'apt update'"
     fi
 
-    # Run 'apt-get install'
-    if ! apt-get install -y apt-transport-https ca-certificates curl gnupg; then
+    # Run 'apt install'
+    if ! apt install -y apt-transport-https ca-certificates curl gnupg; then
         handle_error "$?" "Failed to install packages"
     fi
 
@@ -152,11 +152,11 @@ configure_repo() {
     echo "Pin: origin deb.nodesource.com" | tee -a /etc/apt/preferences.d/nodejs > /dev/null
     echo "Pin-Priority: 600" | tee -a /etc/apt/preferences.d/nodejs > /dev/null
 
-    # Run 'apt-get update'
-    if ! apt-get update -y; then
-        handle_error "$?" "Failed to run 'apt-get update'"
+    # Run 'apt update'
+    if ! apt update -y; then
+        handle_error "$?" "Failed to run 'apt update'"
     else
-        log "Repository configured successfully. To install Node.js, run: apt-get install nodejs -y" "success"
+        log "Repository configured successfully. To install Node.js, run: apt install nodejs -y" "success"
     fi
 }
 

@@ -19,18 +19,18 @@ The relevant bits of our build scripts to install the needed compilers looks lik
 
 if [ "x${DIST}" == "xprecise" ]; then
   echo "Calling $0"
-  apt-get update
-  apt-get install -y clang-3.4
+  apt update
+  apt install -y clang-3.4
 fi
 
 if [ "x${DIST}" == "xwheezy" ]; then
   echo "Calling $0"
-  apt-get update
-  apt-get -y install curl apt-transport-https ca-certificates
+  apt update
+  apt -y install curl apt-transport-https ca-certificates
   echo "deb https://deb.nodesource.com/clang-3.4 wheezy main" >> /etc/apt/sources.list
   curl -s https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
-  apt-get update
-  apt-get install -y clang-3.4
+  apt update
+  apt install -y clang-3.4
 fi
 ```
 

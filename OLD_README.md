@@ -163,14 +163,14 @@ NodeSource will maintain support for stable, testing and unstable releases of De
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 **Node.js v19.x**:
@@ -179,14 +179,14 @@ apt-get install -y nodejs
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_19.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 **Node.js v18.x**:
@@ -195,14 +195,14 @@ apt-get install -y nodejs
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 **Node.js v16.x**:
@@ -211,14 +211,14 @@ apt-get install -y nodejs
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_16.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 **Node.js LTS (v18.x)**:
@@ -227,14 +227,14 @@ apt-get install -y nodejs
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 **Node.js Current (v20.x)**:
@@ -243,14 +243,14 @@ apt-get install -y nodejs
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - &&\
-sudo apt-get install -y nodejs
+sudo apt install -y nodejs
 ```
 
 ##### Using Debian, as root
 
 ```sh
 curl -fsSL https://deb.nodesource.com/setup_current.x | bash - &&\
-apt-get install -y nodejs
+apt install -y nodejs
 ```
 
 ***Optional***: install build tools
@@ -260,7 +260,7 @@ To compile and install native addons from npm you may also need to install build
 ##### use `sudo` on Ubuntu or run this as root on debian
 
 ```sh
-apt-get install -y build-essential
+apt install -y build-essential
 ```
 
 `<a name="debuninstall"></a>`
@@ -272,7 +272,7 @@ To completely remove Node.js installed from the deb.nodesource.com package metho
 ##### use `sudo` on Ubuntu or run this as root on debian
 
 ```sh
-apt-get purge nodejs &&\
+apt purge nodejs &&\
 rm -r /etc/apt/sources.list.d/nodesource.list
 ```
 
@@ -290,7 +290,7 @@ This step is only required if you previously used Chris Lea's Node.js PPA.
 
 ```sh
 # add-apt-repository may not be present on some Ubuntu releases:
-# sudo apt-get install python-software-properties
+# sudo apt install python-software-properties
 sudo add-apt-repository -y -r ppa:chris-lea/node.js &&\
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list &&\
 sudo rm -f /etc/apt/sources.list.d/chris-lea-node_js-*.list.save
@@ -329,8 +329,8 @@ echo "deb-src [signed-by=$KEYRING] https://deb.nodesource.com/$VERSION $DISTRO m
 **4. Update package lists and install Node.js**
 
 ```sh
-sudo apt-get update
-sudo apt-get install nodejs
+sudo apt update
+sudo apt install nodejs
 ```
 
 `<a name="rpm"></a>`

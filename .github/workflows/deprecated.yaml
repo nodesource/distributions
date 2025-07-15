@@ -16,8 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [16]
-        os: ["ubuntu:20.04", "debian:10"]
+        version: [ 16 ]
+        os: [ "ubuntu:20.04", "debian:10" ]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -27,29 +27,34 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v4
 
-      - name: Run Istallation Script
+      - name: Fix sources.list for Debian 10
+        if: contains(matrix.os, 'debian:10')
+        run: |
+          echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list
+          apt-get -o Acquire::Check-Valid-Until=false -o Acquire::AllowInsecureRepositories=true update
+
+      - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
         run: |
-          apt-get install nodejs -y
+          apt install nodejs -y
 
       - name: Validate Node Version
         run: |
           node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
+          NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
           if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
-
   rpm:
     name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [16]
-        os: ["fedora:29", "amazonlinux:2023"]
+        version: [ 16 ]
+        os: [ "fedora:29", "amazonlinux:2023" ]
     container:
       image: ${{ matrix.os }}
     defaults:
