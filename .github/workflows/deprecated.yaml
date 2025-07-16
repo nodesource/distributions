@@ -12,20 +12,16 @@ on:
 
 jobs:
   deb:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    name: "NodeJS ${{ matrix.version }} (${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 16 ]
-        os: [ "ubuntu:20.04", "debian:10" ]
+        version: [16]
+        os: ["ubuntu:20.04", "debian:10"]
     container:
       image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Fix sources.list for Debian 10
         if: contains(matrix.os, 'debian:10')
@@ -37,50 +33,47 @@ jobs:
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
-        run: |
-          apt install nodejs -y
+        run: apt install nodejs -y
 
       - name: Validate Node Version
         run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+          node -v
+          command -v node
+          NODE_VERSION=$(node -v | sed 's/v\([0-9]*\).*/\1/')
+          if [[ "${NODE_VERSION}" != "${{ matrix.version }}" ]]; then
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
+
   rpm:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    name: "NodeJS ${{ matrix.version }} (${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 16 ]
-        os: [ "fedora:29", "amazonlinux:2023" ]
+        version: [16]
+        os: ["fedora:29", "amazonlinux:2023"]
     container:
       image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: install git
+      - name: Install git
         run: |
           yum update -y
           yum install git -y
 
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Run Istallation Script
+      - name: Run Installation Script
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
-        run: |
-          yum install nodejs -y
+        run: yum install nodejs -y
 
       - name: Validate Node Version
         run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
+          node -v
+          command -v node
+          NODE_VERSION=$(node -v | sed 's/v\([0-9]*\).*/\1/')
+          if [[ "${NODE_VERSION}" != "${{ matrix.version }}" ]]; then
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
