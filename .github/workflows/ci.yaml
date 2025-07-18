@@ -25,7 +25,7 @@ jobs:
         if: contains(matrix.os, 'debian:10')
         run: |
           echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list
-          apt-get -o Acquire::Check-Valid-Until=false -o Acquire::AllowInsecureRepositories=true update
+          apt update
 
       - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
@@ -34,12 +34,14 @@ jobs:
         run: apt install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
+          set -e
           node -v
           command -v node
-          NODE_VERSION=$(node -v | sed 's/v\([0-9]*\).*/\1/')
-          if [[ "${NODE_VERSION}" != "${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ "$NODE_VERSION" -ne "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
 
@@ -67,12 +69,14 @@ jobs:
         run: dnf install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
+          set -e
           node -v
           command -v node
-          NODE_VERSION=$(node -v | sed 's/v\([0-9]*\).*/\1/')
-          if [[ "${NODE_VERSION}" != "${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ "$NODE_VERSION" -ne "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
 
@@ -100,11 +104,17 @@ jobs:
         run: microdnf install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
+          set -e
           node -v
           command -v node
-          NODE_VERSION=$(node -v | sed 's/v\([0-9]*\).*/\1/')
-          if [[ "${NODE_VERSION}" != "${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ -z "$NODE_VERSION" ] || ! [[ "$NODE_VERSION" =~ ^[0-9]+$ ]]; then
+            echo "::error::Failed to extract a valid Node.js version. NODE_VERSION='$NODE_VERSION'"
+            exit 1
+          fi
+          if [ "$NODE_VERSION" != "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
