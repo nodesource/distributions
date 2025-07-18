@@ -4,34 +4,28 @@ on:
   schedule:
     - cron: "00 00 * * *"
   push:
-    branches:
-      - master
+    branches: [ master ]
   pull_request:
-    branches:
-      - master
+    branches: [ master ]
 
 jobs:
   deb:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    name: "NodeJS ${{ matrix.version }} (${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
-        os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:10" ]
+        version: [18, 20, 22, 23, 24]
+        os: ["ubuntu:24.04", "ubuntu:22.04", "debian:10"]
     container:
       image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Fix sources.list for Debian 10
         if: contains(matrix.os, 'debian:10')
         run: |
           echo "deb http://archive.debian.org/debian buster main" > /etc/apt/sources.list
-          apt-get -o Acquire::Check-Valid-Until=false -o Acquire::AllowInsecureRepositories=true update
+          apt update
 
       - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
@@ -40,85 +34,87 @@ jobs:
         run: apt install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
-         node -e "console.log(process.version)"
-         NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
-        
-         if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
-          echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
-          exit 1
-         fi
+          set -e
+          node -v
+          command -v node
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ "$NODE_VERSION" -ne "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+            exit 1
+          fi
 
   rpm:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    name: "NodeJS ${{ matrix.version }} (${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
-        os: [ "fedora:36", "amazonlinux:2023", "rockylinux:9", "redhat/ubi9:latest" ]
+        version: [18, 20, 22, 23, 24]
+        os: ["fedora:36", "amazonlinux:2023", "rockylinux:9", "redhat/ubi9:latest"]
     container:
       image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: install git
+      - name: Install git
         run: |
           dnf update -y
           dnf install git -y
 
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Run Istallation Script
+      - name: Run Installation Script
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
-        run: |
-          dnf install nodejs -y
+        run: dnf install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          set -e
+          node -v
+          command -v node
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ "$NODE_VERSION" -ne "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
 
   rpm-minimal:
-    name: "NodeJS ${{ matrix.version }}(${{ matrix.os }})"
+    name: "NodeJS ${{ matrix.version }} (${{ matrix.os }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
-        os: [ "rockylinux:9-minimal", "redhat/ubi9-minimal:latest" ]
+        version: [18, 20, 22, 23, 24]
+        os: ["rockylinux:9-minimal", "redhat/ubi9-minimal:latest"]
     container:
       image: ${{ matrix.os }}
-    defaults:
-      run:
-        shell: bash
     steps:
-      - name: install git
+      - name: Install git
         run: |
           microdnf update -y
           microdnf install git -y
 
-      - name: Checkout Repo
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Run Istallation Script
+      - name: Run Installation Script
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Install Nodejs
-        run: |
-          microdnf install nodejs -y
+        run: microdnf install nodejs -y
 
       - name: Validate Node Version
+        shell: bash
         run: |
-          node -e "console.log(process.version)"
-          NODE_VERSION=$(node -e "console.log((process.version).split('.')[0])")
-          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
-            echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
+          set -e
+          node -v
+          command -v node
+          NODE_VERSION=$(node -v | grep -oP '^v\K[0-9]+')
+          if [ -z "$NODE_VERSION" ] || ! [[ "$NODE_VERSION" =~ ^[0-9]+$ ]]; then
+            echo "::error::Failed to extract a valid Node.js version. NODE_VERSION='$NODE_VERSION'"
+            exit 1
+          fi
+          if [ "$NODE_VERSION" != "${{ matrix.version }}" ]; then
+            echo "::error::Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
