@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
+        version: [ 18, 20, 22, 23, 24, 25 ]
         os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:10" ]
     container:
       image: ${{ matrix.os }}
@@ -54,7 +54,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
+        version: [ 18, 20, 22, 23, 24, 25 ]
         os: [ "fedora:36", "amazonlinux:2023", "rockylinux:9", "redhat/ubi9:latest" ]
     container:
       image: ${{ matrix.os }}
@@ -109,7 +109,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 18, 20, 22, 23, 24 ]
+        version: [ 18, 20, 22, 23, 24, 25]
         os: [ "rockylinux:9-minimal", "redhat/ubi9-minimal:latest" ]
     container:
       image: ${{ matrix.os }}
