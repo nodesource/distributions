@@ -62,6 +62,24 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Patch Rocky repos (avoid broken mirror)
+        if: contains(matrix.os, 'rocky')
+        run: |
+          set -euxo pipefail
+          for f in /etc/yum.repos.d/Rocky-*.repo; do
+            [ -f "$f" ] || continue
+            sed -i 's|^baseurl=.*|# baseurl disabled by CI|' "$f" || true
+            if grep -q '^mirrorlist=' "$f"; then
+              sed -i 's|^mirrorlist=.*|mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=$repo&release=$releasever|g' "$f" || true
+            else
+              echo 'mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=$repo&release=$releasever' >> "$f" || true
+            fi
+            if ! grep -qi '^skip_if_unavailable=' "$f"; then
+              echo 'skip_if_unavailable=True' >> "$f"
+            fi
+          done
+          (dnf clean all || microdnf clean all || true)
+          (dnf -y makecache || microdnf -y makecache || true)
       - name: install git
         run: |
           dnf update -y
@@ -99,6 +117,24 @@ jobs:
       run:
         shell: bash
     steps:
+      - name: Patch Rocky repos (avoid broken mirror)
+        if: contains(matrix.os, 'rocky')
+        run: |
+          set -euxo pipefail
+          for f in /etc/yum.repos.d/Rocky-*.repo; do
+            [ -f "$f" ] || continue
+            sed -i 's|^baseurl=.*|# baseurl disabled by CI|' "$f" || true
+            if grep -q '^mirrorlist=' "$f"; then
+              sed -i 's|^mirrorlist=.*|mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=$repo&release=$releasever|g' "$f" || true
+            else
+              echo 'mirrorlist=https://mirrors.rockylinux.org/mirrorlist?arch=$basearch&repo=$repo&release=$releasever' >> "$f" || true
+            fi
+            if ! grep -qi '^skip_if_unavailable=' "$f"; then
+              echo 'skip_if_unavailable=True' >> "$f"
+            fi
+          done
+          (dnf clean all || microdnf clean all || true)
+          (dnf -y makecache || microdnf -y makecache || true)
       - name: install git
         run: |
           microdnf update -y
