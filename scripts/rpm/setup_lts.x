@@ -41,7 +41,7 @@ rm -f /etc/yum.repos.d/nodesource*.repo
 log "Old repositories removed" "info"
 
 # Define Node.js version
-NODE_VERSION="22.x"
+NODE_VERSION="24.x"
 
 # Get system architecture
 SYS_ARCH=$(uname -m)
