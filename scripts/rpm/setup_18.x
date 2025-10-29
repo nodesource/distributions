@@ -1,5 +1,31 @@
 #!/bin/bash
 
+# Send deprecation Warning
+node_deprecation_warning() {
+    log "
+===============================================================================
+                            DEPRECATION WARNING                            
+===============================================================================
+Node.js 18.x is no longer actively supported!
+You will not receive security or critical stability updates for this version.
+
+You should migrate to a supported version of Node.js as soon as possible.
+
+Please see https://nodesource.com/products/distributions for details about which
+version may be appropriate for you.
+
+The NodeSource Node.js distributions site contains
+information both about supported versions of Node.js and N|Solid supported Linux
+distributions. To learn more about usage, see:
+https://nodesource.com/products/distributions
+
+===============================================================================
+
+Continuing in 10 seconds ...
+" "error"
+    sleep 10
+}
+
 # Logger Function
 log() {
   local message="$1"
@@ -35,6 +61,9 @@ command_exists() {
 if ! [ -f /etc/redhat-release ] && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null; then
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
+
+# Send deprecation Warning
+node_deprecation_warning
 
 log "Cleaning up old repositories..." "info"
 rm -f /etc/yum.repos.d/nodesource*.repo
