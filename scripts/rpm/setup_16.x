@@ -66,11 +66,11 @@ print_bold \
   Use the installation script that corresponds to the version of Node.js you
   wish to install. e.g.
   
-   * ${red}https://rpm.nodesource.com/setup_16.x — Node.js 16 \"Gallium\" ${bold}(deprecated)${normal}
-   * ${green}https://rpm.nodesource.com/setup_18.x — Node.js 18 \"Hydrogen\" (Maintenance)${normal}
-   * ${red}https://rpm.nodesource.com/setup_19.x — Node.js 19 \"Nineteen\" ${bold}(deprecated)${normal}
-   * ${bold}${green}https://rpm.nodesource.com/setup_20.x — Node.js 20 LTS \"Iron\" (recommended)${normal}
-   * ${green}https://rpm.nodesource.com/setup_21.x — Node.js 21 \"Iron\" (current)${normal}
+  * ${red}https://rpm.nodesource.com/setup_16.x - Node.js 16 \"Gallium\" ${bold}(deprecated)${normal}
+  * ${green}https://rpm.nodesource.com/setup_18.x - Node.js 18 \"Hydrogen\" (Maintenance)${normal}
+  * ${red}https://rpm.nodesource.com/setup_19.x - Node.js 19 \"Nineteen\" ${bold}(deprecated)${normal}
+  * ${bold}${green}https://rpm.nodesource.com/setup_20.x - Node.js 20 LTS \"Iron\" (recommended)${normal}
+  * ${green}https://rpm.nodesource.com/setup_21.x - Node.js 21 \"Iron\" (current)${normal}
    
 
 
@@ -104,7 +104,10 @@ command_exists() {
 }
 
 # Check if we are on an RPM-based system
-if ! [ -f /etc/redhat-release ] && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null; then
+if ! [ -f /etc/redhat-release ] \
+   && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null \
+  && ! grep -qi "TencentOS" /etc/system-release 2>/dev/null \
+  && ! grep -qi "OpenCloudOS" /etc/system-release 2>/dev/null; then
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
 node_deprecation_warning
