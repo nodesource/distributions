@@ -106,7 +106,7 @@ jobs:
     strategy:
       matrix:
         version: [ 20, 22, 24, 25, 26 ]
-        os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest" ]
+        os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest", "tencentos/tencentos4:latest" ]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -198,7 +198,7 @@ jobs:
     strategy:
       matrix:
         version: [ 20, 22, 24, 25, 26 ]
-        os: [ "rockylinux:9-minimal", "rockylinux:8-minimal", "redhat/ubi9-minimal:latest" ]
+        os: [ "rockylinux:9-minimal", "rockylinux:8-minimal", "redhat/ubi9-minimal:latest", "tencentos/tencentos4-minimal:latest", "opencloudos/opencloudos9-minimal:latest" ]
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -207,8 +207,16 @@ jobs:
     steps:
       - name: install git
         run: |
-          microdnf update -y
-          microdnf install git -y
+          if command -v microdnf &>/dev/null; then
+            PM=microdnf
+          elif command -v dnf &>/dev/null; then
+            PM=dnf
+          else
+            PM=yum
+          fi
+          echo "PM=$PM" >> $GITHUB_ENV
+          $PM update -y
+          $PM install git -y
 
       - name: Checkout Repo
         uses: actions/checkout@v5
@@ -217,11 +225,11 @@ jobs:
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
 
       - name: Audit Repository
-        run: microdnf repolist
+        run: ${{ env.PM }} repolist
 
       - name: Install Nodejs
         run: |
-          microdnf install nodejs -y
+          ${{ env.PM }} install nodejs -y
 
       - name: Validate Node Version
         run: |
@@ -271,8 +279,8 @@ jobs:
       - name: Install NSolid
         if: matrix.version != 25 && matrix.version != 26
         run: |
-          microdnf remove nodejs -y
-          microdnf install nsolid -y
+          ${{ env.PM }} remove nodejs -y
+          ${{ env.PM }} install nsolid -y
 
       - name: Validate NSolid Version
         if: matrix.version != 25 && matrix.version != 26
