@@ -60,8 +60,8 @@ command_exists() {
 # Check if we are on an RPM-based system
 if ! [ -f /etc/redhat-release ] \
    && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null \
-  && ! grep -qi "TencentOS" /etc/system-release 2>/dev/null \
-  && ! grep -qi "OpenCloudOS" /etc/system-release 2>/dev/null; then
+   && ! grep -qi "TencentOS" /etc/system-release 2>/dev/null \
+   && ! grep -qi "OpenCloudOS" /etc/system-release 2>/dev/null; then
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
 
