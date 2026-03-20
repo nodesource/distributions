@@ -41,7 +41,7 @@ elif grep -q "Amazon Linux" /etc/system-release 2>/dev/null; then
 elif [ -f /etc/os-release ]; then
     . /etc/os-release
     case "$ID" in
-        rhel|centos|fedora|rocky|alma|tencentos|openEuler|anolis)
+        rhel|centos|fedora|rocky|alma|tencentos)
             is_rpm_system=true
             ;;
     esac
