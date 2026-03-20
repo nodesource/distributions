@@ -32,7 +32,26 @@ command_exists() {
 }
 
 # Check if we are on an RPM-based system
-if ! [ -f /etc/redhat-release ] && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null; then
+# Supports: RHEL, CentOS, Fedora, Amazon Linux, TencentOS, and other EL-compatible distros
+is_rpm_system=false
+if [ -f /etc/redhat-release ]; then
+    is_rpm_system=true
+elif grep -q "Amazon Linux" /etc/system-release 2>/dev/null; then
+    is_rpm_system=true
+elif [ -f /etc/os-release ]; then
+    . /etc/os-release
+    case "$ID" in
+        rhel|centos|fedora|rocky|alma|tencentos|openEuler|anolis)
+            is_rpm_system=true
+            ;;
+    esac
+    # Fallback: check PLATFORM_ID for EL-compatible distros (e.g., platform:el9)
+    if [ "$is_rpm_system" = false ] && echo "${PLATFORM_ID:-}" | grep -q "platform:el"; then
+        is_rpm_system=true
+    fi
+fi
+
+if [ "$is_rpm_system" = false ]; then
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
 
@@ -130,3 +149,4 @@ elif command_exists microdnf; then
 else
     handle_error 1 "Neither yum, dnf nor microdnf package manager was found. Please update your system using your package manager."
 fi
+
