@@ -25,7 +25,7 @@ jobs:
         shell: bash
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
@@ -41,11 +41,47 @@ jobs:
         run: |
          node -e "console.log(process.version)"
          NODE_VERSION=$(node -e "console.log(process.version.split('.')[0])")
-        
+
          if [[ ${NODE_VERSION} != "v${{ matrix.version }}" ]]; then
           echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
           exit 1
          fi
+
+      - name: Validate Node matches latest official tag
+        env:
+          MATRIX_OS: ${{ matrix.os }}
+        run: |
+          cat <<'EOF' > /tmp/check-latest.js
+          const fs = require('fs');
+          const https = require('https');
+          const major = 'v' + process.argv[2] + '.';
+          const os = process.argv[3] || '';
+          const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+          const appendSummary = (s) => { if (summaryFile) fs.appendFileSync(summaryFile, s); };
+          https.get('https://nodejs.org/dist/index.json', (res) => {
+            let data = '';
+            res.on('data', (c) => (data += c));
+            res.on('end', () => {
+              const versions = JSON.parse(data);
+              const latest = versions.find((v) => v.version.startsWith(major));
+              const installed = process.version;
+              const header = '### Node ' + process.argv[2] + ' on ' + os + '\n\n';
+              if (!latest) {
+                console.log('No official release yet for Node ' + process.argv[2] + ', skipping');
+                appendSummary(header + 'Status: no official release yet for this major, skipped\n\n');
+                process.exit(0);
+              }
+              if (installed !== latest.version) {
+                const msg = 'Node ' + process.argv[2] + ' on ' + os + ': installed ' + installed + ' does not match latest official ' + latest.version;
+                console.log('::warning::' + msg);
+                appendSummary(header + 'Installed: `' + installed + '`\n\nLatest official: `' + latest.version + '`\n\nStatus: **WARNING** NodeSource package is behind upstream\n\n');
+                process.exit(0);
+              }
+              console.log('Installed ' + installed + ' matches latest ' + latest.version);
+            });
+          }).on('error', (e) => { console.error('Could not fetch nodejs.org/dist/index.json:', e.message); process.exit(0); });
+          EOF
+          node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
         if: matrix.version != 25
@@ -83,7 +119,7 @@ jobs:
           dnf install git -y
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run Istallation Script
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
@@ -103,6 +139,42 @@ jobs:
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
+
+      - name: Validate Node matches latest official tag
+        env:
+          MATRIX_OS: ${{ matrix.os }}
+        run: |
+          cat <<'EOF' > /tmp/check-latest.js
+          const fs = require('fs');
+          const https = require('https');
+          const major = 'v' + process.argv[2] + '.';
+          const os = process.argv[3] || '';
+          const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+          const appendSummary = (s) => { if (summaryFile) fs.appendFileSync(summaryFile, s); };
+          https.get('https://nodejs.org/dist/index.json', (res) => {
+            let data = '';
+            res.on('data', (c) => (data += c));
+            res.on('end', () => {
+              const versions = JSON.parse(data);
+              const latest = versions.find((v) => v.version.startsWith(major));
+              const installed = process.version;
+              const header = '### Node ' + process.argv[2] + ' on ' + os + '\n\n';
+              if (!latest) {
+                console.log('No official release yet for Node ' + process.argv[2] + ', skipping');
+                appendSummary(header + 'Status: no official release yet for this major, skipped\n\n');
+                process.exit(0);
+              }
+              if (installed !== latest.version) {
+                const msg = 'Node ' + process.argv[2] + ' on ' + os + ': installed ' + installed + ' does not match latest official ' + latest.version;
+                console.log('::warning::' + msg);
+                appendSummary(header + 'Installed: `' + installed + '`\n\nLatest official: `' + latest.version + '`\n\nStatus: **WARNING** NodeSource package is behind upstream\n\n');
+                process.exit(0);
+              }
+              console.log('Installed ' + installed + ' matches latest ' + latest.version);
+            });
+          }).on('error', (e) => { console.error('Could not fetch nodejs.org/dist/index.json:', e.message); process.exit(0); });
+          EOF
+          node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
         if: matrix.version != 25
@@ -139,7 +211,7 @@ jobs:
           microdnf install git -y
 
       - name: Checkout Repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Run Istallation Script
         run: ./scripts/rpm/setup_${{ matrix.version }}.x
@@ -159,6 +231,42 @@ jobs:
             echo "Node version is not ${{ matrix.version }}. It is $NODE_VERSION"
             exit 1
           fi
+
+      - name: Validate Node matches latest official tag
+        env:
+          MATRIX_OS: ${{ matrix.os }}
+        run: |
+          cat <<'EOF' > /tmp/check-latest.js
+          const fs = require('fs');
+          const https = require('https');
+          const major = 'v' + process.argv[2] + '.';
+          const os = process.argv[3] || '';
+          const summaryFile = process.env.GITHUB_STEP_SUMMARY;
+          const appendSummary = (s) => { if (summaryFile) fs.appendFileSync(summaryFile, s); };
+          https.get('https://nodejs.org/dist/index.json', (res) => {
+            let data = '';
+            res.on('data', (c) => (data += c));
+            res.on('end', () => {
+              const versions = JSON.parse(data);
+              const latest = versions.find((v) => v.version.startsWith(major));
+              const installed = process.version;
+              const header = '### Node ' + process.argv[2] + ' on ' + os + '\n\n';
+              if (!latest) {
+                console.log('No official release yet for Node ' + process.argv[2] + ', skipping');
+                appendSummary(header + 'Status: no official release yet for this major, skipped\n\n');
+                process.exit(0);
+              }
+              if (installed !== latest.version) {
+                const msg = 'Node ' + process.argv[2] + ' on ' + os + ': installed ' + installed + ' does not match latest official ' + latest.version;
+                console.log('::warning::' + msg);
+                appendSummary(header + 'Installed: `' + installed + '`\n\nLatest official: `' + latest.version + '`\n\nStatus: **WARNING** NodeSource package is behind upstream\n\n');
+                process.exit(0);
+              }
+              console.log('Installed ' + installed + ' matches latest ' + latest.version);
+            });
+          }).on('error', (e) => { console.error('Could not fetch nodejs.org/dist/index.json:', e.message); process.exit(0); });
+          EOF
+          node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
         if: matrix.version != 25
