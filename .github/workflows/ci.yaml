@@ -106,7 +106,7 @@ jobs:
     strategy:
       matrix:
         version: [ 20, 22, 24, 25 ]
-        os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest" ]
+        os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest", "openeuler/openeuler:22.03-lts-sp4", "openeuler/openeuler:24.03-lts-sp3" ]
     container:
       image: ${{ matrix.os }}
     defaults:
