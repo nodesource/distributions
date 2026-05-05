@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25 ]
+        version: [ 20, 22, 24, 25, 26 ]
         os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:13", "debian:11" ]
     container:
       image: ${{ matrix.os }}
@@ -84,13 +84,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
          apt remove nodejs -y
          apt install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
          nsolid -e "console.log(process.version)"
          NSOLID_VERSION=$(nsolid -e "console.log(process.version.split('.')[0])")
@@ -105,7 +105,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25 ]
+        version: [ 20, 22, 24, 25, 26 ]
         os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest" ]
     container:
       image: ${{ matrix.os }}
@@ -177,13 +177,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
           dnf remove nodejs -y
           dnf install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")
@@ -197,7 +197,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25]
+        version: [ 20, 22, 24, 25, 26 ]
         os: [ "rockylinux:9-minimal", "rockylinux:8-minimal", "redhat/ubi9-minimal:latest" ]
     container:
       image: ${{ matrix.os }}
@@ -269,13 +269,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
           microdnf remove nodejs -y
           microdnf install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 26
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")

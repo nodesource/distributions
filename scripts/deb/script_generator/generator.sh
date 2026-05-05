@@ -25,7 +25,7 @@ if [ ! -f "$base_script" ]; then
 fi
 
 # List of versions
-versions=("20" "22" "24" "25")
+versions=("20" "22" "24" "25" "26")
 
 # Iterate over the versions and create scripts
 for version in "${versions[@]}"; do
@@ -34,7 +34,7 @@ done
 
 # Define LTS and current Node.js versions
 lts_version="24"
-current_version="25"
+current_version="26"
 
 # Create setup_lts and setup_current scripts
 create_script "$lts_version" "lts"
