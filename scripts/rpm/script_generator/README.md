@@ -4,9 +4,9 @@ This repository contains scripts for setting up different versions of Node.js on
 
 ## Modifying the Scripts
 
-Each script in this repository sets up a specific version of Node.js. The version is specified in the line `NODE_VERSION="XX.x"` in each script. To modify the version, simply replace `"XX.x"` with the desired version, e.g., `"18.x"`.
+Each script in this repository sets up a specific version of Node.js. The version is specified in the line `NODE_VERSION="XX.x"` in each script. To modify the version, simply replace `"XX.x"` with the desired version, e.g., `"24.x"`.
 
-For example, to modify the `setup_18.x` script to install Node.js version 20.x instead, you would change the line to `NODE_VERSION="20.x"`.
+For example, to modify the `setup_24.x` script to install Node.js version 26.x instead, you would change the line to `NODE_VERSION="26.x"`.
 
 ## Running the Scripts
 
@@ -16,7 +16,7 @@ To run a script, navigate to the directory containing the script and run the fol
 sudo bash setup_XX.x
 ```
 
-Replace `XX.x` with the version number of the script you want to run. For example, to run the `setup_18.x` script, you would use the command `sudo bash setup_18.x`.
+Replace `XX.x` with the version number of the script you want to run. For example, to run the `setup_24.x` script, you would use the command `sudo bash setup_24.x`.
 
 ## How It Works
 
@@ -27,7 +27,7 @@ Each script in this repository performs the following steps:
 3. Checks if `dnf`, `yum` or `microdnf` is available and updates the system using the available package manager.
 4. Logs a message indicating that the repository is configured and updated, and instructs the user to run `dnf install nodejs -y`, `yum install nodejs -y` or `microdnf install nodejs -y` to complete the installation.
 
-The `setup_current` and `setup_latest` scripts are special scripts that install the current and latest versions of Node.js, respectively. The current version is 20.x and the latest version is 21.x.
+The `setup_lts` and `setup_current` scripts are special scripts that install the LTS and current versions of Node.js, respectively. The LTS version is 24.x and the current version is 26.x.
 
 ## Updating the Scripts
 
@@ -37,7 +37,7 @@ If you make a change to the base script, you can regenerate all the version-spec
 bash generator.sh
 ```
 
-This script iterates over a list of versions (currently 18.x, 20.x, and 21.x), and creates a new script for each version with the updated base script. It also creates setup_current and setup_latest scripts for the current and latest versions of Node.js, respectively.
+This script iterates over a list of versions (currently 23.x, 24.x, 25.x, and 26.x), and creates a new script for each version with the updated base script. It also creates setup_lts and setup_current scripts for the LTS and current versions of Node.js, respectively.
 
 ## Deploying the Scripts
 

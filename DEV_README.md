@@ -253,7 +253,7 @@ apt install -y curl
       ```
    </details>
 
-**Node.js v20.x**:
+**Node.js v20.x** (deprecated — end-of-life, no longer actively supported):
 
 ##### Using Ubuntu (Node.js 20)
 
@@ -359,7 +359,7 @@ apt install -y curl
       ```
    </details>
 
-**Node.js v18.x**:
+**Node.js v18.x** (deprecated — end-of-life, no longer actively supported):
 
 ##### Using Ubuntu (Node.js 18)
 
@@ -840,7 +840,7 @@ yum install -y curl
    node -v
    ```
 
-**Node.js v20.x**
+**Node.js v20.x** (deprecated — end-of-life, no longer actively supported)
 
 ##### As root (Node.js 20)
 
@@ -946,7 +946,7 @@ yum install -y curl
       ```
    </details>
 
-**Node.js v18.x**
+**Node.js v18.x** (deprecated — end-of-life, no longer actively supported)
 
 ##### As root (Node.js 18)
 
@@ -1270,7 +1270,7 @@ _source: <https://nodejs.dev>_
 
 Q: Are the scripts deprecated?
 
-A: The scripts are deprecated for the versions of Node.js that are currently outdated. While the packages for these versions still exist, we no longer provide support for them. Our support is exclusively dedicated to the active Node.js versions, which, as of today, are 18, 20, and 21. Users utilizing these versions can confidently use our scripts, but we encourage those using older versions to upgrade for continued support and the best experience.
+A: The scripts are deprecated for the versions of Node.js that are currently outdated. While the packages for these versions still exist, we no longer provide support for them. Our support is exclusively dedicated to the active Node.js versions, which, as of today, are 22, 24, 25, and 26. Users utilizing these versions can confidently use our scripts, but we encourage those using older versions to upgrade for continued support and the best experience.
 
 ---
 
