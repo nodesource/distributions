@@ -25,7 +25,7 @@ if [ ! -f "$base_script" ]; then
 fi
 
 # List of versions
-versions=("20" "22" "24" "25" "26")
+versions=("22" "24" "25" "26")
 
 # Iterate over the versions and create scripts
 for version in "${versions[@]}"; do
