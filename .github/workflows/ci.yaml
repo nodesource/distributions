@@ -27,6 +27,13 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v5
 
+      - name: Fix sources.list for Debian 11
+        if: matrix.os == 'debian:11'
+        run: |
+          echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian bullseye-updates main" >> /etc/apt/sources.list
+          echo "deb http://archive.debian.org/debian-security bullseye-security main" >> /etc/apt/sources.list
+
       - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
