@@ -38,7 +38,7 @@ jobs:
 
       - name: Install Nodejs
         run: |
-          apt install nodejs -y
+          apt-get install nodejs -y
 
       - name: Validate Node Version
         run: |

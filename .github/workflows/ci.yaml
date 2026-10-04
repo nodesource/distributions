@@ -32,10 +32,10 @@ jobs:
 
       - name: Audit Repository
         if: matrix.os == 'debian:13'
-        run: apt update --audit
+        run: apt-get update --audit
 
       - name: Install Nodejs
-        run: apt install nodejs -y
+        run: apt-get install nodejs -y
 
       - name: Validate Node Version
         run: |
@@ -86,8 +86,8 @@ jobs:
       - name: Install NSolid
         if: matrix.version != 25 && matrix.version != 26
         run: |
-         apt remove nodejs -y
-         apt install nsolid -y
+         apt-get remove nodejs -y
+         apt-get install nsolid -y
 
       - name: Validate NSolid Version
         if: matrix.version != 25 && matrix.version != 26
