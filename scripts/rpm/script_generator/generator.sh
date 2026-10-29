@@ -33,7 +33,7 @@ for version in "${versions[@]}"; do
 done
 
 # Define LTS, current and alpha Node.js versions
-lts_version="24"
+lts_version="26"
 current_version="26"
 alpha_version="27"
 

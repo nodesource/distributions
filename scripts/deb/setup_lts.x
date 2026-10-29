@@ -111,7 +111,7 @@ EOF
 }
 
 # Define Node.js version
-NODE_VERSION="24.x"
+NODE_VERSION="26.x"
 
 # Check OS
 check_os
