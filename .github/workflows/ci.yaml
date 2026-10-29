@@ -16,8 +16,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26 ]
+        version: [ 20, 22, 24, 25, 26, 27 ]
         os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:13", "debian:11" ]
+        # Node 27 needs glibc >= 2.34
+        exclude:
+          - version: 27
+            os: "debian:11"
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -93,13 +97,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
          apt remove nodejs -y
          apt install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
          nsolid -e "console.log(process.version)"
          NSOLID_VERSION=$(nsolid -e "console.log(process.version.split('.')[0])")
@@ -114,8 +118,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26 ]
+        version: [ 20, 22, 24, 25, 26, 27 ]
         os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest", "tencentos/tencentos4:latest" ]
+        # Node 27 needs glibc >= 2.34
+        exclude:
+          - version: 27
+            os: "rockylinux:8"
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -186,13 +194,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
           dnf remove nodejs -y
           dnf install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")
@@ -206,8 +214,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26 ]
+        version: [ 20, 22, 24, 25, 26, 27 ]
         os: [ "rockylinux:9-minimal", "rockylinux:8-minimal", "redhat/ubi9-minimal:latest", "tencentos/tencentos4-minimal:latest", "opencloudos/opencloudos9-minimal:latest" ]
+        # Node 27 needs glibc >= 2.34
+        exclude:
+          - version: 27
+            os: "rockylinux:8-minimal"
     container:
       image: ${{ matrix.os }}
     defaults:
@@ -286,13 +298,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
           ${{ env.PM }} remove nodejs -y
           ${{ env.PM }} install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25
+        if: matrix.version != 25 && matrix.version != 27
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")
