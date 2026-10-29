@@ -33,9 +33,9 @@ command_exists() {
 
 # Check if we are on an RPM-based system
 if ! [ -f /etc/redhat-release ] \
-   && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null \
-   && ! grep -qi "TencentOS" /etc/system-release 2>/dev/null \
-   && ! grep -qi "OpenCloudOS" /etc/system-release 2>/dev/null; then
+  && ! grep -q "Amazon Linux" /etc/system-release 2>/dev/null \
+  && ! grep -qi "TencentOS" /etc/system-release 2>/dev/null \
+  && ! grep -qi "OpenCloudOS" /etc/system-release 2>/dev/null; then
     handle_error 1 "This script is intended for RPM-based systems. Please run it on an RPM-based system."
 fi
 
@@ -69,7 +69,7 @@ module_hotfixes=1"
 echo "$NODEJS_REPO_CONTENT" | tee /etc/yum.repos.d/nodesource-nodejs.repo > /dev/null
 
 # Check if Node.js version is an LTS version
-if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]]; then
+if [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]] || [[ "$NODE_VERSION" == "24.x" ]] || [[ "$NODE_VERSION" == "26.x" ]]; then
   # Repository content for N|Solid
   NSOLID_REPO_CONTENT="[nodesource-nsolid]
 name=N|Solid Packages for Linux RPM based distros - $SYS_ARCH
@@ -91,7 +91,7 @@ if command_exists dnf; then
     dnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
     
     # Update N|Solid repository if it's LTS
-    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]]; then
+    if [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]] || [[ "$NODE_VERSION" == "24.x" ]] || [[ "$NODE_VERSION" == "26.x" ]]; then
         dnf makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
         log "Repository is configured and updated." "info"
         log "You can use N|solid Runtime as a node.js alternative" "info"
@@ -107,7 +107,7 @@ elif command_exists yum; then
     yum makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
 
     # Update N|Solid repository if it's LTS
-    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]]; then
+    if [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]] || [[ "$NODE_VERSION" == "24.x" ]] || [[ "$NODE_VERSION" == "26.x" ]]; then
         yum makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
         log "Repository is configured and updated." "info"
         log "You can use N|solid Runtime as a node.js alternative" "info"
@@ -122,7 +122,7 @@ elif command_exists microdnf; then
     microdnf makecache --disablerepo="*" --enablerepo="nodesource-nodejs"
 
     # Update N|Solid repository if it's LTS
-    if [[ "$NODE_VERSION" == "18.x" ]] || [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]]; then
+    if [[ "$NODE_VERSION" == "20.x" ]] || [[ "$NODE_VERSION" == "22.x" ]] || [[ "$NODE_VERSION" == "24.x" ]] || [[ "$NODE_VERSION" == "26.x" ]]; then
         microdnf makecache --disablerepo="*" --enablerepo="nodesource-nsolid"
         log "Repository is configured and updated. Run 'microdnf install nsolid -y' to complete the installation." "info"
     else

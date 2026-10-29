@@ -27,7 +27,7 @@ Each script in this repository performs the following steps:
 3. Checks if `dnf`, `yum` or `microdnf` is available and updates the system using the available package manager.
 4. Logs a message indicating that the repository is configured and updated, and instructs the user to run `dnf install nodejs -y`, `yum install nodejs -y` or `microdnf install nodejs -y` to complete the installation.
 
-The `setup_lts` and `setup_current` scripts are special scripts that install the LTS and current versions of Node.js, respectively. The LTS version is 24.x and the current version is 26.x.
+The `setup_lts`, `setup_current` and `setup_alpha` scripts are special scripts that install the LTS, current and alpha versions of Node.js. Their versions are set by `lts_version`, `current_version` and `alpha_version` in `generator.sh`.
 
 ## Updating the Scripts
 
@@ -37,7 +37,7 @@ If you make a change to the base script, you can regenerate all the version-spec
 bash generator.sh
 ```
 
-This script iterates over a list of versions (currently 23.x, 24.x, 25.x, and 26.x), and creates a new script for each version with the updated base script. It also creates setup_lts and setup_current scripts for the LTS and current versions of Node.js, respectively.
+This script iterates over the `versions` list in `generator.sh` and creates a new script for each version with the updated base script. It also creates the setup_lts, setup_current and setup_alpha scripts.
 
 ## Deploying the Scripts
 
