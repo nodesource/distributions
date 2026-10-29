@@ -27,6 +27,15 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v5
 
+      - name: Fix apt sources for EOL Debian 11
+        if: contains(matrix.os, 'debian:11')
+        run: |
+          # Debian 11 (bullseye) is EOL: deb.debian.org no longer serves
+          # its security pool, so point apt at archive.debian.org. Mirrors
+          # the debian:10 handling in deprecated.yaml.
+          sed -i 's|deb.debian.org|archive.debian.org|g' /etc/apt/sources.list
+          apt-get update
+
       - name: Run Installation Script
         run: ./scripts/deb/setup_${{ matrix.version }}.x
 
@@ -84,13 +93,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
          apt remove nodejs -y
          apt install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
          nsolid -e "console.log(process.version)"
          NSOLID_VERSION=$(nsolid -e "console.log(process.version.split('.')[0])")
@@ -177,13 +186,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
           dnf remove nodejs -y
           dnf install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")
@@ -277,13 +286,13 @@ jobs:
           node /tmp/check-latest.js ${{ matrix.version }} "$MATRIX_OS"
 
       - name: Install NSolid
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
           ${{ env.PM }} remove nodejs -y
           ${{ env.PM }} install nsolid -y
 
       - name: Validate NSolid Version
-        if: matrix.version != 25 && matrix.version != 26
+        if: matrix.version != 25
         run: |
           nsolid -e "console.log(process.version)"
           NSOLID_VERSION=$(nsolid -e "console.log((process.version).split('.')[0])")
