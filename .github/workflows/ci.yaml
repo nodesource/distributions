@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26, 27 ]
+        version: [ 22, 24, 25, 26, 27 ]
         os: [ "ubuntu:24.04", "ubuntu:22.04", "debian:13", "debian:11" ]
         # Node 27 needs glibc >= 2.34
         exclude:
@@ -118,7 +118,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26, 27 ]
+        version: [ 22, 24, 25, 26, 27 ]
         os: [ "fedora:41", "amazonlinux:2023", "rockylinux:9", "rockylinux:8", "redhat/ubi9:latest", "tencentos/tencentos4:latest" ]
         # Node 27 needs glibc >= 2.34
         exclude:
@@ -214,7 +214,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 20, 22, 24, 25, 26, 27 ]
+        version: [ 22, 24, 25, 26, 27 ]
         os: [ "rockylinux:9-minimal", "rockylinux:8-minimal", "redhat/ubi9-minimal:latest", "tencentos/tencentos4-minimal:latest", "opencloudos/opencloudos9-minimal:latest" ]
         # Node 27 needs glibc >= 2.34
         exclude:

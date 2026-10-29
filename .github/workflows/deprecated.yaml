@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 16, 18 ]
+        version: [ 16, 18, 20 ]
         os: [ "ubuntu:20.04", "debian:10" ]
     container:
       image: ${{ matrix.os }}
@@ -53,7 +53,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        version: [ 16, 18 ]
+        version: [ 16, 18, 20 ]
         os: [ "fedora:29", "amazonlinux:2023" ]
     container:
       image: ${{ matrix.os }}
