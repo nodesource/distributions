@@ -32,10 +32,12 @@ for version in "${versions[@]}"; do
     create_script "$version" "$version"
 done
 
-# Define LTS and current Node.js versions
+# Define LTS, current and alpha Node.js versions
 lts_version="24"
 current_version="26"
+alpha_version="27"
 
-# Create setup_lts and setup_current scripts
+# Create setup_lts, setup_current and setup_alpha scripts
 create_script "$lts_version" "lts"
 create_script "$current_version" "current"
+create_script "$alpha_version" "alpha"
